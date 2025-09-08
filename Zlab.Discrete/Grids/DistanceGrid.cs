@@ -71,6 +71,10 @@ namespace ZLab.Discrete.Grids
 
         // ------------ PUBLIC INTERFACE: storage operations ------------
         #region Storage Operations
+
+        /// <summary>
+        /// Get distance value at given grid index.
+        /// </summary>
         public float GetValue((int x, int y, int z) index)
         {
             if (!TryToLinearIndex(index, out int linear))
@@ -79,8 +83,22 @@ namespace ZLab.Discrete.Grids
             return _distances[linear];
         }
 
+        /// <summary>
+        /// Get distance value at given world position (trilinear interpolation NOT supported).
+        /// </summary>
+        public float GetValue(Vector3 position)
+        {
+            return GetValue(GridConverter.WorldToGridMin(position, Meta.VoxelSize));
+        }
+
+        /// <summary>
+        /// Get all distance values as a read-only span (flat row-major array).
+        /// </summary>
         public ReadOnlySpan<float> GetValues() => _distances;
 
+        /// <summary>
+        /// Set distance value at given grid index.
+        /// </summary>
         public void SetValue((int x, int y, int z) index, float value)
         {
             if (!TryToLinearIndex(index, out int linear))
@@ -88,16 +106,24 @@ namespace ZLab.Discrete.Grids
             _distances[linear] = value;
         }
 #if NETFRAMEWORK
+        /// <summary>
+        /// Fill all distances with a constant value.
+        /// </summary>
         public void Fill(float value)
         {
             for (int i = 0; i < _distances.Length; i++)
                 _distances[i] = value;
         }
 #else
+        /// <summary>
+        /// Fill all distances with a constant value.
+        /// </summary>
         public void Fill(float value) => Array.Fill(_distances, value);
 #endif
 
-
+        /// <summary>
+        /// Get minimum and maximum distance values in the grid.
+        /// </summary>
         public (float minVal, float maxVal) GetMinMax()
         {
             if (_distances.Length == 0) return (0, 0);
