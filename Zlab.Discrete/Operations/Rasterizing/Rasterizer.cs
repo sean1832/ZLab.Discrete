@@ -10,7 +10,7 @@ namespace ZLab.Discrete.Operations.Rasterizing
 {
     internal static class Rasterizer
     {
-        public static List<OccupancyVoxel> RasterizeFace(MeshF mesh, TriFace face, Vector3 voxelSize)
+        public static List<Vector3> RasterizeFace(MeshF mesh, TriFace face, Vector3 voxelSize)
         {
             // Get the triangle's vertices
             face.QueryVertices(mesh.Vertices, out Vector3 v0, out Vector3 v1, out Vector3 v2);
@@ -30,7 +30,7 @@ namespace ZLab.Discrete.Operations.Rasterizing
             int nz = gz1 - gz0 + 1;
 
             int cap = Math.Max(0, nx * ny * nz / 4); // heuristic
-            List<OccupancyVoxel> voxels = new(Math.Max(8, cap));
+            List<Vector3> voxels = new(Math.Max(8, cap));
 
             // One reusable BBox to cut allocs
             BBox box = default;
@@ -50,9 +50,8 @@ namespace ZLab.Discrete.Operations.Rasterizing
 
                         if (BBoxIntersection.TriangleIntersectsAabb(v0, v1, v2, box))
                         {
-                            voxels.Add(new OccupancyVoxel(
-                                GridConverter.IndexToMinCorner(x, y, z, voxelSize),
-                                Occupancy.Boundary));
+                            // intersects, add voxel min corner (world space origin)
+                            voxels.Add(GridConverter.IndexToMinCorner(x, y, z, voxelSize));
                         }
                     }
                 }

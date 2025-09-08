@@ -18,17 +18,17 @@ namespace ZLab.Discrete.Operations.Rasterizing
         /// <param name="voxelSize">Size of each voxel</param>
         /// <param name="parallelThreshold">Mesh vertices threshold for parallelism</param>
         /// <returns><see cref="OccupancyVoxel"/> intersects with the mesh boundary</returns>
-        public static List<OccupancyVoxel> Rasterize(
+        public static List<Vector3> Rasterize(
             MeshF mesh, Vector3 voxelSize, 
             int parallelThreshold = 2048)
         {
             TriFace[] faces = mesh.Faces;
-            if (faces.Length == 0) return new List<OccupancyVoxel>();
+            if (faces.Length == 0) return new List<Vector3>();
 
             // small meshes: single-thread
             if (faces.Length <= parallelThreshold)
             {
-                List<OccupancyVoxel> outList = new(faces.Length * 8); // heuristic
+                List<Vector3> outList = new(faces.Length * 8); // heuristic
                 foreach (TriFace face in faces)
                     Rasterizer.RasterizeFace(mesh, face, voxelSize).ForEach(
                         v => outList.Add(v)
@@ -39,16 +39,16 @@ namespace ZLab.Discrete.Operations.Rasterizing
             OrderablePartitioner<Tuple<int, int>> partitioner = Partitioner.Create(
                 0, faces.Length, Math.Max(1, faces.Length / (Environment.ProcessorCount * 8))
             );
-            ConcurrentBag<List<OccupancyVoxel>> buckets = new();
+            ConcurrentBag<List<Vector3>> buckets = new();
 
             Parallel.ForEach(
                 partitioner,
-                () => new List<OccupancyVoxel>(256),
+                () => new List<Vector3>(256),
                 (range, state, local) =>
                 {
                     for (int i = range.Item1; i < range.Item2; i++)
                     {
-                        List<OccupancyVoxel> faceList = Rasterizer.RasterizeFace(mesh, faces[i], voxelSize);
+                        List<Vector3> faceList = Rasterizer.RasterizeFace(mesh, faces[i], voxelSize);
                         // append into thread-local buffer
                         local.AddRange(faceList);
                     }
@@ -59,8 +59,8 @@ namespace ZLab.Discrete.Operations.Rasterizing
 
             // concat
             int total = buckets.Sum(b => b.Count);
-            List<OccupancyVoxel> result = new(total);
-            foreach (List<OccupancyVoxel>? b in buckets) 
+            List<Vector3> result = new(total);
+            foreach (List<Vector3> b in buckets) 
                 result.AddRange(b);
             return result;
         }
