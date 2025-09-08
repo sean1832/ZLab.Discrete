@@ -9,9 +9,9 @@ using ZLab.Discrete.Grids;
 namespace ZLab.Discrete.Algorithms.Sampling
 {
     /// <summary>
-    /// Trilinear sampling of a <see cref="DistanceGrid"/>.
+    /// Extension methods for sampling a <see cref="DistanceGrid"/>.
     /// </summary>
-    internal static class TrilinearSampler
+    internal static class DistanceGridSamplingExtension
     {
         /// <summary>
         /// Trilinear sample of a <see cref="DistanceGrid"/> at an arbitrary world position.
