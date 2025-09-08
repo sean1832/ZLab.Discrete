@@ -181,7 +181,7 @@ namespace ZLab.Discrete.Grids
         /// Count voxels in a given <see cref="Occupancy"/> state.
         /// </summary>
         /// <param name="state">state of occupancy to count</param>
-        public long CountVoxels(Occupancy state)
+        public long CountState(Occupancy state)
         {
             return _occupancies.Count(v => v == state);
         }
@@ -189,7 +189,7 @@ namespace ZLab.Discrete.Grids
         /// <summary>
         /// Count total number of voxels in the grid.
         /// </summary>
-        public long CountVoxels()
+        public long CountState()
         {
             return _occupancies.Length;
         }
