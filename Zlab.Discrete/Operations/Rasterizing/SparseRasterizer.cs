@@ -4,11 +4,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
+using ZLab.Discrete.Core;
 using ZLab.Discrete.Geometry;
 using ZLab.Discrete.Voxels;
 
 namespace ZLab.Discrete.Operations.Rasterizing
 {
+    internal sealed class VoxelOriginComparer : IEqualityComparer<Vector3>
+    {
+        private readonly Vector3 _inv; // 1/voxelSize
+        public VoxelOriginComparer(Vector3 voxelSize)
+        {
+            _inv = new Vector3(1f / voxelSize.X, 1f / voxelSize.Y, 1f / voxelSize.Z);
+        }
+
+        private (int ix, int iy, int iz) Q(Vector3 v)
+            => ((int)MathFx.Round(v.X * _inv.X),
+                (int)MathFx.Round(v.Y * _inv.Y),
+                (int)MathFx.Round(v.Z * _inv.Z));
+
+        public bool Equals(Vector3 a, Vector3 b) => Q(a) == Q(b);
+
+        public int GetHashCode(Vector3 v)
+        {
+            var (ix, iy, iz) = Q(v);
+            unchecked
+            {
+                int h = ix;
+                h = (h * 397) ^ iy;
+                h = (h * 397) ^ iz;
+                return h;
+            }
+        }
+    }
+
     public static class SparseRasterizer
     {
         /// <summary>
@@ -23,46 +52,40 @@ namespace ZLab.Discrete.Operations.Rasterizing
             int parallelThreshold = 2048)
         {
             TriFace[] faces = mesh.Faces;
-            if (faces.Length == 0) return new List<Vector3>();
+            if (faces.Length == 0) return new List<Vector3>(0);
 
-            // small meshes: single-thread
+            VoxelOriginComparer comparer = new(voxelSize);
+
+            // Small meshes: single-thread, use HashSet to dedup
             if (faces.Length <= parallelThreshold)
             {
-                List<Vector3> outList = new(faces.Length * 8); // heuristic
+                HashSet<Vector3> set = new(comparer);
                 foreach (TriFace face in faces)
-                    Rasterizer.RasterizeFace(mesh, face, voxelSize).ForEach(
-                        v => outList.Add(v)
-                    );
-                return outList;
-            }
-            // large meshes: parallel with thread-local lists
-            OrderablePartitioner<Tuple<int, int>> partitioner = Partitioner.Create(
-                0, faces.Length, Math.Max(1, faces.Length / (Environment.ProcessorCount * 8))
-            );
-            ConcurrentBag<List<Vector3>> buckets = new();
-
-            Parallel.ForEach(
-                partitioner,
-                () => new List<Vector3>(256),
-                (range, state, local) =>
                 {
-                    for (int i = range.Item1; i < range.Item2; i++)
-                    {
-                        List<Vector3> faceList = Rasterizer.RasterizeFace(mesh, faces[i], voxelSize);
-                        // append into thread-local buffer
-                        local.AddRange(faceList);
-                    }
-                    return local;
-                },
-                local => buckets.Add(local)
+                    List<Vector3> voxels = Rasterizer.RasterizeFace(mesh, face, voxelSize);
+                    foreach (Vector3 v in voxels) set.Add(v);
+                }
+                return set.ToList();
+            }
+
+            // Large meshes: parallel. Use a ConcurrentDictionary as a concurrent set.
+            ConcurrentDictionary<Vector3, byte> setConcurrent = new(comparer);
+
+            OrderablePartitioner<Tuple<int, int>> partitioner = Partitioner.Create(
+                0, faces.Length,
+                Math.Max(1, faces.Length / (Environment.ProcessorCount * 8))
             );
 
-            // concat
-            int total = buckets.Sum(b => b.Count);
-            List<Vector3> result = new(total);
-            foreach (List<Vector3> b in buckets) 
-                result.AddRange(b);
-            return result;
+            Parallel.ForEach(partitioner, range =>
+            {
+                for (int i = range.Item1; i < range.Item2; i++)
+                {
+                    List<Vector3> voxels = Rasterizer.RasterizeFace(mesh, faces[i], voxelSize);
+                    foreach (Vector3 v in voxels) setConcurrent.TryAdd(v, 0);
+                }
+            });
+
+            return setConcurrent.Keys.ToList();
         }
     }
 }
