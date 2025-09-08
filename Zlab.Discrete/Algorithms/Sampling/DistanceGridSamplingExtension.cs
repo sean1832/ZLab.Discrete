@@ -18,7 +18,10 @@ namespace ZLab.Discrete.Algorithms.Sampling
         /// </summary>
         /// <param name="grid">The distance grid to sample.</param>
         /// <param name="worldPos">The arbitrary world position to sample.</param>
-        /// <param name="clampToBounds">If true, positions outside the grid bounds will be clamped to the nearest valid voxel.</param>
+        /// <param name="clampToBounds">
+        /// If true, samples outside the grid are clamped to the outermost valid cell; 
+        /// if false, an <see cref="ArgumentOutOfRangeException"/> is thrown when sampling out of bounds.
+        /// </param>
         /// <returns>Distance to the nearest surface at the specified world position.</returns>
         public static float SampleTrilinear(this DistanceGrid grid, Vector3 worldPos, bool clampToBounds = true)
         {
@@ -80,6 +83,92 @@ namespace ZLab.Discrete.Algorithms.Sampling
             // interpolate along z
             float c = MathFx.Lerp(c0, c1, fracZ);
             return c;
+        }
+
+        /// <summary>
+        /// Estimates the gradient of the signed distance field at a world-space position
+        /// using central differences over one voxel step per axis.
+        /// </summary>
+        /// <param name="grid">Distance grid to sample</param>
+        /// <param name="worldPos">Query position in world space.</param>
+        /// <param name="clampToBounds">
+        /// If true, samples outside the grid are clamped to the outermost valid cell; 
+        /// if false, an <see cref="ArgumentOutOfRangeException"/> is thrown when sampling out of bounds.
+        /// </param>
+        /// <returns>
+        /// Gradient vector in world units (X,Y,Z). For a true SDF, normalizing this vector
+        /// yields the surface normal at <paramref name="worldPos"/>.
+        /// </returns>
+        /// <remarks>
+        /// Uses trilinear samples per axis.
+        /// Degenerate axes (dimension = 1) produce zero derivative on that axis.
+        /// Result quality depends on grid resolution and SDF accuracy (it is an approximation of the mesh normal).
+        /// </remarks>
+        public static Vector3 SampleGradient(this DistanceGrid grid, Vector3 worldPos, bool clampToBounds = true)
+        {
+            GridMeta meta = grid.Meta;
+            Vector3 vSize = meta.VoxelSize;
+
+            // handle degenerate dimensions (only 1 voxel in that dimension)
+            bool singleX = meta.Nx <= 1;
+            bool singleY = meta.Ny <= 1;
+            bool singleZ = meta.Nz <= 1;
+
+            float dx = 0f, dy = 0f, dz = 0f;
+            if (!singleX)
+            {
+                float stepX = vSize.X;
+                float fPlus = grid.SampleTrilinear(new Vector3(worldPos.X + stepX, worldPos.Y, worldPos.Z),
+                    clampToBounds);
+                float fMinus = grid.SampleTrilinear(new Vector3(worldPos.X - stepX, worldPos.Y, worldPos.Z),
+                    clampToBounds);
+                dx = (fPlus - fMinus) / (2f * stepX);
+            }
+
+            if (!singleY)
+            {
+                float stepY = vSize.Y;
+                float fPlus = grid.SampleTrilinear(new Vector3(worldPos.X, worldPos.Y + stepY, worldPos.Z),
+                    clampToBounds);
+                float fMinus = grid.SampleTrilinear(new Vector3(worldPos.X, worldPos.Y - stepY, worldPos.Z),
+                    clampToBounds);
+                dy = (fPlus - fMinus) / (2f * stepY);
+            }
+
+            if (!singleZ)
+            {
+                float stepZ = vSize.Z;
+                float fPlus = grid.SampleTrilinear(new Vector3(worldPos.X, worldPos.Y, worldPos.Z + stepZ),
+                    clampToBounds);
+                float fMinus = grid.SampleTrilinear(new Vector3(worldPos.X, worldPos.Y, worldPos.Z - stepZ),
+                    clampToBounds);
+                dz = (fPlus - fMinus) / (2f * stepZ);
+            }
+
+            return new Vector3(dx, dy, dz);
+        }
+
+        /// <summary>
+        /// Returns a unit-length normal estimated from the SDF gradient at a world-space position.
+        /// </summary>
+        /// <param name="grid">Distance grid to sample</param>
+        /// <param name="worldPos">Query position in world space.</param>
+        /// <param name="clampToBounds">
+        /// If true, samples outside the grid are clamped to the outermost valid cell; 
+        /// if false, an <see cref="ArgumentOutOfRangeException"/> is thrown when sampling out of bounds.
+        /// </param>
+        /// <returns>
+        /// Unit normal vector. Returns <see cref="Vector3.Zero"/> if the gradient magnitude is near zero.
+        /// </returns>
+        /// <remarks>
+        /// Normal is computed as <c>Normalize(SampleGradient(worldPos))</c>. Suitable for shading, collision response,
+        /// and analysis; accuracy improves with grid resolution.
+        /// </remarks>
+        public static Vector3 SampleNormal(this DistanceGrid grid, Vector3 worldPos, bool clampToBounds = true)
+        {
+            Vector3 g = grid.SampleGradient(worldPos, clampToBounds);
+            float len = g.Length();
+            return len > 1e-8f ? g / len : Vector3.Zero;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
