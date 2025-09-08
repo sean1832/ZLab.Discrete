@@ -158,6 +158,12 @@ namespace ZLab.Discrete.Grids
 
         #endregion
 
+        // ------------ OVERRIDES ------------
+        public override string ToString()
+        {
+            return $"OccupancyGrid: {Meta.Nx} x {Meta.Ny} x {Meta.Nz} voxels @ {Meta.VoxelSize} (Bounds: {Bounds})";
+        }
+
         // ------------ PUBLIC: export operations ------------
         /// <summary>
         /// Enumerate all voxels with their world-space positions and occupancy values.
