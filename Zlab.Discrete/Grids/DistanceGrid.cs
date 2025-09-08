@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 using ZLab.Discrete.Algorithms.DistanceTransforms;
+using ZLab.Discrete.Algorithms.Sampling;
 using ZLab.Discrete.Geometry;
 using ZLab.Discrete.Grids.Interfaces;
 
@@ -84,11 +85,15 @@ namespace ZLab.Discrete.Grids
         }
 
         /// <summary>
-        /// Get distance value at given world position (trilinear interpolation NOT supported).
+        /// Get distance value at given world position.
         /// </summary>
-        public float GetValue(Vector3 position)
+        /// <param name="position">World position</param>
+        /// <param name="continues">If true, trilinear interpolation is used; otherwise, nearest voxel value is returned.</param>
+        public float GetValue(Vector3 position, bool continues = false)
         {
-            return GetValue(GridConverter.WorldToGridMin(position, Meta.VoxelSize));
+            return continues ? 
+                this.SampleTrilinear(position) : 
+                GetValue(GridConverter.WorldToGridMin(position, Meta.VoxelSize));
         }
 
         /// <summary>

@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Text;
+using ZLab.Discrete.Core;
+using ZLab.Discrete.Grids;
+
+namespace ZLab.Discrete.Algorithms.Sampling
+{
+    /// <summary>
+    /// Trilinear sampling of a <see cref="DistanceGrid"/>.
+    /// </summary>
+    internal static class TrilinearSampler
+    {
+        /// <summary>
+        /// Trilinear sample of a <see cref="DistanceGrid"/> at an arbitrary world position.
+        /// </summary>
+        /// <param name="grid">The distance grid to sample.</param>
+        /// <param name="worldPos">The arbitrary world position to sample.</param>
+        /// <param name="clampToBounds">If true, positions outside the grid bounds will be clamped to the nearest valid voxel.</param>
+        /// <returns>Distance to the nearest surface at the specified world position.</returns>
+        public static float SampleTrilinear(this DistanceGrid grid, Vector3 worldPos, bool clampToBounds = true)
+        {
+            GridMeta meta = grid.Meta;
+            Vector3 vSize = meta.VoxelSize;
+            Vector3 originWorld = grid.Bounds.Min;
+
+            // Find the index of the voxel cell containing the query position (lower corner)
+            (int cellX, int cellY, int cellZ) = GridConverter.WorldToGridMin(worldPos, vSize, originWorld);
+
+            // Handle degenerate dimensions (only 1 voxel in that dimension)
+            bool singleX = meta.Nx <= 1;
+            bool singleY = meta.Ny <= 1;
+            bool singleZ = meta.Nz <= 1;
+
+            // clamp / validate lower cell indices
+            int cellX0 = singleX ? 0 : ClampOrThrow(cellX, 0, meta.Nx - 2, clampToBounds);
+            int cellY0 = singleY ? 0 : ClampOrThrow(cellY, 0, meta.Ny - 2, clampToBounds);
+            int cellZ0 = singleZ ? 0 : ClampOrThrow(cellZ, 0, meta.Nz - 2, clampToBounds);
+
+            // World position of the lower corner of the cell
+            Vector3 cellMinWorld = GridConverter.IndexToMinCorner(cellX0, cellY0, cellZ0, vSize, originWorld);
+
+            // clamp offset within the cell to [0,1]
+            float fracX = singleX ? 0f : MathFx.Clamp((worldPos.X - cellMinWorld.X) / vSize.X, 0f, 1f);
+            float fracY = singleY ? 0f : MathFx.Clamp((worldPos.Y - cellMinWorld.Y) / vSize.Y, 0f, 1f);
+            float fracZ = singleZ ? 0f : MathFx.Clamp((worldPos.Z - cellMinWorld.Z) / vSize.Z, 0f, 1f);
+
+            // Convert local indices to global grid indices
+            int gx0 = meta.MinX + cellX0;
+            int gx1 = singleX ? gx0 : gx0 + 1;
+
+            int gy0 = meta.MinY + cellY0;
+            int gy1 = singleY ? gy0 : gy0 + 1;
+
+            int gz0 = meta.MinZ + cellZ0;
+            int gz1 = singleZ ? gz0 : gz0 + 1;
+
+            // Fetch the 8 corner samples
+            float v000 = grid.GetValue((gx0, gy0, gz0));
+            float v100 = grid.GetValue((gx1, gy0, gz0));
+            float v010 = grid.GetValue((gx0, gy1, gz0));
+            float v110 = grid.GetValue((gx1, gy1, gz0));
+            float v001 = grid.GetValue((gx0, gy0, gz1));
+            float v101 = grid.GetValue((gx1, gy0, gz1));
+            float v011 = grid.GetValue((gx0, gy1, gz1));
+            float v111 = grid.GetValue((gx1, gy1, gz1));
+
+            // interpolate along x
+            float c00 = MathFx.Lerp(v000, v100, fracX);
+            float c10 = MathFx.Lerp(v010, v110, fracX);
+            float c01 = MathFx.Lerp(v001, v101, fracX);
+            float c11 = MathFx.Lerp(v011, v111, fracX);
+
+            // interpolate along y
+            float c0 = MathFx.Lerp(c00, c10, fracY);
+            float c1 = MathFx.Lerp(c01, c11, fracY);
+
+            // interpolate along z
+            float c = MathFx.Lerp(c0, c1, fracZ);
+            return c;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static int ClampOrThrow(int value, int min, int max, bool clamp)
+        {
+            if (clamp) return MathFx.Clamp(value, min, max);
+            if (value < min || value > max)
+                throw new ArgumentOutOfRangeException(nameof(value), "Position is outside the grid bounds.");
+            return value;
+        }
+    }
+}
