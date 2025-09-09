@@ -227,9 +227,9 @@ namespace ZLab.Discrete.Operations.Meshing
                     Vector3 o = origins[i];
                     Vector3 size = voxelSizes[i];
                     Vector3 originUniform = new BBox(o, o + size).Min;
-                    foreach (Vector3 dir in VoxelFaceBuilder.Directions)
+                    foreach (Vector3 dir in DiscreteFaceBuilder.Directions)
                     {
-                        VoxelFaceBuilder.MakeFace(originUniform, dir, vertices, faces, size, cordSystem);
+                        DiscreteFaceBuilder.MakeFace(originUniform, dir, vertices, faces, size, cordSystem);
                     }
                 }
             }
@@ -372,13 +372,13 @@ namespace ZLab.Discrete.Operations.Meshing
                     // We can skip explicit bounds checks since we’re using a set; just avoid uint underflow semantics confusion:
                     if (nx < 0 || ny < 0 || nz < 0)
                     {
-                        VoxelFaceBuilder.MakeFace(v, n.dir, vertices, faces, cell, cordSystem);
+                        DiscreteFaceBuilder.MakeFace(v, n.dir, vertices, faces, cell, cordSystem);
                         continue;
                     }
 
                     ulong keyN = Morton.Encode((uint)nx, (uint)ny, (uint)nz);
                     if (!occupied.Contains(keyN))
-                        VoxelFaceBuilder.MakeFace(v, n.dir, vertices, faces, cell, cordSystem);
+                        DiscreteFaceBuilder.MakeFace(v, n.dir, vertices, faces, cell, cordSystem);
                 }
             }
         }

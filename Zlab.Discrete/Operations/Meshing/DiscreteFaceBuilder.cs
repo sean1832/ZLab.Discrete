@@ -6,7 +6,7 @@ using ZLab.Discrete.Geometry;
 
 namespace ZLab.Discrete.Operations.Meshing
 {
-    internal static class VoxelFaceBuilder
+    internal static class DiscreteFaceBuilder
     {
         private static readonly Vector3[] _dirs = new[]
         {
