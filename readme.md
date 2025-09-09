@@ -6,13 +6,15 @@ Zlab.Discrete is a fully managed C# library that provides a collection of voxeli
 It is not as performant as some native libraries, but it is easier to integrate into C# projects and it tries its best to be performant for a managed library.
 
 ## Features
-- Rasterization of 3D meshes using Bounding Box intersection
 - Anisiotropic Voxelization (non-uniform voxel sizes)
 - Dense occupancy grid representation
 - Dense distance grid representation (Euclidean distance transform)
 - Signed Distance Field (SDF) generation
+- Sampling SDF with nearest neighbor or trilinear interpolation
+- Gradient sampling from SDF
+- Sparse voxelization (boundary voxels only)
 - Meshing using face-culling algorithms
-- Flood fill algorithms for interior voxel identification
+- BFS Flood fill algorithms for interior voxel identification
 
 ## Frameworks
 - .NET Framework 4.7.2
@@ -42,7 +44,7 @@ to skip the interal watertight check, which can be slow for large meshes.
 // Axis-aligned bounds and uniform/non-uniform voxel size
 BBox bounds = new(min: new Vector3(0,0,0), max: new Vector3(10,10,10));
 Vector3 size = new(0.5f, 1f, 0.5f);
-OccupancyGrid grid = new(size, bounds);
+OccupancyGrid oGrid = new(size, bounds);
 ```
 
 ### Rasterization
@@ -50,9 +52,9 @@ OccupancyGrid grid = new(size, bounds);
 This will result in a dense occupancy grid where each voxel is classified as `Inside`, `Outside`, or `Boundary`.
 ```csharp
 // Flood fill classifies interior; requires a closed mesh
-DenseRasterizer.Rasterize(grid, mesh, floodFill: true);
+DenseRasterizer.Rasterize(oGrid, mesh, floodFill: true);
 ```
-- `grid` will be mutated.
+- `oGrid` will be mutated.
 - `floodFill` is optional and defaults to `false`. It is recommended to set it to `true` if the mesh is closed (watertight) to correctly identify interior voxels. This is a post-processing step that fills in the interior of the mesh after rasterization.
 
 #### Sparse rasterization
@@ -63,29 +65,21 @@ List<Vector3> voxelOrigins = SparseRasterizer.Rasterize(Mesh, _voxelSize);
 
 
 ### Enumerate voxels inside the grid
-#### Pass as `List<Vector3>`
+#### Single threaded
 ```csharp
 List<Vector3> voxelOrigins = new();
-foreach ((Vector3 origin, Occupancy state) in Grid.EnumerateVoxels())
-{
-    // Outside | Inside | Boundary
+oGrid.ForEachVoxel((origin, state) => {
     if (state == Occupancy.Boundary)  // <- change this to select different states
         voxelOrigins.Add(origin);
-}
+})
 ```
-
-#### Pass as `ReadOnlySpan`
+#### Multi-threaded
 ```csharp
-long boundaryCount = grid.CountState(Occupancy.Boundary);
-Vector3[] buffer = new[boundaryCount];
-int i = 0;
-foreach ((Vector3 origin, Occupancy state) in grid.EnumerateVoxels())
-{
+ConcurrentBag<Vector3> voxelOrigins = new();
+oGrid.ForEachVoxelParallel((origin, state) => {
     if (state == Occupancy.Boundary)  // <- change this to select different states
-        buffer[i++] = origin;
-}
-// Trim to actual size, avoid extra allocations
-ReadOnlySpan<Vector3> voxelOrigins = buffer.AsSpan(0, i);
+        voxelOrigins.Add(origin);
+})
 ```
 
 ### Mesh Extraction
@@ -101,20 +95,32 @@ This will result individual mesh for each voxel.
 MeshF[] meshes = VoxelMesher.GenerateMeshes(voxelOrigins, size);
 ```
 
-### Grid Masking
-This will result a byte array where each voxel is classified as `0: Outside`, `1: Inside`, or `2: Boundary`.
+### Grid Masking & Distance Field Creation
 ```csharp
-byte[] mask = grid.GetMaskTernary(); // 0: Outside, 1: Inside, 2: Boundary
+DistanceGrid dGrid = new(oGrid); // Create distance grid from occupancy grid
+int count = (int)oGrid.Meta.Count; // Total number of voxels in the grid
+byte[] buffer = ArrayPool<byte>.Shared.Rent(count); // Rent buffer from shared pool
+try
+{
+    Span<byte> mask = buffer.AsSpan(0, count); // trim to actual size
+    oGrid.GetMaskTernary(mask); // mask[i] = 0 (Outside), 1 (Inside), 2 (Boundary)
+    dGrid.BuildFromTernaryMask(mask); // Build distance field from mask
+}
+finally
+{
+    ArrayPool<byte>.Shared.Return(buffer); // return buffer to pool
+}
 ```
 
-### Distance Field
-This will result a dense distance grid where each voxel stores the Euclidean distance to the nearest surface voxel.
+### Sample Signed Distance Field (SDF)
+Sample an arbitrary point in space using nearest voxell or trilinear interpolation. You can also sample the gradient at that point.
 ```csharp
-DistanceGrid distGrid = new(grid); // Copy grid structure from occupancy grid
-distGrid.BuildFromTernaryMask(mask, parallel:true); // Build distance field from ternary mask
+Vector3 point = new(1.0f, 2.0f, 3.0f);
+float distanceDiscrete = dGrid.GetValue(point); // nearest voxel (will throw if out of bounds)
+float distance = dGrid.SampleTrilinear(point); // trilinear interpolation
+Vector3 gradient = dGrid.SampleGradient(point); // gradient at point
 ```
-#### Distance queries
-```csharp
-float distance = distGrid.GetValue(new Vector3(1,2,1)); // Get distance at a specific point (must be inside the grid bounds)
-ReadOnlySpan<float> allDistances = distGrid.GetValues(); // Get all distances as a flat array
-```
+
+## References
+- Akenine-Moller, T. (2001). Fast 3D Triangle-Box Overlap Testing. Journal of Graphics Tools, 6(1), 29–33. https://doi.org/10.1080/10867651.2001.10487535
+- Felzenszwalb, P. F., & Huttenlocher, D. P. (2012). Distance Transforms of Sampled Functions. Theory of Computing, 8(1), 415–428. https://doi.org/10.4086/toc.2012.v008a019
