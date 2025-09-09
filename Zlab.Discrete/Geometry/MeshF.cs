@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
@@ -104,62 +105,100 @@ namespace ZLab.Discrete.Geometry
         // Check if the mesh is watertight (closed manifold)
         private bool CheckWaterTight()
         {
+            // Watertight (closed 2-manifold) check using sort+scan.
+            // Conditions per edge group (same undirected key):
+            //   - total == 2 (no more, no less)
+            //   - sum(sign) == 0 (one +1, one -1) => consistent opposite orientation
+
             int vCount = Vertices.Length;
             int fCount = Faces.Length;
             if (fCount == 0) return false;
 
-            Dictionary<ulong, int> edges = new(fCount * 2);
-
-            foreach (TriFace f in Faces)
+            // Validate faces quickly and count edges
+            // (early exits keep us from allocating for obviously-bad meshes)
+            for (int i = 0; i < fCount; i++)
             {
+                TriFace f = Faces[i];
                 int a = f.A, b = f.B, c = f.C;
+                if ((uint)a >= (uint)vCount || (uint)b >= (uint)vCount || (uint)c >= (uint)vCount) return false;
                 if (a == b || b == c || c == a) return false;
-
-                Acc(a, b);
-                Acc(b, c);
-                Acc(c, a);
             }
 
-            foreach (KeyValuePair<ulong, int> kv in edges)
+            int totalEdges = fCount * 3;
+
+            // Pool big buffers
+            ArrayPool<ulong> keyPool = ArrayPool<ulong>.Shared;
+            ArrayPool<sbyte> signPool = ArrayPool<sbyte>.Shared;
+
+            ulong[] keys = keyPool.Rent(totalEdges);
+            sbyte[] signs = signPool.Rent(totalEdges);
+
+            int w = 0;
+            try
             {
-                Unpack(kv.Value, out int total, out int pos, out int neg);
-                if (total != 2) return false; // open or non-manifold edge
-                if (pos != 1 || neg != 1) return false; // inconsistent orientation
+                // Emit edges (tight, branchless-ish inner loop)
+                // If faces are huge, you can parallelize this block safely.
+                for (int i = 0; i < fCount; i++)
+                {
+                    TriFace f = Faces[i];
+                    // (a,b), (b,c), (c,a)
+                    sbyte s;
+
+                    keys[w] = MakeEdgeKey(f.A, f.B, out s);
+                    signs[w++] = s;
+
+                    keys[w] = MakeEdgeKey(f.B, f.C, out s);
+                    signs[w++] = s;
+
+                    keys[w] = MakeEdgeKey(f.C, f.A, out s);
+                    signs[w++] = s;
+                }
+
+                // Sort by key; keep signs aligned
+                // Works on .NET Framework and .NET Core+.
+                Array.Sort(keys, signs, 0, w);
+
+                // Linear scan equal-key runs
+                int iRun = 0;
+                while (iRun < w)
+                {
+                    ulong k = keys[iRun];
+                    int total = 0;
+                    int sum = 0;
+
+                    do
+                    {
+                        total++;
+                        sum += signs[iRun];
+                        iRun++;
+                    }
+                    while (iRun < w && keys[iRun] == k);
+
+                    // Require exactly two half-edges per undirected edge,
+                    // with opposite orientation (+1 and -1).
+                    if (total != 2 || sum != 0)
+                        return false;
+                }
+
+                return true;
             }
-            return true;
-
-
-            // local helper to accumulate one directed edge
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            void Acc(int a, int b)
+            finally
             {
-                if ((uint)a >= (uint)vCount || (uint)b >= (uint)vCount) { throw new InvalidOperationException("Index out of range"); }
-                if (a == b) { throw new InvalidOperationException("Degenerate edge"); }
-
-                bool pos = a < b; // orientation relative to (min,max)
-                int min = pos ? a : b;
-                int max = pos ? b : a;
-
-                ulong key = (ulong)(uint)min << 32 | (uint)max;
-#if NETFRAMEWORK
-                int packed = edges.TryGetValue(key, out int val) ? val : 0;
-#else
-                // .NET 6+ has GetValueOrDefault
-                int packed = edges.GetValueOrDefault(key, 0);
-#endif
-                Unpack(packed, out int total, out int posCnt, out int negCnt);
-                total++; if (pos) posCnt++; else negCnt++;
-                edges[key] = Pack(total, posCnt, negCnt);
+                // Return pooled arrays without clearing (fast).
+                keyPool.Return(keys, clearArray: false);
+                signPool.Return(signs, clearArray: false);
             }
         }
 
-        // Pack an undirected edge (min,max) into a 64-bit key
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static ulong EdgeKey(int a, int b)
+        private static ulong MakeEdgeKey(int i, int j, out sbyte sign)
         {
-            uint u = (uint)Math.Min(a, b);
-            uint v = (uint)Math.Max(a, b);
-            return (ulong)u << 32 | v;
+            // normalize to undirected key (min,max); track orientation as sign
+            bool pos = i < j;
+            int a = pos ? i : j;
+            int b = pos ? j : i;
+            sign = pos ? (sbyte)+1 : (sbyte)-1;
+            return ((ulong)(uint)a << 32) | (uint)b;
         }
 
         // Pack counts into one int: bits 0-9 total, 10-19 pos, 20-29 neg (each 10 bits is plenty)
