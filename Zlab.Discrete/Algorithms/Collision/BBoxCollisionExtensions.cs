@@ -9,7 +9,7 @@ namespace ZLab.Discrete.Algorithms.Collision
     /// <summary>
     /// Axis-aligned bounding box (AABB) intersection tests.
     /// </summary>
-    internal static class BBoxExtensions
+    internal static class BBoxCollisionExtensions
     {
         private const float SAT_EPS = 1e-5f;
         private const float CONS_PAD = 1e-4f;
