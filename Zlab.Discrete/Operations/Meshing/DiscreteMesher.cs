@@ -331,15 +331,20 @@ namespace ZLab.Discrete.Operations.Meshing
             List<Vector3> vertices,
             List<TriFace> faces)
         {
-            // quantization origin (min corner)
-            Vector3 originMorton = origins[0];
-            Vector3 inv = new(1f / cell.X, 1f / cell.Y, 1f / cell.Z);
+            // compute true min-corner & reciprocals
+            var (minCorner, inv) = ComputeQuantization(origins, cell);
+
+            // occupancy set (capacity hint)
+#if NET48_OR_GREATER || NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+            HashSet<ulong> occupied = new(capacity: origins.Length);
+#else
+    HashSet<ulong> occupied = new HashSet<ulong>(); // no capacity ctor on older TFMs
+#endif
 
             // build occupancy
-            HashSet<ulong> occupied = new(origins.Length);
-            foreach (Vector3 v in origins)
+            for (int i = 0; i < origins.Length; i++)
             {
-                (int ix, int iy, int iz) = ToIdx(v, originMorton, inv);
+                var (ix, iy, iz) = ToIdx(origins[i], minCorner, inv);
                 occupied.Add(Morton.Encode((uint)ix, (uint)iy, (uint)iz));
             }
 
@@ -354,28 +359,58 @@ namespace ZLab.Discrete.Operations.Meshing
                 ( 0, 0,-1, new Vector3( 0, 0,-1)),
             };
 
-            // emit faces
-            foreach (Vector3 v in origins)
+            // emit faces only where no Morton-neighbor exists
+            for (int i = 0; i < origins.Length; i++)
             {
-                (int ix, int iy, int iz) = ToIdx(v, originMorton, inv);
+                Vector3 v = origins[i];
+                var (ix, iy, iz) = ToIdx(v, minCorner, inv);
 
-                foreach ((int dx, int dy, int dz, Vector3 dir) n in N6)
+                foreach (var n in N6)
                 {
-                    ulong keyN = Morton.Encode(
-                        (uint)(ix + n.dx), (uint)(iy + n.dy), (uint)(iz + n.dz));
+                    int nx = ix + n.dx, ny = iy + n.dy, nz = iz + n.dz;
+                    // Out-of-range neighbors should be treated as empty (face visible).
+                    // We can skip explicit bounds checks since we’re using a set; just avoid uint underflow semantics confusion:
+                    if (nx < 0 || ny < 0 || nz < 0)
+                    {
+                        VoxelFaceBuilder.MakeFace(v, n.dir, vertices, faces, cell, cordSystem);
+                        continue;
+                    }
 
-                    if (occupied.Contains(keyN)) continue;
-                    VoxelFaceBuilder.MakeFace(v, n.dir, vertices, faces, cell, cordSystem);
+                    ulong keyN = Morton.Encode((uint)nx, (uint)ny, (uint)nz);
+                    if (!occupied.Contains(keyN))
+                        VoxelFaceBuilder.MakeFace(v, n.dir, vertices, faces, cell, cordSystem);
                 }
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static (Vector3 min, Vector3 inv) ComputeQuantization(ReadOnlySpan<Vector3> origins, in Vector3 cell)
+        {
+            // true component-wise minimum across all voxel origins
+            Vector3 min = origins[0];
+            for (int i = 1; i < origins.Length; i++)
+            {
+                Vector3 v = origins[i];
+                if (v.X < min.X) min.X = v.X;
+                if (v.Y < min.Y) min.Y = v.Y;
+                if (v.Z < min.Z) min.Z = v.Z;
+            }
+
+            // precompute reciprocals
+            Vector3 inv = new Vector3(1f / cell.X, 1f / cell.Y, 1f / cell.Z);
+            return (min, inv);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static (int ix, int iy, int iz) ToIdx(Vector3 p, Vector3 min, Vector3 inv)
         {
-            int ix = (int)MathFx.Floor((p.X - min.X) * inv.X);
-            int iy = (int)MathFx.Floor((p.Y - min.Y) * inv.Y);
-            int iz = (int)MathFx.Floor((p.Z - min.Z) * inv.Z);
+            const float eps = 1e-6f;
+            float fx = (p.X - min.X) * inv.X;
+            float fy = (p.Y - min.Y) * inv.Y;
+            float fz = (p.Z - min.Z) * inv.Z;
+            int ix = (int)MathFx.Round(fx + (fx >= 0 ? eps : -eps));
+            int iy = (int)MathFx.Round(fy + (fy >= 0 ? eps : -eps));
+            int iz = (int)MathFx.Round(fz + (fz >= 0 ? eps : -eps));
             return (ix, iy, iz);
         }
 

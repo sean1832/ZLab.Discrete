@@ -37,65 +37,71 @@ namespace ZLab.Discrete.Operations.Meshing
         {
             if (!TryToAxisSign(direction, out int axis, out int sign))
                 throw new ArgumentException("direction must be axis-aligned +-X/+-Y/+-Z", nameof(direction));
-            int baseIndex = vertices.Count;
 
-            // Build the four corners on the stack (no allocations)
-            Span<Vector3> fv = stackalloc Vector3[4];
+            int baseIndex = vertices.Count;
             Vector3 min = origin;
             Vector3 max = origin + voxelSize;
-            FillFaceVerticesUnified(min, max, axis, sign, cordSystem, fv);
+
+            // 4 corners for each face (RH outward). Index order: 0-1-2-3 around the quad.
+            Vector3 a, b, c, d;
+
+            switch (axis)
+            {
+                case 0: // X face
+                    {
+                        float x = sign > 0 ? max.X : min.X;
+                        // rectangle on the plane x=const, oriented in Y-Z
+                        a = new Vector3(x, min.Y, min.Z);
+                        b = new Vector3(x, max.Y, min.Z);
+                        c = new Vector3(x, max.Y, max.Z);
+                        d = new Vector3(x, min.Y, max.Z);
+                        // for -X, reverse the loop to keep outward normal
+                        if (sign < 0) (b, d) = (d, b);
+                    }
+                    break;
+
+                case 1: // Y face
+                    {
+                        float y = sign > 0 ? max.Y : min.Y;
+                        // rectangle on the plane y=const, oriented in X-Z
+                        a = new Vector3(min.X, y, min.Z);
+                        b = new Vector3(max.X, y, min.Z);
+                        c = new Vector3(max.X, y, max.Z);
+                        d = new Vector3(min.X, y, max.Z);
+                        if (sign < 0) (b, d) = (d, b);
+                    }
+                    break;
+
+                default: // 2: Z face
+                    {
+                        float z = sign > 0 ? max.Z : min.Z;
+                        // rectangle on the plane z=const, oriented in X-Y
+                        a = new Vector3(min.X, min.Y, z);
+                        b = new Vector3(max.X, min.Y, z);
+                        c = new Vector3(max.X, max.Y, z);
+                        d = new Vector3(min.X, max.Y, z);
+                        if (sign < 0) (b, d) = (d, b);
+                    }
+                    break;
+            }
 
             // Append verts
-            vertices.Add(fv[0]);
-            vertices.Add(fv[1]);
-            vertices.Add(fv[2]);
-            vertices.Add(fv[3]);
+            vertices.Add(a);
+            vertices.Add(b);
+            vertices.Add(c);
+            vertices.Add(d);
 
-            // Two tris with consistent winding (outward normal)
-            faces.Add(new TriFace(baseIndex + 0, baseIndex + 1, baseIndex + 2));
-            faces.Add(new TriFace(baseIndex + 0, baseIndex + 2, baseIndex + 3));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static void FillFaceVerticesUnified(
-            Vector3 min, Vector3 max, int axis, int sign, // axis: 0=x,1=y,2=z ; sign: +1/-1
-            CordSystem cordSystem, Span<Vector3> fv)
-        {
-            // Compute plane point p0 and edge vectors u, v for the face
-            Vector3 p0, u, v;
-
-            if (axis == 0) // X face
+            // RH: (0,1,2) + (0,2,3). For LH, flip winding.
+            if (cordSystem == CordSystem.RightHanded)
             {
-                float x = sign > 0 ? max.X : min.X;
-                p0 = new Vector3(x, min.Y, min.Z);
-                u = new Vector3(0, max.Y - min.Y, 0); // along +Y
-                v = new Vector3(0, 0, max.Z - min.Z); // along +Z
-                // Winding: flip u for LH vs RH (or swap u/v)
-                if (sign < 0) (u, v) = (v, u); // example: adjust to keep outward normal
+                faces.Add(new TriFace(baseIndex + 0, baseIndex + 1, baseIndex + 2));
+                faces.Add(new TriFace(baseIndex + 0, baseIndex + 2, baseIndex + 3));
             }
-            else if (axis == 1) // Y face
+            else
             {
-                float y = sign > 0 ? max.Y : min.Y;
-                p0 = new Vector3(min.X, y, min.Z);
-                u = new Vector3(max.X - min.X, 0, 0); // +X
-                v = new Vector3(0, 0, max.Z - min.Z); // +Z
-                if (cordSystem == CordSystem.LeftHanded) u = -u; // toggle winding
-                if (sign < 0) v = -v; // ensure outward normal
+                faces.Add(new TriFace(baseIndex + 0, baseIndex + 2, baseIndex + 1));
+                faces.Add(new TriFace(baseIndex + 0, baseIndex + 3, baseIndex + 2));
             }
-            else // Z face
-            {
-                float z = sign > 0 ? max.Z : min.Z;
-                p0 = new Vector3(min.X, min.Y, z);
-                u = new Vector3(max.X - min.X, 0, 0); // +X
-                v = new Vector3(0, max.Y - min.Y, 0); // +Y
-                if (sign < 0) u = -u;
-            }
-
-            // Quad corners
-            fv[0] = p0;
-            fv[1] = p0 + u;
-            fv[2] = p0 + u + v;
-            fv[3] = p0 + v;
         }
 
 
