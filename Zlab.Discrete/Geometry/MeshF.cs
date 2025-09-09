@@ -200,19 +200,6 @@ namespace ZLab.Discrete.Geometry
             sign = pos ? (sbyte)+1 : (sbyte)-1;
             return ((ulong)(uint)a << 32) | (uint)b;
         }
-
-        // Pack counts into one int: bits 0-9 total, 10-19 pos, 20-29 neg (each 10 bits is plenty)
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static int Pack(int total, int pos, int neg) => total & 0x3FF | (pos & 0x3FF) << 10 | (neg & 0x3FF) << 20;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static void Unpack(int packed, out int total, out int pos, out int neg)
-        {
-            total = packed & 0x3FF;
-            pos = packed >> 10 & 0x3FF;
-            neg = packed >> 20 & 0x3FF;
-        }
-
         #endregion
     }
 }
