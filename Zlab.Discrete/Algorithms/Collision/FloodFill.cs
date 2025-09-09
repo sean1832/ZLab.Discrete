@@ -273,8 +273,6 @@ namespace ZLab.Discrete.Algorithms.Collision
 
             bool[] visited = new bool[nx * ny * nz];
 
-            Span<Occupancy> voxels = grid.GetBuffer();
-
             ReadOnlySpan<(int dx, int dy, int dz)> neighbours = stackalloc (int, int, int)[]
             {
                 (1, 0, 0), (-1, 0, 0),
