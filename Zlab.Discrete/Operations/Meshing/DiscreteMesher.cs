@@ -22,6 +22,78 @@ namespace ZLab.Discrete.Operations.Meshing
     public static class DiscreteMesher
     {
         /// <summary>
+        /// Gets axis-aligned bounding boxes for a set of voxels.
+        /// </summary>
+        /// <param name="origins">Voxel origins</param>
+        /// <param name="voxelSizes">Per-voxel sizes; must match <paramref name="origins"/> length.</param>
+        /// <returns>Array of bounding boxes, one per input voxel.</returns>
+        /// <exception cref="ArgumentException">voxelSizes length must match voxels length.</exception>
+        public static BBox[] GetVoxelBounds(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes)
+        {
+            if (voxelSizes.Length != origins.Length)
+                throw new ArgumentException("voxelSizes length must match voxels length.");
+            if (origins.Length == 0) return Array.Empty<BBox>();
+            BBox[] boxes = new BBox[origins.Length];
+            for (int i = 0; i < origins.Length; i++)
+            {
+                Vector3 origin = origins[i];
+                Vector3 size = voxelSizes[i];
+                boxes[i] = new BBox(origin, origin + size);
+            }
+            return boxes;
+        }
+
+        /// <summary>
+        /// Gets axis-aligned bounding boxes for a set of voxels.
+        /// </summary>
+        /// <param name="origins">Voxel origins</param>
+        /// <param name="voxelSizes">Per-voxel sizes; must match <paramref name="origins"/> length.</param>
+        /// <returns>Array of bounding boxes, one per input voxel.</returns>
+        /// <exception cref="ArgumentException">voxelSizes length must match voxels length.</exception>
+        public static BBox[] GetVoxelBounds(List<Vector3> origins, List<Vector3> voxelSizes)
+        {
+#if NET6_0_OR_GREATER
+            return GetVoxelBounds(CollectionsMarshal.AsSpan(origins), CollectionsMarshal.AsSpan(voxelSizes));
+#else
+            return GetVoxelBounds(origins.ToArray(), voxelSizes.ToArray());
+#endif
+        }
+
+        /// <summary>
+        /// Gets axis-aligned bounding boxes for a set of voxels (all voxels share the same <paramref name="voxelSize"/>).
+        /// </summary>
+        /// <param name="origins">Voxel origins</param>
+        /// <param name="voxelSize">Per-voxel sizes</param>
+        /// <returns>Array of bounding boxes, one per input voxel.</returns>
+        public static BBox[] GetVoxelBounds(ReadOnlySpan<Vector3> origins, Vector3 voxelSize)
+        {
+            if (origins.Length == 0) return Array.Empty<BBox>();
+            BBox[] boxes = new BBox[origins.Length];
+            for (int i = 0; i < origins.Length; i++)
+            {
+                Vector3 origin = origins[i];
+                boxes[i] = new BBox(origin, origin + voxelSize);
+            }
+            return boxes;
+        }
+
+        /// <summary>
+        /// Gets axis-aligned bounding boxes for a set of voxels (all voxels share the same <paramref name="voxelSize"/>).
+        /// </summary>
+        /// <param name="origins">Voxel origins</param>
+        /// <param name="voxelSize">Per-voxel sizes</param>
+        /// <returns>Array of bounding boxes, one per input voxel.</returns>
+        public static BBox[] GetVoxelBounds(List<Vector3> origins, Vector3 voxelSize)
+        {
+#if NET6_0_OR_GREATER
+            return GetVoxelBounds(CollectionsMarshal.AsSpan(origins), voxelSize);
+#else
+            return GetVoxelBounds(origins.ToArray(), voxelSize);
+#endif
+        }
+
+
+        /// <summary>
         /// Generates an individual quad-mesh per voxel (no face merging across voxels).
         /// </summary>
         /// <param name="origins">Voxel origins</param>
