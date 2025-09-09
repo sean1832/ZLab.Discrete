@@ -89,11 +89,9 @@ namespace ZLab.Discrete.Grids
         /// </summary>
         /// <param name="position">World position</param>
         /// <param name="continues">If true, trilinear interpolation is used; otherwise, nearest voxel value is returned.</param>
-        public float GetValue(Vector3 position, bool continues = false)
+        public float GetValue(Vector3 position)
         {
-            return continues ? 
-                this.SampleTrilinear(position) : 
-                GetValue(GridConverter.WorldToGridMin(position, Meta.VoxelSize));
+            return GetValue(GridConverter.WorldToGridMin(position, Meta.VoxelSize));
         }
 
         /// <summary>
