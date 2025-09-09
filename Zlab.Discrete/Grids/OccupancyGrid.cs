@@ -168,7 +168,7 @@ namespace ZLab.Discrete.Grids
         // ------------ OVERRIDES ------------
         public override string ToString()
         {
-            return $"OccupancyGrid: {Meta.Nx} x {Meta.Ny} x {Meta.Nz} voxels @ {Meta.VoxelSize} (Bounds: {Bounds})";
+            return $"OccupancyGrid[{Meta.Nx}x{Meta.Ny}x{Meta.Nz}]@{Meta.VoxelSize} (Bounds: {Bounds})";
         }
 
         // ------------ PUBLIC: export operations ------------
