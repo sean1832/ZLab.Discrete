@@ -131,6 +131,11 @@ namespace ZLab.Discrete.Grids
         public ReadOnlySpan<Occupancy> GetReadOnlyBuffer() => _occupancies;
 
         /// <summary>
+        /// Get a read-only memory over the internal occupancy buffer.
+        /// </summary>
+        public ReadOnlyMemory<Occupancy> GetReadOnlyMemory() => _occupancies;
+
+        /// <summary>
         /// Get a writable span over the internal occupancy buffer.
         /// </summary>
         public Span<Occupancy> GetBuffer() => _occupancies;
@@ -185,8 +190,32 @@ namespace ZLab.Discrete.Grids
         /// </code>
         /// </remarks>
         /// <returns>sequence of (position, occupancy) tuples</returns>
+        [Obsolete("Use ForEachVoxel or ForEachVoxelParallel instead for better performance.")]
         public IEnumerable<(Vector3 position, Occupancy value)> EnumerateVoxels()
             => this.EnumerateVoxels(this);
+
+        /// <summary>
+        /// Enumerate all voxels in the grid, invoking the given <paramref name="action"/> for each voxel.
+        /// </summary>
+        /// <param name="action">Action to invoke for each voxel, with parameters (position, value)</param>
+        /// <remarks>
+        /// <code>grid.ForEachVoxel((pos, val) => {/* ... */});</code>
+        /// </remarks>
+        public void ForEachVoxel(Action<Vector3, Occupancy> action)
+            => this.ForEachVoxel(this, action);
+
+        /// <summary>
+        /// Parallel z-slice enumeration. Use only if the work done in <paramref name="action"/>
+        /// is heavy enough to justify the parallel overhead.
+        /// </summary>
+        /// <param name="action">Action to invoke for each voxel, with parameters (position, value)</param>
+        /// <param name="maxDegree">Max degree of parallelism. Default (null) lets the system decide.</param>
+        /// <remarks>
+        ///<code>grid.ForEachVoxelParallel((pos, val) => { /* heavy work per voxel */ }, maxDegree: Environment.ProcessorCount);</code>
+        /// </remarks>
+        public void ForEachVoxelParallel(Action<Vector3, Occupancy> action, int? maxDegree = null)
+            => this.ForEachVoxelParallel(this, action, maxDegree);
+
 
         // ------------ PUBLIC: counting operations ------------
 

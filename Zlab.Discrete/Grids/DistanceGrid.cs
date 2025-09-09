@@ -100,6 +100,11 @@ namespace ZLab.Discrete.Grids
         public ReadOnlySpan<float> GetReadOnlyBuffer() => _distances;
 
         /// <summary>
+        /// Get all distance values as a read-only memory (flat row-major array).
+        /// </summary>
+        public ReadOnlyMemory<float> GetReadOnlyMemory() => _distances;
+
+        /// <summary>
         /// Get all distance values as a mutable span (flat row-major array).
         /// </summary>
         public Span<float> GetBuffer() => _distances;
@@ -176,8 +181,31 @@ namespace ZLab.Discrete.Grids
         #endregion
 
         // ------------ PUBLIC: enumeration ------------
+        [Obsolete("Use ForEachVoxel or ForEachVoxelParallel instead for better performance.")]
         public IEnumerable<(Vector3 position, float value)> EnumerateVoxels()
             => this.EnumerateVoxels(this);
+
+        /// <summary>
+        /// Enumerate all voxels in the grid, invoking the given <paramref name="action"/> for each voxel.
+        /// </summary>
+        /// <param name="action">Action to invoke for each voxel, with parameters (position, value)</param>
+        /// <remarks>
+        /// <code>grid.ForEachVoxel((pos, val) => {/* ... */});</code>
+        /// </remarks>
+        public void ForEachVoxel(Action<Vector3, float> action)
+            => this.ForEachVoxel(this, action);
+
+        /// <summary>
+        /// Parallel z-slice enumeration. Use only if the work done in <paramref name="action"/>
+        /// is heavy enough to justify the parallel overhead.
+        /// </summary>
+        /// <param name="action">Action to invoke for each voxel, with parameters (position, value)</param>
+        /// <param name="maxDegree">Max degree of parallelism. Default (null) lets the system decide.</param>
+        /// <remarks>
+        ///<code>grid.ForEachVoxelParallel((pos, val) => { /* heavy work per voxel */ }, maxDegree: Environment.ProcessorCount);</code>
+        /// </remarks>
+        public void ForEachVoxelParallel(Action<Vector3, float> action, int? maxDegree = null)
+            => this.ForEachVoxelParallel(this, action, maxDegree);
 
 
         // ------------ PUBLIC: SDF build (exact EDT, anisotropic) ------------
