@@ -22,9 +22,17 @@ namespace ZLab.Discrete.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Ceiling(float x) => (float)Math.Ceiling(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Clamp(float value, float min, float max) => value < min ? min : (value > max ? max : value);
+        public static float Clamp(float value, float min, float max)
+        {
+            if (min > max) { (min, max) = (max, min); }
+            return value < min ? min : (value > max ? max : value);
+        }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int Clamp (int value, int min, int max) => value < min ? min : (value > max ? max : value);
+        public static int Clamp(int value, int min, int max)
+        {
+            if (min > max) { (min, max) = (max, min); }
+            return value < min ? min : (value > max ? max : value);
+        }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Round(float input) => (float)Math.Round(input);
 
@@ -42,8 +50,19 @@ namespace ZLab.Discrete.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Ceiling(float x) => MathF.Ceiling(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Clamp(float value, float min, float max) => Math.Clamp(value, min, max);
-        public static int Clamp (int value, int min, int max) => Math.Clamp(value, min, max);
+        public static int Clamp(int value, int min, int max)
+        {
+            if (min > max) { (min, max) = (max, min); }
+            return Math.Clamp(value, min, max);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Clamp(float value, float min, float max)
+        {
+            if (min > max) { (min, max) = (max, min); }
+            return Math.Clamp(value, min, max);
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Round(float input) => MathF.Round(input);
 #endif
