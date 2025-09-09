@@ -11,7 +11,7 @@ namespace ZLab.Discrete.Algorithms.Sampling
     /// <summary>
     /// Extension methods for sampling a <see cref="DistanceGrid"/>.
     /// </summary>
-    internal static class DistanceGridSamplingExtension
+    public static class DistanceGridSamplingExtension
     {
         /// <summary>
         /// Trilinear sample of a <see cref="DistanceGrid"/> at an arbitrary world position.
