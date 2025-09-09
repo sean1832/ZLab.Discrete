@@ -126,7 +126,7 @@ namespace ZLab.Discrete.Grids
             _occupancies[linear] = value;
         }
 
-        public ReadOnlySpan<Occupancy> GetValues() => _occupancies;
+        public ReadOnlySpan<Occupancy> GetRawBuffer() => _occupancies;
 
 #if NETFRAMEWORK
         public void Fill(Occupancy value)
