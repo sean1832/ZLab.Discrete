@@ -19,7 +19,7 @@ namespace ZLab.Discrete.Operations.Meshing
     /// For the culled path, all voxels must share an identical <c>voxelSize</c>.
     /// If voxel sizes vary, all six faces per voxel are emitted (no merging).
     /// </remarks>
-    public static class VoxelMesher
+    public static class DiscreteMesher
     {
         /// <summary>
         /// Generates an individual quad-mesh per voxel (no face merging across voxels).
