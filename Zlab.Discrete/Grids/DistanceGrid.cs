@@ -99,7 +99,12 @@ namespace ZLab.Discrete.Grids
         /// <summary>
         /// Get all distance values as a read-only span (flat row-major array).
         /// </summary>
-        public ReadOnlySpan<float> GetRawBuffer() => _distances;
+        public ReadOnlySpan<float> GetReadOnlyBuffer() => _distances;
+
+        /// <summary>
+        /// Get all distance values as a mutable span (flat row-major array).
+        /// </summary>
+        public Span<float> GetBuffer() => _distances;
 
         /// <summary>
         /// Set distance value at given grid index.

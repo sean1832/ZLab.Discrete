@@ -125,8 +125,15 @@ namespace ZLab.Discrete.Grids
             int linear = (lz * Meta.Ny + ly) * Meta.Nx + lx; // same as lz*Nx*Ny + ly*Nx + lx
             _occupancies[linear] = value;
         }
+        /// <summary>
+        /// Get a read-only span over the internal occupancy buffer.
+        /// </summary>
+        public ReadOnlySpan<Occupancy> GetReadOnlyBuffer() => _occupancies;
 
-        public ReadOnlySpan<Occupancy> GetRawBuffer() => _occupancies;
+        /// <summary>
+        /// Get a writable span over the internal occupancy buffer.
+        /// </summary>
+        public Span<Occupancy> GetBuffer() => _occupancies;
 
 #if NETFRAMEWORK
         public void Fill(Occupancy value)

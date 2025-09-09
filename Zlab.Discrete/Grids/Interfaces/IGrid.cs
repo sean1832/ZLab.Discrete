@@ -6,6 +6,7 @@ namespace ZLab.Discrete.Grids.Interfaces
     {
         T GetValue((int x, int y, int z) index);
         void SetValue((int x, int y, int z) index, T value);
-        ReadOnlySpan<T> GetRawBuffer();
+        ReadOnlySpan<T> GetReadOnlyBuffer();
+        Span<T> GetBuffer();
     }
 }
