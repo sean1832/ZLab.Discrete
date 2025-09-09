@@ -419,7 +419,7 @@ namespace ZLab.Discrete.Operations.Meshing
         {
             if (vertices.Count == 0 || faces.Count == 0)
                 throw new InvalidOperationException("Generated mesh has no vertices or faces.");
-            return new MeshF(vertices.ToArray(), faces.ToArray());
+            return new MeshF(vertices.ToArray(), faces.ToArray(), isClosed:true); // <- always closed (avoid watertight check)
         }
     }
 }
