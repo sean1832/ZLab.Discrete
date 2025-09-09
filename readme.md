@@ -6,7 +6,7 @@ Zlab.Discrete is a fully managed C# library that provides a collection of voxeli
 It is not as performant as some native libraries, but it is easier to integrate into C# projects and it tries its best to be performant for a managed library.
 
 ## Features
-- Anisiotropic Voxelization (non-uniform voxel sizes)
+- Anisotropic Voxelization (non-uniform voxel sizes)
 - Dense occupancy grid representation
 - Dense distance grid representation (Euclidean distance transform)
 - Signed Distance Field (SDF) generation
