@@ -24,6 +24,7 @@ It is not as performant as some native libraries, but it is easier to integrate 
 - .NET 8.0
 - .NET 9.0
 
+
 ## Usage
 ### Mesh building
 ```csharp
@@ -121,6 +122,20 @@ float distance = dGrid.SampleTrilinear(point); // trilinear interpolation
 Vector3 gradient = dGrid.SampleGradient(point); // gradient at point
 ```
 
+## License
+This project is dual-licensed:
+
+- **Open Source (GPL3.0)** — see [LICENSE](./LICENSE)  
+- **Commercial License** — see [LICENSE-COMMERCIAL](./LICENSE-COMMERCIAL).
+
+If you are a researcher, student, or using this project in an open-source context,  
+use the GPL3.0 license.  
+
+If you want to use this in proprietary software or closed-source products,  
+you must obtain a commercial license. (contact: dev@zekezhang.com)
+
 ## References
+```
 - Akenine-Moller, T. (2001). Fast 3D Triangle-Box Overlap Testing. Journal of Graphics Tools, 6(1), 29–33. https://doi.org/10.1080/10867651.2001.10487535
 - Felzenszwalb, P. F., & Huttenlocher, D. P. (2012). Distance Transforms of Sampled Functions. Theory of Computing, 8(1), 415–428. https://doi.org/10.4086/toc.2012.v008a019
+```
