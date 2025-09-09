@@ -20,6 +20,8 @@ namespace ZLab.Discrete.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Floor(float x) => (float)Math.Floor(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Ceiling(float x) => (float)Math.Ceiling(x);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Clamp(float value, float min, float max) => value < min ? min : (value > max ? max : value);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int Clamp (int value, int min, int max) => value < min ? min : (value > max ? max : value);
@@ -37,6 +39,8 @@ namespace ZLab.Discrete.Core
         public static float Max(float a, float b) => MathF.Max(a, b);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Floor(float x) => MathF.Floor(x);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Ceiling(float x) => MathF.Ceiling(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Clamp(float value, float min, float max) => Math.Clamp(value, min, max);
         public static int Clamp (int value, int min, int max) => Math.Clamp(value, min, max);

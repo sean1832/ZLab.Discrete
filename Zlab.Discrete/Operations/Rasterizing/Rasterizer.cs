@@ -48,7 +48,8 @@ namespace ZLab.Discrete.Operations.Rasterizing
                         box.Min = new Vector3(x0, y0, z0);
                         box.Max = new Vector3(x1, y1, z1);
 
-                        if (BBoxIntersection.TriangleIntersectsAabb(v0, v1, v2, box))
+                        if (box.IsIntersectsTriangle(v0, v1, v2)||
+                            box.IsCoveredByTriangle(v0, v1, v2))
                         {
                             // intersects, add voxel min corner (world space origin)
                             voxels.Add(GridConverter.IndexToMinCorner(x, y, z, voxelSize));
@@ -97,7 +98,8 @@ namespace ZLab.Discrete.Operations.Rasterizing
                         box.Min = new Vector3(x0, y0, z0);
                         box.Max = new Vector3(x1, y1, z1);
 
-                        if (BBoxIntersection.TriangleIntersectsAabb(v0, v1, v2, box))
+                        if (box.IsIntersectsTriangle(v0, v1, v2) ||
+                            box.IsCoveredByTriangle(v0, v1, v2))
                         {
                             grid.SetValue((x, y, z), Occupancy.Boundary);
                         }
