@@ -46,7 +46,7 @@ namespace ZLab.Discrete.Grids
         /// <summary>
         /// Total number of voxels in the grid.
         /// </summary>
-        public long VoxelCount => (long)Nx * Ny * Nz;
+        public long Count => (long)Nx * Ny * Nz;
 
         /// <summary>
         /// Size dimensions of the entire grid in world units.

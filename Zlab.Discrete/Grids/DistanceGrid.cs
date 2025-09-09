@@ -35,7 +35,7 @@ namespace ZLab.Discrete.Grids
 
             Meta = new GridMeta(minX, minY, minZ, nx, ny, nz, voxelSize);
 
-            _distances = new float[Meta.VoxelCount];
+            _distances = new float[Meta.Count];
             RecomputeBounds();
         }
 
@@ -44,14 +44,14 @@ namespace ZLab.Discrete.Grids
             if (meta.Nx <= 0 || meta.Ny <= 0 || meta.Nz <= 0)
                 throw new ArgumentException("Grid dimensions must be positive.");
             Meta = meta;
-            _distances = new float[meta.VoxelCount];
+            _distances = new float[meta.Count];
             RecomputeBounds();
         }
 
         public DistanceGrid(OccupancyGrid og)
         {
             Meta = og.Meta;
-            _distances = new float[Meta.VoxelCount];
+            _distances = new float[Meta.Count];
             RecomputeBounds();
         }
 

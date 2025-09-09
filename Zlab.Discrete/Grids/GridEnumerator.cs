@@ -32,7 +32,7 @@ namespace ZLab.Discrete.Grids
             int nx = meta.Nx;
             int ny = meta.Ny;
             int nz = meta.Nz;
-            if (buffer.Length != g.Meta.VoxelCount)
+            if (buffer.Length != g.Meta.Count)
                 throw new ArgumentException("Data buffer size does not match grid dimensions.");
 
             Vector3 size = meta.VoxelSize;
@@ -76,7 +76,7 @@ namespace ZLab.Discrete.Grids
             int ny = meta.Ny;
             int nz = meta.Nz;
             
-            if (memory.Length != g.Meta.VoxelCount)
+            if (memory.Length != g.Meta.Count)
                 throw new ArgumentException("Data memory size does not match grid dimensions.");
 
             int layer = nx * ny;

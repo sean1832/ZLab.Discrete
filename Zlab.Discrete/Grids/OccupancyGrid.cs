@@ -29,7 +29,7 @@ namespace ZLab.Discrete.Grids
                 throw new ArgumentException("Invalid grid dimensions derived from bounds and voxel size.");
             Meta = new GridMeta(minX, minY, minZ, nx, ny, nz, voxelSize);
 
-            _occupancies = new Occupancy[Meta.VoxelCount];
+            _occupancies = new Occupancy[Meta.Count];
             RecomputeBounds();
         }
 
@@ -38,7 +38,7 @@ namespace ZLab.Discrete.Grids
             if (meta.Nx <= 0 || meta.Ny <= 0 || meta.Nz <= 0)
                 throw new ArgumentException("Grid dimensions must be positive.");
             Meta = meta;
-            _occupancies = new Occupancy[meta.VoxelCount];
+            _occupancies = new Occupancy[meta.Count];
             RecomputeBounds();
         }
 
