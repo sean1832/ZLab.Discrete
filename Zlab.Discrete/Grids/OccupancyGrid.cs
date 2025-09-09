@@ -309,6 +309,40 @@ namespace ZLab.Discrete.Grids
         }
 
         /// <summary>
+        /// Export occupancy as a ternary mask into a provided span.
+        /// </summary>
+        /// <param name="destination">destination span (length must be at least Nx*Ny*Nz)</param>
+        /// <param name="flipSign">flip outside and inside</param>
+        /// <exception cref="ArgumentException">if destination span is too small</exception>
+        /// <remarks>
+        /// Example:
+        /// <code>
+        /// byte[] buf = ArrayPool.Shared.Rent(gridSize);
+        /// grid.GetMaskTernary(buf.AsSpan());
+        /// </code>
+        /// </remarks>
+        public void GetMaskTernary(Span<byte> destination, bool flipSign = false)
+        {
+            if (destination.Length < _occupancies.Length)
+                throw new ArgumentException("Destination span is too small.");
+            for (int i = 0; i < _occupancies.Length; i++)
+            {
+                switch (_occupancies[i])
+                {
+                    case Occupancy.Outside: // default: 0
+                        destination[i] = flipSign ? (byte)1 : (byte)0;
+                        break;
+                    case Occupancy.Inside: // default: 1
+                        destination[i] = flipSign ? (byte)0 : (byte)1;
+                        break;
+                    case Occupancy.Boundary:
+                        destination[i] = 2;
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
         /// Export occupancy as a binary mask.
         /// </summary>
         /// <param name="flipSign">flip outside and inside</param>
