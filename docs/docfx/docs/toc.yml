@@ -1,5 +1,5 @@
 - name: Usages
-  href: usages\toc.yml
+  href: usages/toc.yml
 
 - name: Licenses
   href: licenses.md
