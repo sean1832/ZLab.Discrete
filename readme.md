@@ -61,7 +61,7 @@ DenseRasterizer.Rasterize(oGrid, mesh, floodFill: true);
 #### Sparse rasterization
 This will only return a list of voxel origins that are classified as `Boundary`.
 ```csharp
-List<Vector3> origins = SparseRasterizer.Rasterize(Mesh, _voxelSize);
+List<Vector3> origins = SparseRasterizer.Rasterize(Mesh, size);
 ```
 
 
