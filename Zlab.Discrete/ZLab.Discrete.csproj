@@ -9,6 +9,9 @@
     <Authors>Zeke Zhang</Authors>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <Description>3D discrete computations implemented in fully managed code</Description>
+    <Version>0.0.1</Version>
+    <FileVersion>0.0.1</FileVersion>
+    <AssemblyVersion>0.0.1</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup Condition=" $([System.String]::Copy('$(TargetFramework)').StartsWith('net4')) ">
     <PackageReference Include="System.Memory" Version="4.6.3" />
