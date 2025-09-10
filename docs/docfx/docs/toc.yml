@@ -1,8 +1,8 @@
 - name: Usages
   href: usages\toc.yml
 
-# - name: Licenses
-#   href: licenses.md
+- name: Licenses
+  href: licenses.md
 
 - name: References
   href: references.md
