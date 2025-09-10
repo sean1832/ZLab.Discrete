@@ -1,5 +1,5 @@
 # Mesh building
-To construct a [MeshF](/api/ZLab.Discrete.Geometry.MeshF.html), you need to provide an array of vertices and an array of faces. Currently, only triangular faces ([TriFace](/api/ZLab.Discrete.Geometry.TriFace.html)) are supported.
+To construct a [MeshF](/ZLab.Discrete/api/ZLab.Discrete.Geometry.MeshF.html), you need to provide an array of vertices and an array of faces. Currently, only triangular faces ([TriFace](/ZLab.Discrete/api/ZLab.Discrete.Geometry.TriFace.html)) are supported.
 
 ```csharp
 // Triangles only, indices must be valid for verts[]
