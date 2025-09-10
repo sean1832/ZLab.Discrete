@@ -64,7 +64,8 @@
 body,html {
     padding: 0;
     margin: 0;
-    font: 15px/150%"Roboto",sans-serif;
+    font: 15px/1.5 "Roboto", system-ui, -apple-system, "Segoe UI",
+        "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
     color: var(--text-color);
     background-color: var(--main-bg-color)
 }
