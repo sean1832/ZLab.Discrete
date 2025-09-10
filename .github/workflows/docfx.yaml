@@ -1,0 +1,40 @@
+# Trigger the action on push to main
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  publish-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Dotnet Setup
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.x
+
+      - name: Install DocFX
+        run: dotnet tool update -g docfx
+
+      # Build the DocFX site
+      - name: Build DocFX
+        run: docfx docs/docfx/docfx.json
+
+      # Publish only the built site to gh-pages as a clean, orphaned branch
+      - name: Deploy to gh-pages (orphan)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/docfx/_site
+          force_orphan: true # ensure history-less docs-only branch
+          publish_branch: gh-pages # change if you prefer a different branch

@@ -1,0 +1,43 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Grids.Interfaces
+  commentId: N:ZLab.Discrete.Grids.Interfaces
+  id: ZLab.Discrete.Grids.Interfaces
+  children:
+  - ZLab.Discrete.Grids.Interfaces.IGrid`1
+  langs:
+  - csharp
+  - vb
+  name: ZLab.Discrete.Grids.Interfaces
+  nameWithType: ZLab.Discrete.Grids.Interfaces
+  fullName: ZLab.Discrete.Grids.Interfaces
+  type: Namespace
+  assemblies:
+  - ZLab.Discrete
+references:
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1
+  commentId: T:ZLab.Discrete.Grids.Interfaces.IGrid`1
+  href: ZLab.Discrete.Grids.Interfaces.IGrid-1.html
+  name: IGrid<T>
+  nameWithType: IGrid<T>
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>
+  nameWithType.vb: IGrid(Of T)
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T)
+  name.vb: IGrid(Of T)
+  spec.csharp:
+  - uid: ZLab.Discrete.Grids.Interfaces.IGrid`1
+    name: IGrid
+    href: ZLab.Discrete.Grids.Interfaces.IGrid-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ZLab.Discrete.Grids.Interfaces.IGrid`1
+    name: IGrid
+    href: ZLab.Discrete.Grids.Interfaces.IGrid-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+memberLayout: SeparatePages

@@ -1,0 +1,140 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Voxels.Occupancy
+  commentId: T:ZLab.Discrete.Voxels.Occupancy
+  id: Occupancy
+  parent: ZLab.Discrete.Voxels
+  children:
+  - ZLab.Discrete.Voxels.Occupancy.Boundary
+  - ZLab.Discrete.Voxels.Occupancy.Inside
+  - ZLab.Discrete.Voxels.Occupancy.Outside
+  langs:
+  - csharp
+  - vb
+  name: Occupancy
+  nameWithType: Occupancy
+  fullName: ZLab.Discrete.Voxels.Occupancy
+  type: Enum
+  source:
+    id: Occupancy
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Voxels\Occupancy.cs
+    startLine: 5
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Voxels
+  summary: Occupancy state of a voxel.
+  example: []
+  syntax:
+    content: 'public enum Occupancy : byte'
+    content.vb: Public Enum Occupancy As Byte
+- uid: ZLab.Discrete.Voxels.Occupancy.Outside
+  commentId: F:ZLab.Discrete.Voxels.Occupancy.Outside
+  id: Outside
+  parent: ZLab.Discrete.Voxels.Occupancy
+  langs:
+  - csharp
+  - vb
+  name: Outside
+  nameWithType: Occupancy.Outside
+  fullName: ZLab.Discrete.Voxels.Occupancy.Outside
+  type: Field
+  source:
+    id: Outside
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Voxels\Occupancy.cs
+    startLine: 10
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Voxels
+  summary: The voxel is outside the geometry.
+  example: []
+  syntax:
+    content: Outside = 0
+    return:
+      type: ZLab.Discrete.Voxels.Occupancy
+- uid: ZLab.Discrete.Voxels.Occupancy.Inside
+  commentId: F:ZLab.Discrete.Voxels.Occupancy.Inside
+  id: Inside
+  parent: ZLab.Discrete.Voxels.Occupancy
+  langs:
+  - csharp
+  - vb
+  name: Inside
+  nameWithType: Occupancy.Inside
+  fullName: ZLab.Discrete.Voxels.Occupancy.Inside
+  type: Field
+  source:
+    id: Inside
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Voxels\Occupancy.cs
+    startLine: 14
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Voxels
+  summary: The voxel is inside the geometry.
+  example: []
+  syntax:
+    content: Inside = 1
+    return:
+      type: ZLab.Discrete.Voxels.Occupancy
+- uid: ZLab.Discrete.Voxels.Occupancy.Boundary
+  commentId: F:ZLab.Discrete.Voxels.Occupancy.Boundary
+  id: Boundary
+  parent: ZLab.Discrete.Voxels.Occupancy
+  langs:
+  - csharp
+  - vb
+  name: Boundary
+  nameWithType: Occupancy.Boundary
+  fullName: ZLab.Discrete.Voxels.Occupancy.Boundary
+  type: Field
+  source:
+    id: Boundary
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Voxels\Occupancy.cs
+    startLine: 18
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Voxels
+  summary: The voxel intersects the boundary of the geometry.
+  example: []
+  syntax:
+    content: Boundary = 2
+    return:
+      type: ZLab.Discrete.Voxels.Occupancy
+references:
+- uid: ZLab.Discrete.Voxels
+  commentId: N:ZLab.Discrete.Voxels
+  href: ZLab.html
+  name: ZLab.Discrete.Voxels
+  nameWithType: ZLab.Discrete.Voxels
+  fullName: ZLab.Discrete.Voxels
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Voxels
+    name: Voxels
+    href: ZLab.Discrete.Voxels.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Voxels
+    name: Voxels
+    href: ZLab.Discrete.Voxels.html
+- uid: ZLab.Discrete.Voxels.Occupancy
+  commentId: T:ZLab.Discrete.Voxels.Occupancy
+  parent: ZLab.Discrete.Voxels
+  href: ZLab.Discrete.Voxels.Occupancy.html
+  name: Occupancy
+  nameWithType: Occupancy
+  fullName: ZLab.Discrete.Voxels.Occupancy
+memberLayout: SeparatePages

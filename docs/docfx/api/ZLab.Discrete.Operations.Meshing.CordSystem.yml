@@ -1,0 +1,123 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem
+  commentId: T:ZLab.Discrete.Operations.Meshing.CordSystem
+  id: CordSystem
+  parent: ZLab.Discrete.Operations.Meshing
+  children:
+  - ZLab.Discrete.Operations.Meshing.CordSystem.LeftHanded
+  - ZLab.Discrete.Operations.Meshing.CordSystem.RightHanded
+  langs:
+  - csharp
+  - vb
+  name: CordSystem
+  nameWithType: CordSystem
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem
+  type: Enum
+  source:
+    id: CordSystem
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Operations\Meshing\CordSystem.cs
+    startLine: 5
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Operations.Meshing
+  summary: Coordinate system type used in meshing operations.
+  example: []
+  syntax:
+    content: 'public enum CordSystem : byte'
+    content.vb: Public Enum CordSystem As Byte
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem.RightHanded
+  commentId: F:ZLab.Discrete.Operations.Meshing.CordSystem.RightHanded
+  id: RightHanded
+  parent: ZLab.Discrete.Operations.Meshing.CordSystem
+  langs:
+  - csharp
+  - vb
+  name: RightHanded
+  nameWithType: CordSystem.RightHanded
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem.RightHanded
+  type: Field
+  source:
+    id: RightHanded
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Operations\Meshing\CordSystem.cs
+    startLine: 10
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Operations.Meshing
+  summary: OpenGL and DirectX use right-handed coordinate systems
+  example: []
+  syntax:
+    content: RightHanded = 0
+    return:
+      type: ZLab.Discrete.Operations.Meshing.CordSystem
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem.LeftHanded
+  commentId: F:ZLab.Discrete.Operations.Meshing.CordSystem.LeftHanded
+  id: LeftHanded
+  parent: ZLab.Discrete.Operations.Meshing.CordSystem
+  langs:
+  - csharp
+  - vb
+  name: LeftHanded
+  nameWithType: CordSystem.LeftHanded
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem.LeftHanded
+  type: Field
+  source:
+    id: LeftHanded
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Operations\Meshing\CordSystem.cs
+    startLine: 15
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Operations.Meshing
+  summary: Rhino3D uses left-handed coordinate system
+  example: []
+  syntax:
+    content: LeftHanded = 1
+    return:
+      type: ZLab.Discrete.Operations.Meshing.CordSystem
+references:
+- uid: ZLab.Discrete.Operations.Meshing
+  commentId: N:ZLab.Discrete.Operations.Meshing
+  href: ZLab.html
+  name: ZLab.Discrete.Operations.Meshing
+  nameWithType: ZLab.Discrete.Operations.Meshing
+  fullName: ZLab.Discrete.Operations.Meshing
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Operations
+    name: Operations
+    href: ZLab.Discrete.Operations.html
+  - name: .
+  - uid: ZLab.Discrete.Operations.Meshing
+    name: Meshing
+    href: ZLab.Discrete.Operations.Meshing.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Operations
+    name: Operations
+    href: ZLab.Discrete.Operations.html
+  - name: .
+  - uid: ZLab.Discrete.Operations.Meshing
+    name: Meshing
+    href: ZLab.Discrete.Operations.Meshing.html
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem
+  commentId: T:ZLab.Discrete.Operations.Meshing.CordSystem
+  parent: ZLab.Discrete.Operations.Meshing
+  href: ZLab.Discrete.Operations.Meshing.CordSystem.html
+  name: CordSystem
+  nameWithType: CordSystem
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem
+memberLayout: SeparatePages

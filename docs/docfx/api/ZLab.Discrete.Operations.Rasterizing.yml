@@ -1,0 +1,31 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Operations.Rasterizing
+  commentId: N:ZLab.Discrete.Operations.Rasterizing
+  id: ZLab.Discrete.Operations.Rasterizing
+  children:
+  - ZLab.Discrete.Operations.Rasterizing.DenseRasterizer
+  - ZLab.Discrete.Operations.Rasterizing.SparseRasterizer
+  langs:
+  - csharp
+  - vb
+  name: ZLab.Discrete.Operations.Rasterizing
+  nameWithType: ZLab.Discrete.Operations.Rasterizing
+  fullName: ZLab.Discrete.Operations.Rasterizing
+  type: Namespace
+  assemblies:
+  - ZLab.Discrete
+references:
+- uid: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer
+  commentId: T:ZLab.Discrete.Operations.Rasterizing.DenseRasterizer
+  href: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.html
+  name: DenseRasterizer
+  nameWithType: DenseRasterizer
+  fullName: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer
+- uid: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer
+  commentId: T:ZLab.Discrete.Operations.Rasterizing.SparseRasterizer
+  href: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.html
+  name: SparseRasterizer
+  nameWithType: SparseRasterizer
+  fullName: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer
+memberLayout: SeparatePages

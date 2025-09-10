@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Operations.Meshing
+  commentId: N:ZLab.Discrete.Operations.Meshing
+  id: ZLab.Discrete.Operations.Meshing
+  children:
+  - ZLab.Discrete.Operations.Meshing.CordSystem
+  - ZLab.Discrete.Operations.Meshing.DiscreteMesher
+  langs:
+  - csharp
+  - vb
+  name: ZLab.Discrete.Operations.Meshing
+  nameWithType: ZLab.Discrete.Operations.Meshing
+  fullName: ZLab.Discrete.Operations.Meshing
+  type: Namespace
+  assemblies:
+  - ZLab.Discrete
+references:
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem
+  commentId: T:ZLab.Discrete.Operations.Meshing.CordSystem
+  parent: ZLab.Discrete.Operations.Meshing
+  href: ZLab.Discrete.Operations.Meshing.CordSystem.html
+  name: CordSystem
+  nameWithType: CordSystem
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher
+  commentId: T:ZLab.Discrete.Operations.Meshing.DiscreteMesher
+  href: ZLab.Discrete.Operations.Meshing.DiscreteMesher.html
+  name: DiscreteMesher
+  nameWithType: DiscreteMesher
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher
+- uid: ZLab.Discrete.Operations.Meshing
+  commentId: N:ZLab.Discrete.Operations.Meshing
+  href: ZLab.html
+  name: ZLab.Discrete.Operations.Meshing
+  nameWithType: ZLab.Discrete.Operations.Meshing
+  fullName: ZLab.Discrete.Operations.Meshing
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Operations
+    name: Operations
+    href: ZLab.Discrete.Operations.html
+  - name: .
+  - uid: ZLab.Discrete.Operations.Meshing
+    name: Meshing
+    href: ZLab.Discrete.Operations.Meshing.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Operations
+    name: Operations
+    href: ZLab.Discrete.Operations.html
+  - name: .
+  - uid: ZLab.Discrete.Operations.Meshing
+    name: Meshing
+    href: ZLab.Discrete.Operations.Meshing.html
+memberLayout: SeparatePages

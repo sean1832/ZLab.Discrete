@@ -1,0 +1,79 @@
+### YamlMime:TableOfContent
+items:
+- uid: ZLab.Discrete.Algorithms.Sampling
+  name: ZLab.Discrete.Algorithms.Sampling
+  type: Namespace
+  items:
+  - uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension
+    name: DistanceGridSamplingExtension
+    type: Class
+- uid: ZLab.Discrete.Geometry
+  name: ZLab.Discrete.Geometry
+  type: Namespace
+  items:
+  - uid: ZLab.Discrete.Geometry.BBox
+    name: BBox
+    type: Struct
+  - uid: ZLab.Discrete.Geometry.MeshF
+    name: MeshF
+    type: Class
+  - uid: ZLab.Discrete.Geometry.TriFace
+    name: TriFace
+    type: Struct
+- uid: ZLab.Discrete.Grids
+  name: ZLab.Discrete.Grids
+  type: Namespace
+  items:
+  - uid: ZLab.Discrete.Grids.DistanceGrid
+    name: DistanceGrid
+    type: Class
+  - uid: ZLab.Discrete.Grids.GridBase
+    name: GridBase
+    type: Class
+  - uid: ZLab.Discrete.Grids.GridMeta
+    name: GridMeta
+    type: Struct
+  - uid: ZLab.Discrete.Grids.OccupancyGrid
+    name: OccupancyGrid
+    type: Class
+- uid: ZLab.Discrete.Grids.Interfaces
+  name: ZLab.Discrete.Grids.Interfaces
+  type: Namespace
+  items:
+  - uid: ZLab.Discrete.Grids.Interfaces.IGrid`1
+    name: IGrid<T>
+    type: Interface
+- uid: ZLab.Discrete.Operations.Meshing
+  name: ZLab.Discrete.Operations.Meshing
+  type: Namespace
+  items:
+  - uid: ZLab.Discrete.Operations.Meshing.CordSystem
+    name: CordSystem
+    type: Enum
+  - uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher
+    name: DiscreteMesher
+    type: Class
+- uid: ZLab.Discrete.Operations.Rasterizing
+  name: ZLab.Discrete.Operations.Rasterizing
+  type: Namespace
+  items:
+  - uid: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer
+    name: DenseRasterizer
+    type: Class
+  - uid: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer
+    name: SparseRasterizer
+    type: Class
+- uid: ZLab.Discrete.Voxels
+  name: ZLab.Discrete.Voxels
+  type: Namespace
+  items:
+  - uid: ZLab.Discrete.Voxels.DistanceVoxel
+    name: DistanceVoxel
+    type: Struct
+  - uid: ZLab.Discrete.Voxels.Occupancy
+    name: Occupancy
+    type: Enum
+  - uid: ZLab.Discrete.Voxels.OccupancyVoxel
+    name: OccupancyVoxel
+    type: Struct
+memberLayout: SeparatePages

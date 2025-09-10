@@ -1,0 +1,544 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1
+  commentId: T:ZLab.Discrete.Grids.Interfaces.IGrid`1
+  id: IGrid`1
+  parent: ZLab.Discrete.Grids.Interfaces
+  children:
+  - ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer
+  - ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer
+  - ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory
+  - ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  - ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},`0)
+  langs:
+  - csharp
+  - vb
+  name: IGrid<T>
+  nameWithType: IGrid<T>
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>
+  type: Interface
+  source:
+    id: IGrid
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
+    startLine: 4
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Grids.Interfaces
+  syntax:
+    content: public interface IGrid<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IGrid(Of T)
+  nameWithType.vb: IGrid(Of T)
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T)
+  name.vb: IGrid(Of T)
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  id: GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  parent: ZLab.Discrete.Grids.Interfaces.IGrid`1
+  langs:
+  - csharp
+  - vb
+  name: GetValue((int x, int y, int z))
+  nameWithType: IGrid<T>.GetValue((int x, int y, int z))
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetValue((int x, int y, int z))
+  type: Method
+  source:
+    id: GetValue
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
+    startLine: 6
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Grids.Interfaces
+  syntax:
+    content: T GetValue((int x, int y, int z) index)
+    parameters:
+    - id: index
+      type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+    return:
+      type: '{T}'
+    content.vb: Function GetValue(index As (x As Integer, y As Integer, z As Integer)) As T
+  overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue*
+  nameWithType.vb: IGrid(Of T).GetValue((x As Integer, y As Integer, z As Integer))
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetValue((x As Integer, y As Integer, z As Integer))
+  name.vb: GetValue((x As Integer, y As Integer, z As Integer))
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},`0)
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},`0)
+  id: SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},`0)
+  parent: ZLab.Discrete.Grids.Interfaces.IGrid`1
+  langs:
+  - csharp
+  - vb
+  name: SetValue((int x, int y, int z), T)
+  nameWithType: IGrid<T>.SetValue((int x, int y, int z), T)
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.SetValue((int x, int y, int z), T)
+  type: Method
+  source:
+    id: SetValue
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
+    startLine: 7
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Grids.Interfaces
+  syntax:
+    content: void SetValue((int x, int y, int z) index, T value)
+    parameters:
+    - id: index
+      type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+    - id: value
+      type: '{T}'
+    content.vb: Sub SetValue(index As (x As Integer, y As Integer, z As Integer), value As T)
+  overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue*
+  nameWithType.vb: IGrid(Of T).SetValue((x As Integer, y As Integer, z As Integer), T)
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).SetValue((x As Integer, y As Integer, z As Integer), T)
+  name.vb: SetValue((x As Integer, y As Integer, z As Integer), T)
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer
+  id: GetReadOnlyBuffer
+  parent: ZLab.Discrete.Grids.Interfaces.IGrid`1
+  langs:
+  - csharp
+  - vb
+  name: GetReadOnlyBuffer()
+  nameWithType: IGrid<T>.GetReadOnlyBuffer()
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyBuffer()
+  type: Method
+  source:
+    id: GetReadOnlyBuffer
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
+    startLine: 8
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Grids.Interfaces
+  syntax:
+    content: ReadOnlySpan<T> GetReadOnlyBuffer()
+    return:
+      type: System.ReadOnlySpan{{T}}
+    content.vb: Function GetReadOnlyBuffer() As ReadOnlySpan(Of T)
+  overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer*
+  nameWithType.vb: IGrid(Of T).GetReadOnlyBuffer()
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetReadOnlyBuffer()
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer
+  id: GetBuffer
+  parent: ZLab.Discrete.Grids.Interfaces.IGrid`1
+  langs:
+  - csharp
+  - vb
+  name: GetBuffer()
+  nameWithType: IGrid<T>.GetBuffer()
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetBuffer()
+  type: Method
+  source:
+    id: GetBuffer
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
+    startLine: 9
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Grids.Interfaces
+  syntax:
+    content: Span<T> GetBuffer()
+    return:
+      type: System.Span{{T}}
+    content.vb: Function GetBuffer() As Span(Of T)
+  overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer*
+  nameWithType.vb: IGrid(Of T).GetBuffer()
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetBuffer()
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory
+  id: GetReadOnlyMemory
+  parent: ZLab.Discrete.Grids.Interfaces.IGrid`1
+  langs:
+  - csharp
+  - vb
+  name: GetReadOnlyMemory()
+  nameWithType: IGrid<T>.GetReadOnlyMemory()
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyMemory()
+  type: Method
+  source:
+    id: GetReadOnlyMemory
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
+    startLine: 11
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Grids.Interfaces
+  syntax:
+    content: ReadOnlyMemory<T> GetReadOnlyMemory()
+    return:
+      type: System.ReadOnlyMemory{{T}}
+    content.vb: Function GetReadOnlyMemory() As ReadOnlyMemory(Of T)
+  overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory*
+  nameWithType.vb: IGrid(Of T).GetReadOnlyMemory()
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetReadOnlyMemory()
+references:
+- uid: ZLab.Discrete.Grids.Interfaces
+  commentId: N:ZLab.Discrete.Grids.Interfaces
+  href: ZLab.html
+  name: ZLab.Discrete.Grids.Interfaces
+  nameWithType: ZLab.Discrete.Grids.Interfaces
+  fullName: ZLab.Discrete.Grids.Interfaces
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Grids
+    name: Grids
+    href: ZLab.Discrete.Grids.html
+  - name: .
+  - uid: ZLab.Discrete.Grids.Interfaces
+    name: Interfaces
+    href: ZLab.Discrete.Grids.Interfaces.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Grids
+    name: Grids
+    href: ZLab.Discrete.Grids.html
+  - name: .
+  - uid: ZLab.Discrete.Grids.Interfaces
+    name: Interfaces
+    href: ZLab.Discrete.Grids.Interfaces.html
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue*
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue
+  href: ZLab.Discrete.Grids.Interfaces.IGrid-1.GetValue.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_GetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__
+  name: GetValue
+  nameWithType: IGrid<T>.GetValue
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetValue
+  nameWithType.vb: IGrid(Of T).GetValue
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetValue
+- uid: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+  commentId: T:System.ValueTuple{System.Int32,System.Int32,System.Int32}
+  parent: System
+  definition: System.ValueTuple`3
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: (int x, int y, int z)
+  nameWithType: (int x, int y, int z)
+  fullName: (int x, int y, int z)
+  nameWithType.vb: (x As Integer, y As Integer, z As Integer)
+  fullName.vb: (x As Integer, y As Integer, z As Integer)
+  name.vb: (x As Integer, y As Integer, z As Integer)
+  spec.csharp:
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32}.x
+    name: x
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.x
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32}.y
+    name: y
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.y
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32}.z
+    name: z
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.z
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32}.x
+    name: x
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.x
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32}.y
+    name: y
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.y
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32}.z
+    name: z
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.z
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.ValueTuple`3
+  commentId: T:System.ValueTuple`3
+  name: (T1, T2, T3)
+  nameWithType: (T1, T2, T3)
+  fullName: (T1, T2, T3)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue*
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue
+  href: ZLab.Discrete.Grids.Interfaces.IGrid-1.SetValue.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_SetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32___0_
+  name: SetValue
+  nameWithType: IGrid<T>.SetValue
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.SetValue
+  nameWithType.vb: IGrid(Of T).SetValue
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).SetValue
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer*
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer
+  href: ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyBuffer.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_GetReadOnlyBuffer
+  name: GetReadOnlyBuffer
+  nameWithType: IGrid<T>.GetReadOnlyBuffer
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyBuffer
+  nameWithType.vb: IGrid(Of T).GetReadOnlyBuffer
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetReadOnlyBuffer
+- uid: System.ReadOnlySpan{{T}}
+  commentId: T:System.ReadOnlySpan{`0}
+  parent: System
+  definition: System.ReadOnlySpan`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  name: ReadOnlySpan<T>
+  nameWithType: ReadOnlySpan<T>
+  fullName: System.ReadOnlySpan<T>
+  nameWithType.vb: ReadOnlySpan(Of T)
+  fullName.vb: System.ReadOnlySpan(Of T)
+  name.vb: ReadOnlySpan(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ReadOnlySpan`1
+  commentId: T:System.ReadOnlySpan`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  name: ReadOnlySpan<T>
+  nameWithType: ReadOnlySpan<T>
+  fullName: System.ReadOnlySpan<T>
+  nameWithType.vb: ReadOnlySpan(Of T)
+  fullName.vb: System.ReadOnlySpan(Of T)
+  name.vb: ReadOnlySpan(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlySpan`1
+    name: ReadOnlySpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlyspan-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer*
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer
+  href: ZLab.Discrete.Grids.Interfaces.IGrid-1.GetBuffer.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_GetBuffer
+  name: GetBuffer
+  nameWithType: IGrid<T>.GetBuffer
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetBuffer
+  nameWithType.vb: IGrid(Of T).GetBuffer
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetBuffer
+- uid: System.Span{{T}}
+  commentId: T:System.Span{`0}
+  parent: System
+  definition: System.Span`1
+  href: https://learn.microsoft.com/dotnet/api/system.span-1
+  name: Span<T>
+  nameWithType: Span<T>
+  fullName: System.Span<T>
+  nameWithType.vb: Span(Of T)
+  fullName.vb: System.Span(Of T)
+  name.vb: Span(Of T)
+  spec.csharp:
+  - uid: System.Span`1
+    name: Span
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.span-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Span`1
+    name: Span
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.span-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Span`1
+  commentId: T:System.Span`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.span-1
+  name: Span<T>
+  nameWithType: Span<T>
+  fullName: System.Span<T>
+  nameWithType.vb: Span(Of T)
+  fullName.vb: System.Span(Of T)
+  name.vb: Span(Of T)
+  spec.csharp:
+  - uid: System.Span`1
+    name: Span
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.span-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Span`1
+    name: Span
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.span-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory*
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory
+  href: ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyMemory.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_GetReadOnlyMemory
+  name: GetReadOnlyMemory
+  nameWithType: IGrid<T>.GetReadOnlyMemory
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyMemory
+  nameWithType.vb: IGrid(Of T).GetReadOnlyMemory
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetReadOnlyMemory
+- uid: System.ReadOnlyMemory{{T}}
+  commentId: T:System.ReadOnlyMemory{`0}
+  parent: System
+  definition: System.ReadOnlyMemory`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<T>
+  nameWithType: ReadOnlyMemory<T>
+  fullName: System.ReadOnlyMemory<T>
+  nameWithType.vb: ReadOnlyMemory(Of T)
+  fullName.vb: System.ReadOnlyMemory(Of T)
+  name.vb: ReadOnlyMemory(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ReadOnlyMemory`1
+  commentId: T:System.ReadOnlyMemory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<T>
+  nameWithType: ReadOnlyMemory<T>
+  fullName: System.ReadOnlyMemory<T>
+  nameWithType.vb: ReadOnlyMemory(Of T)
+  fullName.vb: System.ReadOnlyMemory(Of T)
+  name.vb: ReadOnlyMemory(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+memberLayout: SeparatePages

@@ -1,0 +1,63 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Algorithms.Sampling
+  commentId: N:ZLab.Discrete.Algorithms.Sampling
+  id: ZLab.Discrete.Algorithms.Sampling
+  children:
+  - ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension
+  langs:
+  - csharp
+  - vb
+  name: ZLab.Discrete.Algorithms.Sampling
+  nameWithType: ZLab.Discrete.Algorithms.Sampling
+  fullName: ZLab.Discrete.Algorithms.Sampling
+  type: Namespace
+  assemblies:
+  - ZLab.Discrete
+references:
+- uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension
+  commentId: T:ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension
+  parent: ZLab.Discrete.Algorithms.Sampling
+  href: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.html
+  name: DistanceGridSamplingExtension
+  nameWithType: DistanceGridSamplingExtension
+  fullName: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension
+- uid: ZLab.Discrete.Algorithms.Sampling
+  commentId: N:ZLab.Discrete.Algorithms.Sampling
+  href: ZLab.html
+  name: ZLab.Discrete.Algorithms.Sampling
+  nameWithType: ZLab.Discrete.Algorithms.Sampling
+  fullName: ZLab.Discrete.Algorithms.Sampling
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Algorithms
+    name: Algorithms
+    href: ZLab.Discrete.Algorithms.html
+  - name: .
+  - uid: ZLab.Discrete.Algorithms.Sampling
+    name: Sampling
+    href: ZLab.Discrete.Algorithms.Sampling.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Algorithms
+    name: Algorithms
+    href: ZLab.Discrete.Algorithms.html
+  - name: .
+  - uid: ZLab.Discrete.Algorithms.Sampling
+    name: Sampling
+    href: ZLab.Discrete.Algorithms.Sampling.html
+memberLayout: SeparatePages

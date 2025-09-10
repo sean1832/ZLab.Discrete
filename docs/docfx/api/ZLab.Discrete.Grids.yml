@@ -1,0 +1,79 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Grids
+  commentId: N:ZLab.Discrete.Grids
+  id: ZLab.Discrete.Grids
+  children:
+  - ZLab.Discrete.Grids.DistanceGrid
+  - ZLab.Discrete.Grids.GridBase
+  - ZLab.Discrete.Grids.GridMeta
+  - ZLab.Discrete.Grids.OccupancyGrid
+  langs:
+  - csharp
+  - vb
+  name: ZLab.Discrete.Grids
+  nameWithType: ZLab.Discrete.Grids
+  fullName: ZLab.Discrete.Grids
+  type: Namespace
+  assemblies:
+  - ZLab.Discrete
+references:
+- uid: ZLab.Discrete.Grids.DistanceGrid
+  commentId: T:ZLab.Discrete.Grids.DistanceGrid
+  parent: ZLab.Discrete.Grids
+  href: ZLab.Discrete.Grids.DistanceGrid.html
+  name: DistanceGrid
+  nameWithType: DistanceGrid
+  fullName: ZLab.Discrete.Grids.DistanceGrid
+- uid: ZLab.Discrete.Grids.GridBase
+  commentId: T:ZLab.Discrete.Grids.GridBase
+  parent: ZLab.Discrete.Grids
+  href: ZLab.Discrete.Grids.GridBase.html
+  name: GridBase
+  nameWithType: GridBase
+  fullName: ZLab.Discrete.Grids.GridBase
+- uid: ZLab.Discrete.Grids.GridMeta
+  commentId: T:ZLab.Discrete.Grids.GridMeta
+  parent: ZLab.Discrete.Grids
+  href: ZLab.Discrete.Grids.GridMeta.html
+  name: GridMeta
+  nameWithType: GridMeta
+  fullName: ZLab.Discrete.Grids.GridMeta
+- uid: ZLab.Discrete.Grids.OccupancyGrid
+  commentId: T:ZLab.Discrete.Grids.OccupancyGrid
+  parent: ZLab.Discrete.Grids
+  href: ZLab.Discrete.Grids.OccupancyGrid.html
+  name: OccupancyGrid
+  nameWithType: OccupancyGrid
+  fullName: ZLab.Discrete.Grids.OccupancyGrid
+- uid: ZLab.Discrete.Grids
+  commentId: N:ZLab.Discrete.Grids
+  href: ZLab.html
+  name: ZLab.Discrete.Grids
+  nameWithType: ZLab.Discrete.Grids
+  fullName: ZLab.Discrete.Grids
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Grids
+    name: Grids
+    href: ZLab.Discrete.Grids.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Grids
+    name: Grids
+    href: ZLab.Discrete.Grids.html
+memberLayout: SeparatePages

@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Geometry
+  commentId: N:ZLab.Discrete.Geometry
+  id: ZLab.Discrete.Geometry
+  children:
+  - ZLab.Discrete.Geometry.BBox
+  - ZLab.Discrete.Geometry.MeshF
+  - ZLab.Discrete.Geometry.TriFace
+  langs:
+  - csharp
+  - vb
+  name: ZLab.Discrete.Geometry
+  nameWithType: ZLab.Discrete.Geometry
+  fullName: ZLab.Discrete.Geometry
+  type: Namespace
+  assemblies:
+  - ZLab.Discrete
+references:
+- uid: ZLab.Discrete.Geometry.BBox
+  commentId: T:ZLab.Discrete.Geometry.BBox
+  parent: ZLab.Discrete.Geometry
+  href: ZLab.Discrete.Geometry.BBox.html
+  name: BBox
+  nameWithType: BBox
+  fullName: ZLab.Discrete.Geometry.BBox
+- uid: ZLab.Discrete.Geometry.MeshF
+  commentId: T:ZLab.Discrete.Geometry.MeshF
+  parent: ZLab.Discrete.Geometry
+  href: ZLab.Discrete.Geometry.MeshF.html
+  name: MeshF
+  nameWithType: MeshF
+  fullName: ZLab.Discrete.Geometry.MeshF
+- uid: ZLab.Discrete.Geometry.TriFace
+  commentId: T:ZLab.Discrete.Geometry.TriFace
+  parent: ZLab.Discrete.Geometry
+  href: ZLab.Discrete.Geometry.TriFace.html
+  name: TriFace
+  nameWithType: TriFace
+  fullName: ZLab.Discrete.Geometry.TriFace
+- uid: ZLab.Discrete.Geometry
+  commentId: N:ZLab.Discrete.Geometry
+  href: ZLab.html
+  name: ZLab.Discrete.Geometry
+  nameWithType: ZLab.Discrete.Geometry
+  fullName: ZLab.Discrete.Geometry
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Geometry
+    name: Geometry
+    href: ZLab.Discrete.Geometry.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Geometry
+    name: Geometry
+    href: ZLab.Discrete.Geometry.html
+memberLayout: SeparatePages

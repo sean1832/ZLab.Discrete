@@ -1,0 +1,1087 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Geometry.BBox
+  commentId: T:ZLab.Discrete.Geometry.BBox
+  id: BBox
+  parent: ZLab.Discrete.Geometry
+  children:
+  - ZLab.Discrete.Geometry.BBox.#ctor
+  - ZLab.Discrete.Geometry.BBox.#ctor(System.Numerics.Vector3,System.Numerics.Vector3)
+  - ZLab.Discrete.Geometry.BBox.Center
+  - ZLab.Discrete.Geometry.BBox.Contains(System.Numerics.Vector3)
+  - ZLab.Discrete.Geometry.BBox.Contains(ZLab.Discrete.Geometry.BBox)
+  - ZLab.Discrete.Geometry.BBox.Expand(System.Numerics.Vector3)
+  - ZLab.Discrete.Geometry.BBox.Expand(ZLab.Discrete.Geometry.BBox)
+  - ZLab.Discrete.Geometry.BBox.FromUnordered(System.Numerics.Vector3,System.Numerics.Vector3)
+  - ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span{System.Numerics.Vector3})
+  - ZLab.Discrete.Geometry.BBox.Intersects(ZLab.Discrete.Geometry.BBox)
+  - ZLab.Discrete.Geometry.BBox.IsValid
+  - ZLab.Discrete.Geometry.BBox.Max
+  - ZLab.Discrete.Geometry.BBox.Min
+  - ZLab.Discrete.Geometry.BBox.Pad(System.Single)
+  - ZLab.Discrete.Geometry.BBox.Size
+  - ZLab.Discrete.Geometry.BBox.SurfaceArea
+  - ZLab.Discrete.Geometry.BBox.ToMesh(ZLab.Discrete.Operations.Meshing.CordSystem)
+  - ZLab.Discrete.Geometry.BBox.ToString
+  langs:
+  - csharp
+  - vb
+  name: BBox
+  nameWithType: BBox
+  fullName: ZLab.Discrete.Geometry.BBox
+  type: Struct
+  source:
+    id: BBox
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 10
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Axis-aligned bounding box (AABB) in 3D space.
+  example: []
+  syntax:
+    content: public struct BBox
+    content.vb: Public Structure BBox
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ZLab.Discrete.Geometry.BBox.Min
+  commentId: F:ZLab.Discrete.Geometry.BBox.Min
+  id: Min
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Min
+  nameWithType: BBox.Min
+  fullName: ZLab.Discrete.Geometry.BBox.Min
+  type: Field
+  source:
+    id: Min
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 19
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Minimum corner of the bounding box.
+  example: []
+  syntax:
+    content: public Vector3 Min
+    return:
+      type: System.Numerics.Vector3
+    content.vb: Public Min As Vector3
+- uid: ZLab.Discrete.Geometry.BBox.Max
+  commentId: F:ZLab.Discrete.Geometry.BBox.Max
+  id: Max
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Max
+  nameWithType: BBox.Max
+  fullName: ZLab.Discrete.Geometry.BBox.Max
+  type: Field
+  source:
+    id: Max
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 23
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Maximum corner of the bounding box.
+  example: []
+  syntax:
+    content: public Vector3 Max
+    return:
+      type: System.Numerics.Vector3
+    content.vb: Public Max As Vector3
+- uid: ZLab.Discrete.Geometry.BBox.Center
+  commentId: P:ZLab.Discrete.Geometry.BBox.Center
+  id: Center
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Center
+  nameWithType: BBox.Center
+  fullName: ZLab.Discrete.Geometry.BBox.Center
+  type: Property
+  source:
+    id: Center
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 28
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Center point of the bounding box.
+  example: []
+  syntax:
+    content: public Vector3 Center { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector3
+    content.vb: Public ReadOnly Property Center As Vector3
+  overload: ZLab.Discrete.Geometry.BBox.Center*
+- uid: ZLab.Discrete.Geometry.BBox.Size
+  commentId: P:ZLab.Discrete.Geometry.BBox.Size
+  id: Size
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: BBox.Size
+  fullName: ZLab.Discrete.Geometry.BBox.Size
+  type: Property
+  source:
+    id: Size
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 33
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Cartesian dimension of the bounding box. (Width, Height, Depth)
+  example: []
+  syntax:
+    content: public Vector3 Size { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector3
+    content.vb: Public ReadOnly Property Size As Vector3
+  overload: ZLab.Discrete.Geometry.BBox.Size*
+- uid: ZLab.Discrete.Geometry.BBox.SurfaceArea
+  commentId: P:ZLab.Discrete.Geometry.BBox.SurfaceArea
+  id: SurfaceArea
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: SurfaceArea
+  nameWithType: BBox.SurfaceArea
+  fullName: ZLab.Discrete.Geometry.BBox.SurfaceArea
+  type: Property
+  source:
+    id: SurfaceArea
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 38
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Surface area of the box (2*(xy + yz + zx)). Returns 0 for invalid boxes.
+  example: []
+  syntax:
+    content: public readonly float SurfaceArea { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property SurfaceArea As Single
+  overload: ZLab.Discrete.Geometry.BBox.SurfaceArea*
+- uid: ZLab.Discrete.Geometry.BBox.IsValid
+  commentId: P:ZLab.Discrete.Geometry.BBox.IsValid
+  id: IsValid
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: IsValid
+  nameWithType: BBox.IsValid
+  fullName: ZLab.Discrete.Geometry.BBox.IsValid
+  type: Property
+  source:
+    id: IsValid
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 49
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Checks if the bounding box is valid (not degenerate).
+  example: []
+  syntax:
+    content: public readonly bool IsValid { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsValid As Boolean
+  overload: ZLab.Discrete.Geometry.BBox.IsValid*
+- uid: ZLab.Discrete.Geometry.BBox.#ctor(System.Numerics.Vector3,System.Numerics.Vector3)
+  commentId: M:ZLab.Discrete.Geometry.BBox.#ctor(System.Numerics.Vector3,System.Numerics.Vector3)
+  id: '#ctor(System.Numerics.Vector3,System.Numerics.Vector3)'
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: BBox(Vector3, Vector3)
+  nameWithType: BBox.BBox(Vector3, Vector3)
+  fullName: ZLab.Discrete.Geometry.BBox.BBox(System.Numerics.Vector3, System.Numerics.Vector3)
+  type: Constructor
+  source:
+    id: .ctor
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 60
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Creates a bounding box from minimum and maximum corner points.
+  example: []
+  syntax:
+    content: public BBox(Vector3 min, Vector3 max)
+    parameters:
+    - id: min
+      type: System.Numerics.Vector3
+      description: Minimum corner
+    - id: max
+      type: System.Numerics.Vector3
+      description: Maximum corner
+    content.vb: Public Sub New(min As Vector3, max As Vector3)
+  overload: ZLab.Discrete.Geometry.BBox.#ctor*
+  nameWithType.vb: BBox.New(Vector3, Vector3)
+  fullName.vb: ZLab.Discrete.Geometry.BBox.New(System.Numerics.Vector3, System.Numerics.Vector3)
+  name.vb: New(Vector3, Vector3)
+- uid: ZLab.Discrete.Geometry.BBox.#ctor
+  commentId: M:ZLab.Discrete.Geometry.BBox.#ctor
+  id: '#ctor'
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: BBox()
+  nameWithType: BBox.BBox()
+  fullName: ZLab.Discrete.Geometry.BBox.BBox()
+  type: Constructor
+  source:
+    id: .ctor
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 69
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Creates an empty bounding box. The box is degenerate until expanded.
+  example: []
+  syntax:
+    content: public BBox()
+    content.vb: Public Sub New()
+  overload: ZLab.Discrete.Geometry.BBox.#ctor*
+  nameWithType.vb: BBox.New()
+  fullName.vb: ZLab.Discrete.Geometry.BBox.New()
+  name.vb: New()
+- uid: ZLab.Discrete.Geometry.BBox.FromUnordered(System.Numerics.Vector3,System.Numerics.Vector3)
+  commentId: M:ZLab.Discrete.Geometry.BBox.FromUnordered(System.Numerics.Vector3,System.Numerics.Vector3)
+  id: FromUnordered(System.Numerics.Vector3,System.Numerics.Vector3)
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: FromUnordered(Vector3, Vector3)
+  nameWithType: BBox.FromUnordered(Vector3, Vector3)
+  fullName: ZLab.Discrete.Geometry.BBox.FromUnordered(System.Numerics.Vector3, System.Numerics.Vector3)
+  type: Method
+  source:
+    id: FromUnordered
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 82
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Create a box from possibly unordered corners by normalizing per axis.
+  example: []
+  syntax:
+    content: public static BBox FromUnordered(Vector3 a, Vector3 b)
+    parameters:
+    - id: a
+      type: System.Numerics.Vector3
+    - id: b
+      type: System.Numerics.Vector3
+    return:
+      type: ZLab.Discrete.Geometry.BBox
+    content.vb: Public Shared Function FromUnordered(a As Vector3, b As Vector3) As BBox
+  overload: ZLab.Discrete.Geometry.BBox.FromUnordered*
+- uid: ZLab.Discrete.Geometry.BBox.ToString
+  commentId: M:ZLab.Discrete.Geometry.BBox.ToString
+  id: ToString
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: BBox.ToString()
+  fullName: ZLab.Discrete.Geometry.BBox.ToString()
+  type: Method
+  source:
+    id: ToString
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 87
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Returns the fully qualified type name of this instance.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The fully qualified type name.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: ZLab.Discrete.Geometry.BBox.ToString*
+- uid: ZLab.Discrete.Geometry.BBox.Intersects(ZLab.Discrete.Geometry.BBox)
+  commentId: M:ZLab.Discrete.Geometry.BBox.Intersects(ZLab.Discrete.Geometry.BBox)
+  id: Intersects(ZLab.Discrete.Geometry.BBox)
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Intersects(BBox)
+  nameWithType: BBox.Intersects(BBox)
+  fullName: ZLab.Discrete.Geometry.BBox.Intersects(ZLab.Discrete.Geometry.BBox)
+  type: Method
+  source:
+    id: Intersects
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 98
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Checks if this bounding box intersects with another bounding box.
+  example: []
+  syntax:
+    content: public readonly bool Intersects(BBox other)
+    parameters:
+    - id: other
+      type: ZLab.Discrete.Geometry.BBox
+      description: Other bounding box
+    return:
+      type: System.Boolean
+      description: intersects or not
+    content.vb: Public Function Intersects(other As BBox) As Boolean
+  overload: ZLab.Discrete.Geometry.BBox.Intersects*
+- uid: ZLab.Discrete.Geometry.BBox.Contains(System.Numerics.Vector3)
+  commentId: M:ZLab.Discrete.Geometry.BBox.Contains(System.Numerics.Vector3)
+  id: Contains(System.Numerics.Vector3)
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Contains(Vector3)
+  nameWithType: BBox.Contains(Vector3)
+  fullName: ZLab.Discrete.Geometry.BBox.Contains(System.Numerics.Vector3)
+  type: Method
+  source:
+    id: Contains
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 111
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Checks if a point is contained within the bounding box.
+  example: []
+  syntax:
+    content: public readonly bool Contains(Vector3 point)
+    parameters:
+    - id: point
+      type: System.Numerics.Vector3
+      description: The point to test
+    return:
+      type: System.Boolean
+      description: Point in bounding box or not
+    content.vb: Public Function Contains(point As Vector3) As Boolean
+  overload: ZLab.Discrete.Geometry.BBox.Contains*
+- uid: ZLab.Discrete.Geometry.BBox.Contains(ZLab.Discrete.Geometry.BBox)
+  commentId: M:ZLab.Discrete.Geometry.BBox.Contains(ZLab.Discrete.Geometry.BBox)
+  id: Contains(ZLab.Discrete.Geometry.BBox)
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Contains(BBox)
+  nameWithType: BBox.Contains(BBox)
+  fullName: ZLab.Discrete.Geometry.BBox.Contains(ZLab.Discrete.Geometry.BBox)
+  type: Method
+  source:
+    id: Contains
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 122
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Checks if another bounding box is fully contained within this bounding box.
+  example: []
+  syntax:
+    content: public readonly bool Contains(BBox other)
+    parameters:
+    - id: other
+      type: ZLab.Discrete.Geometry.BBox
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(other As BBox) As Boolean
+  overload: ZLab.Discrete.Geometry.BBox.Contains*
+- uid: ZLab.Discrete.Geometry.BBox.Expand(ZLab.Discrete.Geometry.BBox)
+  commentId: M:ZLab.Discrete.Geometry.BBox.Expand(ZLab.Discrete.Geometry.BBox)
+  id: Expand(ZLab.Discrete.Geometry.BBox)
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Expand(BBox)
+  nameWithType: BBox.Expand(BBox)
+  fullName: ZLab.Discrete.Geometry.BBox.Expand(ZLab.Discrete.Geometry.BBox)
+  type: Method
+  source:
+    id: Expand
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 133
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Expands the bounding box to include another bounding box.
+  example: []
+  syntax:
+    content: public void Expand(BBox other)
+    parameters:
+    - id: other
+      type: ZLab.Discrete.Geometry.BBox
+      description: Other bounding box
+    content.vb: Public Sub Expand(other As BBox)
+  overload: ZLab.Discrete.Geometry.BBox.Expand*
+- uid: ZLab.Discrete.Geometry.BBox.Expand(System.Numerics.Vector3)
+  commentId: M:ZLab.Discrete.Geometry.BBox.Expand(System.Numerics.Vector3)
+  id: Expand(System.Numerics.Vector3)
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Expand(Vector3)
+  nameWithType: BBox.Expand(Vector3)
+  fullName: ZLab.Discrete.Geometry.BBox.Expand(System.Numerics.Vector3)
+  type: Method
+  source:
+    id: Expand
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 144
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Expands the bounding box to include a point.
+  example: []
+  syntax:
+    content: public void Expand(Vector3 point)
+    parameters:
+    - id: point
+      type: System.Numerics.Vector3
+      description: Point to include
+    content.vb: Public Sub Expand(point As Vector3)
+  overload: ZLab.Discrete.Geometry.BBox.Expand*
+- uid: ZLab.Discrete.Geometry.BBox.Pad(System.Single)
+  commentId: M:ZLab.Discrete.Geometry.BBox.Pad(System.Single)
+  id: Pad(System.Single)
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: Pad(float)
+  nameWithType: BBox.Pad(float)
+  fullName: ZLab.Discrete.Geometry.BBox.Pad(float)
+  type: Method
+  source:
+    id: Pad
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 154
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Uniformly pad the box by a non-negative margin.
+  example: []
+  syntax:
+    content: public void Pad(float margin)
+    parameters:
+    - id: margin
+      type: System.Single
+    content.vb: Public Sub Pad(margin As Single)
+  overload: ZLab.Discrete.Geometry.BBox.Pad*
+  nameWithType.vb: BBox.Pad(Single)
+  fullName.vb: ZLab.Discrete.Geometry.BBox.Pad(Single)
+  name.vb: Pad(Single)
+- uid: ZLab.Discrete.Geometry.BBox.ToMesh(ZLab.Discrete.Operations.Meshing.CordSystem)
+  commentId: M:ZLab.Discrete.Geometry.BBox.ToMesh(ZLab.Discrete.Operations.Meshing.CordSystem)
+  id: ToMesh(ZLab.Discrete.Operations.Meshing.CordSystem)
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: ToMesh(CordSystem)
+  nameWithType: BBox.ToMesh(CordSystem)
+  fullName: ZLab.Discrete.Geometry.BBox.ToMesh(ZLab.Discrete.Operations.Meshing.CordSystem)
+  type: Method
+  source:
+    id: ToMesh
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 167
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: >-
+    Converts the bounding box to a mesh representation (12 triangles, 8 vertices).
+
+    Winding is CCW for RightHanded; flipped for LeftHanded.
+  example: []
+  syntax:
+    content: public readonly MeshF ToMesh(CordSystem cordSystem)
+    parameters:
+    - id: cordSystem
+      type: ZLab.Discrete.Operations.Meshing.CordSystem
+    return:
+      type: ZLab.Discrete.Geometry.MeshF
+    content.vb: Public Function ToMesh(cordSystem As CordSystem) As MeshF
+  overload: ZLab.Discrete.Geometry.BBox.ToMesh*
+- uid: ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span{System.Numerics.Vector3})
+  commentId: M:ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span{System.Numerics.Vector3})
+  id: GetAllCorners(System.Span{System.Numerics.Vector3})
+  parent: ZLab.Discrete.Geometry.BBox
+  langs:
+  - csharp
+  - vb
+  name: GetAllCorners(Span<Vector3>)
+  nameWithType: BBox.GetAllCorners(Span<Vector3>)
+  fullName: ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span<System.Numerics.Vector3>)
+  type: Method
+  source:
+    id: GetAllCorners
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\BBox.cs
+    startLine: 212
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: 'Write all 8 corners to a Span (length &gt;= 8). Order: (x,y,z)'
+  example: []
+  syntax:
+    content: public readonly void GetAllCorners(Span<Vector3> dst)
+    parameters:
+    - id: dst
+      type: System.Span{System.Numerics.Vector3}
+    content.vb: Public Sub GetAllCorners(dst As Span(Of Vector3))
+  overload: ZLab.Discrete.Geometry.BBox.GetAllCorners*
+  nameWithType.vb: BBox.GetAllCorners(Span(Of Vector3))
+  fullName.vb: ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span(Of System.Numerics.Vector3))
+  name.vb: GetAllCorners(Span(Of Vector3))
+references:
+- uid: ZLab.Discrete.Geometry
+  commentId: N:ZLab.Discrete.Geometry
+  href: ZLab.html
+  name: ZLab.Discrete.Geometry
+  nameWithType: ZLab.Discrete.Geometry
+  fullName: ZLab.Discrete.Geometry
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Geometry
+    name: Geometry
+    href: ZLab.Discrete.Geometry.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Geometry
+    name: Geometry
+    href: ZLab.Discrete.Geometry.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Numerics.Vector3
+  commentId: T:System.Numerics.Vector3
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  name: Vector3
+  nameWithType: Vector3
+  fullName: System.Numerics.Vector3
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: ZLab.Discrete.Geometry.BBox.Center*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Center
+  href: ZLab.Discrete.Geometry.BBox.Center.html#ZLab_Discrete_Geometry_BBox_Center
+  name: Center
+  nameWithType: BBox.Center
+  fullName: ZLab.Discrete.Geometry.BBox.Center
+- uid: ZLab.Discrete.Geometry.BBox.Size*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Size
+  href: ZLab.Discrete.Geometry.BBox.Size.html#ZLab_Discrete_Geometry_BBox_Size
+  name: Size
+  nameWithType: BBox.Size
+  fullName: ZLab.Discrete.Geometry.BBox.Size
+- uid: ZLab.Discrete.Geometry.BBox.SurfaceArea*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.SurfaceArea
+  href: ZLab.Discrete.Geometry.BBox.SurfaceArea.html#ZLab_Discrete_Geometry_BBox_SurfaceArea
+  name: SurfaceArea
+  nameWithType: BBox.SurfaceArea
+  fullName: ZLab.Discrete.Geometry.BBox.SurfaceArea
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: ZLab.Discrete.Geometry.BBox.IsValid*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.IsValid
+  href: ZLab.Discrete.Geometry.BBox.IsValid.html#ZLab_Discrete_Geometry_BBox_IsValid
+  name: IsValid
+  nameWithType: BBox.IsValid
+  fullName: ZLab.Discrete.Geometry.BBox.IsValid
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ZLab.Discrete.Geometry.BBox.#ctor*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.#ctor
+  href: ZLab.Discrete.Geometry.BBox.-ctor.html#ZLab_Discrete_Geometry_BBox__ctor_System_Numerics_Vector3_System_Numerics_Vector3_
+  name: BBox
+  nameWithType: BBox.BBox
+  fullName: ZLab.Discrete.Geometry.BBox.BBox
+  nameWithType.vb: BBox.New
+  fullName.vb: ZLab.Discrete.Geometry.BBox.New
+  name.vb: New
+- uid: ZLab.Discrete.Geometry.BBox.FromUnordered*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.FromUnordered
+  href: ZLab.Discrete.Geometry.BBox.FromUnordered.html#ZLab_Discrete_Geometry_BBox_FromUnordered_System_Numerics_Vector3_System_Numerics_Vector3_
+  name: FromUnordered
+  nameWithType: BBox.FromUnordered
+  fullName: ZLab.Discrete.Geometry.BBox.FromUnordered
+- uid: ZLab.Discrete.Geometry.BBox
+  commentId: T:ZLab.Discrete.Geometry.BBox
+  parent: ZLab.Discrete.Geometry
+  href: ZLab.Discrete.Geometry.BBox.html
+  name: BBox
+  nameWithType: BBox
+  fullName: ZLab.Discrete.Geometry.BBox
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: ZLab.Discrete.Geometry.BBox.ToString*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.ToString
+  href: ZLab.Discrete.Geometry.BBox.ToString.html#ZLab_Discrete_Geometry_BBox_ToString
+  name: ToString
+  nameWithType: BBox.ToString
+  fullName: ZLab.Discrete.Geometry.BBox.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ZLab.Discrete.Geometry.BBox.Intersects*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Intersects
+  href: ZLab.Discrete.Geometry.BBox.Intersects.html#ZLab_Discrete_Geometry_BBox_Intersects_ZLab_Discrete_Geometry_BBox_
+  name: Intersects
+  nameWithType: BBox.Intersects
+  fullName: ZLab.Discrete.Geometry.BBox.Intersects
+- uid: ZLab.Discrete.Geometry.BBox.Contains*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Contains
+  href: ZLab.Discrete.Geometry.BBox.Contains.html#ZLab_Discrete_Geometry_BBox_Contains_System_Numerics_Vector3_
+  name: Contains
+  nameWithType: BBox.Contains
+  fullName: ZLab.Discrete.Geometry.BBox.Contains
+- uid: ZLab.Discrete.Geometry.BBox.Expand*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Expand
+  href: ZLab.Discrete.Geometry.BBox.Expand.html#ZLab_Discrete_Geometry_BBox_Expand_ZLab_Discrete_Geometry_BBox_
+  name: Expand
+  nameWithType: BBox.Expand
+  fullName: ZLab.Discrete.Geometry.BBox.Expand
+- uid: ZLab.Discrete.Geometry.BBox.Pad*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Pad
+  href: ZLab.Discrete.Geometry.BBox.Pad.html#ZLab_Discrete_Geometry_BBox_Pad_System_Single_
+  name: Pad
+  nameWithType: BBox.Pad
+  fullName: ZLab.Discrete.Geometry.BBox.Pad
+- uid: ZLab.Discrete.Geometry.BBox.ToMesh*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.ToMesh
+  href: ZLab.Discrete.Geometry.BBox.ToMesh.html#ZLab_Discrete_Geometry_BBox_ToMesh_ZLab_Discrete_Operations_Meshing_CordSystem_
+  name: ToMesh
+  nameWithType: BBox.ToMesh
+  fullName: ZLab.Discrete.Geometry.BBox.ToMesh
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem
+  commentId: T:ZLab.Discrete.Operations.Meshing.CordSystem
+  parent: ZLab.Discrete.Operations.Meshing
+  href: ZLab.Discrete.Operations.Meshing.CordSystem.html
+  name: CordSystem
+  nameWithType: CordSystem
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem
+- uid: ZLab.Discrete.Geometry.MeshF
+  commentId: T:ZLab.Discrete.Geometry.MeshF
+  parent: ZLab.Discrete.Geometry
+  href: ZLab.Discrete.Geometry.MeshF.html
+  name: MeshF
+  nameWithType: MeshF
+  fullName: ZLab.Discrete.Geometry.MeshF
+- uid: ZLab.Discrete.Operations.Meshing
+  commentId: N:ZLab.Discrete.Operations.Meshing
+  href: ZLab.html
+  name: ZLab.Discrete.Operations.Meshing
+  nameWithType: ZLab.Discrete.Operations.Meshing
+  fullName: ZLab.Discrete.Operations.Meshing
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Operations
+    name: Operations
+    href: ZLab.Discrete.Operations.html
+  - name: .
+  - uid: ZLab.Discrete.Operations.Meshing
+    name: Meshing
+    href: ZLab.Discrete.Operations.Meshing.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Operations
+    name: Operations
+    href: ZLab.Discrete.Operations.html
+  - name: .
+  - uid: ZLab.Discrete.Operations.Meshing
+    name: Meshing
+    href: ZLab.Discrete.Operations.Meshing.html
+- uid: ZLab.Discrete.Geometry.BBox.GetAllCorners*
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.GetAllCorners
+  href: ZLab.Discrete.Geometry.BBox.GetAllCorners.html#ZLab_Discrete_Geometry_BBox_GetAllCorners_System_Span_System_Numerics_Vector3__
+  name: GetAllCorners
+  nameWithType: BBox.GetAllCorners
+  fullName: ZLab.Discrete.Geometry.BBox.GetAllCorners
+- uid: System.Span{System.Numerics.Vector3}
+  commentId: T:System.Span{System.Numerics.Vector3}
+  parent: System
+  definition: System.Span`1
+  href: https://learn.microsoft.com/dotnet/api/system.span-1
+  name: Span<Vector3>
+  nameWithType: Span<Vector3>
+  fullName: System.Span<System.Numerics.Vector3>
+  nameWithType.vb: Span(Of Vector3)
+  fullName.vb: System.Span(Of System.Numerics.Vector3)
+  name.vb: Span(Of Vector3)
+  spec.csharp:
+  - uid: System.Span`1
+    name: Span
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.span-1
+  - name: <
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: '>'
+  spec.vb:
+  - uid: System.Span`1
+    name: Span
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.span-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: )
+- uid: System.Span`1
+  commentId: T:System.Span`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.span-1
+  name: Span<T>
+  nameWithType: Span<T>
+  fullName: System.Span<T>
+  nameWithType.vb: Span(Of T)
+  fullName.vb: System.Span(Of T)
+  name.vb: Span(Of T)
+  spec.csharp:
+  - uid: System.Span`1
+    name: Span
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.span-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Span`1
+    name: Span
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.span-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+memberLayout: SeparatePages

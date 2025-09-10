@@ -1,0 +1,757 @@
+### YamlMime:ManagedReference
+items:
+- uid: ZLab.Discrete.Geometry.MeshF
+  commentId: T:ZLab.Discrete.Geometry.MeshF
+  id: MeshF
+  parent: ZLab.Discrete.Geometry
+  children:
+  - ZLab.Discrete.Geometry.MeshF.#ctor
+  - ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[])
+  - ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[],System.Boolean)
+  - ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+  - ZLab.Discrete.Geometry.MeshF.Faces
+  - ZLab.Discrete.Geometry.MeshF.GetBounds
+  - ZLab.Discrete.Geometry.MeshF.IsClosed
+  - ZLab.Discrete.Geometry.MeshF.IsValid
+  - ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+  - ZLab.Discrete.Geometry.MeshF.Vertices
+  langs:
+  - csharp
+  - vb
+  name: MeshF
+  nameWithType: MeshF
+  fullName: ZLab.Discrete.Geometry.MeshF
+  type: Class
+  source:
+    id: MeshF
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 11
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Triangle mesh with float precision vertices.
+  example: []
+  syntax:
+    content: public sealed class MeshF
+    content.vb: Public NotInheritable Class MeshF
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ZLab.Discrete.Geometry.MeshF.Vertices
+  commentId: F:ZLab.Discrete.Geometry.MeshF.Vertices
+  id: Vertices
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: Vertices
+  nameWithType: MeshF.Vertices
+  fullName: ZLab.Discrete.Geometry.MeshF.Vertices
+  type: Field
+  source:
+    id: Vertices
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 16
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Array of vertex positions.
+  example: []
+  syntax:
+    content: public readonly Vector3[] Vertices
+    return:
+      type: System.Numerics.Vector3[]
+    content.vb: Public ReadOnly Vertices As Vector3()
+- uid: ZLab.Discrete.Geometry.MeshF.Faces
+  commentId: F:ZLab.Discrete.Geometry.MeshF.Faces
+  id: Faces
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: Faces
+  nameWithType: MeshF.Faces
+  fullName: ZLab.Discrete.Geometry.MeshF.Faces
+  type: Field
+  source:
+    id: Faces
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 21
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Array of faces, each face is an array of vertex indices. (must be triangles)
+  example: []
+  syntax:
+    content: public readonly TriFace[] Faces
+    return:
+      type: ZLab.Discrete.Geometry.TriFace[]
+    content.vb: Public ReadOnly Faces As TriFace()
+- uid: ZLab.Discrete.Geometry.MeshF.IsClosed
+  commentId: F:ZLab.Discrete.Geometry.MeshF.IsClosed
+  id: IsClosed
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: IsClosed
+  nameWithType: MeshF.IsClosed
+  fullName: ZLab.Discrete.Geometry.MeshF.IsClosed
+  type: Field
+  source:
+    id: IsClosed
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 26
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Indicates if the mesh is closed (watertight).
+  example: []
+  syntax:
+    content: public readonly bool IsClosed
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly IsClosed As Boolean
+- uid: ZLab.Discrete.Geometry.MeshF.IsValid
+  commentId: P:ZLab.Discrete.Geometry.MeshF.IsValid
+  id: IsValid
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: IsValid
+  nameWithType: MeshF.IsValid
+  fullName: ZLab.Discrete.Geometry.MeshF.IsValid
+  type: Property
+  source:
+    id: IsValid
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 31
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Checks if the mesh is valid (at least 3 vertices and 1 face).
+  example: []
+  syntax:
+    content: public bool IsValid { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsValid As Boolean
+  overload: ZLab.Discrete.Geometry.MeshF.IsValid*
+- uid: ZLab.Discrete.Geometry.MeshF.#ctor
+  commentId: M:ZLab.Discrete.Geometry.MeshF.#ctor
+  id: '#ctor'
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: MeshF()
+  nameWithType: MeshF.MeshF()
+  fullName: ZLab.Discrete.Geometry.MeshF.MeshF()
+  type: Constructor
+  source:
+    id: .ctor
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 38
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Creates an empty mesh. (Invalid)
+  example: []
+  syntax:
+    content: public MeshF()
+    content.vb: Public Sub New()
+  overload: ZLab.Discrete.Geometry.MeshF.#ctor*
+  nameWithType.vb: MeshF.New()
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.New()
+  name.vb: New()
+- uid: ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[])
+  commentId: M:ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[])
+  id: '#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[])'
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: MeshF(Vector3[], TriFace[])
+  nameWithType: MeshF.MeshF(Vector3[], TriFace[])
+  fullName: ZLab.Discrete.Geometry.MeshF.MeshF(System.Numerics.Vector3[], ZLab.Discrete.Geometry.TriFace[])
+  type: Constructor
+  source:
+    id: .ctor
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 49
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Creates a mesh and automatically checks if it is closed. (slow for large meshes, explicitly specify closeness if possible)
+  example: []
+  syntax:
+    content: public MeshF(Vector3[] vertices, TriFace[] faces)
+    parameters:
+    - id: vertices
+      type: System.Numerics.Vector3[]
+    - id: faces
+      type: ZLab.Discrete.Geometry.TriFace[]
+    content.vb: Public Sub New(vertices As Vector3(), faces As TriFace())
+  overload: ZLab.Discrete.Geometry.MeshF.#ctor*
+  nameWithType.vb: MeshF.New(Vector3(), TriFace())
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.New(System.Numerics.Vector3(), ZLab.Discrete.Geometry.TriFace())
+  name.vb: New(Vector3(), TriFace())
+- uid: ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[],System.Boolean)
+  commentId: M:ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[],System.Boolean)
+  id: '#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[],System.Boolean)'
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: MeshF(Vector3[], TriFace[], bool)
+  nameWithType: MeshF.MeshF(Vector3[], TriFace[], bool)
+  fullName: ZLab.Discrete.Geometry.MeshF.MeshF(System.Numerics.Vector3[], ZLab.Discrete.Geometry.TriFace[], bool)
+  type: Constructor
+  source:
+    id: .ctor
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 59
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: Creates a mesh with explicit specified closeness. (no watertight check)
+  example: []
+  syntax:
+    content: public MeshF(Vector3[] vertices, TriFace[] faces, bool isClosed)
+    parameters:
+    - id: vertices
+      type: System.Numerics.Vector3[]
+    - id: faces
+      type: ZLab.Discrete.Geometry.TriFace[]
+    - id: isClosed
+      type: System.Boolean
+    content.vb: Public Sub New(vertices As Vector3(), faces As TriFace(), isClosed As Boolean)
+  overload: ZLab.Discrete.Geometry.MeshF.#ctor*
+  nameWithType.vb: MeshF.New(Vector3(), TriFace(), Boolean)
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.New(System.Numerics.Vector3(), ZLab.Discrete.Geometry.TriFace(), Boolean)
+  name.vb: New(Vector3(), TriFace(), Boolean)
+- uid: ZLab.Discrete.Geometry.MeshF.GetBounds
+  commentId: M:ZLab.Discrete.Geometry.MeshF.GetBounds
+  id: GetBounds
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: GetBounds()
+  nameWithType: MeshF.GetBounds()
+  fullName: ZLab.Discrete.Geometry.MeshF.GetBounds()
+  type: Method
+  source:
+    id: GetBounds
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 66
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  syntax:
+    content: public BBox GetBounds()
+    return:
+      type: ZLab.Discrete.Geometry.BBox
+    content.vb: Public Function GetBounds() As BBox
+  overload: ZLab.Discrete.Geometry.MeshF.GetBounds*
+- uid: ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+  commentId: M:ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+  id: RecomputeBounds
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: RecomputeBounds()
+  nameWithType: MeshF.RecomputeBounds()
+  fullName: ZLab.Discrete.Geometry.MeshF.RecomputeBounds()
+  type: Method
+  source:
+    id: RecomputeBounds
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 71
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  syntax:
+    content: public void RecomputeBounds()
+    content.vb: Public Sub RecomputeBounds()
+  overload: ZLab.Discrete.Geometry.MeshF.RecomputeBounds*
+- uid: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+  commentId: M:ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+  id: EnumerateTriangleBounds
+  parent: ZLab.Discrete.Geometry.MeshF
+  langs:
+  - csharp
+  - vb
+  name: EnumerateTriangleBounds()
+  nameWithType: MeshF.EnumerateTriangleBounds()
+  fullName: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds()
+  type: Method
+  source:
+    id: EnumerateTriangleBounds
+    path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Geometry\MeshF.cs
+    startLine: 101
+  assemblies:
+  - ZLab.Discrete
+  namespace: ZLab.Discrete.Geometry
+  summary: >-
+    Enumerates the axis-aligned bounding boxes (AABB) of each triangle face in the mesh.
+
+    <pre><code class="lang-csharp">foreach (BBox triBox in mesh.EnumerateTriangleBounds())
+
+    {
+        // Process each triangle bounding box (triBox)
+    }</code></pre>
+  example: []
+  syntax:
+    content: public IEnumerable<BBox> EnumerateTriangleBounds()
+    return:
+      type: System.Collections.Generic.IEnumerable{ZLab.Discrete.Geometry.BBox}
+    content.vb: Public Function EnumerateTriangleBounds() As IEnumerable(Of BBox)
+  overload: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds*
+references:
+- uid: ZLab.Discrete.Geometry
+  commentId: N:ZLab.Discrete.Geometry
+  href: ZLab.html
+  name: ZLab.Discrete.Geometry
+  nameWithType: ZLab.Discrete.Geometry
+  fullName: ZLab.Discrete.Geometry
+  spec.csharp:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Geometry
+    name: Geometry
+    href: ZLab.Discrete.Geometry.html
+  spec.vb:
+  - uid: ZLab
+    name: ZLab
+    href: ZLab.html
+  - name: .
+  - uid: ZLab.Discrete
+    name: Discrete
+    href: ZLab.Discrete.html
+  - name: .
+  - uid: ZLab.Discrete.Geometry
+    name: Geometry
+    href: ZLab.Discrete.Geometry.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Numerics.Vector3[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  name: Vector3[]
+  nameWithType: Vector3[]
+  fullName: System.Numerics.Vector3[]
+  nameWithType.vb: Vector3()
+  fullName.vb: System.Numerics.Vector3()
+  name.vb: Vector3()
+  spec.csharp:
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: (
+  - name: )
+- uid: ZLab.Discrete.Geometry.TriFace[]
+  isExternal: true
+  href: ZLab.Discrete.Geometry.TriFace.html
+  name: TriFace[]
+  nameWithType: TriFace[]
+  fullName: ZLab.Discrete.Geometry.TriFace[]
+  nameWithType.vb: TriFace()
+  fullName.vb: ZLab.Discrete.Geometry.TriFace()
+  name.vb: TriFace()
+  spec.csharp:
+  - uid: ZLab.Discrete.Geometry.TriFace
+    name: TriFace
+    href: ZLab.Discrete.Geometry.TriFace.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: ZLab.Discrete.Geometry.TriFace
+    name: TriFace
+    href: ZLab.Discrete.Geometry.TriFace.html
+  - name: (
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ZLab.Discrete.Geometry.MeshF.IsValid*
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.IsValid
+  href: ZLab.Discrete.Geometry.MeshF.IsValid.html#ZLab_Discrete_Geometry_MeshF_IsValid
+  name: IsValid
+  nameWithType: MeshF.IsValid
+  fullName: ZLab.Discrete.Geometry.MeshF.IsValid
+- uid: ZLab.Discrete.Geometry.MeshF.#ctor*
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.#ctor
+  href: ZLab.Discrete.Geometry.MeshF.-ctor.html#ZLab_Discrete_Geometry_MeshF__ctor
+  name: MeshF
+  nameWithType: MeshF.MeshF
+  fullName: ZLab.Discrete.Geometry.MeshF.MeshF
+  nameWithType.vb: MeshF.New
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.New
+  name.vb: New
+- uid: ZLab.Discrete.Geometry.MeshF.GetBounds*
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.GetBounds
+  href: ZLab.Discrete.Geometry.MeshF.GetBounds.html#ZLab_Discrete_Geometry_MeshF_GetBounds
+  name: GetBounds
+  nameWithType: MeshF.GetBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.GetBounds
+- uid: ZLab.Discrete.Geometry.BBox
+  commentId: T:ZLab.Discrete.Geometry.BBox
+  parent: ZLab.Discrete.Geometry
+  href: ZLab.Discrete.Geometry.BBox.html
+  name: BBox
+  nameWithType: BBox
+  fullName: ZLab.Discrete.Geometry.BBox
+- uid: ZLab.Discrete.Geometry.MeshF.RecomputeBounds*
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+  href: ZLab.Discrete.Geometry.MeshF.RecomputeBounds.html#ZLab_Discrete_Geometry_MeshF_RecomputeBounds
+  name: RecomputeBounds
+  nameWithType: MeshF.RecomputeBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+- uid: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds*
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+  href: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds.html#ZLab_Discrete_Geometry_MeshF_EnumerateTriangleBounds
+  name: EnumerateTriangleBounds
+  nameWithType: MeshF.EnumerateTriangleBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+- uid: System.Collections.Generic.IEnumerable{ZLab.Discrete.Geometry.BBox}
+  commentId: T:System.Collections.Generic.IEnumerable{ZLab.Discrete.Geometry.BBox}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<BBox>
+  nameWithType: IEnumerable<BBox>
+  fullName: System.Collections.Generic.IEnumerable<ZLab.Discrete.Geometry.BBox>
+  nameWithType.vb: IEnumerable(Of BBox)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ZLab.Discrete.Geometry.BBox)
+  name.vb: IEnumerable(Of BBox)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ZLab.Discrete.Geometry.BBox
+    name: BBox
+    href: ZLab.Discrete.Geometry.BBox.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ZLab.Discrete.Geometry.BBox
+    name: BBox
+    href: ZLab.Discrete.Geometry.BBox.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+memberLayout: SeparatePages

@@ -1,0 +1,11 @@
+- name: Overview
+  href: index.md
+
+- name: Docs
+  href: docs/
+
+- name: API Documentation
+  href: api/
+
+- name: GitHub Repository
+  href: https://github.com/sean1832/Zlab.Discrete
