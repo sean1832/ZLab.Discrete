@@ -34,6 +34,17 @@ namespace ZLab.Discrete.Geometry
         private BBox? _bounds;
 
         /// <summary>
+        /// Creates an empty mesh. (Invalid)
+        /// </summary>
+        public MeshF()
+        {
+            Vertices = Array.Empty<Vector3>();
+            Faces = Array.Empty<TriFace>();
+            IsClosed = false;
+            _bounds = null;
+        }
+
+        /// <summary>
         /// Creates a mesh and automatically checks if it is closed. (slow for large meshes, explicitly specify closeness if possible)
         /// </summary>
         public MeshF(Vector3[] vertices, TriFace[] faces)
