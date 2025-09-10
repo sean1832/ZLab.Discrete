@@ -7,16 +7,29 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Company></Company>
     <Authors>Zeke Zhang</Authors>
-    <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <Description>3D discrete computations implemented in fully managed code</Description>
     <Version>0.0.1</Version>
     <FileVersion>0.0.1</FileVersion>
     <AssemblyVersion>0.0.1</AssemblyVersion>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <IncludeSymbols>False</IncludeSymbols>
+    <RepositoryUrl>https://github.com/sean1832/zlab.discrete</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup Condition=" $([System.String]::Copy('$(TargetFramework)').StartsWith('net4')) ">
     <PackageReference Include="System.Memory" Version="4.6.3" />
+  </ItemGroup>  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
-
   
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
     <DebugType>embedded</DebugType>
@@ -57,6 +70,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0|AnyCPU'">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net472|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+    
 
   
 
