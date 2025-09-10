@@ -61,25 +61,25 @@ DenseRasterizer.Rasterize(oGrid, mesh, floodFill: true);
 #### Sparse rasterization
 This will only return a list of voxel origins that are classified as `Boundary`.
 ```csharp
-List<Vector3> voxelOrigins = SparseRasterizer.Rasterize(Mesh, _voxelSize);
+List<Vector3> origins = SparseRasterizer.Rasterize(Mesh, _voxelSize);
 ```
 
 
 ### Enumerate voxels inside the grid
 #### Single threaded
 ```csharp
-List<Vector3> voxelOrigins = new();
+List<Vector3> origins = new();
 oGrid.ForEachVoxel((origin, state) => {
     if (state == Occupancy.Boundary)  // <- change this to select different states
-        voxelOrigins.Add(origin);
+        origins.Add(origin);
 })
 ```
 #### Multi-threaded
 ```csharp
-ConcurrentBag<Vector3> voxelOrigins = new();
+ConcurrentBag<Vector3> origins = new();
 oGrid.ForEachVoxelParallel((origin, state) => {
     if (state == Occupancy.Boundary)  // <- change this to select different states
-        voxelOrigins.Add(origin);
+        origins.Add(origin);
 })
 ```
 
@@ -87,13 +87,28 @@ oGrid.ForEachVoxelParallel((origin, state) => {
 #### Face-culling meshing
 This will result a single mesh with internal faces removed.
 ```csharp
-MeshF mesh = VoxelMesher.GenerateMesh(voxelOrigins, size);
+MeshF mesh = DiscreteMesher.GenerateMesh(origins, size);
 ```
 
 #### Naive meshing
 This will result individual mesh for each voxel.
 ```csharp
-MeshF[] meshes = VoxelMesher.GenerateMeshes(voxelOrigins, size);
+// allocates a new array for the meshes
+MeshF[] meshes = DiscreteMesher.GenerateMeshes(origins, size);
+```
+if you want no allocation at all, you can also do:
+```csharp
+MeshF[] buffer = ArrayPool<MeshF>.Shared.Rent(origins.Count);
+Span<MeshF> meshSpan = buffer.AsSpan(0, origins.Count); // trim to actual size
+try
+{
+    DiscreteMesher.GenerateMeshes(origins, size, meshSpan);
+}
+finally
+{
+    // remember to return the array to the pool
+    ArrayPool<MeshF>.Shared.Return(buffer);
+}
 ```
 
 ### Grid Masking & Distance Field Creation
