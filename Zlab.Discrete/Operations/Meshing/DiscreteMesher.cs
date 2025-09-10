@@ -26,21 +26,21 @@ namespace ZLab.Discrete.Operations.Meshing
         /// </summary>
         /// <param name="origins">Voxel origins</param>
         /// <param name="voxelSizes">Per-voxel sizes; must match <paramref name="origins"/> length.</param>
-        /// <returns>Array of bounding boxes, one per input voxel.</returns>
+        /// <param name="outBoxes">Pre-allocated output span to write bounding boxes into; must match <paramref name="origins"/> length.</param>
         /// <exception cref="ArgumentException">voxelSizes length must match voxels length.</exception>
-        public static BBox[] GetVoxelBounds(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes)
+        /// <remarks>
+        /// This variant avoids allocations by writing into a pre-allocated output <see cref="Span{T}"/>.
+        /// </remarks>
+        public static void GetVoxelBounds(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes, Span<BBox> outBoxes)
         {
             if (voxelSizes.Length != origins.Length)
                 throw new ArgumentException("voxelSizes length must match voxels length.");
-            if (origins.Length == 0) return Array.Empty<BBox>();
-            BBox[] boxes = new BBox[origins.Length];
+            if (outBoxes.Length < origins.Length)
+                throw new ArgumentException("Output span is too small to hold all bounding boxes.", nameof(outBoxes));
             for (int i = 0; i < origins.Length; i++)
             {
-                Vector3 origin = origins[i];
-                Vector3 size = voxelSizes[i];
-                boxes[i] = new BBox(origin, origin + size);
+                outBoxes[i] = new BBox(origins[i], origins[i] + voxelSizes[i]);
             }
-            return boxes;
         }
 
         /// <summary>
@@ -50,30 +50,16 @@ namespace ZLab.Discrete.Operations.Meshing
         /// <param name="voxelSizes">Per-voxel sizes; must match <paramref name="origins"/> length.</param>
         /// <returns>Array of bounding boxes, one per input voxel.</returns>
         /// <exception cref="ArgumentException">voxelSizes length must match voxels length.</exception>
-        public static BBox[] GetVoxelBounds(List<Vector3> origins, List<Vector3> voxelSizes)
+        /// <remarks>
+        /// This variant allocates a <b>new array</b> for the output bounding boxes.
+        /// </remarks>
+        public static BBox[] GetVoxelBounds(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes)
         {
-#if NET6_0_OR_GREATER
-            return GetVoxelBounds(CollectionsMarshal.AsSpan(origins), CollectionsMarshal.AsSpan(voxelSizes));
-#else
-            return GetVoxelBounds(origins.ToArray(), voxelSizes.ToArray());
-#endif
-        }
-
-        /// <summary>
-        /// Gets axis-aligned bounding boxes for a set of voxels (all voxels share the same <paramref name="voxelSize"/>).
-        /// </summary>
-        /// <param name="origins">Voxel origins</param>
-        /// <param name="voxelSize">Per-voxel sizes</param>
-        /// <returns>Array of bounding boxes, one per input voxel.</returns>
-        public static BBox[] GetVoxelBounds(ReadOnlySpan<Vector3> origins, Vector3 voxelSize)
-        {
+            if (voxelSizes.Length != origins.Length)
+                throw new ArgumentException("voxelSizes length must match voxels length.");
             if (origins.Length == 0) return Array.Empty<BBox>();
             BBox[] boxes = new BBox[origins.Length];
-            for (int i = 0; i < origins.Length; i++)
-            {
-                Vector3 origin = origins[i];
-                boxes[i] = new BBox(origin, origin + voxelSize);
-            }
+            GetVoxelBounds(origins, voxelSizes, boxes);
             return boxes;
         }
 
@@ -82,16 +68,64 @@ namespace ZLab.Discrete.Operations.Meshing
         /// </summary>
         /// <param name="origins">Voxel origins</param>
         /// <param name="voxelSize">Per-voxel sizes</param>
-        /// <returns>Array of bounding boxes, one per input voxel.</returns>
-        public static BBox[] GetVoxelBounds(List<Vector3> origins, Vector3 voxelSize)
+        /// <param name="outBoxes">Pre-allocated output span to write bounding boxes into; must match <paramref name="origins"/> length.</param>
+        /// <exception cref="ArgumentException">Output span is too small to hold all bounding boxes.</exception>
+        /// <remarks>
+        /// This variant avoids allocations by writing into a pre-allocated output <see cref="Span{T}"/>.
+        /// </remarks>
+        public static void GetVoxelBounds(ReadOnlySpan<Vector3> origins, Vector3 voxelSize, Span<BBox> outBoxes)
         {
-#if NET6_0_OR_GREATER
-            return GetVoxelBounds(CollectionsMarshal.AsSpan(origins), voxelSize);
-#else
-            return GetVoxelBounds(origins.ToArray(), voxelSize);
-#endif
+            if (outBoxes.Length < origins.Length)
+                throw new ArgumentException("Output span is too small to hold all bounding boxes.", nameof(outBoxes));
+            for (int i = 0; i < origins.Length; i++)
+            {
+                Vector3 origin = origins[i];
+                outBoxes[i] = new BBox(origin, origin + voxelSize);
+            }
         }
 
+        /// <summary>
+        /// Gets axis-aligned bounding boxes for a set of voxels (all voxels share the same <paramref name="voxelSize"/>).
+        /// </summary>
+        /// <param name="origins">Voxel origins</param>
+        /// <param name="voxelSize">Per-voxel sizes</param>
+        /// <returns>Array of bounding boxes, one per input voxel.</returns>
+        /// <remarks>
+        /// This variant allocates a <b>new array</b> for the output bounding boxes.
+        /// </remarks>
+        public static BBox[] GetVoxelBounds(ReadOnlySpan<Vector3> origins, Vector3 voxelSize)
+        {
+            if (origins.Length == 0) return Array.Empty<BBox>();
+            BBox[] boxes = new BBox[origins.Length];
+            GetVoxelBounds(origins, voxelSize, boxes);
+            return boxes;
+        }
+
+
+        /// <summary>
+        /// Generates an individual quad-mesh per voxel (no face merging across voxels).
+        /// </summary>
+        /// <param name="origins">Voxel origins</param>
+        /// <param name="voxelSizes">Per-voxel sizes; must match <paramref name="origins"/> length.</param>
+        /// <param name="outMeshes">Pre-allocated output span to write meshes into; must match <paramref name="origins"/> length.</param>
+        /// <param name="cordSystem">Coordinate system for winding (right- or left-handed).</param>
+        /// <exception cref="ArgumentException">Lengths of <paramref name="origins"/> and <paramref name="voxelSizes"/> differ.</exception>
+        /// <remarks>
+        /// This variant avoids allocations by writing into a pre-allocated output <see cref="Span{T}"/>.
+        /// </remarks>
+        public static void GenerateMeshes(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes, Span<MeshF> outMeshes, CordSystem cordSystem = CordSystem.RightHanded)
+        {
+            if (voxelSizes.Length != origins.Length)
+                throw new ArgumentException("voxelSizes length must match voxels length.");
+            if (outMeshes.Length < origins.Length)
+                throw new ArgumentException("Output span is too small to hold all meshes.", nameof(outMeshes));
+            for (int i = 0; i < origins.Length; i++)
+            {
+                Vector3 origin = origins[i];
+                Vector3 size = voxelSizes[i];
+                outMeshes[i] = new BBox(origin, origin + size).ToMesh(cordSystem);
+            }
+        }
 
         /// <summary>
         /// Generates an individual quad-mesh per voxel (no face merging across voxels).
@@ -102,8 +136,9 @@ namespace ZLab.Discrete.Operations.Meshing
         /// <returns>Array of meshes, one per input voxel.</returns>
         /// <exception cref="ArgumentException">Lengths of <paramref name="origins"/> and <paramref name="voxelSizes"/> differ.</exception>
         /// <remarks>
-        /// <b>Memory-heavy:</b> each voxel becomes a standalone box mesh (24 verts, 12 tris) unless you change the box builder.
-        /// Useful for debugging or per-voxel downstream ops.
+        /// <b>Memory-heavy:</b> each voxel becomes a standalone box mesh (24 verts, 12 tris).
+        /// 
+        /// This variant allocates a <b>new array</b> for the output meshes.
         /// </remarks>
         public static MeshF[] GenerateMeshes(
             ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes, CordSystem cordSystem = CordSystem.RightHanded)
@@ -112,34 +147,29 @@ namespace ZLab.Discrete.Operations.Meshing
                 throw new ArgumentException("voxelSizes length must match voxels length.");
             if (origins.Length == 0) return Array.Empty<MeshF>();
             MeshF[] meshes = new MeshF[origins.Length];
-            for (int i = 0; i < origins.Length; i++)
-            {
-                Vector3 origin = origins[i];
-                Vector3 size = voxelSizes[i];
-                meshes[i] = new BBox(origin, origin+size).ToMesh(cordSystem);
-            }
+            GenerateMeshes(origins, voxelSizes, meshes, cordSystem);
             return meshes;
         }
 
         /// <summary>
-        /// Generates an individual quad-mesh per voxel (no face merging across voxels).
+        /// Generates an individual quad-mesh per voxel (all voxels share the same <paramref name="voxelSize"/>).
         /// </summary>
         /// <param name="origins">Voxel origins</param>
-        /// <param name="voxelSizes">Per-voxel sizes; must match <paramref name="origins"/> length.</param>
-        /// <param name="cordSystem">Coordinate system for winding (right- or left-handed).</param>
-        /// <returns>Array of meshes, one per input voxel.</returns>
-        /// <exception cref="ArgumentException">Lengths of <paramref name="origins"/> and <paramref name="voxelSizes"/> differ.</exception>
+        /// <param name="voxelSize">Uniform voxel size for all voxels.</param>
+        /// <param name="outMeshes">Pre-allocated output span to write meshes into; must match <paramref name="origins"/> length.</param>
+        /// <param name="cord">Coordinate system for winding (right- or left-handed).</param>
+        /// <exception cref="ArgumentException">Output span is too small to hold all meshes.</exception>
         /// <remarks>
-        /// <b>Memory-heavy:</b> each voxel becomes a standalone box mesh (24 verts, 12 tris)
+        /// This variant avoids allocations by writing into a pre-allocated output <see cref="Span{T}"/>.
         /// </remarks>
-        public static MeshF[] GenerateMeshes(
-            List<Vector3> origins, List<Vector3> voxelSizes, CordSystem cordSystem = CordSystem.RightHanded)
+        public static void GenerateMeshes(
+            ReadOnlySpan<Vector3> origins, Vector3 voxelSize, Span<MeshF> outMeshes,
+            CordSystem cord = CordSystem.RightHanded)
         {
-#if NET6_0_OR_GREATER
-            return GenerateMeshes(CollectionsMarshal.AsSpan(origins), CollectionsMarshal.AsSpan(voxelSizes), cordSystem);
-#else
-            return GenerateMeshes(origins.ToArray(), voxelSizes.ToArray(), cordSystem);
-#endif
+            if (outMeshes.Length < origins.Length)
+                throw new ArgumentException("Output span is too small to hold all meshes.", nameof(outMeshes));
+            for (int i = 0; i < origins.Length; i++)
+                outMeshes[i] = new BBox(origins[i], origins[i] + voxelSize).ToMesh(cord);
         }
 
         /// <summary>
@@ -149,6 +179,9 @@ namespace ZLab.Discrete.Operations.Meshing
         /// <param name="voxelSize">Uniform voxel size for all voxels.</param>
         /// <param name="cordSystem">Coordinate system for winding (right- or left-handed).</param>
         /// <returns>Array of meshes, one per input voxel.</returns>
+        /// <remarks>
+        /// <b>Memory-heavy:</b> each voxel becomes a standalone box mesh (24 verts, 12 tris). This variant allocates a <b>new array</b> for the output meshes.
+        /// </remarks>
         public static MeshF[] GenerateMeshes(
             ReadOnlySpan<Vector3> origins,
             Vector3 voxelSize,
@@ -156,29 +189,8 @@ namespace ZLab.Discrete.Operations.Meshing
         {
             if (origins.Length == 0) return Array.Empty<MeshF>();
             MeshF[] meshes = new MeshF[origins.Length];
-            for (int i = 0; i < origins.Length; i++)
-                meshes[i] = new BBox(origins[i], origins[i] + voxelSize).ToMesh(cordSystem);
+            GenerateMeshes(origins, voxelSize, meshes, cordSystem);
             return meshes;
-        }
-
-
-        /// <summary>
-        /// Generates an individual quad-mesh per voxel (all voxels share the same <paramref name="voxelSize"/>).
-        /// </summary>
-        /// <param name="origins">Voxel origins</param>
-        /// <param name="voxelSize">Uniform voxel size for all voxels.</param>
-        /// <param name="cordSystem">Coordinate system for winding (right- or left-handed).</param>
-        /// <returns>Array of meshes, one per input voxel.</returns>
-        public static MeshF[] GenerateMeshes(
-            List<Vector3> origins,
-            Vector3 voxelSize,
-            CordSystem cordSystem = CordSystem.RightHanded)
-        {
-#if NET6_0_OR_GREATER
-            return GenerateMeshes(CollectionsMarshal.AsSpan(origins), voxelSize, cordSystem);
-#else
-            return GenerateMeshes(origins.ToArray(), voxelSize, cordSystem);
-#endif
         }
 
         /// <summary>
@@ -236,30 +248,6 @@ namespace ZLab.Discrete.Operations.Meshing
             return MakeMesh(vertices, faces);
         }
 
-        /// <summary>
-        /// Generates a single mesh from a set of voxels. Internal faces are culled using <see cref="Morton"/> occupancy set (O(1) neighbor checks).
-        /// </summary>
-        /// <param name="origins">Voxel origins</param>
-        /// <param name="voxelSizes">Per-voxel sizes; must match <paramref name="origins"/> length.</param>
-        /// <param name="cordSystem">Coordinate system for winding (right- or left-handed).</param>
-        /// <returns>A single combined mesh.</returns>
-        /// <exception cref="ArgumentException">Lengths of <paramref name="origins"/> and <paramref name="voxelSizes"/> differ.</exception>
-        /// <exception cref="InvalidOperationException">No vertices or faces were generated.</exception>
-        /// <remarks>
-        /// If <paramref name="voxelSizes"/> differ, culling is disabled and all six faces per voxel are emitted.
-        /// <para>
-        /// The culled path treats <see cref="OccupancyVoxel.Origin"/> as the <i>minimum corner</i> of the cell.
-        /// </para>
-        /// </remarks>
-        public static MeshF GenerateMesh(
-            List<Vector3> origins, List<Vector3> voxelSizes, CordSystem cordSystem = CordSystem.RightHanded)
-        {
-#if NET6_0_OR_GREATER
-            return GenerateMesh(CollectionsMarshal.AsSpan(origins), CollectionsMarshal.AsSpan(voxelSizes), cordSystem);
-#else
-            return GenerateMesh(origins.ToArray(), voxelSizes.ToArray(), cordSystem);
-#endif
-        }
 
         /// <summary>
         /// Generates a single mesh from a set of voxels, assuming a uniform <paramref name="voxelSize"/>.
@@ -279,7 +267,7 @@ namespace ZLab.Discrete.Operations.Meshing
             CordSystem cordSystem = CordSystem.RightHanded)
         {
             if (origins.Length == 0)
-                return new MeshF(Array.Empty<Vector3>(), Array.Empty<TriFace>());
+                return new MeshF();
 
             List<Vector3> vertices = new(origins.Length * 24);
             List<TriFace> faces = new(origins.Length * 12);
@@ -289,29 +277,6 @@ namespace ZLab.Discrete.Operations.Meshing
             return MakeMesh(vertices, faces);
         }
 
-        /// <summary>
-        /// Generates a single mesh from a set of voxels, assuming a uniform <paramref name="voxelSize"/>.
-        /// Internal faces are culled using <see cref="Morton"/> occupancy set (O(1) neighbor checks).
-        /// </summary>
-        /// <param name="origins">Voxel origins</param>
-        /// <param name="voxelSize">Uniform voxel size for all voxels</param>
-        /// <param name="cordSystem">Coordinate system for winding (right- or left-handed)</param>
-        /// <returns>A single combined mesh</returns>
-        /// <exception cref="InvalidOperationException">No vertices or faces were generated</exception>
-        /// <remarks>
-        /// <b>Origin convention:</b> the culled path treats <see cref="OccupancyVoxel.Origin"/> as the minimum corner of the cell.
-        /// </remarks>
-        public static MeshF GenerateMesh(
-            List<Vector3> origins,
-            Vector3 voxelSize,
-            CordSystem cordSystem = CordSystem.RightHanded)
-        {
-#if NET6_0_OR_GREATER
-            return GenerateMesh(CollectionsMarshal.AsSpan(origins), voxelSize, cordSystem);
-#else
-            return GenerateMesh(origins.ToArray(), voxelSize, cordSystem);
-#endif
-        }
 
         /// <summary>
         /// Internal: builds faces only where no Morton-neighbor exists (uniform cell size required).
@@ -338,7 +303,7 @@ namespace ZLab.Discrete.Operations.Meshing
 #if NET48_OR_GREATER || NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
             HashSet<ulong> occupied = new(capacity: origins.Length);
 #else
-    HashSet<ulong> occupied = new HashSet<ulong>(); // no capacity ctor on older TFMs
+            HashSet<ulong> occupied = new HashSet<ulong>(); // no capacity ctor on older TFMs
 #endif
 
             // build occupancy
