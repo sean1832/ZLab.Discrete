@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers;
 using ZLab.Discrete.Core;
 
 namespace ZLab.Discrete.Algorithms.DistanceTransforms
@@ -14,42 +15,64 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// Isotropic voxels (unit spacing).
         /// </summary>
         /// <param name="binaryMask">Flat row-major volume of size nx*ny*nz (x changes fastest, then y, then z).</param>
+        /// <param name="outSdf"><b>OUTPUT</b>: Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
         /// <param name="nx">Number of voxels along X.</param>
         /// <param name="ny">Number of voxels along Y.</param>
         /// <param name="nz">Number of voxels along Z.</param>
         /// <param name="parallel">If true, uses <code>Parallel.For</code> for line-wise passes.</param>
-        /// <returns>Flat row-major SDF (float), positive outside, negative inside.</returns>
-        public static float[] FromBinaryMask(ReadOnlySpan<byte> binaryMask, int nx, int ny, int nz, bool parallel)
+        /// <remarks><paramref name="outSdf"/> will be mutated to contain the signed distance field (SDF).</remarks>
+        public static void FromBinaryMask(ReadOnlySpan<byte> binaryMask, Span<float> outSdf,  int nx, int ny, int nz, bool parallel)
         {
-            if (binaryMask.Length != nx * ny * nz)
+            int total = nx * ny * nz;
+            if (binaryMask.Length != total)
                 throw new ArgumentException("Mask length does not match nx*ny*nz.");
+            if (outSdf.Length != total)
+                throw new ArgumentException("sdf length must match binaryMask length.");
             if (nx <= 0 || ny <= 0 || nz <= 0)
                 throw new ArgumentException("Dimensions must be positive.");
             // build seed grids:
             // distance to foreground (inside): costs are 0 at foreground, INF elsewhere
             // distance to background (outside): costs are 0 at background, INF elsewhere
             const int infinity = 1 << 28; // large but not too large to avoid overflow
-            int[] seedsToForeground = new int[nx * ny * nz];
-            int[] seedsToBackground = new int[nx * ny * nz];
-            for (int i = 0; i < binaryMask.Length; i++)
+
+            // temp buffer for EDT
+            int[] bufferA = ArrayPool<int>.Shared.Rent(total);
+            int[] bufferB = ArrayPool<int>.Shared.Rent(total);
+            int[] bufferC = ArrayPool<int>.Shared.Rent(total); 
+            int[] bufferD = ArrayPool<int>.Shared.Rent(total);
+            try
             {
-                bool isForeground = binaryMask[i] != 0;
-                seedsToForeground[i] = isForeground ? 0 : infinity;
-                seedsToBackground[i] = isForeground ? infinity : 0;
+                Span<int> seedForeground = bufferA.AsSpan(0, total);
+                Span<int> seedBackground = bufferB.AsSpan(0, total);
+                
+                for (int i = 0; i < binaryMask.Length; i++)
+                {
+                    bool isForeground = binaryMask[i] != 0;
+                    seedForeground[i] = isForeground ? 0 : infinity;
+                    seedBackground[i] = isForeground ? infinity : 0;
+                }
+
+                Span<int> sqForeground = bufferC.AsSpan(0, total);
+                Span<int> sqBackground = bufferD.AsSpan(0, total);
+                // compute exact squared distance to nearest foreground and background
+                Edt3D.ExactSquaredIsotropic(seedForeground, sqForeground, nx, ny, nz, parallel);
+                Edt3D.ExactSquaredIsotropic(seedBackground, sqBackground, nx, ny, nz, parallel);
+                // combine into signed distance field
+                // SDF = sqrt(distToForeground) - sqrt(distToBackground)
+                for (int i = 0; i < outSdf.Length; i++)
+                {
+                    float outside = (float)Math.Sqrt(sqBackground[i]);
+                    float inside = (float)Math.Sqrt(sqForeground[i]);
+                    outSdf[i] = inside - outside; // > 0 outside, < 0 inside
+                }
             }
-            // compute exact squared distance to nearest foreground and background
-            int[] squaredToForeground = Edt3D.ExactSquaredIsotropic(seedsToForeground, nx, ny, nz, parallel);
-            int[] squaredToBackground = Edt3D.ExactSquaredIsotropic(seedsToBackground, nx, ny, nz, parallel);
-            // combine into signed distance field
-            // SDF = +sqrt(distToBackground) - sqrt(distToForeground)
-            float[] sdf = new float[nx * ny * nz];
-            for (int i = 0; i < sdf.Length; i++)
+            finally
             {
-                float outside = (float)Math.Sqrt(squaredToBackground[i]);
-                float inside = (float)Math.Sqrt(squaredToForeground[i]);
-                sdf[i] = inside - outside; // > 0 outside, < 0 inside
+                ArrayPool<int>.Shared.Return(bufferB);
+                ArrayPool<int>.Shared.Return(bufferA);
+                ArrayPool<int>.Shared.Return(bufferC);
+                ArrayPool<int>.Shared.Return(bufferD);
             }
-            return sdf;
         }
 
 
@@ -57,7 +80,7 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// Computes a 3D signed distance field (SDF) from a binary mask with anisotropic voxel spacing using exact Euclidean distance transform (EDT).
         /// </summary>
         /// <param name="binaryMask">Flattened row-major mask (z*nx*ny + y*nx + x). Value 1 = foreground (inside), 0 = background (outside).</param>
-        /// <param name="sdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
+        /// <param name="outSdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
         /// <param name="nx">Number of voxels along X.</param>
         /// <param name="ny">Number of voxels along Y.</param>
         /// <param name="nz">Number of voxels along Z.</param>
@@ -65,40 +88,59 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// <param name="spacingY">Voxel spacing along Y axis (must be positive).</param>
         /// <param name="spacingZ">Voxel spacing along Z axis (must be positive).</param>
         /// <param name="parallel">If true, lines along X, Y, and Z are processed in parallel.</param>
-        /// <returns>Flattened row-major SDF (float). Positive outside, negative inside, zero on boundary, measured in physical units.</returns>
+        /// <remarks><paramref name="outSdf"/> will be mutated to contain the signed distance field (SDF).</remarks>
         public static void FromBinaryMaskAnisotropic(
-            ReadOnlySpan<byte> binaryMask, Span<float> sdf,
+            ReadOnlySpan<byte> binaryMask, Span<float> outSdf,
             int nx, int ny, int nz,
             double spacingX, double spacingY, double spacingZ,
             bool parallel)
         {
-            if (sdf.Length != binaryMask.Length)
+            int total = nx * ny * nz;
+            if (outSdf.Length != binaryMask.Length)
                 throw new ArgumentException("sdf length must match binaryMask length.");
-            if (binaryMask.Length != nx * ny * nz)
+            if (binaryMask.Length != total)
                 throw new ArgumentException("binaryMask length must be nx*ny*nz.");
             if (spacingX <= 0 || spacingY <= 0 || spacingZ <= 0)
                 throw new ArgumentOutOfRangeException(nameof(spacingX), "Voxel spacings must be positive.");
 
             const double infinity = 1e30;
 
-            double[] seedsToForeground = new double[binaryMask.Length];
-            double[] seedsToBackground = new double[binaryMask.Length];
-
-            for (int i = 0; i < binaryMask.Length; i++)
+            double[] bufferA = ArrayPool<double>.Shared.Rent(total);
+            double[] bufferB = ArrayPool<double>.Shared.Rent(total);
+            double[] bufferC = ArrayPool<double>.Shared.Rent(total);
+            double[] bufferD = ArrayPool<double>.Shared.Rent(total);
+            try
             {
-                bool isForeground = binaryMask[i] != 0;
-                seedsToForeground[i] = isForeground ? 0.0 : infinity;
-                seedsToBackground[i] = isForeground ? infinity : 0.0;
+                Span<double> seedForeground = bufferA.AsSpan(0, total);
+                Span<double> seedBackground = bufferB.AsSpan(0, total);
+
+                for (int i = 0; i < binaryMask.Length; i++)
+                {
+                    bool isForeground = binaryMask[i] != 0;
+                    seedForeground[i] = isForeground ? 0.0 : infinity;
+                    seedBackground[i] = isForeground ? infinity : 0.0;
+                }
+                Span<double> sqForeground = bufferC.AsSpan(0, total);
+                Span<double> sqBackground = bufferD.AsSpan(0, total);
+
+                Edt3D.ExactSquaredAnisotropic(seedForeground, sqForeground, nx, ny, nz, spacingX,
+                    spacingY, spacingZ, parallel);
+                Edt3D.ExactSquaredAnisotropic(seedBackground, sqBackground, nx, ny, nz, spacingX,
+                    spacingY, spacingZ, parallel);
+
+                for (int i = 0; i < outSdf.Length; i++)
+                {
+                    float outside = (float)Math.Sqrt(sqBackground[i]);
+                    float inside = (float)Math.Sqrt(sqForeground[i]);
+                    outSdf[i] = inside - outside; // <- assign to output span
+                }
             }
-
-            double[] squaredToForeground = Edt3D.ExactSquaredAnisotropic(seedsToForeground, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
-            double[] squaredToBackground = Edt3D.ExactSquaredAnisotropic(seedsToBackground, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
-
-            for (int i = 0; i < sdf.Length; i++)
+            finally
             {
-                float outside = (float)Math.Sqrt(squaredToBackground[i]);
-                float inside = (float)Math.Sqrt(squaredToForeground[i]);
-                sdf[i] = inside - outside; // <- assign to output span
+                ArrayPool<double>.Shared.Return(bufferA);
+                ArrayPool<double>.Shared.Return(bufferB);
+                ArrayPool<double>.Shared.Return(bufferC);
+                ArrayPool<double>.Shared.Return(bufferD);
             }
         }
 
@@ -108,17 +150,18 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// Isotropic voxels (unit spacing). Row-major (x fastest).
         /// </summary>
         /// <param name="ternaryMask">Flattened row-major mask (z*nx*ny + y*nx + x). Value 0 = Outside, 1 = Inside, 2 = Intersecting (boundary/zero set).</param>
-        /// <param name="sdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
+        /// <param name="outSdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
         /// <param name="nx">Number of voxels along X.</param>
         /// <param name="ny">Number of voxels along Y.</param>
         /// <param name="nz">Number of voxels along Z.</param>
         /// <param name="parallel">If true, lines along X, Y, and Z are processed in parallel.</param>
-        /// <returns>Returns SDF with outside LARGER THAN 0, inside SMALLER THAN 0, boundary == 0 (in physical units).</returns>
-        public static void FromTernaryMask(ReadOnlySpan<byte> ternaryMask, Span<float> sdf, int nx, int ny, int nz, bool parallel)
+        /// <remarks><paramref name="outSdf"/> will be mutated to contain the signed distance field (SDF).</remarks>
+        public static void FromTernaryMask(ReadOnlySpan<byte> ternaryMask, Span<float> outSdf, int nx, int ny, int nz, bool parallel)
         {
-            if (sdf.Length != ternaryMask.Length)
+            int total = nx * ny * nz;
+            if (outSdf.Length != ternaryMask.Length)
                 throw new ArgumentException("sdf length must match ternaryMask length.");
-            if (ternaryMask.Length != nx * ny * nz)
+            if (ternaryMask.Length != total)
                 throw new ArgumentException("Mask length must be nx*ny*nz.");
             if (nx <= 0 || ny <= 0 || nz <= 0)
                 throw new ArgumentException("Dimensions must be positive.");
@@ -127,31 +170,47 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
             //  - insideFG: Inside U Intersecting
             //  - outsideFG: Outside U Intersecting
             const int infinity = 1 << 28;
-            int n = ternaryMask.Length;
-            int[] seedsToInsideFg = new int[n];
-            int[] seedsToOutsideFg = new int[n];
 
-            for (int i = 0; i < n; i++)
+            int[] bufferA = ArrayPool<int>.Shared.Rent(total);
+            int[] bufferB = ArrayPool<int>.Shared.Rent(total);
+            int[] bufferC = ArrayPool<int>.Shared.Rent(total);
+            int[] bufferD = ArrayPool<int>.Shared.Rent(total);
+            try
             {
-                byte s = ternaryMask[i]; // 0=Outside,1=Inside,2=Intersecting
-                bool inInsideFg = (s == 1) || (s == 2);
-                bool inOutsideFg = (s == 0) || (s == 2);
+                Span<int> seedForeground = bufferA.AsSpan(0, total);
+                Span<int> seedBackground = bufferB.AsSpan(0, total);
+                for (int i = 0; i < total; i++)
+                {
+                    byte s = ternaryMask[i]; // 0=Outside,1=Inside,2=Intersecting
+                    bool inInsideFg = (s == 1) || (s == 2);
+                    bool inOutsideFg = (s == 0) || (s == 2);
 
-                seedsToInsideFg[i] = inInsideFg ? 0 : infinity;
-                seedsToOutsideFg[i] = inOutsideFg ? 0 : infinity;
+                    seedForeground[i] = inInsideFg ? 0 : infinity;
+                    seedBackground[i] = inOutsideFg ? 0 : infinity;
+                }
+                Span<int> sqForeground = bufferC.AsSpan(0, total);
+                Span<int> sqBackground = bufferD.AsSpan(0, total);
+
+                // Exact squared distances to each foreground
+                Edt3D.ExactSquaredIsotropic(seedForeground, sqForeground, nx, ny, nz, parallel);
+                Edt3D.ExactSquaredIsotropic(seedBackground, sqBackground, nx, ny, nz, parallel);
+
+                // SDF = sqrt(distToForeground) - sqrt(distToBackground)
+                for (int i = 0; i < total; i++)
+                    outSdf[i] = (float)Math.Sqrt(sqForeground[i]) - (float)Math.Sqrt(sqBackground[i]);
+
+                // Hard snap exact boundary to zero (removes tiny FP noise)
+                for (int i = 0; i < total; i++)
+                    if (ternaryMask[i] == 2)
+                        outSdf[i] = 0f;
             }
-
-            // Exact squared distances to each foreground
-            int[] sqToInside = Edt3D.ExactSquaredIsotropic(seedsToInsideFg, nx, ny, nz, parallel);
-            int[] sqToOutside = Edt3D.ExactSquaredIsotropic(seedsToOutsideFg, nx, ny, nz, parallel);
-
-            // SDF = dist(outsideFG) - dist(insideFG)
-            for (int i = 0; i < n; i++)
-                sdf[i] = (float)Math.Sqrt(sqToInside[i]) - (float)Math.Sqrt(sqToOutside[i]);
-
-            // Hard snap exact boundary to zero (removes tiny FP noise)
-            for (int i = 0; i < n; i++)
-                if (ternaryMask[i] == 2) sdf[i] = 0f;
+            finally
+            {
+                ArrayPool<int>.Shared.Return(bufferA);
+                ArrayPool<int>.Shared.Return(bufferB);
+                ArrayPool<int>.Shared.Return(bufferC);
+                ArrayPool<int>.Shared.Return(bufferD);
+            }
         }
 
         /// <summary>
@@ -160,7 +219,7 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// Anisotropic voxels (spacingX/Y/Z). Row-major (x fastest).
         /// </summary>
         /// <param name="ternaryMask">Flattened row-major mask (z*nx*ny + y*nx + x). Value 0 = Outside, 1 = Inside, 2 = Intersecting (boundary/zero set).</param>
-        /// <param name="sdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
+        /// <param name="outSdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
         /// <param name="nx">Number of voxels along X.</param>
         /// <param name="ny">Number of voxels along Y.</param>
         /// <param name="nz">Number of voxels along Z.</param>
@@ -168,48 +227,63 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// <param name="spacingY">Voxel spacing along Y axis (must be positive).</param>
         /// <param name="spacingZ">Voxel spacing along Z axis (must be positive).</param>
         /// <param name="parallel">If true, lines along X, Y, and Z are processed in parallel.</param>
-        /// <returns>Returns SDF with outside LARGER THAN 0, inside SMALLER THAN 0, boundary == 0 (in physical units).</returns>
+        /// <remarks><paramref name="outSdf"/> will be mutated to contain the signed distance field (SDF).</remarks>
         public static void FromTernaryMaskAnisotropic(
-            ReadOnlySpan<byte> ternaryMask, Span<float> sdf,
+            ReadOnlySpan<byte> ternaryMask, Span<float> outSdf,
             int nx, int ny, int nz,
             double spacingX, double spacingY, double spacingZ,
             bool parallel)
         {
-            if (sdf.Length != ternaryMask.Length)
+            int total = nx * ny * nz;
+            if (outSdf.Length != ternaryMask.Length)
                 throw new ArgumentException("sdf length must match ternaryMask length.");
-            if (ternaryMask.Length != nx * ny * nz)
+            if (ternaryMask.Length != total)
                 throw new ArgumentException("Mask length must be nx*ny*nz.");
             if (spacingX <= 0 || spacingY <= 0 || spacingZ <= 0)
                 throw new ArgumentOutOfRangeException(nameof(spacingX), "Spacings must be positive.");
 
-            int n = ternaryMask.Length;
             const double INF = 1e30;
 
-            double[] seedsToInsideFg = new double[n];
-            double[] seedsToOutsideFg = new double[n];
-
-            for (int i = 0; i < n; i++)
+            double[] bufferA = ArrayPool<double>.Shared.Rent(total);
+            double[] bufferB = ArrayPool<double>.Shared.Rent(total);
+            double[] bufferC = ArrayPool<double>.Shared.Rent(total);
+            double[] bufferD = ArrayPool<double>.Shared.Rent(total);
+            try
             {
-                byte s = ternaryMask[i]; // 0=Outside,1=Inside,2=Intersecting
-                bool inInsideFg = (s == 1) || (s == 2);
-                bool inOutsideFg = (s == 0) || (s == 2);
+                Span<double> seedForeground = bufferA.AsSpan(0, total);
+                Span<double> seedBackground = bufferB.AsSpan(0, total);
 
-                seedsToInsideFg[i] = inInsideFg ? 0.0 : INF;
-                seedsToOutsideFg[i] = inOutsideFg ? 0.0 : INF;
+                for (int i = 0; i < total; i++)
+                {
+                    byte s = ternaryMask[i]; // 0=Outside,1=Inside,2=Intersecting
+                    bool inInsideFg = (s == 1) || (s == 2);
+                    bool inOutsideFg = (s == 0) || (s == 2);
+
+                    seedForeground[i] = inInsideFg ? 0.0 : INF;
+                    seedBackground[i] = inOutsideFg ? 0.0 : INF;
+                }
+
+                Span<double> sqForeground = bufferC.AsSpan(0, total);
+                Span<double> sqBackground = bufferD.AsSpan(0, total);
+
+                Edt3D.ExactSquaredAnisotropic(seedForeground, sqForeground, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
+                Edt3D.ExactSquaredAnisotropic(seedBackground, sqBackground, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
+
+                for (int i = 0; i < total; i++)
+                    outSdf[i] = (float)Math.Sqrt(sqForeground[i]) - (float)Math.Sqrt(sqBackground[i]);
+
+                // Exact zero on boundary
+                for (int i = 0; i < total; i++)
+                    if (ternaryMask[i] == 2)
+                        outSdf[i] = 0f;
             }
-
-            double[] sqToInside = Edt3D.ExactSquaredAnisotropic(
-                seedsToInsideFg, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
-
-            double[] sqToOutside = Edt3D.ExactSquaredAnisotropic(
-                seedsToOutsideFg, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
-
-            for (int i = 0; i < n; i++)
-                sdf[i] = (float)Math.Sqrt(sqToInside[i]) - (float)Math.Sqrt(sqToOutside[i]);
-
-            // Exact zero on boundary
-            for (int i = 0; i < n; i++)
-                if (ternaryMask[i] == 2) sdf[i] = 0f;
+            finally
+            {
+                ArrayPool<double>.Shared.Return(bufferA);
+                ArrayPool<double>.Shared.Return(bufferB);
+                ArrayPool<double>.Shared.Return(bufferC);
+                ArrayPool<double>.Shared.Return(bufferD);
+            }
         }
     }
 }
