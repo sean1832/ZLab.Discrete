@@ -107,6 +107,13 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// <code>0 = Outside, 1 = Inside, 2 = Intersecting (boundary/zero set).</code>
         /// Isotropic voxels (unit spacing). Row-major (x fastest).
         /// </summary>
+        /// <param name="ternaryMask">Flattened row-major mask (z*nx*ny + y*nx + x). Value 0 = Outside, 1 = Inside, 2 = Intersecting (boundary/zero set).</param>
+        /// <param name="sdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
+        /// <param name="nx">Number of voxels along X.</param>
+        /// <param name="ny">Number of voxels along Y.</param>
+        /// <param name="nz">Number of voxels along Z.</param>
+        /// <param name="parallel">If true, lines along X, Y, and Z are processed in parallel.</param>
+        /// <returns>Returns SDF with outside LARGER THAN 0, inside SMALLER THAN 0, boundary == 0 (in physical units).</returns>
         public static void FromTernaryMask(ReadOnlySpan<byte> ternaryMask, Span<float> sdf, int nx, int ny, int nz, bool parallel)
         {
             if (sdf.Length != ternaryMask.Length)
@@ -152,6 +159,15 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// <code>0 = Outside, 1 = Inside, 2 = Intersecting (boundary/zero set).</code>
         /// Anisotropic voxels (spacingX/Y/Z). Row-major (x fastest).
         /// </summary>
+        /// <param name="ternaryMask">Flattened row-major mask (z*nx*ny + y*nx + x). Value 0 = Outside, 1 = Inside, 2 = Intersecting (boundary/zero set).</param>
+        /// <param name="sdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
+        /// <param name="nx">Number of voxels along X.</param>
+        /// <param name="ny">Number of voxels along Y.</param>
+        /// <param name="nz">Number of voxels along Z.</param>
+        /// <param name="spacingX">Voxel spacing along X axis (must be positive).</param>
+        /// <param name="spacingY">Voxel spacing along Y axis (must be positive).</param>
+        /// <param name="spacingZ">Voxel spacing along Z axis (must be positive).</param>
+        /// <param name="parallel">If true, lines along X, Y, and Z are processed in parallel.</param>
         /// <returns>Returns SDF with outside LARGER THAN 0, inside SMALLER THAN 0, boundary == 0 (in physical units).</returns>
         public static void FromTernaryMaskAnisotropic(
             ReadOnlySpan<byte> ternaryMask, Span<float> sdf,
@@ -159,6 +175,8 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
             double spacingX, double spacingY, double spacingZ,
             bool parallel)
         {
+            if (sdf.Length != ternaryMask.Length)
+                throw new ArgumentException("sdf length must match ternaryMask length.");
             if (ternaryMask.Length != nx * ny * nz)
                 throw new ArgumentException("Mask length must be nx*ny*nz.");
             if (spacingX <= 0 || spacingY <= 0 || spacingZ <= 0)
