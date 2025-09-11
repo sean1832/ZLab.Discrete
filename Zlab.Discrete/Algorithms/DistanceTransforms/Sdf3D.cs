@@ -45,9 +45,9 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
             float[] sdf = new float[nx * ny * nz];
             for (int i = 0; i < sdf.Length; i++)
             {
-                float distToForeground = MathFx.Sqrt(squaredToForeground[i]);
-                float distToBackground = MathFx.Sqrt(squaredToBackground[i]);
-                sdf[i] = distToBackground - distToForeground; // > 0 outside, < 0 inside
+                float outside = MathFx.Sqrt(squaredToBackground[i]);
+                float inside = MathFx.Sqrt(squaredToForeground[i]);
+                sdf[i] = inside - outside; // > 0 outside, < 0 inside
             }
             return sdf;
         }
@@ -96,9 +96,9 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
 
             for (int i = 0; i < sdf.Length; i++)
             {
-                float outsideDistance = MathFx.Sqrt((float)squaredToBackground[i]);
-                float insideDistance = MathFx.Sqrt((float)squaredToForeground[i]);
-                sdf[i] = outsideDistance - insideDistance; // <- assign to output span
+                float outside = MathFx.Sqrt((float)squaredToBackground[i]);
+                float inside = MathFx.Sqrt((float)squaredToForeground[i]);
+                sdf[i] = inside - outside; // <- assign to output span
             }
         }
 
@@ -117,8 +117,8 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
                 throw new ArgumentException("Dimensions must be positive.");
 
             // Build two seed volumes with the boundary in BOTH:
-            //  - insideFG: Inside ∪ Intersecting
-            //  - outsideFG: Outside ∪ Intersecting
+            //  - insideFG: Inside U Intersecting
+            //  - outsideFG: Outside U Intersecting
             const int infinity = 1 << 28;
             int n = ternaryMask.Length;
             int[] seedsToInsideFg = new int[n];
@@ -140,7 +140,7 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
 
             // SDF = dist(outsideFG) - dist(insideFG)
             for (int i = 0; i < n; i++)
-                sdf[i] = MathFx.Sqrt(sqToOutside[i]) - MathFx.Sqrt(sqToInside[i]);
+                sdf[i] = MathFx.Sqrt(sqToInside[i]) - MathFx.Sqrt(sqToOutside[i]);
 
             // Hard snap exact boundary to zero (removes tiny FP noise)
             for (int i = 0; i < n; i++)
@@ -187,7 +187,7 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
                 seedsToOutsideFg, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
 
             for (int i = 0; i < n; i++)
-                sdf[i] = MathFx.Sqrt((float)sqToOutside[i]) - MathFx.Sqrt((float)sqToInside[i]);
+                sdf[i] = MathFx.Sqrt((float)sqToInside[i]) - MathFx.Sqrt((float)sqToOutside[i]);
 
             // Exact zero on boundary
             for (int i = 0; i < n; i++)
