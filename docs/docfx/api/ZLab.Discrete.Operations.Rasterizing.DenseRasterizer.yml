@@ -16,10 +16,12 @@ items:
   source:
     id: DenseRasterizer
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Operations\Rasterizing\DenseRasterizer.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Operations.Rasterizing
+  summary: Rasterizes a mesh into a dense occupancy grid.
+  example: []
   syntax:
     content: public static class DenseRasterizer
     content.vb: Public Module DenseRasterizer
@@ -47,7 +49,7 @@ items:
   source:
     id: Rasterize
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Operations\Rasterizing\DenseRasterizer.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Operations.Rasterizing

@@ -18,10 +18,12 @@ items:
   source:
     id: GridBase
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\GridBase.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Base class for 3D grid structures, providing common properties and methods.
+  example: []
   syntax:
     content: public abstract class GridBase
     content.vb: Public MustInherit Class GridBase
@@ -52,10 +54,12 @@ items:
   source:
     id: Meta
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\GridBase.cs
-    startLine: 8
+    startLine: 14
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Metadata about the grid, including dimensions and voxel size.
+  example: []
   syntax:
     content: public GridMeta Meta { get; protected set; }
     parameters: []
@@ -77,10 +81,12 @@ items:
   source:
     id: Bounds
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\GridBase.cs
-    startLine: 10
+    startLine: 19
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Axis-aligned bounding box of the grid in world coordinates.
+  example: []
   syntax:
     content: public BBox Bounds { get; protected set; }
     parameters: []
@@ -102,17 +108,21 @@ items:
   source:
     id: Contains
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\GridBase.cs
-    startLine: 34
+    startLine: 48
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Checks if the given 3D index is within the bounds of the grid.
+  example: []
   syntax:
     content: public bool Contains((int x, int y, int z) index)
     parameters:
     - id: index
       type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+      description: The 3D index (x, y, z) to check.
     return:
       type: System.Boolean
+      description: True if the index is within the grid bounds; otherwise, false.
     content.vb: Public Function Contains(index As (x As Integer, y As Integer, z As Integer)) As Boolean
   overload: ZLab.Discrete.Grids.GridBase.Contains*
   nameWithType.vb: GridBase.Contains((x As Integer, y As Integer, z As Integer))

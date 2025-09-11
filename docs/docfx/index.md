@@ -1,20 +1,36 @@
 # Zlab.Discrete
-Library for voxelization, meshing, and distance fields in managed C#.
+
+A fully managed .NET library for voxelization, meshing, and distance field computation.
 
 ## Overview
-Zlab.Discrete is a fully managed C# library that provides a collection of voxelization algorithms for 3D meshes. It focuses on ease of use while offering flexibility through different voxelization techniques.
-It is not as performant as some native libraries, but it is easier to integrate into C# projects and it tries its best to be performant for a managed library.
+
+**Zlab.Discrete** provides tools for constructing and processing voxel grids from 3D geometry. It is written entirely in C#, requires no external dependencies, and is designed for easy integration into .NET projects.
 
 ## Features
-- Anisotropic Voxelization (non-uniform voxel sizes)
-- Dense occupancy grid representation
-- Dense distance grid representation (Euclidean distance transform)
-- Signed Distance Field (SDF) generation
-- Sampling SDF with nearest neighbor or trilinear interpolation
-- Gradient sampling from SDF
-- Sparse voxelization (boundary voxels only)
-- Meshing using face-culling algorithms
-- BFS Flood fill algorithms for interior voxel identification
+
+- **Voxelization**
+  - Anisotropic voxelization (non-uniform voxel sizes)
+  - Dense occupancy grids
+  - Sparse boundary voxelization
+
+- **Distance Fields**
+  - Euclidean distance transform (exact, isotropic and anisotropic)
+  - Signed distance field (SDF) generation
+  - Sampling with nearest-neighbor or trilinear interpolation
+  - Gradient computation from SDFs
+
+- **Meshing**
+  - Face-culling voxel meshing
+
+- **Grid Processing**
+  - BFS-based flood fill for interior/exterior classification
+
+## Use Cases
+- Preprocessing 3D meshes into voxel grids
+- Generating SDFs for geometry processing, physics, or rendering
+- Mesh extraction from voxel volumes
+- Spatial analysis and computational geometry research
+
 
 ## Supported Frameworks
 - .NET Framework 4.7.2

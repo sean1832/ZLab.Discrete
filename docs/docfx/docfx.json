@@ -41,7 +41,8 @@
       "_appName": "ZLab.Discrete",
       "_appTitle": "ZLab.Discrete",
       "_appFooter": "<strong>Developed by <a href='https://github.com/sean1832' style='color: lightblue !important;'>Zeke Zhang</a></strong>",
-      "_enableSearch": true
+      "_enableSearch": true,
+      "_appLogoPath": "images/icon_dark_trans.png"
     }
   }
 }

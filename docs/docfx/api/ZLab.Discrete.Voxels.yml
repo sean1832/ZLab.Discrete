@@ -4,9 +4,7 @@ items:
   commentId: N:ZLab.Discrete.Voxels
   id: ZLab.Discrete.Voxels
   children:
-  - ZLab.Discrete.Voxels.DistanceVoxel
   - ZLab.Discrete.Voxels.Occupancy
-  - ZLab.Discrete.Voxels.OccupancyVoxel
   langs:
   - csharp
   - vb
@@ -17,12 +15,6 @@ items:
   assemblies:
   - ZLab.Discrete
 references:
-- uid: ZLab.Discrete.Voxels.DistanceVoxel
-  commentId: T:ZLab.Discrete.Voxels.DistanceVoxel
-  href: ZLab.Discrete.Voxels.DistanceVoxel.html
-  name: DistanceVoxel
-  nameWithType: DistanceVoxel
-  fullName: ZLab.Discrete.Voxels.DistanceVoxel
 - uid: ZLab.Discrete.Voxels.Occupancy
   commentId: T:ZLab.Discrete.Voxels.Occupancy
   parent: ZLab.Discrete.Voxels
@@ -30,12 +22,6 @@ references:
   name: Occupancy
   nameWithType: Occupancy
   fullName: ZLab.Discrete.Voxels.Occupancy
-- uid: ZLab.Discrete.Voxels.OccupancyVoxel
-  commentId: T:ZLab.Discrete.Voxels.OccupancyVoxel
-  href: ZLab.Discrete.Voxels.OccupancyVoxel.html
-  name: OccupancyVoxel
-  nameWithType: OccupancyVoxel
-  fullName: ZLab.Discrete.Voxels.OccupancyVoxel
 - uid: ZLab.Discrete.Voxels
   commentId: N:ZLab.Discrete.Voxels
   href: ZLab.html

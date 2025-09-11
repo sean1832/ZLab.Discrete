@@ -165,14 +165,17 @@ items:
   source:
     id: Clone
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 100
+    startLine: 105
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Deep clone of this grid. (Meta and buffer are copied.)
+  example: []
   syntax:
     content: public OccupancyGrid Clone()
     return:
       type: ZLab.Discrete.Grids.OccupancyGrid
+      description: a new OccupancyGrid instance
     content.vb: Public Function Clone() As OccupancyGrid
   overload: ZLab.Discrete.Grids.OccupancyGrid.Clone*
 - uid: ZLab.Discrete.Grids.OccupancyGrid.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
@@ -189,20 +192,27 @@ items:
   source:
     id: GetValue
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 106
+    startLine: 118
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Get occupancy value at given grid index.
   example: []
   syntax:
     content: public Occupancy GetValue((int x, int y, int z) index)
     parameters:
     - id: index
       type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+      description: grid index (x,y,z)
     return:
       type: ZLab.Discrete.Voxels.Occupancy
+      description: occupancy value at index
     content.vb: Public Function GetValue(index As (x As Integer, y As Integer, z As Integer)) As Occupancy
   overload: ZLab.Discrete.Grids.OccupancyGrid.GetValue*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: if index is out of bounds
   implements:
   - ZLab.Discrete.Grids.Interfaces.IGrid{ZLab.Discrete.Voxels.Occupancy}.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
   nameWithType.vb: OccupancyGrid.GetValue((x As Integer, y As Integer, z As Integer))
@@ -222,20 +232,27 @@ items:
   source:
     id: SetValue
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 117
+    startLine: 135
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Set occupancy value at given grid index.
   example: []
   syntax:
     content: public void SetValue((int x, int y, int z) index, Occupancy value)
     parameters:
     - id: index
       type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+      description: grid index (x,y,z)
     - id: value
       type: ZLab.Discrete.Voxels.Occupancy
+      description: occupancy value to set
     content.vb: Public Sub SetValue(index As (x As Integer, y As Integer, z As Integer), value As Occupancy)
   overload: ZLab.Discrete.Grids.OccupancyGrid.SetValue*
+  exceptions:
+  - type: System.IndexOutOfRangeException
+    commentId: T:System.IndexOutOfRangeException
+    description: if index is out of bounds
   implements:
   - ZLab.Discrete.Grids.Interfaces.IGrid{ZLab.Discrete.Voxels.Occupancy}.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},ZLab.Discrete.Voxels.Occupancy)
   nameWithType.vb: OccupancyGrid.SetValue((x As Integer, y As Integer, z As Integer), Occupancy)
@@ -255,7 +272,7 @@ items:
   source:
     id: GetReadOnlyBuffer
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 130
+    startLine: 148
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -283,7 +300,7 @@ items:
   source:
     id: GetReadOnlyMemory
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 135
+    startLine: 153
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -311,7 +328,7 @@ items:
   source:
     id: GetBuffer
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 140
+    startLine: 158
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -339,15 +356,18 @@ items:
   source:
     id: Fill
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 149
+    startLine: 164
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Fill the entire grid with a given occupancy value.
+  example: []
   syntax:
     content: public void Fill(Occupancy value)
     parameters:
     - id: value
       type: ZLab.Discrete.Voxels.Occupancy
+      description: value to fill
     content.vb: Public Sub Fill(value As Occupancy)
   overload: ZLab.Discrete.Grids.OccupancyGrid.Fill*
 - uid: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray(System.ReadOnlySpan{ZLab.Discrete.Voxels.Occupancy})
@@ -364,17 +384,24 @@ items:
   source:
     id: LoadFromArray
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 153
+    startLine: 179
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Load occupancies from a flat array (row-major order).
+  example: []
   syntax:
     content: public void LoadFromArray(ReadOnlySpan<Occupancy> values)
     parameters:
     - id: values
       type: System.ReadOnlySpan{ZLab.Discrete.Voxels.Occupancy}
+      description: input array (length must be Nx*Ny*Nz)
     content.vb: Public Sub LoadFromArray(values As ReadOnlySpan(Of Occupancy))
   overload: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: if input array length does not match grid size
   nameWithType.vb: OccupancyGrid.LoadFromArray(ReadOnlySpan(Of Occupancy))
   fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray(System.ReadOnlySpan(Of ZLab.Discrete.Voxels.Occupancy))
   name.vb: LoadFromArray(ReadOnlySpan(Of Occupancy))
@@ -392,7 +419,7 @@ items:
   source:
     id: ToArrayCopy
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 163
+    startLine: 189
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -418,7 +445,7 @@ items:
   source:
     id: ToString
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 173
+    startLine: 199
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -446,19 +473,12 @@ items:
   source:
     id: EnumerateVoxels
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 192
+    startLine: 212
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
   summary: Enumerate all voxels with their world-space positions and occupancy values.
-  remarks: >-
-    Examples:
-
-    <pre><code class="lang-csharp">foreach (var (pos, occ) in grid.EnumerateVoxels())
-
-    {
-        // process pos and occ
-    }</code></pre>
+  remarks: '<b>Obsolete</b>: Use <xref href="ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action%7bSystem.Numerics.Vector3%2cZLab.Discrete.Voxels.Occupancy%7d)" data-throw-if-not-resolved="false"></xref> or <xref href="ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action%7bSystem.Numerics.Vector3%2cZLab.Discrete.Voxels.Occupancy%7d%2cSystem.Nullable%7bSystem.Int32%7d)" data-throw-if-not-resolved="false"></xref> instead for better performance.'
   example: []
   syntax:
     content: >-
@@ -493,7 +513,7 @@ items:
   source:
     id: ForEachVoxel
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 203
+    startLine: 223
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -525,7 +545,7 @@ items:
   source:
     id: ForEachVoxelParallel
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 215
+    startLine: 235
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -563,7 +583,7 @@ items:
   source:
     id: CountState
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 225
+    startLine: 245
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -593,7 +613,7 @@ items:
   source:
     id: CountState
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 233
+    startLine: 253
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -619,7 +639,7 @@ items:
   source:
     id: TransformWorld
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 245
+    startLine: 265
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -650,7 +670,7 @@ items:
   source:
     id: TransformWorld
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 308
+    startLine: 328
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -684,7 +704,7 @@ items:
   source:
     id: GetMaskTernary
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 318
+    startLine: 338
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -718,7 +738,7 @@ items:
   source:
     id: GetMaskTernary
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 352
+    startLine: 372
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -762,7 +782,7 @@ items:
   source:
     id: GetMaskBinary
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\OccupancyGrid.cs
-    startLine: 379
+    startLine: 399
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -1354,6 +1374,13 @@ references:
   name: OccupancyGrid
   nameWithType: OccupancyGrid
   fullName: ZLab.Discrete.Grids.OccupancyGrid
+- uid: System.IndexOutOfRangeException
+  commentId: T:System.IndexOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception
+  name: IndexOutOfRangeException
+  nameWithType: IndexOutOfRangeException
+  fullName: System.IndexOutOfRangeException
 - uid: ZLab.Discrete.Grids.OccupancyGrid.GetValue*
   commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.GetValue
   href: ZLab.Discrete.Grids.OccupancyGrid.GetValue.html#ZLab_Discrete_Grids_OccupancyGrid_GetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__
@@ -2210,6 +2237,13 @@ references:
   name: Fill
   nameWithType: OccupancyGrid.Fill
   fullName: ZLab.Discrete.Grids.OccupancyGrid.Fill
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
 - uid: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray*
   commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray
   href: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray.html#ZLab_Discrete_Grids_OccupancyGrid_LoadFromArray_System_ReadOnlySpan_ZLab_Discrete_Voxels_Occupancy__
@@ -2286,6 +2320,128 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy})
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy})
+  isExternal: true
+  href: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__
+  name: ForEachVoxel(Action<Vector3, Occupancy>)
+  nameWithType: OccupancyGrid.ForEachVoxel(Action<Vector3, Occupancy>)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action<System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy>)
+  nameWithType.vb: OccupancyGrid.ForEachVoxel(Action(Of Vector3, Occupancy))
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action(Of System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy))
+  name.vb: ForEachVoxel(Action(Of Vector3, Occupancy))
+  spec.csharp:
+  - uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy})
+    name: ForEachVoxel
+    href: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__
+  - name: (
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: ','
+  - name: " "
+  - uid: ZLab.Discrete.Voxels.Occupancy
+    name: Occupancy
+    href: ZLab.Discrete.Voxels.Occupancy.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy})
+    name: ForEachVoxel
+    href: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__
+  - name: (
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: ','
+  - name: " "
+  - uid: ZLab.Discrete.Voxels.Occupancy
+    name: Occupancy
+    href: ZLab.Discrete.Voxels.Occupancy.html
+  - name: )
+  - name: )
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy},System.Nullable{System.Int32})
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy},System.Nullable{System.Int32})
+  isExternal: true
+  href: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__System_Nullable_System_Int32__
+  name: ForEachVoxelParallel(Action<Vector3, Occupancy>, int?)
+  nameWithType: OccupancyGrid.ForEachVoxelParallel(Action<Vector3, Occupancy>, int?)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action<System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy>, int?)
+  nameWithType.vb: OccupancyGrid.ForEachVoxelParallel(Action(Of Vector3, Occupancy), Integer?)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action(Of System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy), Integer?)
+  name.vb: ForEachVoxelParallel(Action(Of Vector3, Occupancy), Integer?)
+  spec.csharp:
+  - uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy},System.Nullable{System.Int32})
+    name: ForEachVoxelParallel
+    href: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__System_Nullable_System_Int32__
+  - name: (
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: ','
+  - name: " "
+  - uid: ZLab.Discrete.Voxels.Occupancy
+    name: Occupancy
+    href: ZLab.Discrete.Voxels.Occupancy.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy},System.Nullable{System.Int32})
+    name: ForEachVoxelParallel
+    href: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__System_Nullable_System_Int32__
+  - name: (
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: ','
+  - name: " "
+  - uid: ZLab.Discrete.Voxels.Occupancy
+    name: Occupancy
+    href: ZLab.Discrete.Voxels.Occupancy.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  - name: )
 - uid: ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels*
   commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels
   href: ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels.html#ZLab_Discrete_Grids_OccupancyGrid_EnumerateVoxels
@@ -2631,13 +2787,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.byte
   - name: (
   - name: )
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
-  name: ArgumentException
-  nameWithType: ArgumentException
-  fullName: System.ArgumentException
 - uid: System.Span{System.Byte}
   commentId: T:System.Span{System.Byte}
   parent: System

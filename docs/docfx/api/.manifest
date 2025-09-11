@@ -138,22 +138,8 @@
   "ZLab.Discrete.Operations.Rasterizing.SparseRasterizer": "ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.yml",
   "ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.Rasterize(ZLab.Discrete.Geometry.MeshF,System.Numerics.Vector3,System.Int32)": "ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.yml",
   "ZLab.Discrete.Voxels": "ZLab.Discrete.Voxels.yml",
-  "ZLab.Discrete.Voxels.DistanceVoxel": "ZLab.Discrete.Voxels.DistanceVoxel.yml",
-  "ZLab.Discrete.Voxels.DistanceVoxel.#ctor(System.Numerics.Vector3,System.Single)": "ZLab.Discrete.Voxels.DistanceVoxel.yml",
-  "ZLab.Discrete.Voxels.DistanceVoxel.Center(System.Numerics.Vector3)": "ZLab.Discrete.Voxels.DistanceVoxel.yml",
-  "ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds(System.Numerics.Vector3)": "ZLab.Discrete.Voxels.DistanceVoxel.yml",
-  "ZLab.Discrete.Voxels.DistanceVoxel.Distance": "ZLab.Discrete.Voxels.DistanceVoxel.yml",
-  "ZLab.Discrete.Voxels.DistanceVoxel.Origin": "ZLab.Discrete.Voxels.DistanceVoxel.yml",
-  "ZLab.Discrete.Voxels.DistanceVoxel.ToArray": "ZLab.Discrete.Voxels.DistanceVoxel.yml",
-  "ZLab.Discrete.Voxels.DistanceVoxel.ToString": "ZLab.Discrete.Voxels.DistanceVoxel.yml",
   "ZLab.Discrete.Voxels.Occupancy": "ZLab.Discrete.Voxels.Occupancy.yml",
   "ZLab.Discrete.Voxels.Occupancy.Boundary": "ZLab.Discrete.Voxels.Occupancy.yml",
   "ZLab.Discrete.Voxels.Occupancy.Inside": "ZLab.Discrete.Voxels.Occupancy.yml",
-  "ZLab.Discrete.Voxels.Occupancy.Outside": "ZLab.Discrete.Voxels.Occupancy.yml",
-  "ZLab.Discrete.Voxels.OccupancyVoxel": "ZLab.Discrete.Voxels.OccupancyVoxel.yml",
-  "ZLab.Discrete.Voxels.OccupancyVoxel.#ctor(System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy)": "ZLab.Discrete.Voxels.OccupancyVoxel.yml",
-  "ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds(System.Numerics.Vector3)": "ZLab.Discrete.Voxels.OccupancyVoxel.yml",
-  "ZLab.Discrete.Voxels.OccupancyVoxel.Origin": "ZLab.Discrete.Voxels.OccupancyVoxel.yml",
-  "ZLab.Discrete.Voxels.OccupancyVoxel.State": "ZLab.Discrete.Voxels.OccupancyVoxel.yml",
-  "ZLab.Discrete.Voxels.OccupancyVoxel.ToString": "ZLab.Discrete.Voxels.OccupancyVoxel.yml"
+  "ZLab.Discrete.Voxels.Occupancy.Outside": "ZLab.Discrete.Voxels.Occupancy.yml"
 }

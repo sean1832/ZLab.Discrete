@@ -163,14 +163,17 @@ items:
   source:
     id: Clone
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 68
+    startLine: 73
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Deep clone of this grid.
+  example: []
   syntax:
     content: public DistanceGrid Clone()
     return:
       type: ZLab.Discrete.Grids.DistanceGrid
+      description: New DistanceGrid instance with copied metadata and distance values.
     content.vb: Public Function Clone() As DistanceGrid
   overload: ZLab.Discrete.Grids.DistanceGrid.Clone*
 - uid: ZLab.Discrete.Grids.DistanceGrid.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
@@ -187,7 +190,7 @@ items:
   source:
     id: GetValue
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 78
+    startLine: 83
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -221,7 +224,7 @@ items:
   source:
     id: GetValue
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 91
+    startLine: 95
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -251,7 +254,7 @@ items:
   source:
     id: GetReadOnlyBuffer
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 99
+    startLine: 103
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -279,7 +282,7 @@ items:
   source:
     id: GetReadOnlyMemory
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 104
+    startLine: 108
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -307,7 +310,7 @@ items:
   source:
     id: GetBuffer
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 109
+    startLine: 113
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -335,7 +338,7 @@ items:
   source:
     id: SetValue
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 114
+    startLine: 118
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -369,7 +372,7 @@ items:
   source:
     id: Fill
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 133
+    startLine: 128
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -399,7 +402,7 @@ items:
   source:
     id: GetMinMax
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 139
+    startLine: 141
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -425,7 +428,7 @@ items:
   source:
     id: LoadFromArray
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 155
+    startLine: 157
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -455,7 +458,7 @@ items:
   source:
     id: ToArrayCopy
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 165
+    startLine: 167
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -481,7 +484,7 @@ items:
   source:
     id: AddOffset
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 175
+    startLine: 177
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -511,10 +514,13 @@ items:
   source:
     id: EnumerateVoxels
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 183
+    startLine: 192
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
+  summary: Enumerate all voxels with their world-space positions and distance values.
+  remarks: '<b>Obsolete</b>: Use <xref href="ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action%7bSystem.Numerics.Vector3%2cSystem.Single%7d)" data-throw-if-not-resolved="false"></xref> or <xref href="ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action%7bSystem.Numerics.Vector3%2cSystem.Single%7d%2cSystem.Nullable%7bSystem.Int32%7d)" data-throw-if-not-resolved="false"></xref> instead for better performance.'
+  example: []
   syntax:
     content: >-
       [Obsolete("Use ForEachVoxel or ForEachVoxelParallel instead for better performance.")]
@@ -522,6 +528,7 @@ items:
       public IEnumerable<(Vector3 position, float value)> EnumerateVoxels()
     return:
       type: System.Collections.Generic.IEnumerable{System.ValueTuple{System.Numerics.Vector3,System.Single}}
+      description: sequence of (position, distance) tuples
     content.vb: >-
       <Obsolete("Use ForEachVoxel or ForEachVoxelParallel instead for better performance.")>
 
@@ -547,7 +554,7 @@ items:
   source:
     id: ForEachVoxel
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 194
+    startLine: 203
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -579,7 +586,7 @@ items:
   source:
     id: ForEachVoxelParallel
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 206
+    startLine: 215
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -617,7 +624,7 @@ items:
   source:
     id: BuildFromBinaryMask
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 217
+    startLine: 226
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -654,7 +661,7 @@ items:
   source:
     id: BuildFromTernaryMask
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\DistanceGrid.cs
-    startLine: 234
+    startLine: 244
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids
@@ -2553,6 +2560,132 @@ references:
   name: AddOffset
   nameWithType: DistanceGrid.AddOffset
   fullName: ZLab.Discrete.Grids.DistanceGrid.AddOffset
+- uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,System.Single})
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,System.Single})
+  isExternal: true
+  href: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel.html#ZLab_Discrete_Grids_DistanceGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_System_Single__
+  name: ForEachVoxel(Action<Vector3, float>)
+  nameWithType: DistanceGrid.ForEachVoxel(Action<Vector3, float>)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action<System.Numerics.Vector3, float>)
+  nameWithType.vb: DistanceGrid.ForEachVoxel(Action(Of Vector3, Single))
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action(Of System.Numerics.Vector3, Single))
+  name.vb: ForEachVoxel(Action(Of Vector3, Single))
+  spec.csharp:
+  - uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,System.Single})
+    name: ForEachVoxel
+    href: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel.html#ZLab_Discrete_Grids_DistanceGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_System_Single__
+  - name: (
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,System.Single})
+    name: ForEachVoxel
+    href: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel.html#ZLab_Discrete_Grids_DistanceGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_System_Single__
+  - name: (
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  - name: )
+- uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,System.Single},System.Nullable{System.Int32})
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,System.Single},System.Nullable{System.Int32})
+  isExternal: true
+  href: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_DistanceGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_System_Single__System_Nullable_System_Int32__
+  name: ForEachVoxelParallel(Action<Vector3, float>, int?)
+  nameWithType: DistanceGrid.ForEachVoxelParallel(Action<Vector3, float>, int?)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action<System.Numerics.Vector3, float>, int?)
+  nameWithType.vb: DistanceGrid.ForEachVoxelParallel(Action(Of Vector3, Single), Integer?)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action(Of System.Numerics.Vector3, Single), Integer?)
+  name.vb: ForEachVoxelParallel(Action(Of Vector3, Single), Integer?)
+  spec.csharp:
+  - uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,System.Single},System.Nullable{System.Int32})
+    name: ForEachVoxelParallel
+    href: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_DistanceGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_System_Single__System_Nullable_System_Int32__
+  - name: (
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,System.Single},System.Nullable{System.Int32})
+    name: ForEachVoxelParallel
+    href: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_DistanceGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_System_Single__System_Nullable_System_Int32__
+  - name: (
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Numerics.Vector3
+    name: Vector3
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  - name: )
 - uid: ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels*
   commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels
   href: ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels.html#ZLab_Discrete_Grids_DistanceGrid_EnumerateVoxels

@@ -7,7 +7,7 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Company></Company>
     <Authors>Zeke Zhang</Authors>
-    <Description>3D discrete computations implemented in fully managed code</Description>
+    <Description>A fully managed library for voxelization, meshing, and distance field computation.</Description>
     <Version>0.0.1</Version>
     <FileVersion>0.0.1</FileVersion>
     <AssemblyVersion>0.0.1</AssemblyVersion>
@@ -17,10 +17,18 @@
     <IncludeSymbols>False</IncludeSymbols>
     <RepositoryUrl>https://github.com/sean1832/zlab.discrete</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://sean1832.github.io/ZLab.Discrete</PackageProjectUrl>
+    <Title>ZLab.Discrete</Title>
+    <Copyright>Copyright © 2025 Zeke Zhang. All rights reserved. </Copyright>
+    <PackageIcon>dark.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup Condition=" $([System.String]::Copy('$(TargetFramework)').StartsWith('net4')) ">
     <PackageReference Include="System.Memory" Version="4.6.3" />
   </ItemGroup>  <ItemGroup>
+    <None Include="..\docs\icons\128w\dark.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

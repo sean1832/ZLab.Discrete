@@ -20,14 +20,17 @@ items:
   source:
     id: IGrid
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
-    startLine: 4
+    startLine: 8
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids.Interfaces
+  summary: Interface for a 3D grid structure that allows getting and setting values at specific indices,
+  example: []
   syntax:
     content: public interface IGrid<T>
     typeParameters:
     - id: T
+      description: The type of values stored in the grid.
     content.vb: Public Interface IGrid(Of T)
   nameWithType.vb: IGrid(Of T)
   fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T)
@@ -46,17 +49,21 @@ items:
   source:
     id: GetValue
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
-    startLine: 6
+    startLine: 15
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids.Interfaces
+  summary: Metadata about the grid, including dimensions and voxel size.
+  example: []
   syntax:
     content: T GetValue((int x, int y, int z) index)
     parameters:
     - id: index
       type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+      description: The 3D index (x, y, z) of the voxel.
     return:
       type: '{T}'
+      description: The value stored at the specified index.
     content.vb: Function GetValue(index As (x As Integer, y As Integer, z As Integer)) As T
   overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue*
   nameWithType.vb: IGrid(Of T).GetValue((x As Integer, y As Integer, z As Integer))
@@ -76,17 +83,21 @@ items:
   source:
     id: SetValue
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
-    startLine: 7
+    startLine: 22
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids.Interfaces
+  summary: Sets the value at the specified 3D index in the grid.
+  example: []
   syntax:
     content: void SetValue((int x, int y, int z) index, T value)
     parameters:
     - id: index
       type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+      description: The 3D index (x, y, z) of the voxel.
     - id: value
       type: '{T}'
+      description: The value to set at the specified index.
     content.vb: Sub SetValue(index As (x As Integer, y As Integer, z As Integer), value As T)
   overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue*
   nameWithType.vb: IGrid(Of T).SetValue((x As Integer, y As Integer, z As Integer), T)
@@ -106,14 +117,17 @@ items:
   source:
     id: GetReadOnlyBuffer
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
-    startLine: 8
+    startLine: 28
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids.Interfaces
+  summary: Gets a read-only span of the underlying buffer storing the grid values.
+  example: []
   syntax:
     content: ReadOnlySpan<T> GetReadOnlyBuffer()
     return:
       type: System.ReadOnlySpan{{T}}
+      description: A read-only span of the grid's values.
     content.vb: Function GetReadOnlyBuffer() As ReadOnlySpan(Of T)
   overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer*
   nameWithType.vb: IGrid(Of T).GetReadOnlyBuffer()
@@ -132,14 +146,17 @@ items:
   source:
     id: GetBuffer
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
-    startLine: 9
+    startLine: 34
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids.Interfaces
+  summary: Gets a span of the underlying buffer storing the grid values for direct manipulation.
+  example: []
   syntax:
     content: Span<T> GetBuffer()
     return:
       type: System.Span{{T}}
+      description: A span of the grid's values.
     content.vb: Function GetBuffer() As Span(Of T)
   overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer*
   nameWithType.vb: IGrid(Of T).GetBuffer()
@@ -158,14 +175,17 @@ items:
   source:
     id: GetReadOnlyMemory
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Grids\Interfaces\IGrid.cs
-    startLine: 11
+    startLine: 40
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Grids.Interfaces
+  summary: Gets a read-only memory representation of the underlying buffer storing the grid values.
+  example: []
   syntax:
     content: ReadOnlyMemory<T> GetReadOnlyMemory()
     return:
       type: System.ReadOnlyMemory{{T}}
+      description: A read-only memory of the grid's values.
     content.vb: Function GetReadOnlyMemory() As ReadOnlyMemory(Of T)
   overload: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory*
   nameWithType.vb: IGrid(Of T).GetReadOnlyMemory()

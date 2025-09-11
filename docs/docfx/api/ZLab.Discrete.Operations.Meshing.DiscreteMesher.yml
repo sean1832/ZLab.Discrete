@@ -34,7 +34,7 @@ items:
 
     Uses face culling with Morton-coded occupancy when voxel size is uniform.
   remarks: >-
-    Assumes <xref href="ZLab.Discrete.Voxels.OccupancyVoxel" data-throw-if-not-resolved="false"></xref> instances lie on a rectilinear grid.
+    Assumes OccupancyVoxel instances lie on a rectilinear grid.
 
     For the culled path, all voxels must share an identical <code>voxelSize</code>.
 
@@ -421,7 +421,7 @@ items:
 
     <p>
 
-    <b>Origin convention:</b> the culled path treats <xref href="ZLab.Discrete.Voxels.OccupancyVoxel.Origin" data-throw-if-not-resolved="false"></xref> as the <i>minimum corner</i> of the cell.
+    <b>Origin convention:</b> the culled path treats OccupancyVoxel.Origin as the <i>minimum corner</i> of the cell.
 
     </p>
   example: []
@@ -474,7 +474,7 @@ items:
     Generates a single mesh from a set of voxels, assuming a uniform <code class="paramref">voxelSize</code>.
 
     Internal faces are culled using <xref href="ZLab.Discrete.Algorithms.Encoding.Morton" data-throw-if-not-resolved="false"></xref> occupancy set (O(1) neighbor checks).
-  remarks: <b>Origin convention:</b> the culled path treats <xref href="ZLab.Discrete.Voxels.OccupancyVoxel.Origin" data-throw-if-not-resolved="false"></xref> as the minimum corner of the cell.
+  remarks: <b>Origin convention:</b> the culled path treats OccupancyVoxel.Origin as the minimum corner of the cell.
   example: []
   syntax:
     content: public static MeshF GenerateMesh(ReadOnlySpan<Vector3> origins, Vector3 voxelSize, CordSystem cordSystem = CordSystem.RightHanded)
@@ -501,12 +501,6 @@ items:
   fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan(Of System.Numerics.Vector3), System.Numerics.Vector3, ZLab.Discrete.Operations.Meshing.CordSystem)
   name.vb: GenerateMesh(ReadOnlySpan(Of Vector3), Vector3, CordSystem)
 references:
-- uid: ZLab.Discrete.Voxels.OccupancyVoxel
-  commentId: T:ZLab.Discrete.Voxels.OccupancyVoxel
-  href: ZLab.Discrete.Voxels.OccupancyVoxel.html
-  name: OccupancyVoxel
-  nameWithType: OccupancyVoxel
-  fullName: ZLab.Discrete.Voxels.OccupancyVoxel
 - uid: ZLab.Discrete.Operations.Meshing
   commentId: N:ZLab.Discrete.Operations.Meshing
   href: ZLab.html
@@ -1047,12 +1041,6 @@ references:
   name: Morton
   nameWithType: Morton
   fullName: ZLab.Discrete.Algorithms.Encoding.Morton
-- uid: ZLab.Discrete.Voxels.OccupancyVoxel.Origin
-  commentId: F:ZLab.Discrete.Voxels.OccupancyVoxel.Origin
-  href: ZLab.Discrete.Voxels.OccupancyVoxel.Origin.html#ZLab_Discrete_Voxels_OccupancyVoxel_Origin
-  name: Origin
-  nameWithType: OccupancyVoxel.Origin
-  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.Origin
 - uid: System.InvalidOperationException
   commentId: T:System.InvalidOperationException
   isExternal: true

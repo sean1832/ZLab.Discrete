@@ -67,13 +67,7 @@ items:
   name: ZLab.Discrete.Voxels
   type: Namespace
   items:
-  - uid: ZLab.Discrete.Voxels.DistanceVoxel
-    name: DistanceVoxel
-    type: Struct
   - uid: ZLab.Discrete.Voxels.Occupancy
     name: Occupancy
     type: Enum
-  - uid: ZLab.Discrete.Voxels.OccupancyVoxel
-    name: OccupancyVoxel
-    type: Struct
 memberLayout: SeparatePages

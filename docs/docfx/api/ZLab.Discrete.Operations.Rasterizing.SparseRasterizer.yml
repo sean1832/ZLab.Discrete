@@ -16,10 +16,12 @@ items:
   source:
     id: SparseRasterizer
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Operations\Rasterizing\SparseRasterizer.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Operations.Rasterizing
+  summary: Sparse rasterization of a mesh into voxels. Only voxels that intersect the mesh are collected.
+  example: []
   syntax:
     content: public static class SparseRasterizer
     content.vb: Public Module SparseRasterizer
@@ -47,7 +49,7 @@ items:
   source:
     id: Rasterize
     path: F:\projects\Zlab.Discrete.Gh\ZLab.Discrete\ZLab.Discrete\Operations\Rasterizing\SparseRasterizer.cs
-    startLine: 49
+    startLine: 52
   assemblies:
   - ZLab.Discrete
   namespace: ZLab.Discrete.Operations.Rasterizing
@@ -67,7 +69,7 @@ items:
       description: Mesh vertices threshold for parallelism
     return:
       type: System.Collections.Generic.List{System.Numerics.Vector3}
-      description: <xref href="ZLab.Discrete.Voxels.OccupancyVoxel" data-throw-if-not-resolved="false"></xref> intersects with the mesh boundary
+      description: OccupancyVoxel intersects with the mesh boundary
     content.vb: Public Shared Function Rasterize(mesh As MeshF, voxelSize As Vector3, parallelThreshold As Integer = 2048) As List(Of Vector3)
   overload: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.Rasterize*
   nameWithType.vb: SparseRasterizer.Rasterize(MeshF, Vector3, Integer)
@@ -349,12 +351,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ZLab.Discrete.Voxels.OccupancyVoxel
-  commentId: T:ZLab.Discrete.Voxels.OccupancyVoxel
-  href: ZLab.Discrete.Voxels.OccupancyVoxel.html
-  name: OccupancyVoxel
-  nameWithType: OccupancyVoxel
-  fullName: ZLab.Discrete.Voxels.OccupancyVoxel
 - uid: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.Rasterize*
   commentId: Overload:ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.Rasterize
   href: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.Rasterize.html#ZLab_Discrete_Operations_Rasterizing_SparseRasterizer_Rasterize_ZLab_Discrete_Geometry_MeshF_System_Numerics_Vector3_System_Int32_
