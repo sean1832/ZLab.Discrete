@@ -4,10 +4,19 @@ using ZLab.Discrete.Geometry;
 
 namespace ZLab.Discrete.Grids
 {
+    /// <summary>
+    /// Base class for 3D grid structures, providing common properties and methods.
+    /// </summary>
     public abstract class GridBase
     {
+        /// <summary>
+        /// Metadata about the grid, including dimensions and voxel size.
+        /// </summary>
         public GridMeta Meta { get; protected set; }
-        
+
+        /// <summary>
+        /// Axis-aligned bounding box of the grid in world coordinates.
+        /// </summary>
         public BBox Bounds { get; protected set; }
 
         private protected const float Epsilon = 1e-6f;
@@ -32,6 +41,11 @@ namespace ZLab.Discrete.Grids
             Bounds = new BBox(min, max);
         }
 
+        /// <summary>
+        /// Checks if the given 3D index is within the bounds of the grid.
+        /// </summary>
+        /// <param name="index">The 3D index (x, y, z) to check.</param>
+        /// <returns>True if the index is within the grid bounds; otherwise, false.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Contains((int x, int y, int z) index)
         {

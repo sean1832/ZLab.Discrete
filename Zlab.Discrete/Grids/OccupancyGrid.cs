@@ -98,12 +98,24 @@ namespace ZLab.Discrete.Grids
             Array.Copy(other._occupancies, _occupancies, _occupancies.Length);
             RecomputeBounds();
         }
+
+        /// <summary>
+        /// Deep clone of this grid. (Meta and buffer are copied.)
+        /// </summary>
+        /// <returns>a new OccupancyGrid instance</returns>
         public OccupancyGrid Clone() => new(this);
 
         #endregion
 
         // ------------ PUBLIC INTERFACE: storage operations ------------
         #region Storage Operations
+
+        /// <summary>
+        /// Get occupancy value at given grid index.
+        /// </summary>
+        /// <param name="index">grid index (x,y,z)</param>
+        /// <returns>occupancy value at index</returns>
+        /// <exception cref="IndexOutOfRangeException">if index is out of bounds</exception>
         public Occupancy GetValue((int x, int y, int z) index)
         {
             if (!Contains(index))
@@ -115,6 +127,12 @@ namespace ZLab.Discrete.Grids
             return _occupancies[linear];
         }
 
+        /// <summary>
+        /// Set occupancy value at given grid index.
+        /// </summary>
+        /// <param name="index">grid index (x,y,z)</param>
+        /// <param name="value">occupancy value to set</param>
+        /// <exception cref="IndexOutOfRangeException">if index is out of bounds</exception>
         public void SetValue((int x, int y, int z) index, Occupancy value)
         {
             if (!Contains(index))
@@ -140,17 +158,25 @@ namespace ZLab.Discrete.Grids
         /// </summary>
         public Span<Occupancy> GetBuffer() => _occupancies;
 
-#if NETFRAMEWORK
+        /// <summary>
+        /// Fill the entire grid with a given occupancy value.
+        /// </summary>
+        /// <param name="value">value to fill</param>
         public void Fill(Occupancy value)
         {
+#if NETFRAMEWORK
             for (int i = 0; i < _occupancies.Length; i++)
                 _occupancies[i] = value;
-        }
 #else
-        public void Fill(Occupancy value) => Array.Fill(_occupancies, value);
+            Array.Fill(_occupancies, value);
 #endif
+        }
 
-
+        /// <summary>
+        /// Load occupancies from a flat array (row-major order).
+        /// </summary>
+        /// <param name="values">input array (length must be Nx*Ny*Nz)</param>
+        /// <exception cref="ArgumentException">if input array length does not match grid size</exception>
         public void LoadFromArray(ReadOnlySpan<Occupancy> values)
         {
             if (values.Length != _occupancies.Length)
@@ -180,16 +206,10 @@ namespace ZLab.Discrete.Grids
         /// <summary>
         /// Enumerate all voxels with their world-space positions and occupancy values.
         /// </summary>
-        /// <remarks>
-        /// Examples:
-        /// <code>
-        /// foreach (var (pos, occ) in grid.EnumerateVoxels())
-        /// {
-        ///     // process pos and occ
-        /// }
-        /// </code>
-        /// </remarks>
         /// <returns>sequence of (position, occupancy) tuples</returns>
+        /// <remarks>
+        /// <b>Obsolete</b>: Use <see cref="ForEachVoxel"/> or <see cref="ForEachVoxelParallel"/> instead for better performance.
+        /// </remarks>
         [Obsolete("Use ForEachVoxel or ForEachVoxelParallel instead for better performance.")]
         public IEnumerable<(Vector3 position, Occupancy value)> EnumerateVoxels()
             => this.EnumerateVoxels(this);

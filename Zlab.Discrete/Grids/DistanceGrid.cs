@@ -66,6 +66,11 @@ namespace ZLab.Discrete.Grids
             Array.Copy(other._distances, _distances, _distances.Length);
             RecomputeBounds();
         }
+
+        /// <summary>
+        /// Deep clone of this grid.
+        /// </summary>
+        /// <returns>New DistanceGrid instance with copied metadata and distance values.</returns>
         public DistanceGrid Clone() => new(this);
 
         #endregion
@@ -117,21 +122,19 @@ namespace ZLab.Discrete.Grids
                 throw new IndexOutOfRangeException($"Index {index} is out of grid bounds.");
             _distances[linear] = value;
         }
-#if NETFRAMEWORK
+
         /// <summary>
         /// Fill all distances with a constant value.
         /// </summary>
         public void Fill(float value)
         {
+#if NETFRAMEWORK
             for (int i = 0; i < _distances.Length; i++)
                 _distances[i] = value;
-        }
 #else
-        /// <summary>
-        /// Fill all distances with a constant value.
-        /// </summary>
-        public void Fill(float value) => Array.Fill(_distances, value);
+            Array.Fill(_distances, value);
 #endif
+        }
 
         /// <summary>
         /// Get minimum and maximum distance values in the grid.
@@ -180,6 +183,13 @@ namespace ZLab.Discrete.Grids
         #endregion
 
         // ------------ PUBLIC: enumeration ------------
+        /// <summary>
+        /// Enumerate all voxels with their world-space positions and distance values.
+        /// </summary>
+        /// <returns>sequence of (position, distance) tuples</returns>
+        /// <remarks>
+        /// <b>Obsolete</b>: Use <see cref="ForEachVoxel"/> or <see cref="ForEachVoxelParallel"/> instead for better performance.
+        /// </remarks>
         [Obsolete("Use ForEachVoxel or ForEachVoxelParallel instead for better performance.")]
         public IEnumerable<(Vector3 position, float value)> EnumerateVoxels()
             => this.EnumerateVoxels(this);

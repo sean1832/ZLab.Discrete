@@ -6,6 +6,9 @@ using ZLab.Discrete.Grids;
 
 namespace ZLab.Discrete.Operations.Rasterizing
 {
+    /// <summary>
+    /// Rasterizes a mesh into a dense occupancy grid.
+    /// </summary>
     public static class DenseRasterizer
     {
         /// <summary>

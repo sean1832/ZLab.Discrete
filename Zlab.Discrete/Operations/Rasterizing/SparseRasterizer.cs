@@ -38,6 +38,9 @@ namespace ZLab.Discrete.Operations.Rasterizing
         }
     }
 
+    /// <summary>
+    /// Sparse rasterization of a mesh into voxels. Only voxels that intersect the mesh are collected.
+    /// </summary>
     public static class SparseRasterizer
     {
         /// <summary>
