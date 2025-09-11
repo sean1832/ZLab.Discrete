@@ -88,7 +88,6 @@ namespace ZLab.Discrete.Grids
         /// Get distance value at given world position.
         /// </summary>
         /// <param name="position">World position</param>
-        /// <param name="continues">If true, trilinear interpolation is used; otherwise, nearest voxel value is returned.</param>
         public float GetValue(Vector3 position)
         {
             return GetValue(GridConverter.WorldToGridMin(position, Meta.VoxelSize));
@@ -221,10 +220,11 @@ namespace ZLab.Discrete.Grids
                 throw new ArgumentException("Binary mask length must match grid voxel count.");
 
             // EDT (anisotropic).
-            float[] sdf = Sdf3D.FromBinaryMaskAnisotropic(
-                binaryMask, Meta.Nx, Meta.Ny, Meta.Nz, Meta.VoxelSize.X, Meta.VoxelSize.Y, Meta.VoxelSize.Z, parallel);
-
-            Array.Copy(sdf, _distances, _distances.Length);
+            Span<float> sdf = _distances.AsSpan(0, _distances.Length);
+            Sdf3D.FromBinaryMaskAnisotropic(
+                binaryMask, sdf,
+                Meta.Nx, Meta.Ny, Meta.Nz, 
+                Meta.VoxelSize.X, Meta.VoxelSize.Y, Meta.VoxelSize.Z, parallel);
         }
 
         /// <summary>
@@ -237,12 +237,13 @@ namespace ZLab.Discrete.Grids
             if (ternaryMask.Length != Meta.Nx * Meta.Ny * Meta.Nz)
                 throw new ArgumentException("Ternary mask length must match grid voxel count.");
 
-            float[] sdf = Sdf3D.FromTernaryMaskAnisotropic(
-                ternaryMask, Meta.Nx, Meta.Ny, Meta.Nz,
+            Span<float> sdf = _distances.AsSpan(0, _distances.Length);
+
+            Sdf3D.FromTernaryMaskAnisotropic(
+                ternaryMask, sdf,
+                Meta.Nx, Meta.Ny, Meta.Nz,
                 Meta.VoxelSize.X, Meta.VoxelSize.Y, Meta.VoxelSize.Z,
                 parallel);
-
-            Array.Copy(sdf, _distances, _distances.Length);
         }
 
         // ------------ PRIVATE HELPERS ------------

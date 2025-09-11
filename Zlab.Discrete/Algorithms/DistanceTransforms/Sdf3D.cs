@@ -57,6 +57,7 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// Computes a 3D signed distance field (SDF) from a binary mask with anisotropic voxel spacing using exact Euclidean distance transform (EDT).
         /// </summary>
         /// <param name="binaryMask">Flattened row-major mask (z*nx*ny + y*nx + x). Value 1 = foreground (inside), 0 = background (outside).</param>
+        /// <param name="sdf">Preallocated output span for SDF (float). Must be same length as binaryMask.</param>
         /// <param name="nx">Number of voxels along X.</param>
         /// <param name="ny">Number of voxels along Y.</param>
         /// <param name="nz">Number of voxels along Z.</param>
@@ -65,12 +66,14 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// <param name="spacingZ">Voxel spacing along Z axis (must be positive).</param>
         /// <param name="parallel">If true, lines along X, Y, and Z are processed in parallel.</param>
         /// <returns>Flattened row-major SDF (float). Positive outside, negative inside, zero on boundary, measured in physical units.</returns>
-        public static float[] FromBinaryMaskAnisotropic(
-            ReadOnlySpan<byte> binaryMask,
+        public static void FromBinaryMaskAnisotropic(
+            ReadOnlySpan<byte> binaryMask, Span<float> sdf,
             int nx, int ny, int nz,
             double spacingX, double spacingY, double spacingZ,
             bool parallel)
         {
+            if (sdf.Length != binaryMask.Length)
+                throw new ArgumentException("sdf length must match binaryMask length.");
             if (binaryMask.Length != nx * ny * nz)
                 throw new ArgumentException("binaryMask length must be nx*ny*nz.");
             if (spacingX <= 0 || spacingY <= 0 || spacingZ <= 0)
@@ -91,14 +94,12 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
             double[] squaredToForeground = Edt3D.ExactSquaredAnisotropic(seedsToForeground, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
             double[] squaredToBackground = Edt3D.ExactSquaredAnisotropic(seedsToBackground, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
 
-            float[] sdf = new float[binaryMask.Length];
             for (int i = 0; i < sdf.Length; i++)
             {
                 float outsideDistance = MathFx.Sqrt((float)squaredToBackground[i]);
                 float insideDistance = MathFx.Sqrt((float)squaredToForeground[i]);
-                sdf[i] = outsideDistance - insideDistance;
+                sdf[i] = outsideDistance - insideDistance; // <- assign to output span
             }
-            return sdf;
         }
 
         /// <summary>
@@ -106,8 +107,10 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// <code>0 = Outside, 1 = Inside, 2 = Intersecting (boundary/zero set).</code>
         /// Isotropic voxels (unit spacing). Row-major (x fastest).
         /// </summary>
-        public static float[] FromTernaryMask(ReadOnlySpan<byte> ternaryMask, int nx, int ny, int nz, bool parallel)
+        public static void FromTernaryMask(ReadOnlySpan<byte> ternaryMask, Span<float> sdf, int nx, int ny, int nz, bool parallel)
         {
+            if (sdf.Length != ternaryMask.Length)
+                throw new ArgumentException("sdf length must match ternaryMask length.");
             if (ternaryMask.Length != nx * ny * nz)
                 throw new ArgumentException("Mask length must be nx*ny*nz.");
             if (nx <= 0 || ny <= 0 || nz <= 0)
@@ -136,15 +139,12 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
             int[] sqToOutside = Edt3D.ExactSquaredIsotropic(seedsToOutsideFg, nx, ny, nz, parallel);
 
             // SDF = dist(outsideFG) - dist(insideFG)
-            float[] sdf = new float[n];
             for (int i = 0; i < n; i++)
                 sdf[i] = MathFx.Sqrt(sqToOutside[i]) - MathFx.Sqrt(sqToInside[i]);
 
             // Hard snap exact boundary to zero (removes tiny FP noise)
             for (int i = 0; i < n; i++)
                 if (ternaryMask[i] == 2) sdf[i] = 0f;
-
-            return sdf;
         }
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
         /// Anisotropic voxels (spacingX/Y/Z). Row-major (x fastest).
         /// </summary>
         /// <returns>Returns SDF with outside LARGER THAN 0, inside SMALLER THAN 0, boundary == 0 (in physical units).</returns>
-        public static float[] FromTernaryMaskAnisotropic(
-            ReadOnlySpan<byte> ternaryMask,
+        public static void FromTernaryMaskAnisotropic(
+            ReadOnlySpan<byte> ternaryMask, Span<float> sdf,
             int nx, int ny, int nz,
             double spacingX, double spacingY, double spacingZ,
             bool parallel)
@@ -186,15 +186,12 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
             double[] sqToOutside = Edt3D.ExactSquaredAnisotropic(
                 seedsToOutsideFg, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
 
-            float[] sdf = new float[n];
             for (int i = 0; i < n; i++)
                 sdf[i] = MathFx.Sqrt((float)sqToOutside[i]) - MathFx.Sqrt((float)sqToInside[i]);
 
             // Exact zero on boundary
             for (int i = 0; i < n; i++)
                 if (ternaryMask[i] == 2) sdf[i] = 0f;
-
-            return sdf;
         }
     }
 }
