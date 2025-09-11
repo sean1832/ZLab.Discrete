@@ -45,8 +45,8 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
             float[] sdf = new float[nx * ny * nz];
             for (int i = 0; i < sdf.Length; i++)
             {
-                float outside = MathFx.Sqrt(squaredToBackground[i]);
-                float inside = MathFx.Sqrt(squaredToForeground[i]);
+                float outside = (float)Math.Sqrt(squaredToBackground[i]);
+                float inside = (float)Math.Sqrt(squaredToForeground[i]);
                 sdf[i] = inside - outside; // > 0 outside, < 0 inside
             }
             return sdf;
@@ -96,8 +96,8 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
 
             for (int i = 0; i < sdf.Length; i++)
             {
-                float outside = MathFx.Sqrt((float)squaredToBackground[i]);
-                float inside = MathFx.Sqrt((float)squaredToForeground[i]);
+                float outside = (float)Math.Sqrt(squaredToBackground[i]);
+                float inside = (float)Math.Sqrt(squaredToForeground[i]);
                 sdf[i] = inside - outside; // <- assign to output span
             }
         }
@@ -147,7 +147,7 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
 
             // SDF = dist(outsideFG) - dist(insideFG)
             for (int i = 0; i < n; i++)
-                sdf[i] = MathFx.Sqrt(sqToInside[i]) - MathFx.Sqrt(sqToOutside[i]);
+                sdf[i] = (float)Math.Sqrt(sqToInside[i]) - (float)Math.Sqrt(sqToOutside[i]);
 
             // Hard snap exact boundary to zero (removes tiny FP noise)
             for (int i = 0; i < n; i++)
@@ -205,7 +205,7 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
                 seedsToOutsideFg, nx, ny, nz, spacingX, spacingY, spacingZ, parallel);
 
             for (int i = 0; i < n; i++)
-                sdf[i] = MathFx.Sqrt((float)sqToInside[i]) - MathFx.Sqrt((float)sqToOutside[i]);
+                sdf[i] = (float)Math.Sqrt(sqToInside[i]) - (float)Math.Sqrt(sqToOutside[i]);
 
             // Exact zero on boundary
             for (int i = 0; i < n; i++)
