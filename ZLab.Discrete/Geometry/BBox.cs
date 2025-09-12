@@ -36,7 +36,7 @@ namespace ZLab.Discrete.Geometry
         /// <summary>
         /// Surface area of the box (2*(xy + yz + zx)). Returns 0 for invalid boxes.
         /// </summary>
-        public readonly float SurfaceArea
+        public float SurfaceArea
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => IsValid
