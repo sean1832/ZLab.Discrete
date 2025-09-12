@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use this class library, please cite it as below."
+authors:
+  - family-names: Zhang
+    given-names: Zeke
+title: "Zlab.Discrete: A C# library for voxelization and distance fields"
+date-released: 2025-09-12

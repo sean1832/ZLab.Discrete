@@ -59,3 +59,16 @@ subject to the PolyForm-NC terms. **Commercial use is not permitted**.
 For commercial licensing, contact [dev@zekezhang.com](mailto:dev@zekezhang.com).
 
 See the [LICENSE](https://github.com/sean1832/ZLab.Discrete/blob/main/LICENSE.md) file for more details.
+
+## Citation
+If you find this library useful in your research or projects, please consider citing it as follows:
+
+```bibtex
+@software{zhang2025zlab,
+  author = {Zeke Zhang},
+  title = {Zlab.Discrete: A managed C# library for voxelization and distance fields},
+  year = {2025},
+  publisher = {GitHub},
+  url = {https://github.com/zekezhang/Zlab.Discrete},
+}
+```
