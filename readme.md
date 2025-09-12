@@ -5,8 +5,8 @@
   <img alt="Icon" src="https://github.com/sean1832/ZLab.Discrete/blob/main/docs/icons/icon_light_trans.png?raw=true" width="200">
 </picture>
 
-![NuGet](https://img.shields.io/nuget/v/ZLab.Discrete)
-![Github Release](https://img.shields.io/github/v/release/sean1832/ZLab.Discrete)
+[![NuGet](https://img.shields.io/nuget/v/ZLab.Discrete)](https://www.nuget.org/packages/ZLab.Discrete)
+[![Github Release](https://img.shields.io/github/v/release/sean1832/ZLab.Discrete)](https://github.com/sean1832/ZLab.Discrete/releases/latest)
 [![license-badge](https://img.shields.io/badge/License-PolyForm_Noncommercial_1.0.0-blue)](https://github.com/sean1832/ZLab.Discrete/blob/main/LICENSE.md)
 
 A fully managed .NET library for voxelization, meshing, and distance field computation. It is written entirely in C#, requires no external dependencies, and is designed for easy integration into .NET projects.
