@@ -53,6 +53,12 @@ jobs:
             --output ./nupkgs
         shell: pwsh
 
+      - name: List packed files
+        shell: pwsh
+        run: |
+          Write-Host "Contents of ./nupkgs:"
+          Get-ChildItem ./nupkgs | Format-Table Name,Length,LastWriteTime
+
       - name: Add GitHub Packages source
         run: |
           dotnet nuget add source `
@@ -64,16 +70,38 @@ jobs:
         shell: pwsh
 
       - name: Publish to GitHub Packages
-        run: |
-          dotnet nuget push "./nupkgs/*.nupkg" --source "github" --skip-duplicate
-          dotnet nuget push "./nupkgs/*.snupkg" --source "github" --skip-duplicate
         shell: pwsh
+        run: |
+          $pkgs = Get-ChildItem -Path "./nupkgs" -Filter "*.nupkg" -ErrorAction Stop
+          if ($pkgs.Count -eq 0) { Write-Error "No .nupkg files found in ./nupkgs"; exit 1 }
+          foreach ($p in $pkgs) {
+            dotnet nuget push $p.FullName --source "github" --skip-duplicate
+          }
+
+          $symbols = Get-ChildItem -Path "./nupkgs" -Filter "*.snupkg" -ErrorAction SilentlyContinue
+          foreach ($s in $symbols) {
+            dotnet nuget push $s.FullName --source "github" --skip-duplicate
+          }
 
       - name: Publish to NuGet.org
-        run: |
-          dotnet nuget push "./nupkgs/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source "https://api.nuget.org/v3/index.json" --skip-duplicate
-          dotnet nuget push "./nupkgs/*.snupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source "https://api.nuget.org/v3/index.json" --skip-duplicate
         shell: pwsh
+        run: |
+          $pkgs = Get-ChildItem -Path "./nupkgs" -Filter "*.nupkg" -ErrorAction Stop
+          if ($pkgs.Count -eq 0) { Write-Error "No .nupkg files found in ./nupkgs"; exit 1 }
+          foreach ($p in $pkgs) {
+            dotnet nuget push $p.FullName `
+              --api-key "${{ secrets.NUGET_API_KEY }}" `
+              --source "https://api.nuget.org/v3/index.json" `
+              --skip-duplicate
+          }
+
+          $symbols = Get-ChildItem -Path "./nupkgs" -Filter "*.snupkg" -ErrorAction SilentlyContinue
+          foreach ($s in $symbols) {
+            dotnet nuget push $s.FullName `
+              --api-key "${{ secrets.NUGET_API_KEY }}" `
+              --source "https://api.nuget.org/v3/index.json" `
+              --skip-duplicate
+          }
 
       - name: Attach packages to the GitHub Release
         uses: softprops/action-gh-release@v2
