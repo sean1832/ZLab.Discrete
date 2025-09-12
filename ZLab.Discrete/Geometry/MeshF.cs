@@ -64,11 +64,19 @@ namespace ZLab.Discrete.Geometry
             IsClosed = isClosed;
         }
 
+        /// <summary>
+        /// Gets the axis-aligned bounding box (AABB) of the mesh.
+        /// </summary>
+        /// <returns></returns>
         public BBox GetBounds()
         {
             _bounds ??= ComputeBounds();
             return _bounds.Value;
         }
+
+        /// <summary>
+        /// Recomputes the axis-aligned bounding box (AABB) of the mesh.
+        /// </summary>
         public void RecomputeBounds()
         {
             _bounds = ComputeBounds();
@@ -153,9 +161,8 @@ namespace ZLab.Discrete.Geometry
                 {
                     TriFace f = Faces[i];
                     // (a,b), (b,c), (c,a)
-                    sbyte s;
 
-                    keys[w] = MakeEdgeKey(f.A, f.B, out s);
+                    keys[w] = MakeEdgeKey(f.A, f.B, out sbyte s);
                     signs[w++] = s;
 
                     keys[w] = MakeEdgeKey(f.B, f.C, out s);
