@@ -13,7 +13,7 @@
     <AssemblyVersion>0.0.1</AssemblyVersion>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <IncludeSymbols>False</IncludeSymbols>
+    <IncludeSymbols>True</IncludeSymbols>
     <RepositoryUrl>https://github.com/sean1832/zlab.discrete</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageProjectUrl>https://sean1832.github.io/ZLab.Discrete</PackageProjectUrl>
@@ -21,6 +21,7 @@
     <Copyright>Copyright © 2025 Zeke Zhang. All rights reserved. </Copyright>
     <PackageIcon>dark.png</PackageIcon>
     <PackageLicenseExpression> PolyForm-Noncommercial-1.0.0</PackageLicenseExpression>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
   <ItemGroup Condition=" $([System.String]::Copy('$(TargetFramework)').StartsWith('net4')) ">
     <PackageReference Include="System.Memory" Version="4.6.3" />
