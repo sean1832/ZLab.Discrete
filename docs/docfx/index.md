@@ -1,5 +1,6 @@
 # Zlab.Discrete
-![Image](Zlab.Discrete/images/icon_dark_trans.png)
+<img alt="Icon" src="images/icon_dark_trans.png" width="200">
+
 A fully managed .NET library for voxelization, meshing, and distance field computation.
 
 ## Overview
