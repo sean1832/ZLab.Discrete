@@ -20,8 +20,8 @@
     <Title>ZLab.Discrete</Title>
     <Copyright>Copyright © 2025 Zeke Zhang. All rights reserved. </Copyright>
     <PackageIcon>dark.png</PackageIcon>
-    <PackageLicenseExpression> PolyForm-Noncommercial-1.0.0</PackageLicenseExpression>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup Condition=" $([System.String]::Copy('$(TargetFramework)').StartsWith('net4')) ">
     <PackageReference Include="System.Memory" Version="4.6.3" />
