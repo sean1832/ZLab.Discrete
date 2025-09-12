@@ -1,18 +1,19 @@
 # Zlab.Discrete
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/icons/icon_dark_trans.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/icons/icon_light_trans.png">
-  <img alt="Icon" src="docs/icons/icon_light_trans.png" width="200">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/sean1832/ZLab.Discrete/blob/main/docs/icons/icon_dark_trans.png?raw=true">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/sean1832/ZLab.Discrete/blob/main/docs/icons/icon_light_trans.png?raw=true">
+  <img alt="Icon" src="https://github.com/sean1832/ZLab.Discrete/blob/main/docs/icons/icon_light_trans.png?raw=true" width="200">
 </picture>
 
+![NuGet](https://img.shields.io/nuget/v/ZLab.Discrete)
+![Github Release](https://img.shields.io/github/v/release/sean1832/ZLab.Discrete)
+[![license-badge](https://img.shields.io/badge/License-PolyForm_Noncommercial_1.0.0-blue)](https://github.com/sean1832/ZLab.Discrete/blob/main/LICENSE.md)
 
-A fully managed .NET library for voxelization, meshing, and distance field computation.
+A fully managed .NET library for voxelization, meshing, and distance field computation. It is written entirely in C#, requires no external dependencies, and is designed for easy integration into .NET projects.
 
 - [Documentation](https://sean1832.github.io/ZLab.Discrete/)
+- [Getting Started](https://sean1832.github.io/ZLab.Discrete/docs/getting-started.html)
 
-## Overview
-
-**Zlab.Discrete** provides tools for constructing and processing voxel grids from 3D geometry. It is written entirely in C#, requires no external dependencies, and is designed for easy integration into .NET projects.
 
 ## Features
 
@@ -50,11 +51,11 @@ A fully managed .NET library for voxelization, meshing, and distance field compu
 
 
 ## License
-ZLab.Discrete is licensed under the PolyForm Noncommercial 1.0.0 license.
+ZLab.Discrete is licensed under the `PolyForm Noncommercial 1.0.0` license.
 
 TL;DR — You may use, modify, and distribute ZLab.Discrete **for noncommercial purposes** 
 (including personal projects, education, academic research, nonprofits, and government) 
 subject to the PolyForm-NC terms. **Commercial use is not permitted**. 
-For commercial licensing, contact dev@zekezhang.com.
+For commercial licensing, contact [dev@zekezhang.com](mailto:dev@zekezhang.com).
 
-See the [LICENSE](LICENSE.md) file for more details.
+See the [LICENSE](https://github.com/sean1832/ZLab.Discrete/blob/main/LICENSE.md) file for more details.

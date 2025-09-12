@@ -56,7 +56,7 @@ items:
   summary: Discretize a mesh. Only voxels that intersect the mesh are returned.
   example: []
   syntax:
-    content: public static List<Vector3> Rasterize(MeshF mesh, Vector3 voxelSize, int parallelThreshold = 2048)
+    content: public static Vector3[] Rasterize(MeshF mesh, Vector3 voxelSize, int parallelThreshold = 2048)
     parameters:
     - id: mesh
       type: ZLab.Discrete.Geometry.MeshF
@@ -68,9 +68,9 @@ items:
       type: System.Int32
       description: Mesh vertices threshold for parallelism
     return:
-      type: System.Collections.Generic.List{System.Numerics.Vector3}
-      description: OccupancyVoxel intersects with the mesh boundary
-    content.vb: Public Shared Function Rasterize(mesh As MeshF, voxelSize As Vector3, parallelThreshold As Integer = 2048) As List(Of Vector3)
+      type: System.Numerics.Vector3[]
+      description: voxels intersects with the mesh boundary
+    content.vb: Public Shared Function Rasterize(mesh As MeshF, voxelSize As Vector3, parallelThreshold As Integer = 2048) As Vector3()
   overload: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.Rasterize*
   nameWithType.vb: SparseRasterizer.Rasterize(MeshF, Vector3, Integer)
   fullName.vb: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.Rasterize(ZLab.Discrete.Geometry.MeshF, System.Numerics.Vector3, Integer)
@@ -383,40 +383,28 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: System.Collections.Generic.List{System.Numerics.Vector3}
-  commentId: T:System.Collections.Generic.List{System.Numerics.Vector3}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<Vector3>
-  nameWithType: List<Vector3>
-  fullName: System.Collections.Generic.List<System.Numerics.Vector3>
-  nameWithType.vb: List(Of Vector3)
-  fullName.vb: System.Collections.Generic.List(Of System.Numerics.Vector3)
-  name.vb: List(Of Vector3)
+- uid: System.Numerics.Vector3[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  name: Vector3[]
+  nameWithType: Vector3[]
+  fullName: System.Numerics.Vector3[]
+  nameWithType.vb: Vector3()
+  fullName.vb: System.Numerics.Vector3()
+  name.vb: Vector3()
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
   - uid: System.Numerics.Vector3
     name: Vector3
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
-  - name: '>'
+  - name: '['
+  - name: ']'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
   - uid: System.Numerics.Vector3
     name: Vector3
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.numerics.vector3
+  - name: (
   - name: )
 - uid: ZLab.Discrete.Geometry
   commentId: N:ZLab.Discrete.Geometry
@@ -475,69 +463,4 @@ references:
     name: Numerics
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.numerics
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 memberLayout: SeparatePages
