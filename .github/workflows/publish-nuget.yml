@@ -27,7 +27,9 @@ jobs:
       - name: Compute version from tag
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "VERSION=${env:GITHUB_REF_NAME -replace '^v',''}" >> $env:GITHUB_ENV
+          $tag = $env:GITHUB_REF_NAME
+          $version = $tag -replace '^v',''
+          echo "VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         shell: pwsh
 
       - name: Restore
