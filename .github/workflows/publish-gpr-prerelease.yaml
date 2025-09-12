@@ -2,12 +2,12 @@ name: Publish to GitHub Packages (Prerelease)
 # tags like: v1.2.3-rc.1
 on:
   release:
-    types: [prereleased]   # trigger on prereleases
+    types: [prereleased] # trigger on prereleases
   workflow_dispatch:
 
 permissions:
-  contents: write          # (optional) needed if you attach assets to the GitHub Release
-  packages: write          # required to publish to GitHub Packages
+  contents: write # (optional) needed if you attach assets to the GitHub Release
+  packages: write # required to publish to GitHub Packages
 
 jobs:
   publish:
@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
+            9.x
             8.x
             7.x
 
@@ -36,14 +37,15 @@ jobs:
       - name: Restore
         run: dotnet restore
 
-      - name: Build (Release)
-        run: dotnet build --configuration Release --no-restore
+      - name: Build Release (skip net472;net48 for ubuntu)
+        run: dotnet build --configuration Release --no-restore -p:TargetFrameworks="netstandard2.1;net7.0;net8.0;net9.0"
 
       - name: Pack
         run: |
-          dotnet pack Zlab.Discrete/ZLab.Discrete.csproj \
+          dotnet pack ZLab.Discrete/ZLab.Discrete.csproj \
             --configuration Release \
             --no-build \
+            -p:TargetFrameworks="netstandard2.1;net7.0;net8.0;net9.0" \
             -p:PackageVersion=${VERSION} \
             -p:Version=${VERSION} \
             -p:ContinuousIntegrationBuild=true \
