@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Buffers;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using ZLab.Discrete.IO;
 
 namespace ZLab.Discrete.Geometry
 {
@@ -100,13 +102,16 @@ namespace ZLab.Discrete.Geometry
 
         /// <summary>
         /// Enumerates the axis-aligned bounding boxes (AABB) of each triangle face in the mesh.
+        /// </summary>
+        /// <remarks>
+        /// Usage example:
         /// <code>
         /// foreach (BBox triBox in mesh.EnumerateTriangleBounds())
         /// {
         ///     // Process each triangle bounding box (triBox)
         /// }
         /// </code>
-        /// </summary>
+        /// </remarks>
         public IEnumerable<BBox> EnumerateTriangleBounds()
         {
             foreach (TriFace face in Faces)
@@ -117,6 +122,34 @@ namespace ZLab.Discrete.Geometry
                 yield return new BBox(min, max);
             }
         }
+
+        #region IO
+
+        /// <summary>
+        /// Loads a mesh from an OBJ file. Only supports vertices (v) and triangular faces (f).
+        /// </summary>
+        /// <param name="path">Path to the OBJ file.</param>
+        /// <returns>Loaded mesh.</returns>
+        public static MeshF FromObjFile(string path) => ObjHelpers.Load(path);
+
+        /// <summary>
+        /// Saves the mesh to an OBJ file. Only saves vertices (v) and triangular faces (f).
+        /// </summary>
+        /// <param name="path">Path to save the OBJ file.</param>
+        public void ToObjFile(string path)
+        {
+            try
+            {
+                ObjHelpers.Save(path, this);
+            }
+            catch (IOException)
+            {
+                File.Delete(path); // Delete existing file and retry
+                ObjHelpers.Save(path, this);
+            }
+        }
+
+        #endregion
 
 
         #region Private Methods
