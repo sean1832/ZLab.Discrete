@@ -1,8 +1,8 @@
 # Zlab.Discrete
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="icon_dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="icon_light.png">
-  <img alt="Icon" src="icon_light.png" width="200">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/icons/icon_dark_trans.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/icons/icon_light_trans.png">
+  <img alt="Icon" src="docs/icons/icon_light_trans.png" width="200">
 </picture>
 
 
@@ -49,15 +49,12 @@ A fully managed .NET library for voxelization, meshing, and distance field compu
 - .NET 9.0
 
 
-
 ## License
-This project is dual-licensed:
+ZLab.Discrete is licensed under the PolyForm Noncommercial 1.0.0 license.
 
-- **Open Source (GPL 3.0)** — see [LICENSE](./LICENSE)  
-- **Commercial License** — see [LICENSE-COMMERCIAL](./LICENSE-COMMERCIAL).
+TL;DR — You may use, modify, and distribute ZLab.Discrete **for noncommercial purposes** 
+(including personal projects, education, academic research, nonprofits, and government) 
+subject to the PolyForm-NC terms. **Commercial use is not permitted**. 
+For commercial licensing, contact dev@zekezhang.com.
 
-If you are a researcher, student, or using this project in an open-source context,  
-use the GPL 3.0 license.  
-
-If you want to use this in proprietary software or closed-source products,  
-you must obtain a commercial license. (contact: dev@zekezhang.com)
+See the [LICENSE](LICENSE.md) file for more details.

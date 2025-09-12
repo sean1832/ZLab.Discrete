@@ -1,11 +1,9 @@
-# Licenses
-This project is dual-licensed:
+# License
+ZLab.Discrete is licensed under the PolyForm Noncommercial 1.0.0 license.
 
-- **Open Source (GPL3.0)** — see [LICENSE](https://github.com/sean1832/ZLab.Discrete/blob/main/LICENSE)
-- **Commercial License** — see [LICENSE-COMMERCIAL](https://github.com/sean1832/ZLab.Discrete/blob/main/LICENSE-COMMERCIAL).
+TL;DR — You may use, modify, and distribute ZLab.Discrete **for noncommercial purposes** 
+(including personal projects, education, academic research, nonprofits, and government) 
+subject to the PolyForm-NC terms. **Commercial use is not permitted**. 
+For commercial licensing, contact [dev@zekezhang.com](mailto:dev@zekezhang.com).
 
-If you are a researcher, student, or using this project in an open-source context, use the GPL3.0 license.
-This means that if you distribute software that uses this library, your software must also be open-sourced under the GPL3.0 license.
-
-If you want to use this in proprietary software or closed-source products, you must obtain a commercial license.  
-(contact: dev@zekezhang.com)
+See the [LICENSE](https://github.com/sean1832/ZLab.Discrete/blob/main/LICENSE.md) file for more details.

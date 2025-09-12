@@ -12,7 +12,6 @@
     <FileVersion>0.0.1</FileVersion>
     <AssemblyVersion>0.0.1</AssemblyVersion>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>False</IncludeSymbols>
     <RepositoryUrl>https://github.com/sean1832/zlab.discrete</RepositoryUrl>
@@ -21,6 +20,7 @@
     <Title>ZLab.Discrete</Title>
     <Copyright>Copyright © 2025 Zeke Zhang. All rights reserved. </Copyright>
     <PackageIcon>dark.png</PackageIcon>
+    <PackageLicenseExpression> PolyForm-Noncommercial-1.0.0</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup Condition=" $([System.String]::Copy('$(TargetFramework)').StartsWith('net4')) ">
     <PackageReference Include="System.Memory" Version="4.6.3" />
@@ -29,11 +29,11 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\LICENSE">
+    <None Include="..\readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\readme.md">
+    <None Include="..\LICENSE.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
