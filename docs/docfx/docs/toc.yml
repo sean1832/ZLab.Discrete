@@ -1,3 +1,6 @@
+- name: Getting Started
+  href: getting-started.md
+
 - name: Usages
   href: usages/toc.yml
 
