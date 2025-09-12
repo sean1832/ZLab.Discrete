@@ -22,6 +22,7 @@
     <PackageIcon>dark.png</PackageIcon>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup Condition=" $([System.String]::Copy('$(TargetFramework)').StartsWith('net4')) ">
     <PackageReference Include="System.Memory" Version="4.6.3" />
