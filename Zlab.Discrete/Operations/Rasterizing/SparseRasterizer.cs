@@ -49,13 +49,13 @@ namespace ZLab.Discrete.Operations.Rasterizing
         /// <param name="mesh">Mesh to discretize</param>
         /// <param name="voxelSize">Size of each voxel</param>
         /// <param name="parallelThreshold">Mesh vertices threshold for parallelism</param>
-        /// <returns><see cref="OccupancyVoxel"/> intersects with the mesh boundary</returns>
-        public static List<Vector3> Rasterize(
+        /// <returns>voxels intersects with the mesh boundary</returns>
+        public static Vector3[] Rasterize(
             MeshF mesh, Vector3 voxelSize, 
             int parallelThreshold = 2048)
         {
             TriFace[] faces = mesh.Faces;
-            if (faces.Length == 0) return new List<Vector3>(0);
+            if (faces.Length == 0) return Array.Empty<Vector3>();
 
             VoxelOriginComparer comparer = new(voxelSize);
 
@@ -68,7 +68,7 @@ namespace ZLab.Discrete.Operations.Rasterizing
                     List<Vector3> voxels = Rasterizer.RasterizeFace(mesh, face, voxelSize);
                     foreach (Vector3 v in voxels) set.Add(v);
                 }
-                return set.ToList();
+                return set.ToArray();
             }
 
             // Large meshes: parallel. Use a ConcurrentDictionary as a concurrent set.
@@ -88,7 +88,7 @@ namespace ZLab.Discrete.Operations.Rasterizing
                 }
             });
 
-            return setConcurrent.Keys.ToList();
+            return setConcurrent.Keys.ToArray();
         }
     }
 }
