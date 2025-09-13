@@ -36,18 +36,25 @@ namespace ZLab.Discrete.Algorithms.Collision
             }
 
             // Test each segment against the box
-            Vector3 segmentStart = polyline[0];
-            for (int i = 0; i < vertexCount; i++)
+            for (int i = 1; i < vertexCount; i++)
             {
+                Vector3 segmentStart = polyline[i - 1];
                 Vector3 segmentEnd = polyline[i];
+                // skip exact zero-length segments
+                if ((segmentEnd - segmentStart).LengthSquared() == 0f) continue;
+
                 if (IsIntersectsSegment(bBox, segmentStart, segmentEnd))
                     return true;
-                segmentStart = segmentEnd;
             }
 
             // If closed, test the closing segment
-            if (isClosed && IsIntersectsSegment(bBox, polyline[vertexCount - 1], polyline[0]))
-                return true;
+            if (isClosed && vertexCount > 2)
+            {
+                Vector3 a = polyline[vertexCount - 1];
+                Vector3 b = polyline[0];
+                if ((b - a).LengthSquared() != 0f && IsIntersectsSegment(bBox, a, b))
+                    return true;
+            }
 
             return false;
         }
