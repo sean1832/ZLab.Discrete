@@ -130,7 +130,7 @@ namespace ZLab.Discrete.Geometry
         /// </summary>
         /// <param name="path">Path to the OBJ file.</param>
         /// <returns>Loaded mesh.</returns>
-        public static MeshF FromObjFile(string path) => ObjHelpers.Load(path);
+        public static MeshF FromObjFile(string path) => ObjParser.Load(path);
 
         /// <summary>
         /// Saves the mesh to an OBJ file. Only saves vertices (v) and triangular faces (f).
@@ -138,7 +138,7 @@ namespace ZLab.Discrete.Geometry
         /// <param name="path">Path to save the OBJ file.</param>
         public void ToObjFile(string path)
         {
-            ObjHelpers.Save(path, this);
+            ObjParser.Save(path, this);
         }
 
         #endregion

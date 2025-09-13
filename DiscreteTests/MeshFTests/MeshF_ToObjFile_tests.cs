@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -10,6 +11,23 @@ namespace DiscreteTests.MeshFTests
 {
     public class MeshF_ToObjFile_tests
     {
+        // --- Helpers -------------------------------------------------------------
+
+        private static string TempFile()
+            => Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+
+        private static void SafeDelete(string path)
+        {
+            try { if (File.Exists(path)) File.Delete(path); } catch { }
+        }
+
+        private static void WriteText(string path, string text, bool withBom = false)
+        {
+            using var sw = new StreamWriter(path, false, new UTF8Encoding(withBom));
+            sw.NewLine = "\n";
+            sw.Write(text);
+        }
+
         [Fact]
         public void ToObjFile_Pyramid_With5VerticesAnd6Faces()
         {
@@ -59,16 +77,64 @@ namespace DiscreteTests.MeshFTests
             }
         }
 
-        private static void SafeDelete(string path)
+        [Fact]
+        public void ToObjFile_WritesUtf8_NoBom_And_LF_Only()
         {
+            // Arrange
+            var mesh = new MeshF(
+                new[] { new Vector3(0, 0, 0), new Vector3(1, 2, 3), new Vector3(4, 5, 6) },
+                new[] { new TriFace(0, 1, 2) },
+                isClosed: false);
+
+            string path = TempFile();
             try
             {
-                if (File.Exists(path))
-                    File.Delete(path);
+                // Act
+                mesh.ToObjFile(path);
+
+                // Assert: no BOM
+                byte[] bytes = File.ReadAllBytes(path);
+                var utf8Bom = new byte[] { 0xEF, 0xBB, 0xBF };
+                Assert.False(bytes.Length >= 3 &&
+                             bytes[0] == utf8Bom[0] &&
+                             bytes[1] == utf8Bom[1] &&
+                             bytes[2] == utf8Bom[2]);
+
+                // Assert: LF only
+                string text = File.ReadAllText(path); // normalizes lines in memory, so check raw bytes for CR
+                Assert.DoesNotContain("\r", Encoding.UTF8.GetString(bytes));
             }
-            catch
+            finally { SafeDelete(path); }
+        }
+
+        [Fact]
+        public void ToObjFile_IsCultureInvariant()
+        {
+            var originalCulture = CultureInfo.CurrentCulture;
+            try
             {
-                /* ignore for tests */
+                CultureInfo.CurrentCulture = new CultureInfo("de-DE"); // comma decimal locale
+
+                var mesh = new MeshF(
+                    new[] { new Vector3(0.5f, 1.25f, 2.5f) },
+                    new[] { new TriFace(0, 0, 0) },
+                    isClosed: false);
+
+                string path = TempFile();
+                try
+                {
+                    mesh.ToObjFile(path);
+                    string content = File.ReadAllText(path);
+
+                    // Should use '.' regardless of current culture
+                    Assert.Contains("v 0.5 1.25 2.5", content);
+                    Assert.Contains("f 1 1 1", content);
+                }
+                finally { SafeDelete(path); }
+            }
+            finally
+            {
+                CultureInfo.CurrentCulture = originalCulture;
             }
         }
     }
