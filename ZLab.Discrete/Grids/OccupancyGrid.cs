@@ -11,12 +11,19 @@ namespace ZLab.Discrete.Grids
     /// <summary>
     /// Occupancy grid structure.
     /// </summary>
-    public sealed class OccupancyGrid: GridBase, IGrid<Occupancy>
+    public sealed class OccupancyGrid : GridBase, IGrid<Occupancy>
     {
         private Occupancy[] _occupancies; // length = Nx * Ny * Nz
 
         // ------------ Constructors ------------
         #region Constructors
+
+        /// <summary>
+        /// Create an occupancy grid that covers the given world-space bounds with the given voxel size.
+        /// </summary>
+        /// <param name="voxelSize">voxel size (must be positive in all dimensions)</param>
+        /// <param name="bounds">world-space axis-aligned bounding box</param>
+        /// <exception cref="ArgumentException">Thrown if voxel size is not positive or if grid dimensions are invalid.</exception>
         public OccupancyGrid(Vector3 voxelSize, BBox bounds)
         {
             // Derive integer index range from world bounds
@@ -33,6 +40,11 @@ namespace ZLab.Discrete.Grids
             RecomputeBounds();
         }
 
+        /// <summary>
+        /// Create an occupancy grid with given metadata.
+        /// </summary>
+        /// <param name="meta">Grid metadata (voxel size must be positive)</param>
+        /// <exception cref="ArgumentException">Thrown if voxel size is not positive or if grid dimensions are invalid.</exception>
         public OccupancyGrid(GridMeta meta)
         {
             if (meta.Nx <= 0 || meta.Ny <= 0 || meta.Nz <= 0)
@@ -42,6 +54,16 @@ namespace ZLab.Discrete.Grids
             RecomputeBounds();
         }
 
+        /// <summary>
+        /// Create an occupancy grid from arrays of occupancies and their corresponding world-space positions.
+        /// </summary>
+        /// <param name="occupancies">occupancy values</param>
+        /// <param name="positions">world-space positions corresponding to each occupancy</param>
+        /// <param name="meta">Grid metadata defining the voxel size and bounds</param>
+        /// <exception cref="ArgumentNullException">occurs when <paramref name="occupancies"/> or <paramref name="positions"/> is null.</exception>
+        /// <exception cref="ArgumentException">occurs when input arrays have different lengths, or if grid dimensions are invalid, or if voxel size is not positive, or if any position is outside the provided grid bounds.</exception>
+        /// <exception cref="OutOfMemoryException">occurs when the grid size exceeds available memory.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">occurs when any position is outside the provided grid bounds.</exception>
         public OccupancyGrid(Occupancy[] occupancies, Vector3[] positions, GridMeta meta)
         {
             if (occupancies is null) throw new ArgumentNullException(nameof(occupancies));
@@ -192,6 +214,11 @@ namespace ZLab.Discrete.Grids
         #endregion
 
         // ------------ OVERRIDES ------------
+
+        /// <summary>
+        /// String representation of the grid.
+        /// </summary>
+        /// <returns>string</returns>
         public override string ToString()
         {
             return $"OccupancyGrid[{Meta.Nx}x{Meta.Ny}x{Meta.Nz}]@{Meta.VoxelSize} (Bounds: {Bounds})";

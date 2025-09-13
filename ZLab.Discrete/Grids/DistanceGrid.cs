@@ -11,7 +11,7 @@ namespace ZLab.Discrete.Grids
     /// <summary>
     /// Distance field grid structure.
     /// </summary>
-    public sealed class DistanceGrid: GridBase, IGrid<float>
+    public sealed class DistanceGrid : GridBase, IGrid<float>
     {
         /// <summary>
         /// flat array in row-major order (x fastest, then y, then z)
@@ -20,6 +20,13 @@ namespace ZLab.Discrete.Grids
 
         // ------------ Constructors ------------
         #region Constructors
+
+        /// <summary>
+        /// Create a distance grid with given voxel size and world-space bounds.
+        /// </summary>
+        /// <param name="voxelSize">Voxel size in each dimension (must be positive)</param>
+        /// <param name="bounds">World-space axis-aligned bounding box</param>
+        /// <exception cref="ArgumentException">Thrown if voxel size is not positive or if bounds are invalid.</exception>
         public DistanceGrid(Vector3 voxelSize, BBox bounds)
         {
             // Derive integer index range from world bounds
@@ -39,6 +46,11 @@ namespace ZLab.Discrete.Grids
             RecomputeBounds();
         }
 
+        /// <summary>
+        /// Create a distance grid with given metadata.
+        /// </summary>
+        /// <param name="meta">Grid metadata (voxel size must be positive)</param>
+        /// <exception cref="ArgumentException">Thrown if voxel size is not positive or if grid dimensions are invalid.</exception>
         public DistanceGrid(GridMeta meta)
         {
             if (meta.Nx <= 0 || meta.Ny <= 0 || meta.Nz <= 0)
@@ -48,6 +60,10 @@ namespace ZLab.Discrete.Grids
             RecomputeBounds();
         }
 
+        /// <summary>
+        /// Create a distance grid with the same dimensions and voxel size as the given occupancy grid.
+        /// </summary>
+        /// <param name="og">Occupancy grid to match</param>
         public DistanceGrid(OccupancyGrid og)
         {
             Meta = og.Meta;
@@ -228,7 +244,7 @@ namespace ZLab.Discrete.Grids
             Span<float> sdf = _distances.AsSpan(0, _distances.Length);
             Sdf3D.FromBinaryMaskAnisotropic(
                 binaryMask, sdf,
-                Meta.Nx, Meta.Ny, Meta.Nz, 
+                Meta.Nx, Meta.Ny, Meta.Nz,
                 Meta.VoxelSize.X, Meta.VoxelSize.Y, Meta.VoxelSize.Z, parallel);
         }
 

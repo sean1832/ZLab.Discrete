@@ -85,6 +85,10 @@ namespace ZLab.Discrete.Geometry
             return new BBox(Vector3.Min(a, b), Vector3.Max(a, b));
         }
 
+        /// <summary>
+        /// String representation of the bounding box.
+        /// </summary>
+        /// <returns>string</returns>
         public override string ToString()
         {
             return $"BBox[Min({Min.X},{Min.Y},{Min.Z}), Max({Max.X},{Max.Y},{Max.Z})]";
