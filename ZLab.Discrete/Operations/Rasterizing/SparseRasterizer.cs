@@ -49,7 +49,7 @@ namespace ZLab.Discrete.Operations.Rasterizing
         /// <param name="voxelSize">Size of each voxel</param>
         /// <param name="parallelThreshold">Mesh vertices threshold for parallelism</param>
         /// <returns>voxels intersects with the mesh boundary</returns>
-        public static Vector3[] Rasterize(
+        public static Vector3[] RasterizeMesh(
             MeshF mesh, Vector3 voxelSize, 
             int parallelThreshold = 2048)
         {

@@ -22,7 +22,7 @@ namespace ZLab.Discrete.Operations.Rasterizing
         /// <param name="mesh">Mesh to discretize into voxels.</param>
         /// <param name="floodFill">If true, runs flood fill to label inside/outside voxels.</param>
         /// <param name="parallelThreshold">Face count threshold for enabling parallel processing.</param>
-        public static void Rasterize(OccupancyGrid grid, MeshF mesh, bool floodFill=false, int parallelThreshold=2048)
+        public static void RasterizeMesh(OccupancyGrid grid, MeshF mesh, bool floodFill=false, int parallelThreshold=2048)
         {
             if (grid == null) throw new ArgumentNullException(nameof(grid));
 
