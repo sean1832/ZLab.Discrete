@@ -76,7 +76,7 @@ jobs:
           dotnet nuget push "./nupkgs/*.snupkg" --source "github" --skip-duplicate
 
       - name: Publish to NuGet.org
-        if: ${{ github.event.release.prerelease == false }}
+        if: github.event.release.prerelease == false
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: |
