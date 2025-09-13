@@ -111,8 +111,6 @@ namespace ZLab.Discrete.IO
 
         private static int ParseFaceIndex(string token, int vertexCount, string rawLineForError)
         {
-            // token can be "v", "v/vt", "v//vn", or "v/vt/vn"
-            // We only use the vertex index (first field).
             if (string.IsNullOrWhiteSpace(token))
                 throw new FormatException($"Empty face token in line: '{rawLineForError}'");
 
@@ -120,13 +118,19 @@ namespace ZLab.Discrete.IO
             if (sub.Length == 0 || string.IsNullOrEmpty(sub[0]))
                 throw new FormatException($"Missing vertex index in face token '{token}' (line: '{rawLineForError}')");
 
-            int idx = int.Parse(sub[0], NumberStyles.Integer, CultureInfo.InvariantCulture);
+            if (!int.TryParse(sub[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out int original))
+                throw new FormatException($"Invalid vertex index '{sub[0]}' (line: '{rawLineForError}')");
 
-            // Negative indices are relative to the end; -1 is last vertex.
-            idx = idx < 0 ? vertexCount + idx : idx - 1;
+            if (original == 0)
+                throw new FormatException($"OBJ vertex index cannot be 0 (line: '{rawLineForError}')");
 
-            if ((uint)idx >= (uint)vertexCount) // unsigned trick for single bound check
-                throw new IndexOutOfRangeException($"Face index {idx} out of range [0,{vertexCount - 1}] (line: '{rawLineForError}')");
+            // Convert to 0-based: positive => 1-based to 0-based; negative => relative to end
+            int idx = (original > 0) ? (original - 1) : (vertexCount + original); // e.g., -1 -> last => vertexCount-1
+
+            if ((uint)idx >= (uint)vertexCount)
+                throw new IndexOutOfRangeException(
+                    $"Face vertex index '{original}' resolved to 0-based {idx}, " +
+                    $"but valid range is [0,{vertexCount - 1}] (line: '{rawLineForError}')");
 
             return idx;
         }
