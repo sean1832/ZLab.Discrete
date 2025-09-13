@@ -49,6 +49,17 @@ namespace ZLab.Discrete.Geometry
         /// </summary>
         public readonly bool IsValid => !IsDegenerate();
 
+        /// <summary>
+        /// An empty bounding box (degenerate). Use Expand() to grow it.
+        /// </summary>
+        public static BBox Empty => new BBox();
+
+        /// <summary>
+        /// An infinite bounding box.
+        /// </summary>
+        public static BBox Infinite => new BBox(new Vector3(float.MinValue), new Vector3(float.MaxValue));
+
+
         // ==================
         // Constructors
         // ==================
