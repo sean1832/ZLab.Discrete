@@ -27,9 +27,12 @@ namespace ZLab.Discrete.Operations.Rasterizing
         {
             if (grid == null) throw new ArgumentNullException(nameof(grid));
 
-            // Check if the mesh is within or intersects the grid bounds
-            if (!grid.Bounds.Contains(mesh.GetBounds()) || !grid.Bounds.Intersects(mesh.GetBounds()))
-                return;
+            // Check if the mesh intersects the grid bounds
+            BBox meshBounds = mesh.GetBounds();
+            BBox gridBounds = grid.Bounds;
+            if (!gridBounds.Intersects(meshBounds)) return;
+
+
             if (mesh.Faces.Length == 0 || !mesh.IsValid) return;
             if (mesh.Faces.Length > parallelThreshold)
             {
@@ -61,10 +64,13 @@ namespace ZLab.Discrete.Operations.Rasterizing
             if (grid == null) throw new ArgumentNullException(nameof(grid));
             if (polyline == null) throw new ArgumentNullException(nameof(polyline));
             if (polyline.Count < 2) return;
-            // Check if the polyline is within or intersects the grid bounds
-            if (!grid.Bounds.Contains(polyline.GetBounds()) || !grid.Bounds.Intersects(polyline.GetBounds()))
-                return;
-            
+            // Check if the polyline intersects the grid bounds
+            BBox polyBounds = polyline.GetBounds();
+            if (polyline.Count == 0) return;
+
+            BBox gridBounds = grid.Bounds;
+            if (!gridBounds.Intersects(polyBounds)) return;
+
             Rasterizer.RasterizePolylineInGrid(grid, polyline);
         }
 
