@@ -8,9 +8,9 @@
     <Company></Company>
     <Authors>Zeke Zhang</Authors>
     <Description>A fully managed library for voxelization, meshing, and distance field computation.</Description>
-    <Version>0.0.2</Version>
-    <FileVersion>0.0.2</FileVersion>
-    <AssemblyVersion>0.0.2</AssemblyVersion>
+    <Version>0.0.3-rc1</Version>
+    <FileVersion>0.0.3</FileVersion>
+    <AssemblyVersion>0.0.3</AssemblyVersion>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
