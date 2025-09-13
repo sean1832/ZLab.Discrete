@@ -42,8 +42,6 @@ A fully managed .NET library for voxelization, meshing, and distance field compu
 
 
 ## Supported Frameworks
-- .NET Framework 4.7.2
-- .NET Framework 4.8
 - .NET Standard 2.1
 - .NET 7.0
 - .NET 8.0
