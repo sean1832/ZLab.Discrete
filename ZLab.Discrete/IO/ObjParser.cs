@@ -32,7 +32,7 @@ namespace ZLab.Discrete.IO
                 // Strip comments (starting with #)
                 int hash = line.IndexOf('#');
                 if (hash >= 0)
-                    line = line.Slice(0, hash);
+                    line = line[..hash];
                 line = Trim(line);
                 if (line.IsEmpty) continue;
 
@@ -164,7 +164,7 @@ namespace ZLab.Discrete.IO
                 throw new FormatException($"Empty face token in line: '{rawLineForError}'");
 
             int slash = token.IndexOf('/');
-            ReadOnlySpan<char> vertSpan = (slash >= 0) ? token.Slice(0, slash) : token;
+            ReadOnlySpan<char> vertSpan = (slash >= 0) ? token[..slash] : token;
 
             if (vertSpan.IsEmpty)
                 throw new FormatException($"Missing vertex index in face token '{token.ToString()}' (line: '{rawLineForError}')");
@@ -201,8 +201,8 @@ namespace ZLab.Discrete.IO
             // find next whitespace
             while (i < line.Length && !IsSpace(line[i]))
                 i++;
-            ReadOnlySpan<char> token = line.Slice(0, i); // extract token
-            line = (i < line.Length) ? line.Slice(i) : ReadOnlySpan<char>.Empty; // advance
+            ReadOnlySpan<char> token = line[..i]; // extract token
+            line = (i < line.Length) ? line[i..] : ReadOnlySpan<char>.Empty; // advance
             return token; // return token
         }
 
@@ -224,7 +224,7 @@ namespace ZLab.Discrete.IO
             int start = 0;
             while (start < s.Length && IsSpace(s[start]))
                 start++;
-            return (start == 0) ? s : s.Slice(start);
+            return (start == 0) ? s : s[start..];
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

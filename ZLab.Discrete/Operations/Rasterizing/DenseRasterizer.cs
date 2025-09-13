@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Threading.Tasks;
 using ZLab.Discrete.Algorithms.Collision;
 using ZLab.Discrete.Geometry;
@@ -22,13 +23,16 @@ namespace ZLab.Discrete.Operations.Rasterizing
         /// <param name="mesh">Mesh to discretize into voxels.</param>
         /// <param name="floodFill">If true, runs flood fill to label inside/outside voxels.</param>
         /// <param name="parallelThreshold">Face count threshold for enabling parallel processing.</param>
-        public static void Rasterize(OccupancyGrid grid, MeshF mesh, bool floodFill=false, int parallelThreshold=2048)
+        public static void RasterizeMesh(OccupancyGrid grid, MeshF mesh, bool floodFill=false, int parallelThreshold=2048)
         {
             if (grid == null) throw new ArgumentNullException(nameof(grid));
 
-            // Check if the mesh is within or intersects the grid bounds
-            if (!grid.Bounds.Contains(mesh.GetBounds()) || !grid.Bounds.Intersects(mesh.GetBounds()))
-                return;
+            // Check if the mesh intersects the grid bounds
+            BBox meshBounds = mesh.GetBounds();
+            BBox gridBounds = grid.Bounds;
+            if (!gridBounds.Intersects(meshBounds)) return;
+
+
             if (mesh.Faces.Length == 0 || !mesh.IsValid) return;
             if (mesh.Faces.Length > parallelThreshold)
             {
@@ -48,5 +52,27 @@ namespace ZLab.Discrete.Operations.Rasterizing
             if (floodFill && mesh.IsClosed)
                 FloodFill.Fill3D(grid);
         }
+
+        /// <summary>
+        /// Rasterizes a 3D polyline into the given <see cref="OccupancyGrid"/>.
+        /// </summary>
+        /// <param name="grid">Target grid to populate (mutated in-place).</param>
+        /// <param name="polyline">Polyline to rasterize.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="grid"/> or <paramref name="polyline"/> is null.</exception>
+        public static void RasterizePolyline(OccupancyGrid grid, PolylineF polyline)
+        {
+            if (grid == null) throw new ArgumentNullException(nameof(grid));
+            if (polyline == null) throw new ArgumentNullException(nameof(polyline));
+            if (polyline.Count < 2) return;
+            // Check if the polyline intersects the grid bounds
+            BBox polyBounds = polyline.GetBounds();
+            if (polyline.Count == 0) return;
+
+            BBox gridBounds = grid.Bounds;
+            if (!gridBounds.Intersects(polyBounds)) return;
+
+            Rasterizer.RasterizePolylineInGrid(grid, polyline);
+        }
+
     }
 }
