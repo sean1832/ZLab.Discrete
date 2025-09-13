@@ -36,6 +36,16 @@ namespace ZLab.Discrete.Grids
         /// </summary>
         public Vector3 VoxelSize { get; }
 
+        /// <summary>
+        /// Creates a new GridMeta instance with the specified parameters.
+        /// </summary>
+        /// <param name="minX">minimum X coordinate</param>
+        /// <param name="minY">minimum Y coordinate</param>
+        /// <param name="minZ">minimum Z coordinate</param>
+        /// <param name="nx">number of voxels along X</param>
+        /// <param name="ny">number of voxels along Y</param>
+        /// <param name="nz">number of voxels along Z</param>
+        /// <param name="voxelSize">size of each voxel in world units</param>
         public GridMeta(int minX, int minY, int minZ, int nx, int ny, int nz, Vector3 voxelSize)
         {
             MinX = minX; MinY = minY; MinZ = minZ;

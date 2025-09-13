@@ -21,8 +21,17 @@ namespace ZLab.Discrete.Geometry
         /// </summary>
         public readonly int C; // <- 4 bytes
 
+        /// <summary>
+        /// Checks if the triangle face is valid (all indices are non-negative).
+        /// </summary>
         public bool IsValid => A >= 0 && B >= 0 && C >= 0;
 
+        /// <summary>
+        /// Creates a triangle face from three vertex indices.
+        /// </summary>
+        /// <param name="a">first vertex index</param>
+        /// <param name="b">second vertex index</param>
+        /// <param name="c">third vertex index</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TriFace(int a, int b, int c)
         {
@@ -34,9 +43,9 @@ namespace ZLab.Discrete.Geometry
         /// <summary>
         /// Fetches the vertex positions from the provided vertex array.
         /// </summary>
-        /// <param name="vertices">Input vertices array from <see cref="v0"/></param>
-        /// <param name="v1">Output of first vertex</param>
-        /// <param name="v2">Output of second vertex</param>
+        /// <param name="vertices">Input vertices array</param>
+        /// <param name="v0">Output of first vertex</param>
+        /// <param name="v1">Output of second vertex</param>
         /// <param name="v2">Output of third vertex</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void QueryVertices(Vector3[] vertices, out Vector3 v0, out Vector3 v1, out Vector3 v2)
@@ -46,9 +55,25 @@ namespace ZLab.Discrete.Geometry
 
 
         // Equality & hashing
+        /// <summary>
+        /// Checks if two triangle faces are equal (same vertex indices in the same order).
+        /// </summary>
+        /// <param name="other">other triangle face to compare</param>
+        /// <returns>true if equal, false otherwise</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(TriFace other) => A == other.A && B == other.B && C == other.C;
+
+        /// <summary>
+        /// Checks if two triangle faces are equal (same vertex indices in the same order).
+        /// </summary>
+        /// <param name="obj">other object to compare</param>
+        /// <returns>true if equal, false otherwise</returns>
         public override bool Equals(object? obj) => obj is TriFace t && Equals(t);
+
+        /// <summary>
+        /// Computes a hash code for the triangle face.
+        /// </summary>
+        /// <returns>hash code</returns>
         public override int GetHashCode()
         {
             // simple fast mixing
@@ -60,9 +85,27 @@ namespace ZLab.Discrete.Geometry
                 return h;
             }
         }
+
+        /// <summary>
+        /// Equality operator for triangle faces.
+        /// </summary>
+        /// <param name="left">left triangle face</param>
+        /// <param name="right">right triangle face</param>
+        /// <returns>equal</returns>
         public static bool operator ==(TriFace left, TriFace right) => left.Equals(right);
+
+        /// <summary>
+        /// Inequality operator for triangle faces.
+        /// </summary>
+        /// <param name="left">left triangle face</param>
+        /// <param name="right">right triangle face</param>
+        /// <returns>not equal</returns>
         public static bool operator !=(TriFace left, TriFace right) => !left.Equals(right);
 
+        /// <summary>
+        /// String representation of the triangle face.
+        /// </summary>
+        /// <returns>tring</returns>
         public override string ToString() => $"TriFace32 [A:{A},B:{B},C:{C}]";
     }
 }

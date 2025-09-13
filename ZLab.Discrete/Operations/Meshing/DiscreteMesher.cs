@@ -12,7 +12,7 @@ namespace ZLab.Discrete.Operations.Meshing
     /// Uses face culling with Morton-coded occupancy when voxel size is uniform.
     /// </summary>
     /// <remarks>
-    /// Assumes <see cref="OccupancyVoxel"/> instances lie on a rectilinear grid.
+    /// Assumes voxels instances lie on a rectilinear grid.
     /// For the culled path, all voxels must share an identical <c>voxelSize</c>.
     /// If voxel sizes vary, all six faces per voxel are emitted (no merging).
     /// </remarks>
@@ -202,7 +202,7 @@ namespace ZLab.Discrete.Operations.Meshing
         /// <remarks>
         /// If <paramref name="voxelSizes"/> differ, culling is disabled and all six faces per voxel are emitted.
         /// <para>
-        /// <b>Origin convention:</b> the culled path treats <see cref="OccupancyVoxel.Origin"/> as the <i>minimum corner</i> of the cell.
+        /// <b>Origin convention:</b> the culled path treats origin of voxels as the <i>minimum corner</i> of the cell.
         /// </para>
         /// </remarks>
         public static MeshF GenerateMesh(
@@ -256,7 +256,7 @@ namespace ZLab.Discrete.Operations.Meshing
         /// <returns>A single combined mesh.</returns>
         /// <exception cref="InvalidOperationException">No vertices or faces were generated.</exception>
         /// <remarks>
-        /// <b>Origin convention:</b> the culled path treats <see cref="OccupancyVoxel.Origin"/> as the minimum corner of the cell.
+        /// <b>Origin convention:</b> the culled path treats origin of voxels as the minimum corner of the cell.
         /// </remarks>
         public static MeshF GenerateMesh(
             ReadOnlySpan<Vector3> origins,
@@ -381,7 +381,7 @@ namespace ZLab.Discrete.Operations.Meshing
         {
             if (vertices.Count == 0 || faces.Count == 0)
                 throw new InvalidOperationException("Generated mesh has no vertices or faces.");
-            return new MeshF(vertices.ToArray(), faces.ToArray(), isClosed:true); // <- always closed (avoid watertight check)
+            return new MeshF(vertices.ToArray(), faces.ToArray(), isClosed: true); // <- always closed (avoid watertight check)
         }
     }
 }
