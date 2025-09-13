@@ -91,7 +91,7 @@ namespace ZLab.Discrete.Geometry
         /// </summary>
         /// <param name="left">left triangle face</param>
         /// <param name="right">right triangle face</param>
-        /// <returns>equal</returns>
+        /// <returns>true if the triangle faces are equal, false otherwise</returns>
         public static bool operator ==(TriFace left, TriFace right) => left.Equals(right);
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace ZLab.Discrete.Geometry
         /// </summary>
         /// <param name="left">left triangle face</param>
         /// <param name="right">right triangle face</param>
-        /// <returns>not equal</returns>
+        /// <returns>true if the triangle faces are not equal, false otherwise</returns>
         public static bool operator !=(TriFace left, TriFace right) => !left.Equals(right);
 
         /// <summary>
