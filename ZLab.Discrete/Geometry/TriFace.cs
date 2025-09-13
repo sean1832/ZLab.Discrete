@@ -105,7 +105,7 @@ namespace ZLab.Discrete.Geometry
         /// <summary>
         /// String representation of the triangle face.
         /// </summary>
-        /// <returns>tring</returns>
+        /// <returns>string</returns>
         public override string ToString() => $"TriFace32 [A:{A},B:{B},C:{C}]";
     }
 }
