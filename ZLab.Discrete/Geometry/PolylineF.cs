@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ZLab.Discrete.Geometry
@@ -10,21 +11,40 @@ namespace ZLab.Discrete.Geometry
     /// </summary>
     public sealed class PolylineF
     {
+        // Tunable tolerance for closedness in world units (float).
         /// <summary>
-        /// Vertices of the polyline.
+        /// Tolerance for determining if the polyline is closed (distance between first and last vertex).
         /// </summary>
-        public readonly Vector3[] Vertices;
+        public const float ClosedEpsilon = 1e-6f;
+        private const float ClosedEpsilonSq = ClosedEpsilon * ClosedEpsilon;
+
+        private Vector3[] _buffer;
+        private int _count;          // logical length
+
+        /// <summary>
+        /// Number of vertices.
+        /// </summary>
+        public int Count => _count;
+
+        /// <summary>
+        /// Read-only view of the vertices.
+        /// </summary>
+        public ReadOnlySpan<Vector3> Vertices => _buffer.AsSpan(0, _count);
 
         /// <summary>
         /// Indicates if the polyline is closed (the last vertex connects to the first).
         /// </summary>
-        public readonly bool IsClosed;
+        public bool IsClosed { get; private set; }
 
         /// <summary>
-        /// Checks if the polyline is valid (at least 2 vertices).
+        /// Valid if there are at least two vertices.
         /// </summary>
-        public bool IsValid => Vertices.Length > 1;
-        private float? _length;
+        public bool IsValid => _count > 1;
+
+        /// <summary>
+        /// Total length (perimeter if closed).
+        /// </summary>
+        public float Length { get; private set; }
 
         /// <summary>
         /// Creates an empty polyline. (Invalid)
@@ -35,9 +55,10 @@ namespace ZLab.Discrete.Geometry
         /// </remarks>
         public PolylineF()
         {
-            Vertices = Array.Empty<Vector3>();
+            _buffer = Array.Empty<Vector3>();
+            _count = 0;
             IsClosed = false;
-            _length = null;
+            Length = 0f;
         }
 
         /// <summary>
@@ -50,9 +71,11 @@ namespace ZLab.Discrete.Geometry
         /// </remarks>
         public PolylineF(Vector3[] vertices)
         {
-            Vertices = vertices;
-            IsClosed = IsPolylineClose();
-            _length = null;
+            if (vertices is null) throw new ArgumentNullException(nameof(vertices));
+            _buffer = (Vector3[])vertices.Clone();
+            _count = _buffer.Length;
+            IsClosed = DetectClosed(_buffer.AsSpan(0, _count));
+            Length = ComputeLength(_buffer.AsSpan(0, _count));
         }
 
         /// <summary>
@@ -66,36 +89,99 @@ namespace ZLab.Discrete.Geometry
         /// </remarks>
         public PolylineF(Vector3[] vertices, bool isClosed)
         {
-            Vertices = vertices;
-            IsClosed = isClosed;
-            _length = null;
+            if (vertices is null) throw new ArgumentNullException(nameof(vertices));
+            _buffer = (Vector3[])vertices.Clone();
+            _count = _buffer.Length;
+            IsClosed = isClosed; // caller decides semantics
+            Length = ComputeLength(_buffer.AsSpan(0, _count));
         }
 
         /// <summary>
-        /// Calculates the total length of the polyline.
+        /// Appends a vertex to the end of the polyline, updating length and closedness.
         /// </summary>
-        public float Length => GetLength();
-
-        private float GetLength()
+        /// <param name="vertex">Vertex to append</param>
+        public void Append(Vector3 vertex)
         {
-            if (_length.HasValue) return _length.Value;
-            float len = 0f;
-            for (int i = 1; i < Vertices.Length; i++)
-            {
-                len += Vector3.Distance(Vertices[i - 1], Vertices[i]);
-            }
-            if (IsClosed && Vertices.Length > 2)
-            {
-                len += Vector3.Distance(Vertices[^1], Vertices[0]);
-            }
-            _length = len;
-            return len;
+            EnsureCapacity(_count + 1);
+
+            // incremental length: add segment from previous last to new
+            if (_count > 0)
+                Length += (float)Distance(_buffer[_count - 1], vertex);
+
+            _buffer[_count++] = vertex;
+
+            // update closedness
+            IsClosed = DetectClosed(_buffer.AsSpan(0, _count));
         }
 
-        private bool IsPolylineClose()
+        /// <summary>
+        /// Appends multiple vertices to the end of the polyline, updating length and closedness.
+        /// </summary>
+        /// <param name="vertices">Array of vertices to append</param>
+        public void Append(ReadOnlySpan<Vector3> vertices)
         {
-            if (Vertices.Length < 3) return false;
-            return Vector3.Distance(Vertices[0], Vertices[^1]) < 1e-6f;
+            int count = vertices.Length;
+            if (count == 0) return;
+
+            EnsureCapacity(_count + count);
+
+            // incremental length across the boundary (old tail -> new head)
+            if (_count > 0)
+                Length += (float)Distance(_buffer[_count - 1], vertices[0]);
+
+            // incremental length inside the appended span
+            double segSum = 0.0;
+            for (int i = 1; i < count; i++)
+                segSum += Distance(vertices[i - 1], vertices[i]);
+            Length += (float)segSum;
+
+            // copy the new vertices into place
+            vertices.CopyTo(_buffer.AsSpan(_count));
+            _count += count;
+
+            // update closedness with new endpoint
+            IsClosed = DetectClosed(_buffer.AsSpan(0, _count));
         }
+
+        #region Private methods
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private void EnsureCapacity(int need)
+        {
+            if (_buffer.Length >= need) return;
+            int newCap = _buffer.Length == 0 ? 8 : _buffer.Length * 2;
+            if (newCap < need) newCap = need;
+            Array.Resize(ref _buffer, newCap);
+        }
+
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static bool DetectClosed(ReadOnlySpan<Vector3> v)
+        {
+            if (v.Length < 3) return false;
+            Vector3 d = v[0] - v[^1];
+            return d.LengthSquared() <= ClosedEpsilonSq;
+        }
+
+        private static float ComputeLength(ReadOnlySpan<Vector3> v)
+        {
+            int n = v.Length;
+            if (n < 2) return 0f;
+            double sum = 0.0;
+            for (int i = 1; i < n; i++)
+                sum += Distance(v[i - 1], v[i]);
+            return (float)sum;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static double Distance(in Vector3 a, in Vector3 b)
+        {
+            Vector3 d = a - b;
+            return Math.Sqrt(d.LengthSquared());
+        }
+
+        #endregion
+
+
     }
 }
