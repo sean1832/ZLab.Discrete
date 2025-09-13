@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using ZLab.Discrete.Algorithms.Encoding;
-using ZLab.Discrete.Core;
 using ZLab.Discrete.Geometry;
-using ZLab.Discrete.Voxels;
 
 namespace ZLab.Discrete.Operations.Meshing
 {
@@ -328,9 +325,9 @@ namespace ZLab.Discrete.Operations.Meshing
             for (int i = 0; i < origins.Length; i++)
             {
                 Vector3 v = origins[i];
-                var (ix, iy, iz) = ToIdx(v, minCorner, inv);
+                (int ix, int iy, int iz) = ToIdx(v, minCorner, inv);
 
-                foreach (var n in N6)
+                foreach ((int dx, int dy, int dz, Vector3 dir) n in N6)
                 {
                     int nx = ix + n.dx, ny = iy + n.dy, nz = iz + n.dz;
                     // Out-of-range neighbors should be treated as empty (face visible).
@@ -373,9 +370,9 @@ namespace ZLab.Discrete.Operations.Meshing
             float fx = (p.X - min.X) * inv.X;
             float fy = (p.Y - min.Y) * inv.Y;
             float fz = (p.Z - min.Z) * inv.Z;
-            int ix = (int)MathFx.Round(fx + (fx >= 0 ? eps : -eps));
-            int iy = (int)MathFx.Round(fy + (fy >= 0 ? eps : -eps));
-            int iz = (int)MathFx.Round(fz + (fz >= 0 ? eps : -eps));
+            int ix = (int)MathF.Round(fx + (fx >= 0 ? eps : -eps));
+            int iy = (int)MathF.Round(fy + (fy >= 0 ? eps : -eps));
+            int iz = (int)MathF.Round(fz + (fz >= 0 ? eps : -eps));
             return (ix, iy, iz);
         }
 

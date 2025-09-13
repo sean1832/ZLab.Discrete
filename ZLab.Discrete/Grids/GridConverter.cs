@@ -1,6 +1,6 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
-using ZLab.Discrete.Core;
 
 namespace ZLab.Discrete.Grids
 {
@@ -18,18 +18,18 @@ namespace ZLab.Discrete.Grids
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static (int x, int y, int z) WorldToGridMin(Vector3 p, Vector3 size)
-            => ((int)MathFx.Floor((p.X + Eps) / size.X),
-                (int)MathFx.Floor((p.Y + Eps) / size.Y),
-                (int)MathFx.Floor((p.Z + Eps) / size.Z));
+            => ((int)MathF.Floor((p.X + Eps) / size.X),
+                (int)MathF.Floor((p.Y + Eps) / size.Y),
+                (int)MathF.Floor((p.Z + Eps) / size.Z));
 
         /// <summary>
         /// World -> grid (min-corner cell index) given a world-space grid origin (min corner) for local grids
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static (int x, int y, int z) WorldToGridMin(Vector3 p, Vector3 size, Vector3 origin)
-            => ((int)MathFx.Floor((p.X - origin.X + Eps) / size.X),
-                (int)MathFx.Floor((p.Y - origin.Y + Eps) / size.Y),
-                (int)MathFx.Floor((p.Z - origin.Z + Eps) / size.Z));
+            => ((int)MathF.Floor((p.X - origin.X + Eps) / size.X),
+                (int)MathF.Floor((p.Y - origin.Y + Eps) / size.Y),
+                (int)MathF.Floor((p.Z - origin.Z + Eps) / size.Z));
 
         // --------------------------- World to Max conversions ---------------------------
         /// <summary>
@@ -38,18 +38,18 @@ namespace ZLab.Discrete.Grids
         /// <remarks>Use this for the MAX CORNER when you want an inclusive index</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static (int x, int y, int z) WorldToGridMaxInclusive(Vector3 p, Vector3 size)
-            => ((int)MathFx.Floor((p.X - Eps) / size.X),
-                (int)MathFx.Floor((p.Y - Eps) / size.Y),
-                (int)MathFx.Floor((p.Z - Eps) / size.Z));
+            => ((int)MathF.Floor((p.X - Eps) / size.X),
+                (int)MathF.Floor((p.Y - Eps) / size.Y),
+                (int)MathF.Floor((p.Z - Eps) / size.Z));
 
         /// <summary>
         /// World -> grid (max-corner cell index, inclusive) given a world-space grid origin (min corner) for local grids
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static (int x, int y, int z) WorldToGridMaxInclusive(Vector3 p, Vector3 size, Vector3 origin)
-            => ((int)MathFx.Floor((p.X - origin.X - Eps) / size.X),
-                (int)MathFx.Floor((p.Y - origin.Y - Eps) / size.Y),
-                (int)MathFx.Floor((p.Z - origin.Z - Eps) / size.Z));
+            => ((int)MathF.Floor((p.X - origin.X - Eps) / size.X),
+                (int)MathF.Floor((p.Y - origin.Y - Eps) / size.Y),
+                (int)MathF.Floor((p.Z - origin.Z - Eps) / size.Z));
         // --------------------------- Index to Min conversions ---------------------------
         /// <summary>
         /// Grid index -> world min corner with origin

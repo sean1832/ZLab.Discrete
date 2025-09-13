@@ -164,12 +164,7 @@ namespace ZLab.Discrete.Grids
         /// <param name="value">value to fill</param>
         public void Fill(Occupancy value)
         {
-#if NETFRAMEWORK
-            for (int i = 0; i < _occupancies.Length; i++)
-                _occupancies[i] = value;
-#else
             Array.Fill(_occupancies, value);
-#endif
         }
 
         /// <summary>
@@ -275,12 +270,7 @@ namespace ZLab.Discrete.Grids
 
             Occupancy[] next = new Occupancy[_occupancies.Length];
             // prefill with outside
-#if NETFRAMEWORK
-            for (int i = 0; i < next.Length; i++)
-                next[i] = Occupancy.Outside;
-#else
             Array.Fill(next, Occupancy.Outside);
-#endif
 
             // compute source range that remain in bounds after shift by (dx,dy,dz)
             // copy from src -> dst where dst = src + (dx,dy,dz)
