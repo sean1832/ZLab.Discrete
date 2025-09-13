@@ -64,7 +64,7 @@ namespace ZLab.Discrete.Operations.Rasterizing
                 HashSet<Vector3> set = new(comparer);
                 foreach (TriFace face in faces)
                 {
-                    List<Vector3> voxels = Rasterizer.RasterizeFace(mesh, face, voxelSize);
+                    List<Vector3> voxels = Rasterizer.RasterizeFaceSparse(mesh, face, voxelSize);
                     foreach (Vector3 v in voxels) set.Add(v);
                 }
                 return set.ToArray();
@@ -82,12 +82,25 @@ namespace ZLab.Discrete.Operations.Rasterizing
             {
                 for (int i = range.Item1; i < range.Item2; i++)
                 {
-                    List<Vector3> voxels = Rasterizer.RasterizeFace(mesh, faces[i], voxelSize);
+                    List<Vector3> voxels = Rasterizer.RasterizeFaceSparse(mesh, faces[i], voxelSize);
                     foreach (Vector3 v in voxels) setConcurrent.TryAdd(v, 0);
                 }
             });
 
             return setConcurrent.Keys.ToArray();
+        }
+
+        /// <summary>
+        /// Discretize a 3D polyline. Only voxels that intersect the polyline are returned.
+        /// </summary>
+        /// <param name="polyline">Polyline to discretize</param>
+        /// <param name="voxelSize">Size of each voxel</param>
+        /// <param name="includeClosingEdge">If true, includes the edge connecting the last and first vertex if the polyline is closed.</param>
+        /// <returns>voxels intersects with the polyline</returns>
+        public static Vector3[] RasterizePolyline(PolylineF polyline, Vector3 voxelSize, bool includeClosingEdge = true)
+        {
+            if (polyline.Count < 2) return Array.Empty<Vector3>();
+            return Rasterizer.RasterizePolylineSparse(polyline, voxelSize, includeClosingEdge);
         }
     }
 }

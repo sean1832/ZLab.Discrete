@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Threading.Tasks;
 using ZLab.Discrete.Algorithms.Collision;
 using ZLab.Discrete.Geometry;
@@ -48,5 +49,24 @@ namespace ZLab.Discrete.Operations.Rasterizing
             if (floodFill && mesh.IsClosed)
                 FloodFill.Fill3D(grid);
         }
+
+        /// <summary>
+        /// Rasterizes a 3D polyline into the given <see cref="OccupancyGrid"/>.
+        /// </summary>
+        /// <param name="grid">Target grid to populate (mutated in-place).</param>
+        /// <param name="polyline">Polyline to rasterize.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="grid"/> or <paramref name="polyline"/> is null.</exception>
+        public static void RasterizePolyline(OccupancyGrid grid, PolylineF polyline)
+        {
+            if (grid == null) throw new ArgumentNullException(nameof(grid));
+            if (polyline == null) throw new ArgumentNullException(nameof(polyline));
+            if (polyline.Count < 2) return;
+            // Check if the polyline is within or intersects the grid bounds
+            if (!grid.Bounds.Contains(polyline.GetBounds()) || !grid.Bounds.Intersects(polyline.GetBounds()))
+                return;
+            
+            Rasterizer.RasterizePolylineInGrid(grid, polyline);
+        }
+
     }
 }
