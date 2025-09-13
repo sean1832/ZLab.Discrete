@@ -359,7 +359,7 @@ namespace ZLab.Discrete.Operations.Meshing
             }
 
             // precompute reciprocals
-            Vector3 inv = new Vector3(1f / cell.X, 1f / cell.Y, 1f / cell.Z);
+            Vector3 inv = new(1f / cell.X, 1f / cell.Y, 1f / cell.Z);
             return (min, inv);
         }
 
