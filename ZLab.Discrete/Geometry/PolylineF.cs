@@ -143,6 +143,42 @@ namespace ZLab.Discrete.Geometry
             IsClosed = DetectClosed(_buffer.AsSpan(0, _count));
         }
 
+        /// <summary>
+        /// Computes the axis-aligned bounding box (AABB) of the polyline.
+        /// </summary>
+        /// <returns>AABB of the polyline, or empty if no vertices </returns>
+        public BBox GetBounds()
+        {
+            if (_count == 0) return BBox.Empty;
+
+            float minX = _buffer[0].X, minY = _buffer[0].Y, minZ = _buffer[0].Z;
+            float maxX = minX, maxY = minY, maxZ = minZ;
+
+            for (int i = 1; i < _count; i++)
+            {
+                ref readonly Vector3 v = ref _buffer[i];
+
+                // NaN handling: skip components that are NaN
+                if (!float.IsNaN(v.X))
+                {
+                    if (v.X < minX) minX = v.X;
+                    if (v.X > maxX) maxX = v.X;
+                }
+                if (!float.IsNaN(v.Y))
+                {
+                    if (v.Y < minY) minY = v.Y;
+                    if (v.Y > maxY) maxY = v.Y;
+                }
+                if (!float.IsNaN(v.Z))
+                {
+                    if (v.Z < minZ) minZ = v.Z;
+                    if (v.Z > maxZ) maxZ = v.Z;
+                }
+            }
+
+            return new BBox(new Vector3(minX, minY, minZ), new Vector3(maxX, maxY, maxZ));
+        }
+
         #region Private methods
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
