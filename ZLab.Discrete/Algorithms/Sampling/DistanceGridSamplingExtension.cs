@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Text;
 using ZLab.Discrete.Core;
 using ZLab.Discrete.Grids;
 
@@ -46,9 +44,9 @@ namespace ZLab.Discrete.Algorithms.Sampling
             Vector3 cellMinWorld = GridConverter.IndexToMinCorner(cellX0, cellY0, cellZ0, vSize, originWorld);
 
             // clamp offset within the cell to [0,1]
-            float fracX = singleX ? 0f : MathFx.Clamp((worldPos.X - cellMinWorld.X) / vSize.X, 0f, 1f);
-            float fracY = singleY ? 0f : MathFx.Clamp((worldPos.Y - cellMinWorld.Y) / vSize.Y, 0f, 1f);
-            float fracZ = singleZ ? 0f : MathFx.Clamp((worldPos.Z - cellMinWorld.Z) / vSize.Z, 0f, 1f);
+            float fracX = singleX ? 0f : Math.Clamp((worldPos.X - cellMinWorld.X) / vSize.X, 0f, 1f);
+            float fracY = singleY ? 0f : Math.Clamp((worldPos.Y - cellMinWorld.Y) / vSize.Y, 0f, 1f);
+            float fracZ = singleZ ? 0f : Math.Clamp((worldPos.Z - cellMinWorld.Z) / vSize.Z, 0f, 1f);
 
             // Convert local indices to global grid indices
             int gx0 = meta.MinX + cellX0;
@@ -174,7 +172,7 @@ namespace ZLab.Discrete.Algorithms.Sampling
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static int ClampOrThrow(int value, int min, int max, bool clamp)
         {
-            if (clamp) return MathFx.Clamp(value, min, max);
+            if (clamp) return Math.Clamp(value, min, max);
             if (value < min || value > max)
                 throw new ArgumentOutOfRangeException(nameof(value), "Position is outside the grid bounds.");
             return value;

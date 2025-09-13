@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using ZLab.Discrete.Core;
 using ZLab.Discrete.Geometry;
 
 namespace ZLab.Discrete.Algorithms.Collision
@@ -92,7 +91,7 @@ namespace ZLab.Discrete.Algorithms.Collision
             // distance from plane, but without dividing by |n|
             float distNum = Vector3.Dot(n, c - v0);
             // projection radius of the box onto the plane normal (also without dividing by |n|)
-            float r = MathFx.Abs(n.X) * half.X + MathFx.Abs(n.Y) * half.Y + MathFx.Abs(n.Z) * half.Z;
+            float r = MathF.Abs(n.X) * half.X + MathF.Abs(n.Y) * half.Y + MathF.Abs(n.Z) * half.Z;
 
             // small extra safety band to avoid "edge-only" speckling on thin triangles
             if (distNum > r + CONS_PAD || distNum < -r - CONS_PAD)
@@ -114,7 +113,7 @@ namespace ZLab.Discrete.Algorithms.Collision
             float d21 = Vector3.Dot(vp, e1);
 
             float denom = d00 * d11 - d01 * d01;
-            if (MathFx.Abs(denom) < 1e-20f) return false; // nearly collinear
+            if (MathF.Abs(denom) < 1e-20f) return false; // nearly collinear
 
             float v = (d11 * d20 - d01 * d21) / denom;
             float w = (d00 * d21 - d01 * d20) / denom;
@@ -142,8 +141,8 @@ namespace ZLab.Discrete.Algorithms.Collision
             // Project triangle onto axis L = (0, -aZ, aY)
             float p0 = aZ * v0.Y - aY * v0.Z;
             float p2 = aZ * v2.Y - aY * v2.Z;
-            float min = MathFx.Min(p0, p2), max = MathFx.Max(p0, p2);
-            float r = MathFx.Abs(aZ) * h.Y + MathFx.Abs(aY) * h.Z + SAT_EPS;
+            float min = MathF.Min(p0, p2), max = MathF.Max(p0, p2);
+            float r = MathF.Abs(aZ) * h.Y + MathF.Abs(aY) * h.Z + SAT_EPS;
             return !(min > r || max < -r);
         }
 
@@ -154,8 +153,8 @@ namespace ZLab.Discrete.Algorithms.Collision
             // L = (aZ, 0, -aX)
             float p0 = -aZ * v0.X + aX * v0.Z;
             float p2 = -aZ * v2.X + aX * v2.Z;
-            float min = MathFx.Min(p0, p2), max = MathFx.Max(p0, p2);
-            float r = MathFx.Abs(aZ) * h.X + MathFx.Abs(aX) * h.Z + SAT_EPS;
+            float min = MathF.Min(p0, p2), max = MathF.Max(p0, p2);
+            float r = MathF.Abs(aZ) * h.X + MathF.Abs(aX) * h.Z + SAT_EPS;
             return !(min > r || max < -r);
         }
 
@@ -166,8 +165,8 @@ namespace ZLab.Discrete.Algorithms.Collision
             // L = (-aY, aX, 0)
             float p1 = aY * v1.X - aX * v1.Y;
             float p2 = aY * v2.X - aX * v2.Y;
-            float min = MathFx.Min(p1, p2), max = MathFx.Max(p1, p2);
-            float r = MathFx.Abs(aY) * h.X + MathFx.Abs(aX) * h.Y + SAT_EPS;
+            float min = MathF.Min(p1, p2), max = MathF.Max(p1, p2);
+            float r = MathF.Abs(aY) * h.X + MathF.Abs(aX) * h.Y + SAT_EPS;
             return !(min > r || max < -r);
         }
 

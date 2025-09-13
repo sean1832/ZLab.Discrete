@@ -1,5 +1,4 @@
 ﻿using System;
-using ZLab.Discrete.Core;
 
 namespace ZLab.Discrete.Algorithms.DistanceTransforms
 {
@@ -48,8 +47,8 @@ namespace ZLab.Discrete.Algorithms.DistanceTransforms
             float[] sdf = new float[width * height];
             for (int i = 0; i < sdf.Length; i++)
             {
-                float distToForeground = MathFx.Sqrt(squaredToForeground[i]);
-                float distToBackground = MathFx.Sqrt(squaredToBackground[i]);
+                float distToForeground = MathF.Sqrt(squaredToForeground[i]);
+                float distToBackground = MathF.Sqrt(squaredToBackground[i]);
                 sdf[i] = distToBackground - distToForeground; // > 0 outside, < 0 inside
             }
             return sdf;

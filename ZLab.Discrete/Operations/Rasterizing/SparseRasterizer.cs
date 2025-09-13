@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
-using ZLab.Discrete.Core;
 using ZLab.Discrete.Geometry;
 using ZLab.Discrete.Voxels;
 
@@ -19,9 +18,9 @@ namespace ZLab.Discrete.Operations.Rasterizing
         }
 
         private (int ix, int iy, int iz) Q(Vector3 v)
-            => ((int)MathFx.Round(v.X * _inv.X),
-                (int)MathFx.Round(v.Y * _inv.Y),
-                (int)MathFx.Round(v.Z * _inv.Z));
+            => ((int)MathF.Round(v.X * _inv.X),
+                (int)MathF.Round(v.Y * _inv.Y),
+                (int)MathF.Round(v.Z * _inv.Z));
 
         public bool Equals(Vector3 a, Vector3 b) => Q(a) == Q(b);
 

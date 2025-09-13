@@ -2,7 +2,6 @@
 using System.Buffers;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using ZLab.Discrete.Core;
 using ZLab.Discrete.Grids;
 using ZLab.Discrete.Voxels;
 
@@ -29,7 +28,7 @@ namespace ZLab.Discrete.Algorithms.Collision
             Array.Clear(visited, 0, wordCount);
 
             // Queue of linear indices
-            int initialCapacity = MathFx.Clamp(nx * ny, 1 << 16, total);
+            int initialCapacity = Math.Clamp(nx * ny, 1 << 16, total);
             int[] qbuf = ArrayPool<int>.Shared.Rent(initialCapacity);
             RingQueue q = new(qbuf, initialCapacity, total);
 

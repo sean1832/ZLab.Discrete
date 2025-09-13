@@ -128,12 +128,7 @@ namespace ZLab.Discrete.Grids
         /// </summary>
         public void Fill(float value)
         {
-#if NETFRAMEWORK
-            for (int i = 0; i < _distances.Length; i++)
-                _distances[i] = value;
-#else
             Array.Fill(_distances, value);
-#endif
         }
 
         /// <summary>

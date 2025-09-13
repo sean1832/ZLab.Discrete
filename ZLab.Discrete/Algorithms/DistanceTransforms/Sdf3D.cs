@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Buffers;
-using ZLab.Discrete.Core;
 
 namespace ZLab.Discrete.Algorithms.DistanceTransforms
 {
