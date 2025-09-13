@@ -1,0 +1,787 @@
+{
+  "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient.html": {
+    "href": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient.html",
+    "title": "Method SampleGradient | ZLab.Discrete",
+    "summary": "Method SampleGradient | Edit this page View Source SampleGradient(DistanceGrid, Vector3, bool) Estimates the gradient of the signed distance field at a world-space position using central differences over one voxel step per axis. Declaration public static Vector3 SampleGradient(this DistanceGrid grid, Vector3 worldPos, bool clampToBounds = true) Parameters Type Name Description DistanceGrid grid Distance grid to sample Vector3 worldPos Query position in world space. bool clampToBounds If true, samples outside the grid are clamped to the outermost valid cell; if false, an ArgumentOutOfRangeException is thrown when sampling out of bounds. Returns Type Description Vector3 Gradient vector in world units (X,Y,Z). For a true SDF, normalizing this vector yields the surface normal at worldPos. Remarks Uses trilinear samples per axis. Degenerate axes (dimension = 1) produce zero derivative on that axis. Result quality depends on grid resolution and SDF accuracy (it is an approximation of the mesh normal)."
+  },
+  "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal.html": {
+    "href": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal.html",
+    "title": "Method SampleNormal | ZLab.Discrete",
+    "summary": "Method SampleNormal | Edit this page View Source SampleNormal(DistanceGrid, Vector3, bool) Returns a unit-length normal estimated from the SDF gradient at a world-space position. Declaration public static Vector3 SampleNormal(this DistanceGrid grid, Vector3 worldPos, bool clampToBounds = true) Parameters Type Name Description DistanceGrid grid Distance grid to sample Vector3 worldPos Query position in world space. bool clampToBounds If true, samples outside the grid are clamped to the outermost valid cell; if false, an ArgumentOutOfRangeException is thrown when sampling out of bounds. Returns Type Description Vector3 Unit normal vector. Returns Zero if the gradient magnitude is near zero. Remarks Normal is computed as Normalize(SampleGradient(worldPos)). Suitable for shading, collision response, and analysis; accuracy improves with grid resolution."
+  },
+  "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear.html": {
+    "href": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear.html",
+    "title": "Method SampleTrilinear | ZLab.Discrete",
+    "summary": "Method SampleTrilinear | Edit this page View Source SampleTrilinear(DistanceGrid, Vector3, bool) Trilinear sample of a DistanceGrid at an arbitrary world position. Declaration public static float SampleTrilinear(this DistanceGrid grid, Vector3 worldPos, bool clampToBounds = true) Parameters Type Name Description DistanceGrid grid The distance grid to sample. Vector3 worldPos The arbitrary world position to sample. bool clampToBounds If true, samples outside the grid are clamped to the outermost valid cell; if false, an ArgumentOutOfRangeException is thrown when sampling out of bounds. Returns Type Description float Distance to the nearest surface at the specified world position."
+  },
+  "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.html": {
+    "href": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.html",
+    "title": "Class DistanceGridSamplingExtension | ZLab.Discrete",
+    "summary": "Class DistanceGridSamplingExtension Extension methods for sampling a DistanceGrid. Inheritance object DistanceGridSamplingExtension Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: ZLab.Discrete.Algorithms.Sampling Assembly: ZLab.Discrete.dll Syntax public static class DistanceGridSamplingExtension Methods Name Description SampleGradient(DistanceGrid, Vector3, bool) Estimates the gradient of the signed distance field at a world-space position using central differences over one voxel step per axis. SampleNormal(DistanceGrid, Vector3, bool) Returns a unit-length normal estimated from the SDF gradient at a world-space position. SampleTrilinear(DistanceGrid, Vector3, bool) Trilinear sample of a DistanceGrid at an arbitrary world position."
+  },
+  "api/ZLab.Discrete.Algorithms.Sampling.html": {
+    "href": "api/ZLab.Discrete.Algorithms.Sampling.html",
+    "title": "Namespace ZLab.Discrete.Algorithms.Sampling | ZLab.Discrete",
+    "summary": "Namespace ZLab.Discrete.Algorithms.Sampling Classes DistanceGridSamplingExtension Extension methods for sampling a DistanceGrid."
+  },
+  "api/ZLab.Discrete.Geometry.BBox.-ctor.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.-ctor.html",
+    "title": "Constructor BBox | ZLab.Discrete",
+    "summary": "Constructor BBox | Edit this page View Source BBox(Vector3, Vector3) Creates a bounding box from minimum and maximum corner points. Declaration public BBox(Vector3 min, Vector3 max) Parameters Type Name Description Vector3 min Minimum corner Vector3 max Maximum corner | Edit this page View Source BBox() Creates an empty bounding box. The box is degenerate until expanded. Declaration public BBox()"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Center.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Center.html",
+    "title": "Property Center | ZLab.Discrete",
+    "summary": "Property Center | Edit this page View Source Center Center point of the bounding box. Declaration public Vector3 Center { get; } Property Value Type Description Vector3"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Contains.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Contains.html",
+    "title": "Method Contains | ZLab.Discrete",
+    "summary": "Method Contains | Edit this page View Source Contains(Vector3) Checks if a point is contained within the bounding box. Declaration public readonly bool Contains(Vector3 point) Parameters Type Name Description Vector3 point The point to test Returns Type Description bool Point in bounding box or not | Edit this page View Source Contains(BBox) Checks if another bounding box is fully contained within this bounding box. Declaration public readonly bool Contains(BBox other) Parameters Type Name Description BBox other Returns Type Description bool"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Empty.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Empty.html",
+    "title": "Property Empty | ZLab.Discrete",
+    "summary": "Property Empty | Edit this page View Source Empty An empty bounding box (degenerate). Use Expand() to grow it. Declaration public static BBox Empty { get; } Property Value Type Description BBox"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Expand.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Expand.html",
+    "title": "Method Expand | ZLab.Discrete",
+    "summary": "Method Expand | Edit this page View Source Expand(BBox) Expands the bounding box to include another bounding box. Declaration public void Expand(BBox other) Parameters Type Name Description BBox other Other bounding box | Edit this page View Source Expand(Vector3) Expands the bounding box to include a point. Declaration public void Expand(Vector3 point) Parameters Type Name Description Vector3 point Point to include"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.FromUnordered.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.FromUnordered.html",
+    "title": "Method FromUnordered | ZLab.Discrete",
+    "summary": "Method FromUnordered | Edit this page View Source FromUnordered(Vector3, Vector3) Create a box from possibly unordered corners by normalizing per axis. Declaration public static BBox FromUnordered(Vector3 a, Vector3 b) Parameters Type Name Description Vector3 a Vector3 b Returns Type Description BBox"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.GetAllCorners.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.GetAllCorners.html",
+    "title": "Method GetAllCorners | ZLab.Discrete",
+    "summary": "Method GetAllCorners | Edit this page View Source GetAllCorners(Span<Vector3>) Write all 8 corners to a Span (length >= 8). Order: (x,y,z) Declaration public readonly void GetAllCorners(Span<Vector3> dst) Parameters Type Name Description Span<Vector3> dst"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Infinite.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Infinite.html",
+    "title": "Property Infinite | ZLab.Discrete",
+    "summary": "Property Infinite | Edit this page View Source Infinite An infinite bounding box. Declaration public static BBox Infinite { get; } Property Value Type Description BBox"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Intersects.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Intersects.html",
+    "title": "Method Intersects | ZLab.Discrete",
+    "summary": "Method Intersects | Edit this page View Source Intersects(BBox) Checks if this bounding box intersects with another bounding box. Declaration public readonly bool Intersects(BBox other) Parameters Type Name Description BBox other Other bounding box Returns Type Description bool intersects or not"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.IsValid.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.IsValid.html",
+    "title": "Property IsValid | ZLab.Discrete",
+    "summary": "Property IsValid | Edit this page View Source IsValid Checks if the bounding box is valid (not degenerate). Declaration public readonly bool IsValid { get; } Property Value Type Description bool"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Max.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Max.html",
+    "title": "Field Max | ZLab.Discrete",
+    "summary": "Field Max Maximum corner of the bounding box. Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public Vector3 Max Returns Type Description Vector3 Maximum corner of the bounding box."
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Min.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Min.html",
+    "title": "Field Min | ZLab.Discrete",
+    "summary": "Field Min Minimum corner of the bounding box. Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public Vector3 Min Returns Type Description Vector3 Minimum corner of the bounding box."
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Pad.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Pad.html",
+    "title": "Method Pad | ZLab.Discrete",
+    "summary": "Method Pad | Edit this page View Source Pad(float) Uniformly pad the box by a non-negative margin. Declaration public void Pad(float margin) Parameters Type Name Description float margin"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.Size.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.Size.html",
+    "title": "Property Size | ZLab.Discrete",
+    "summary": "Property Size | Edit this page View Source Size Cartesian dimension of the bounding box. (Width, Height, Depth) Declaration public Vector3 Size { get; } Property Value Type Description Vector3"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.SurfaceArea.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.SurfaceArea.html",
+    "title": "Property SurfaceArea | ZLab.Discrete",
+    "summary": "Property SurfaceArea | Edit this page View Source SurfaceArea Surface area of the box (2*(xy + yz + zx)). Returns 0 for invalid boxes. Declaration public float SurfaceArea { get; } Property Value Type Description float"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.ToMesh.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.ToMesh.html",
+    "title": "Method ToMesh | ZLab.Discrete",
+    "summary": "Method ToMesh | Edit this page View Source ToMesh(CordSystem) Converts the bounding box to a mesh representation (12 triangles, 8 vertices). Winding is CCW for RightHanded; flipped for LeftHanded. Declaration public readonly MeshF ToMesh(CordSystem cordSystem) Parameters Type Name Description CordSystem cordSystem Returns Type Description MeshF"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.ToString.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.ToString.html",
+    "title": "Method ToString | ZLab.Discrete",
+    "summary": "Method ToString | Edit this page View Source ToString() String representation of the bounding box. Declaration public override string ToString() Returns Type Description string string Overrides ValueType.ToString()"
+  },
+  "api/ZLab.Discrete.Geometry.BBox.html": {
+    "href": "api/ZLab.Discrete.Geometry.BBox.html",
+    "title": "Struct BBox | ZLab.Discrete",
+    "summary": "Struct BBox Axis-aligned bounding box (AABB) in 3D space. Inherited Members ValueType.Equals(object) ValueType.GetHashCode() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public struct BBox Constructors Name Description BBox() Creates an empty bounding box. The box is degenerate until expanded. BBox(Vector3, Vector3) Creates a bounding box from minimum and maximum corner points. Fields Name Description Max Maximum corner of the bounding box. Min Minimum corner of the bounding box. Properties Name Description Center Center point of the bounding box. Empty An empty bounding box (degenerate). Use Expand() to grow it. Infinite An infinite bounding box. IsValid Checks if the bounding box is valid (not degenerate). Size Cartesian dimension of the bounding box. (Width, Height, Depth) SurfaceArea Surface area of the box (2*(xy + yz + zx)). Returns 0 for invalid boxes. Methods Name Description Contains(Vector3) Checks if a point is contained within the bounding box. Contains(BBox) Checks if another bounding box is fully contained within this bounding box. Expand(Vector3) Expands the bounding box to include a point. Expand(BBox) Expands the bounding box to include another bounding box. FromUnordered(Vector3, Vector3) Create a box from possibly unordered corners by normalizing per axis. GetAllCorners(Span<Vector3>) Write all 8 corners to a Span (length >= 8). Order: (x,y,z) Intersects(BBox) Checks if this bounding box intersects with another bounding box. Pad(float) Uniformly pad the box by a non-negative margin. ToMesh(CordSystem) Converts the bounding box to a mesh representation (12 triangles, 8 vertices). Winding is CCW for RightHanded; flipped for LeftHanded. ToString() String representation of the bounding box."
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.-ctor.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.-ctor.html",
+    "title": "Constructor MeshF | ZLab.Discrete",
+    "summary": "Constructor MeshF | Edit this page View Source MeshF() Creates an empty mesh. (Invalid) Declaration public MeshF() | Edit this page View Source MeshF(Vector3[], TriFace[]) Creates a mesh and automatically checks if it is closed. (slow for large meshes, explicitly specify closeness if possible) Declaration public MeshF(Vector3[] vertices, TriFace[] faces) Parameters Type Name Description Vector3[] vertices TriFace[] faces | Edit this page View Source MeshF(Vector3[], TriFace[], bool) Creates a mesh with explicit specified closeness. (no watertight check) Declaration public MeshF(Vector3[] vertices, TriFace[] faces, bool isClosed) Parameters Type Name Description Vector3[] vertices TriFace[] faces bool isClosed"
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds.html",
+    "title": "Method EnumerateTriangleBounds | ZLab.Discrete",
+    "summary": "Method EnumerateTriangleBounds | Edit this page View Source EnumerateTriangleBounds() Enumerates the axis-aligned bounding boxes (AABB) of each triangle face in the mesh. Declaration public IEnumerable<BBox> EnumerateTriangleBounds() Returns Type Description IEnumerable<BBox> Remarks Usage example: foreach (BBox triBox in mesh.EnumerateTriangleBounds()) { // Process each triangle bounding box (triBox) }"
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.Faces.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.Faces.html",
+    "title": "Field Faces | ZLab.Discrete",
+    "summary": "Field Faces Array of faces, each face is an array of vertex indices. (must be triangles) Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public readonly TriFace[] Faces Returns Type Description TriFace[] Array of faces, each face is an array of vertex indices. (must be triangles)"
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.FromObjFile.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.FromObjFile.html",
+    "title": "Method FromObjFile | ZLab.Discrete",
+    "summary": "Method FromObjFile | Edit this page View Source FromObjFile(string) Loads a mesh from an OBJ file. Only supports vertices (v) and triangular faces (f). Declaration public static MeshF FromObjFile(string path) Parameters Type Name Description string path Path to the OBJ file. Returns Type Description MeshF Loaded mesh."
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.GetBounds.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.GetBounds.html",
+    "title": "Method GetBounds | ZLab.Discrete",
+    "summary": "Method GetBounds | Edit this page View Source GetBounds() Gets the axis-aligned bounding box (AABB) of the mesh. Declaration public BBox GetBounds() Returns Type Description BBox"
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.IsClosed.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.IsClosed.html",
+    "title": "Field IsClosed | ZLab.Discrete",
+    "summary": "Field IsClosed Indicates if the mesh is closed (watertight). Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public readonly bool IsClosed Returns Type Description bool Indicates if the mesh is closed (watertight)."
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.IsValid.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.IsValid.html",
+    "title": "Property IsValid | ZLab.Discrete",
+    "summary": "Property IsValid | Edit this page View Source IsValid Checks if the mesh is valid (at least 3 vertices and 1 face). Declaration public bool IsValid { get; } Property Value Type Description bool"
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.RecomputeBounds.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.RecomputeBounds.html",
+    "title": "Method RecomputeBounds | ZLab.Discrete",
+    "summary": "Method RecomputeBounds | Edit this page View Source RecomputeBounds() Recomputes the axis-aligned bounding box (AABB) of the mesh. Declaration public void RecomputeBounds()"
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.ToObjFile.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.ToObjFile.html",
+    "title": "Method ToObjFile | ZLab.Discrete",
+    "summary": "Method ToObjFile | Edit this page View Source ToObjFile(string) Saves the mesh to an OBJ file. Only saves vertices (v) and triangular faces (f). Declaration public void ToObjFile(string path) Parameters Type Name Description string path Path to save the OBJ file."
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.Vertices.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.Vertices.html",
+    "title": "Field Vertices | ZLab.Discrete",
+    "summary": "Field Vertices Array of vertex positions. Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public readonly Vector3[] Vertices Returns Type Description Vector3[] Array of vertex positions."
+  },
+  "api/ZLab.Discrete.Geometry.MeshF.html": {
+    "href": "api/ZLab.Discrete.Geometry.MeshF.html",
+    "title": "Class MeshF | ZLab.Discrete",
+    "summary": "Class MeshF Triangle mesh with float precision vertices. Inheritance object MeshF Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public sealed class MeshF Constructors Name Description MeshF() Creates an empty mesh. (Invalid) MeshF(Vector3[], TriFace[]) Creates a mesh and automatically checks if it is closed. (slow for large meshes, explicitly specify closeness if possible) MeshF(Vector3[], TriFace[], bool) Creates a mesh with explicit specified closeness. (no watertight check) Fields Name Description Faces Array of faces, each face is an array of vertex indices. (must be triangles) IsClosed Indicates if the mesh is closed (watertight). Vertices Array of vertex positions. Properties Name Description IsValid Checks if the mesh is valid (at least 3 vertices and 1 face). Methods Name Description EnumerateTriangleBounds() Enumerates the axis-aligned bounding boxes (AABB) of each triangle face in the mesh. FromObjFile(string) Loads a mesh from an OBJ file. Only supports vertices (v) and triangular faces (f). GetBounds() Gets the axis-aligned bounding box (AABB) of the mesh. RecomputeBounds() Recomputes the axis-aligned bounding box (AABB) of the mesh. ToObjFile(string) Saves the mesh to an OBJ file. Only saves vertices (v) and triangular faces (f)."
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.-ctor.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.-ctor.html",
+    "title": "Constructor PolylineF | ZLab.Discrete",
+    "summary": "Constructor PolylineF | Edit this page View Source PolylineF() Creates an empty polyline. (Invalid) Declaration public PolylineF() Remarks You shouldn't use an empty polyline for any meaningful operations. Useful only for initialization or placeholder purposes. | Edit this page View Source PolylineF(Vector3[]) Creates a polyline and automatically checks if it is closed. Declaration public PolylineF(Vector3[] vertices) Parameters Type Name Description Vector3[] vertices Array of vertices defining the polyline Remarks Calculating closedness involves checking the distance between the first and last vertex. This is a simple check but may be inefficient for very large polylines. If you already know the polyline's closedness, consider using the constructor that accepts an explicit closedness parameter. | Edit this page View Source PolylineF(Vector3[], bool) Creates a polyline with the given vertices and explicit closedness. Declaration public PolylineF(Vector3[] vertices, bool isClosed) Parameters Type Name Description Vector3[] vertices Array of vertices defining the polyline bool isClosed Whether the polyline is closed Remarks This constructor does not check if the first and last vertices are the same when isClosed is true. Use this constructor when you already know the closedness of the polyline to avoid unnecessary computations."
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.Append.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.Append.html",
+    "title": "Method Append | ZLab.Discrete",
+    "summary": "Method Append | Edit this page View Source Append(Vector3) Appends a vertex to the end of the polyline, updating length and closedness. Declaration public void Append(Vector3 vertex) Parameters Type Name Description Vector3 vertex Vertex to append | Edit this page View Source Append(ReadOnlySpan<Vector3>) Appends multiple vertices to the end of the polyline, updating length and closedness. Declaration public void Append(ReadOnlySpan<Vector3> vertices) Parameters Type Name Description ReadOnlySpan<Vector3> vertices Array of vertices to append"
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.ClosedEpsilon.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.ClosedEpsilon.html",
+    "title": "Field ClosedEpsilon | ZLab.Discrete",
+    "summary": "Field ClosedEpsilon Tolerance for determining if the polyline is closed (distance between first and last vertex). Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public const float ClosedEpsilon = 1E-06 Returns Type Description float Tolerance for determining if the polyline is closed (distance between first and last vertex)."
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.Count.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.Count.html",
+    "title": "Property Count | ZLab.Discrete",
+    "summary": "Property Count | Edit this page View Source Count Number of vertices. Declaration public int Count { get; } Property Value Type Description int"
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.GetBounds.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.GetBounds.html",
+    "title": "Method GetBounds | ZLab.Discrete",
+    "summary": "Method GetBounds | Edit this page View Source GetBounds() Computes the axis-aligned bounding box (AABB) of the polyline. Declaration public BBox GetBounds() Returns Type Description BBox AABB of the polyline, or empty if no vertices"
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.IsClosed.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.IsClosed.html",
+    "title": "Property IsClosed | ZLab.Discrete",
+    "summary": "Property IsClosed | Edit this page View Source IsClosed Indicates if the polyline is closed (the last vertex connects to the first). Declaration public bool IsClosed { get; } Property Value Type Description bool"
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.IsValid.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.IsValid.html",
+    "title": "Property IsValid | ZLab.Discrete",
+    "summary": "Property IsValid | Edit this page View Source IsValid Valid if there are at least two vertices. Declaration public bool IsValid { get; } Property Value Type Description bool"
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.Length.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.Length.html",
+    "title": "Property Length | ZLab.Discrete",
+    "summary": "Property Length | Edit this page View Source Length Total length (perimeter if closed). Declaration public float Length { get; } Property Value Type Description float"
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.Vertices.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.Vertices.html",
+    "title": "Property Vertices | ZLab.Discrete",
+    "summary": "Property Vertices | Edit this page View Source Vertices Read-only view of the vertices. Declaration public ReadOnlySpan<Vector3> Vertices { get; } Property Value Type Description ReadOnlySpan<Vector3>"
+  },
+  "api/ZLab.Discrete.Geometry.PolylineF.html": {
+    "href": "api/ZLab.Discrete.Geometry.PolylineF.html",
+    "title": "Class PolylineF | ZLab.Discrete",
+    "summary": "Class PolylineF Polyline defined by a sequence of 3D vertices that make up the line segments. Inheritance object PolylineF Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public sealed class PolylineF Constructors Name Description PolylineF() Creates an empty polyline. (Invalid) PolylineF(Vector3[]) Creates a polyline and automatically checks if it is closed. PolylineF(Vector3[], bool) Creates a polyline with the given vertices and explicit closedness. Fields Name Description ClosedEpsilon Tolerance for determining if the polyline is closed (distance between first and last vertex). Properties Name Description Count Number of vertices. IsClosed Indicates if the polyline is closed (the last vertex connects to the first). IsValid Valid if there are at least two vertices. Length Total length (perimeter if closed). Vertices Read-only view of the vertices. Methods Name Description Append(Vector3) Appends a vertex to the end of the polyline, updating length and closedness. Append(ReadOnlySpan<Vector3>) Appends multiple vertices to the end of the polyline, updating length and closedness. GetBounds() Computes the axis-aligned bounding box (AABB) of the polyline."
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.-ctor.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.-ctor.html",
+    "title": "Constructor TriFace | ZLab.Discrete",
+    "summary": "Constructor TriFace | Edit this page View Source TriFace(int, int, int) Creates a triangle face from three vertex indices. Declaration public TriFace(int a, int b, int c) Parameters Type Name Description int a first vertex index int b second vertex index int c third vertex index"
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.A.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.A.html",
+    "title": "Field A | ZLab.Discrete",
+    "summary": "Field A Index of the first vertex of the triangle. Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public readonly int A Returns Type Description int Index of the first vertex of the triangle."
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.B.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.B.html",
+    "title": "Field B | ZLab.Discrete",
+    "summary": "Field B Index of the second vertex of the triangle. Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public readonly int B Returns Type Description int Index of the second vertex of the triangle."
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.C.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.C.html",
+    "title": "Field C | ZLab.Discrete",
+    "summary": "Field C Index of the third vertex of the triangle. Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public readonly int C Returns Type Description int Index of the third vertex of the triangle."
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.Equals.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.Equals.html",
+    "title": "Method Equals | ZLab.Discrete",
+    "summary": "Method Equals | Edit this page View Source Equals(TriFace) Checks if two triangle faces are equal (same vertex indices in the same order). Declaration public bool Equals(TriFace other) Parameters Type Name Description TriFace other other triangle face to compare Returns Type Description bool true if equal, false otherwise | Edit this page View Source Equals(object?) Checks if two triangle faces are equal (same vertex indices in the same order). Declaration public override bool Equals(object? obj) Parameters Type Name Description object obj other object to compare Returns Type Description bool true if equal, false otherwise Overrides ValueType.Equals(object)"
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.GetHashCode.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.GetHashCode.html",
+    "title": "Method GetHashCode | ZLab.Discrete",
+    "summary": "Method GetHashCode | Edit this page View Source GetHashCode() Computes a hash code for the triangle face. Declaration public override int GetHashCode() Returns Type Description int hash code Overrides ValueType.GetHashCode()"
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.IsValid.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.IsValid.html",
+    "title": "Property IsValid | ZLab.Discrete",
+    "summary": "Property IsValid | Edit this page View Source IsValid Checks if the triangle face is valid (all indices are non-negative). Declaration public bool IsValid { get; } Property Value Type Description bool"
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.QueryVertices.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.QueryVertices.html",
+    "title": "Method QueryVertices | ZLab.Discrete",
+    "summary": "Method QueryVertices | Edit this page View Source QueryVertices(Vector3[], out Vector3, out Vector3, out Vector3) Fetches the vertex positions from the provided vertex array. Declaration public void QueryVertices(Vector3[] vertices, out Vector3 v0, out Vector3 v1, out Vector3 v2) Parameters Type Name Description Vector3[] vertices Input vertices array Vector3 v0 Output of first vertex Vector3 v1 Output of second vertex Vector3 v2 Output of third vertex"
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.ToString.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.ToString.html",
+    "title": "Method ToString | ZLab.Discrete",
+    "summary": "Method ToString | Edit this page View Source ToString() String representation of the triangle face. Declaration public override string ToString() Returns Type Description string string Overrides ValueType.ToString()"
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.html",
+    "title": "Struct TriFace | ZLab.Discrete",
+    "summary": "Struct TriFace Triangle face defined by three vertex indices (int). (12 bytes) Inherited Members object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Namespace: ZLab.Discrete.Geometry Assembly: ZLab.Discrete.dll Syntax public readonly struct TriFace Constructors Name Description TriFace(int, int, int) Creates a triangle face from three vertex indices. Fields Name Description A Index of the first vertex of the triangle. B Index of the second vertex of the triangle. C Index of the third vertex of the triangle. Properties Name Description IsValid Checks if the triangle face is valid (all indices are non-negative). Methods Name Description Equals(object?) Checks if two triangle faces are equal (same vertex indices in the same order). Equals(TriFace) Checks if two triangle faces are equal (same vertex indices in the same order). GetHashCode() Computes a hash code for the triangle face. QueryVertices(Vector3[], out Vector3, out Vector3, out Vector3) Fetches the vertex positions from the provided vertex array. ToString() String representation of the triangle face. Operators Name Description operator ==(TriFace, TriFace) Equality operator for triangle faces. operator !=(TriFace, TriFace) Inequality operator for triangle faces."
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.op_Equality.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.op_Equality.html",
+    "title": "Operator operator == | ZLab.Discrete",
+    "summary": "Operator operator == | Edit this page View Source operator ==(TriFace, TriFace) Equality operator for triangle faces. Declaration public static bool operator ==(TriFace left, TriFace right) Parameters Type Name Description TriFace left left triangle face TriFace right right triangle face Returns Type Description bool true if the triangle faces are equal, false otherwise"
+  },
+  "api/ZLab.Discrete.Geometry.TriFace.op_Inequality.html": {
+    "href": "api/ZLab.Discrete.Geometry.TriFace.op_Inequality.html",
+    "title": "Operator operator != | ZLab.Discrete",
+    "summary": "Operator operator != | Edit this page View Source operator !=(TriFace, TriFace) Inequality operator for triangle faces. Declaration public static bool operator !=(TriFace left, TriFace right) Parameters Type Name Description TriFace left left triangle face TriFace right right triangle face Returns Type Description bool true if the triangle faces are not equal, false otherwise"
+  },
+  "api/ZLab.Discrete.Geometry.html": {
+    "href": "api/ZLab.Discrete.Geometry.html",
+    "title": "Namespace ZLab.Discrete.Geometry | ZLab.Discrete",
+    "summary": "Namespace ZLab.Discrete.Geometry Classes MeshF Triangle mesh with float precision vertices. PolylineF Polyline defined by a sequence of 3D vertices that make up the line segments. Structs BBox Axis-aligned bounding box (AABB) in 3D space. TriFace Triangle face defined by three vertex indices (int). (12 bytes)"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.-ctor.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.-ctor.html",
+    "title": "Constructor DistanceGrid | ZLab.Discrete",
+    "summary": "Constructor DistanceGrid | Edit this page View Source DistanceGrid(Vector3, BBox) Create a distance grid with given voxel size and world-space bounds. Declaration public DistanceGrid(Vector3 voxelSize, BBox bounds) Parameters Type Name Description Vector3 voxelSize Voxel size in each dimension (must be positive) BBox bounds World-space axis-aligned bounding box Exceptions Type Condition ArgumentException Thrown if voxel size is not positive or if bounds are invalid. | Edit this page View Source DistanceGrid(GridMeta) Create a distance grid with given metadata. Declaration public DistanceGrid(GridMeta meta) Parameters Type Name Description GridMeta meta Grid metadata (voxel size must be positive) Exceptions Type Condition ArgumentException Thrown if voxel size is not positive or if grid dimensions are invalid. | Edit this page View Source DistanceGrid(OccupancyGrid) Create a distance grid with the same dimensions and voxel size as the given occupancy grid. Declaration public DistanceGrid(OccupancyGrid og) Parameters Type Name Description OccupancyGrid og Occupancy grid to match"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.AddOffset.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.AddOffset.html",
+    "title": "Method AddOffset | ZLab.Discrete",
+    "summary": "Method AddOffset | Edit this page View Source AddOffset(float) Add a constant offset to all distances (e.g., morph iso-surface). Declaration public void AddOffset(float delta) Parameters Type Name Description float delta"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask.html",
+    "title": "Method BuildFromBinaryMask | ZLab.Discrete",
+    "summary": "Method BuildFromBinaryMask | Edit this page View Source BuildFromBinaryMask(ReadOnlySpan<byte>, bool) Compute exact Euclidean SDF (positive outside, negative inside) from a binary mask. The binary mask is row-major with x-fastest layout; length must be NxNyNz. Declaration public void BuildFromBinaryMask(ReadOnlySpan<byte> binaryMask, bool parallel = true) Parameters Type Name Description ReadOnlySpan<byte> binaryMask Binary mask (0=outside, 1=inside) bool parallel Enable parallelism"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask.html",
+    "title": "Method BuildFromTernaryMask | ZLab.Discrete",
+    "summary": "Method BuildFromTernaryMask | Edit this page View Source BuildFromTernaryMask(ReadOnlySpan<byte>, bool) Compute exact Euclidean SDF (positive outside, negative inside) from a ternary mask. Declaration public void BuildFromTernaryMask(ReadOnlySpan<byte> ternaryMask, bool parallel = true) Parameters Type Name Description ReadOnlySpan<byte> ternaryMask Ternary mask (0=outside, 1=inside, 2=boundary) bool parallel Enable parallelism"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.Clone.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.Clone.html",
+    "title": "Method Clone | ZLab.Discrete",
+    "summary": "Method Clone | Edit this page View Source Clone() Deep clone of this grid. Declaration public DistanceGrid Clone() Returns Type Description DistanceGrid New DistanceGrid instance with copied metadata and distance values."
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels.html",
+    "title": "Method EnumerateVoxels | ZLab.Discrete",
+    "summary": "Method EnumerateVoxels | Edit this page View Source EnumerateVoxels() Enumerate all voxels with their world-space positions and distance values. Declaration [Obsolete(\"Use ForEachVoxel or ForEachVoxelParallel instead for better performance.\")] public IEnumerable<(Vector3 position, float value)> EnumerateVoxels() Returns Type Description IEnumerable<(Vector3 position, float value)> sequence of (position, distance) tuples Remarks Obsolete: Use ForEachVoxel(Action<Vector3, float>) or ForEachVoxelParallel(Action<Vector3, float>, int?) instead for better performance."
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.Fill.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.Fill.html",
+    "title": "Method Fill | ZLab.Discrete",
+    "summary": "Method Fill | Edit this page View Source Fill(float) Fill all distances with a constant value. Declaration public void Fill(float value) Parameters Type Name Description float value"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel.html",
+    "title": "Method ForEachVoxel | ZLab.Discrete",
+    "summary": "Method ForEachVoxel | Edit this page View Source ForEachVoxel(Action<Vector3, float>) Enumerate all voxels in the grid, invoking the given action for each voxel. Declaration public void ForEachVoxel(Action<Vector3, float> action) Parameters Type Name Description Action<Vector3, float> action Action to invoke for each voxel, with parameters (position, value) Remarks grid.ForEachVoxel((pos, val) => {/* ... */});"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel.html",
+    "title": "Method ForEachVoxelParallel | ZLab.Discrete",
+    "summary": "Method ForEachVoxelParallel | Edit this page View Source ForEachVoxelParallel(Action<Vector3, float>, int?) Parallel z-slice enumeration. Use only if the work done in action is heavy enough to justify the parallel overhead. Declaration public void ForEachVoxelParallel(Action<Vector3, float> action, int? maxDegree = null) Parameters Type Name Description Action<Vector3, float> action Action to invoke for each voxel, with parameters (position, value) int? maxDegree Max degree of parallelism. Default (null) lets the system decide. Remarks grid.ForEachVoxelParallel((pos, val) => { /* heavy work per voxel */ }, maxDegree: Environment.ProcessorCount);"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.GetBuffer.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.GetBuffer.html",
+    "title": "Method GetBuffer | ZLab.Discrete",
+    "summary": "Method GetBuffer | Edit this page View Source GetBuffer() Get all distance values as a mutable span (flat row-major array). Declaration public Span<float> GetBuffer() Returns Type Description Span<float> Implements IGrid<T>.GetBuffer()"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.GetMinMax.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.GetMinMax.html",
+    "title": "Method GetMinMax | ZLab.Discrete",
+    "summary": "Method GetMinMax | Edit this page View Source GetMinMax() Get minimum and maximum distance values in the grid. Declaration public (float minVal, float maxVal) GetMinMax() Returns Type Description (float minVal, float maxVal)"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer.html",
+    "title": "Method GetReadOnlyBuffer | ZLab.Discrete",
+    "summary": "Method GetReadOnlyBuffer | Edit this page View Source GetReadOnlyBuffer() Get all distance values as a read-only span (flat row-major array). Declaration public ReadOnlySpan<float> GetReadOnlyBuffer() Returns Type Description ReadOnlySpan<float> Implements IGrid<T>.GetReadOnlyBuffer()"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory.html",
+    "title": "Method GetReadOnlyMemory | ZLab.Discrete",
+    "summary": "Method GetReadOnlyMemory | Edit this page View Source GetReadOnlyMemory() Get all distance values as a read-only memory (flat row-major array). Declaration public ReadOnlyMemory<float> GetReadOnlyMemory() Returns Type Description ReadOnlyMemory<float> Implements IGrid<T>.GetReadOnlyMemory()"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.GetValue.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.GetValue.html",
+    "title": "Method GetValue | ZLab.Discrete",
+    "summary": "Method GetValue | Edit this page View Source GetValue((int x, int y, int z)) Get distance value at given grid index. Declaration public float GetValue((int x, int y, int z) index) Parameters Type Name Description (int x, int y, int z) index Returns Type Description float Implements IGrid<T>.GetValue((int x, int y, int z)) | Edit this page View Source GetValue(Vector3) Get distance value at given world position. Declaration public float GetValue(Vector3 position) Parameters Type Name Description Vector3 position World position Returns Type Description float"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.LoadFromArray.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.LoadFromArray.html",
+    "title": "Method LoadFromArray | ZLab.Discrete",
+    "summary": "Method LoadFromArray | Edit this page View Source LoadFromArray(ReadOnlySpan<float>) Load a precomputed SDF. The array length must match NxNyNz. Declaration public void LoadFromArray(ReadOnlySpan<float> source) Parameters Type Name Description ReadOnlySpan<float> source"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.SetValue.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.SetValue.html",
+    "title": "Method SetValue | ZLab.Discrete",
+    "summary": "Method SetValue | Edit this page View Source SetValue((int x, int y, int z), float) Set distance value at given grid index. Declaration public void SetValue((int x, int y, int z) index, float value) Parameters Type Name Description (int x, int y, int z) index float value Implements IGrid<T>.SetValue((int x, int y, int z), T)"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy.html",
+    "title": "Method ToArrayCopy | ZLab.Discrete",
+    "summary": "Method ToArrayCopy | Edit this page View Source ToArrayCopy() Export distances as a copy (flat row-major array). Declaration public float[] ToArrayCopy() Returns Type Description float[]"
+  },
+  "api/ZLab.Discrete.Grids.DistanceGrid.html": {
+    "href": "api/ZLab.Discrete.Grids.DistanceGrid.html",
+    "title": "Class DistanceGrid | ZLab.Discrete",
+    "summary": "Class DistanceGrid Distance field grid structure. Inheritance object GridBase DistanceGrid Implements IGrid<float> Inherited Members GridBase.Meta GridBase.Bounds GridBase.Contains((int x, int y, int z)) object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Namespace: ZLab.Discrete.Grids Assembly: ZLab.Discrete.dll Syntax public sealed class DistanceGrid : GridBase, IGrid<float> Constructors Name Description DistanceGrid(Vector3, BBox) Create a distance grid with given voxel size and world-space bounds. DistanceGrid(GridMeta) Create a distance grid with given metadata. DistanceGrid(OccupancyGrid) Create a distance grid with the same dimensions and voxel size as the given occupancy grid. Methods Name Description AddOffset(float) Add a constant offset to all distances (e.g., morph iso-surface). BuildFromBinaryMask(ReadOnlySpan<byte>, bool) Compute exact Euclidean SDF (positive outside, negative inside) from a binary mask. The binary mask is row-major with x-fastest layout; length must be NxNyNz. BuildFromTernaryMask(ReadOnlySpan<byte>, bool) Compute exact Euclidean SDF (positive outside, negative inside) from a ternary mask. Clone() Deep clone of this grid. EnumerateVoxels() Enumerate all voxels with their world-space positions and distance values. Fill(float) Fill all distances with a constant value. ForEachVoxel(Action<Vector3, float>) Enumerate all voxels in the grid, invoking the given action for each voxel. ForEachVoxelParallel(Action<Vector3, float>, int?) Parallel z-slice enumeration. Use only if the work done in action is heavy enough to justify the parallel overhead. GetBuffer() Get all distance values as a mutable span (flat row-major array). GetMinMax() Get minimum and maximum distance values in the grid. GetReadOnlyBuffer() Get all distance values as a read-only span (flat row-major array). GetReadOnlyMemory() Get all distance values as a read-only memory (flat row-major array). GetValue(Vector3) Get distance value at given world position. GetValue((int x, int y, int z)) Get distance value at given grid index. LoadFromArray(ReadOnlySpan<float>) Load a precomputed SDF. The array length must match NxNyNz. SetValue((int x, int y, int z), float) Set distance value at given grid index. ToArrayCopy() Export distances as a copy (flat row-major array). Extension Methods DistanceGridSamplingExtension.SampleGradient(DistanceGrid, Vector3, bool) DistanceGridSamplingExtension.SampleNormal(DistanceGrid, Vector3, bool) DistanceGridSamplingExtension.SampleTrilinear(DistanceGrid, Vector3, bool)"
+  },
+  "api/ZLab.Discrete.Grids.GridBase.Bounds.html": {
+    "href": "api/ZLab.Discrete.Grids.GridBase.Bounds.html",
+    "title": "Property Bounds | ZLab.Discrete",
+    "summary": "Property Bounds | Edit this page View Source Bounds Axis-aligned bounding box of the grid in world coordinates. Declaration public BBox Bounds { get; protected set; } Property Value Type Description BBox"
+  },
+  "api/ZLab.Discrete.Grids.GridBase.Contains.html": {
+    "href": "api/ZLab.Discrete.Grids.GridBase.Contains.html",
+    "title": "Method Contains | ZLab.Discrete",
+    "summary": "Method Contains | Edit this page View Source Contains((int x, int y, int z)) Checks if the given 3D index is within the bounds of the grid. Declaration public bool Contains((int x, int y, int z) index) Parameters Type Name Description (int x, int y, int z) index The 3D index (x, y, z) to check. Returns Type Description bool True if the index is within the grid bounds; otherwise, false."
+  },
+  "api/ZLab.Discrete.Grids.GridBase.Meta.html": {
+    "href": "api/ZLab.Discrete.Grids.GridBase.Meta.html",
+    "title": "Property Meta | ZLab.Discrete",
+    "summary": "Property Meta | Edit this page View Source Meta Metadata about the grid, including dimensions and voxel size. Declaration public GridMeta Meta { get; protected set; } Property Value Type Description GridMeta"
+  },
+  "api/ZLab.Discrete.Grids.GridBase.html": {
+    "href": "api/ZLab.Discrete.Grids.GridBase.html",
+    "title": "Class GridBase | ZLab.Discrete",
+    "summary": "Class GridBase Base class for 3D grid structures, providing common properties and methods. Inheritance object GridBase DistanceGrid OccupancyGrid Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: ZLab.Discrete.Grids Assembly: ZLab.Discrete.dll Syntax public abstract class GridBase Properties Name Description Bounds Axis-aligned bounding box of the grid in world coordinates. Meta Metadata about the grid, including dimensions and voxel size. Methods Name Description Contains((int x, int y, int z)) Checks if the given 3D index is within the bounds of the grid."
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.-ctor.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.-ctor.html",
+    "title": "Constructor GridMeta | ZLab.Discrete",
+    "summary": "Constructor GridMeta | Edit this page View Source GridMeta(int, int, int, int, int, int, Vector3) Creates a new GridMeta instance with the specified parameters. Declaration public GridMeta(int minX, int minY, int minZ, int nx, int ny, int nz, Vector3 voxelSize) Parameters Type Name Description int minX minimum X coordinate int minY minimum Y coordinate int minZ minimum Z coordinate int nx number of voxels along X int ny number of voxels along Y int nz number of voxels along Z Vector3 voxelSize size of each voxel in world units"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.Count.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.Count.html",
+    "title": "Property Count | ZLab.Discrete",
+    "summary": "Property Count | Edit this page View Source Count Total number of voxels in the grid. Declaration public long Count { get; } Property Value Type Description long"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.Dimensions.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.Dimensions.html",
+    "title": "Property Dimensions | ZLab.Discrete",
+    "summary": "Property Dimensions | Edit this page View Source Dimensions Dimensions of the grid as a tuple (Nx, Ny, Nz) in voxel counts. Declaration public (int X, int Y, int Z) Dimensions { get; } Property Value Type Description (int x, int y, int z)"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.MinX.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.MinX.html",
+    "title": "Property MinX | ZLab.Discrete",
+    "summary": "Property MinX | Edit this page View Source MinX Minimum X coordinate of the grid. Declaration public int MinX { get; } Property Value Type Description int"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.MinY.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.MinY.html",
+    "title": "Property MinY | ZLab.Discrete",
+    "summary": "Property MinY | Edit this page View Source MinY Minimum Y coordinate of the grid. Declaration public int MinY { get; } Property Value Type Description int"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.MinZ.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.MinZ.html",
+    "title": "Property MinZ | ZLab.Discrete",
+    "summary": "Property MinZ | Edit this page View Source MinZ Minimum Z coordinate of the grid. Declaration public int MinZ { get; } Property Value Type Description int"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.Nx.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.Nx.html",
+    "title": "Property Nx | ZLab.Discrete",
+    "summary": "Property Nx | Edit this page View Source Nx Number of voxels along the X axis. Declaration public int Nx { get; } Property Value Type Description int"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.Ny.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.Ny.html",
+    "title": "Property Ny | ZLab.Discrete",
+    "summary": "Property Ny | Edit this page View Source Ny Number of voxels along the Y axis. Declaration public int Ny { get; } Property Value Type Description int"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.Nz.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.Nz.html",
+    "title": "Property Nz | ZLab.Discrete",
+    "summary": "Property Nz | Edit this page View Source Nz Number of voxels along the Z axis. Declaration public int Nz { get; } Property Value Type Description int"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.SizeWorld.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.SizeWorld.html",
+    "title": "Property SizeWorld | ZLab.Discrete",
+    "summary": "Property SizeWorld | Edit this page View Source SizeWorld Size dimensions of the entire grid in world units. Declaration public Vector3 SizeWorld { get; } Property Value Type Description Vector3"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.VoxelSize.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.VoxelSize.html",
+    "title": "Property VoxelSize | ZLab.Discrete",
+    "summary": "Property VoxelSize | Edit this page View Source VoxelSize Size of each voxel in world units. Declaration public Vector3 VoxelSize { get; } Property Value Type Description Vector3"
+  },
+  "api/ZLab.Discrete.Grids.GridMeta.html": {
+    "href": "api/ZLab.Discrete.Grids.GridMeta.html",
+    "title": "Struct GridMeta | ZLab.Discrete",
+    "summary": "Struct GridMeta Metadata for a 3D grid, including its dimensions, minimum coordinates, and voxel size. Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Namespace: ZLab.Discrete.Grids Assembly: ZLab.Discrete.dll Syntax public readonly struct GridMeta Constructors Name Description GridMeta(int, int, int, int, int, int, Vector3) Creates a new GridMeta instance with the specified parameters. Properties Name Description Count Total number of voxels in the grid. Dimensions Dimensions of the grid as a tuple (Nx, Ny, Nz) in voxel counts. MinX Minimum X coordinate of the grid. MinY Minimum Y coordinate of the grid. MinZ Minimum Z coordinate of the grid. Nx Number of voxels along the X axis. Ny Number of voxels along the Y axis. Nz Number of voxels along the Z axis. SizeWorld Size dimensions of the entire grid in world units. VoxelSize Size of each voxel in world units."
+  },
+  "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetBuffer.html": {
+    "href": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetBuffer.html",
+    "title": "Method GetBuffer | ZLab.Discrete",
+    "summary": "Method GetBuffer | Edit this page View Source GetBuffer() Gets a span of the underlying buffer storing the grid values for direct manipulation. Declaration Span<T> GetBuffer() Returns Type Description Span<T> A span of the grid's values."
+  },
+  "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyBuffer.html": {
+    "href": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyBuffer.html",
+    "title": "Method GetReadOnlyBuffer | ZLab.Discrete",
+    "summary": "Method GetReadOnlyBuffer | Edit this page View Source GetReadOnlyBuffer() Gets a read-only span of the underlying buffer storing the grid values. Declaration ReadOnlySpan<T> GetReadOnlyBuffer() Returns Type Description ReadOnlySpan<T> A read-only span of the grid's values."
+  },
+  "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyMemory.html": {
+    "href": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyMemory.html",
+    "title": "Method GetReadOnlyMemory | ZLab.Discrete",
+    "summary": "Method GetReadOnlyMemory | Edit this page View Source GetReadOnlyMemory() Gets a read-only memory representation of the underlying buffer storing the grid values. Declaration ReadOnlyMemory<T> GetReadOnlyMemory() Returns Type Description ReadOnlyMemory<T> A read-only memory of the grid's values."
+  },
+  "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetValue.html": {
+    "href": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetValue.html",
+    "title": "Method GetValue | ZLab.Discrete",
+    "summary": "Method GetValue | Edit this page View Source GetValue((int x, int y, int z)) Metadata about the grid, including dimensions and voxel size. Declaration T GetValue((int x, int y, int z) index) Parameters Type Name Description (int x, int y, int z) index The 3D index (x, y, z) of the voxel. Returns Type Description T The value stored at the specified index."
+  },
+  "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.SetValue.html": {
+    "href": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.SetValue.html",
+    "title": "Method SetValue | ZLab.Discrete",
+    "summary": "Method SetValue | Edit this page View Source SetValue((int x, int y, int z), T) Sets the value at the specified 3D index in the grid. Declaration void SetValue((int x, int y, int z) index, T value) Parameters Type Name Description (int x, int y, int z) index The 3D index (x, y, z) of the voxel. T value The value to set at the specified index."
+  },
+  "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.html": {
+    "href": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.html",
+    "title": "Interface IGrid<T> | ZLab.Discrete",
+    "summary": "Interface IGrid<T> Interface for a 3D grid structure that allows getting and setting values at specific indices, Namespace: ZLab.Discrete.Grids.Interfaces Assembly: ZLab.Discrete.dll Syntax public interface IGrid<T> Type Parameters Name Description T The type of values stored in the grid. Methods Name Description GetBuffer() Gets a span of the underlying buffer storing the grid values for direct manipulation. GetReadOnlyBuffer() Gets a read-only span of the underlying buffer storing the grid values. GetReadOnlyMemory() Gets a read-only memory representation of the underlying buffer storing the grid values. GetValue((int x, int y, int z)) Metadata about the grid, including dimensions and voxel size. SetValue((int x, int y, int z), T) Sets the value at the specified 3D index in the grid."
+  },
+  "api/ZLab.Discrete.Grids.Interfaces.html": {
+    "href": "api/ZLab.Discrete.Grids.Interfaces.html",
+    "title": "Namespace ZLab.Discrete.Grids.Interfaces | ZLab.Discrete",
+    "summary": "Namespace ZLab.Discrete.Grids.Interfaces Interfaces IGrid<T> Interface for a 3D grid structure that allows getting and setting values at specific indices,"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.-ctor.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.-ctor.html",
+    "title": "Constructor OccupancyGrid | ZLab.Discrete",
+    "summary": "Constructor OccupancyGrid | Edit this page View Source OccupancyGrid(Vector3, BBox) Create an occupancy grid that covers the given world-space bounds with the given voxel size. Declaration public OccupancyGrid(Vector3 voxelSize, BBox bounds) Parameters Type Name Description Vector3 voxelSize voxel size (must be positive in all dimensions) BBox bounds world-space axis-aligned bounding box Exceptions Type Condition ArgumentException Thrown if voxel size is not positive or if grid dimensions are invalid. | Edit this page View Source OccupancyGrid(GridMeta) Create an occupancy grid with given metadata. Declaration public OccupancyGrid(GridMeta meta) Parameters Type Name Description GridMeta meta Grid metadata (voxel size must be positive) Exceptions Type Condition ArgumentException Thrown if voxel size is not positive or if grid dimensions are invalid. | Edit this page View Source OccupancyGrid(Occupancy[], Vector3[], GridMeta) Create an occupancy grid from arrays of occupancies and their corresponding world-space positions. Declaration public OccupancyGrid(Occupancy[] occupancies, Vector3[] positions, GridMeta meta) Parameters Type Name Description Occupancy[] occupancies occupancy values Vector3[] positions world-space positions corresponding to each occupancy GridMeta meta Grid metadata defining the voxel size and bounds Exceptions Type Condition ArgumentNullException occurs when occupancies or positions is null. ArgumentException occurs when input arrays have different lengths, or if grid dimensions are invalid, or if voxel size is not positive, or if any position is outside the provided grid bounds. OutOfMemoryException occurs when the grid size exceeds available memory. ArgumentOutOfRangeException occurs when any position is outside the provided grid bounds."
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.Clone.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.Clone.html",
+    "title": "Method Clone | ZLab.Discrete",
+    "summary": "Method Clone | Edit this page View Source Clone() Deep clone of this grid. (Meta and buffer are copied.) Declaration public OccupancyGrid Clone() Returns Type Description OccupancyGrid a new OccupancyGrid instance"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.CountState.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.CountState.html",
+    "title": "Method CountState | ZLab.Discrete",
+    "summary": "Method CountState | Edit this page View Source CountState(Occupancy) Count voxels in a given Occupancy state. Declaration public long CountState(Occupancy state) Parameters Type Name Description Occupancy state state of occupancy to count Returns Type Description long | Edit this page View Source CountState() Count total number of voxels in the grid. Declaration public long CountState() Returns Type Description long"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels.html",
+    "title": "Method EnumerateVoxels | ZLab.Discrete",
+    "summary": "Method EnumerateVoxels | Edit this page View Source EnumerateVoxels() Enumerate all voxels with their world-space positions and occupancy values. Declaration [Obsolete(\"Use ForEachVoxel or ForEachVoxelParallel instead for better performance.\")] public IEnumerable<(Vector3 position, Occupancy value)> EnumerateVoxels() Returns Type Description IEnumerable<(Vector3 position, Occupancy value)> sequence of (position, occupancy) tuples Remarks Obsolete: Use ForEachVoxel(Action<Vector3, Occupancy>) or ForEachVoxelParallel(Action<Vector3, Occupancy>, int?) instead for better performance."
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.Fill.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.Fill.html",
+    "title": "Method Fill | ZLab.Discrete",
+    "summary": "Method Fill | Edit this page View Source Fill(Occupancy) Fill the entire grid with a given occupancy value. Declaration public void Fill(Occupancy value) Parameters Type Name Description Occupancy value value to fill"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html",
+    "title": "Method ForEachVoxel | ZLab.Discrete",
+    "summary": "Method ForEachVoxel | Edit this page View Source ForEachVoxel(Action<Vector3, Occupancy>) Enumerate all voxels in the grid, invoking the given action for each voxel. Declaration public void ForEachVoxel(Action<Vector3, Occupancy> action) Parameters Type Name Description Action<Vector3, Occupancy> action Action to invoke for each voxel, with parameters (position, value) Remarks grid.ForEachVoxel((pos, val) => {/* ... */});"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html",
+    "title": "Method ForEachVoxelParallel | ZLab.Discrete",
+    "summary": "Method ForEachVoxelParallel | Edit this page View Source ForEachVoxelParallel(Action<Vector3, Occupancy>, int?) Parallel z-slice enumeration. Use only if the work done in action is heavy enough to justify the parallel overhead. Declaration public void ForEachVoxelParallel(Action<Vector3, Occupancy> action, int? maxDegree = null) Parameters Type Name Description Action<Vector3, Occupancy> action Action to invoke for each voxel, with parameters (position, value) int? maxDegree Max degree of parallelism. Default (null) lets the system decide. Remarks grid.ForEachVoxelParallel((pos, val) => { /* heavy work per voxel */ }, maxDegree: Environment.ProcessorCount);"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.GetBuffer.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.GetBuffer.html",
+    "title": "Method GetBuffer | ZLab.Discrete",
+    "summary": "Method GetBuffer | Edit this page View Source GetBuffer() Get a writable span over the internal occupancy buffer. Declaration public Span<Occupancy> GetBuffer() Returns Type Description Span<Occupancy> Implements IGrid<T>.GetBuffer()"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary.html",
+    "title": "Method GetMaskBinary | ZLab.Discrete",
+    "summary": "Method GetMaskBinary | Edit this page View Source GetMaskBinary(bool, bool) Export occupancy as a binary mask. Declaration public byte[] GetMaskBinary(bool flipSign = false, bool boundaryAsInside = false) Parameters Type Name Description bool flipSign flip outside and inside bool boundaryAsInside treat boundary as inside? Returns Type Description byte[] (0=outside, 1=inside)"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary.html",
+    "title": "Method GetMaskTernary | ZLab.Discrete",
+    "summary": "Method GetMaskTernary | Edit this page View Source GetMaskTernary(bool) Export occupancy as a ternary mask. Declaration public byte[] GetMaskTernary(bool flipSign = false) Parameters Type Name Description bool flipSign flip outside and inside Returns Type Description byte[] (0=outside, 1=inside, 2=boundary) | Edit this page View Source GetMaskTernary(Span<byte>, bool) Export occupancy as a ternary mask into a provided span. Declaration public void GetMaskTernary(Span<byte> destination, bool flipSign = false) Parameters Type Name Description Span<byte> destination destination span (length must be at least NxNyNz) bool flipSign flip outside and inside Remarks Example: byte[] buf = ArrayPool.Shared.Rent(gridSize); grid.GetMaskTernary(buf.AsSpan()); Exceptions Type Condition ArgumentException if destination span is too small"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer.html",
+    "title": "Method GetReadOnlyBuffer | ZLab.Discrete",
+    "summary": "Method GetReadOnlyBuffer | Edit this page View Source GetReadOnlyBuffer() Get a read-only span over the internal occupancy buffer. Declaration public ReadOnlySpan<Occupancy> GetReadOnlyBuffer() Returns Type Description ReadOnlySpan<Occupancy> Implements IGrid<T>.GetReadOnlyBuffer()"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory.html",
+    "title": "Method GetReadOnlyMemory | ZLab.Discrete",
+    "summary": "Method GetReadOnlyMemory | Edit this page View Source GetReadOnlyMemory() Get a read-only memory over the internal occupancy buffer. Declaration public ReadOnlyMemory<Occupancy> GetReadOnlyMemory() Returns Type Description ReadOnlyMemory<Occupancy> Implements IGrid<T>.GetReadOnlyMemory()"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.GetValue.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.GetValue.html",
+    "title": "Method GetValue | ZLab.Discrete",
+    "summary": "Method GetValue | Edit this page View Source GetValue((int x, int y, int z)) Get occupancy value at given grid index. Declaration public Occupancy GetValue((int x, int y, int z) index) Parameters Type Name Description (int x, int y, int z) index grid index (x,y,z) Returns Type Description Occupancy occupancy value at index Implements IGrid<T>.GetValue((int x, int y, int z)) Exceptions Type Condition IndexOutOfRangeException if index is out of bounds"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray.html",
+    "title": "Method LoadFromArray | ZLab.Discrete",
+    "summary": "Method LoadFromArray | Edit this page View Source LoadFromArray(ReadOnlySpan<Occupancy>) Load occupancies from a flat array (row-major order). Declaration public void LoadFromArray(ReadOnlySpan<Occupancy> values) Parameters Type Name Description ReadOnlySpan<Occupancy> values input array (length must be NxNyNz) Exceptions Type Condition ArgumentException if input array length does not match grid size"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.SetValue.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.SetValue.html",
+    "title": "Method SetValue | ZLab.Discrete",
+    "summary": "Method SetValue | Edit this page View Source SetValue((int x, int y, int z), Occupancy) Set occupancy value at given grid index. Declaration public void SetValue((int x, int y, int z) index, Occupancy value) Parameters Type Name Description (int x, int y, int z) index grid index (x,y,z) Occupancy value occupancy value to set Implements IGrid<T>.SetValue((int x, int y, int z), T) Exceptions Type Condition IndexOutOfRangeException if index is out of bounds"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy.html",
+    "title": "Method ToArrayCopy | ZLab.Discrete",
+    "summary": "Method ToArrayCopy | Edit this page View Source ToArrayCopy() Export distances as a copy (flat row-major array). Declaration public float[] ToArrayCopy() Returns Type Description float[]"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.ToString.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.ToString.html",
+    "title": "Method ToString | ZLab.Discrete",
+    "summary": "Method ToString | Edit this page View Source ToString() String representation of the grid. Declaration public override string ToString() Returns Type Description string string Overrides object.ToString()"
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.TransformWorld.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.TransformWorld.html",
+    "title": "Method TransformWorld | ZLab.Discrete",
+    "summary": "Method TransformWorld | Edit this page View Source TransformWorld(Vector3) Translates the grid by a world-space vector. Internally shifts content by the nearest integer voxel offset. Cells shifting out of range are dropped. Declaration public void TransformWorld(Vector3 translation) Parameters Type Name Description Vector3 translation World-space translation. | Edit this page View Source TransformWorld(Vector3, Vector3) Translates the grid so that origin moves to target. Equivalent to TransformWorld(target - origin). Declaration public void TransformWorld(Vector3 origin, Vector3 target) Parameters Type Name Description Vector3 origin World-space origin point. Vector3 target World-space target point."
+  },
+  "api/ZLab.Discrete.Grids.OccupancyGrid.html": {
+    "href": "api/ZLab.Discrete.Grids.OccupancyGrid.html",
+    "title": "Class OccupancyGrid | ZLab.Discrete",
+    "summary": "Class OccupancyGrid Occupancy grid structure. Inheritance object GridBase OccupancyGrid Implements IGrid<Occupancy> Inherited Members GridBase.Meta GridBase.Bounds GridBase.Contains((int x, int y, int z)) object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) Namespace: ZLab.Discrete.Grids Assembly: ZLab.Discrete.dll Syntax public sealed class OccupancyGrid : GridBase, IGrid<Occupancy> Constructors Name Description OccupancyGrid(Vector3, BBox) Create an occupancy grid that covers the given world-space bounds with the given voxel size. OccupancyGrid(GridMeta) Create an occupancy grid with given metadata. OccupancyGrid(Occupancy[], Vector3[], GridMeta) Create an occupancy grid from arrays of occupancies and their corresponding world-space positions. Methods Name Description Clone() Deep clone of this grid. (Meta and buffer are copied.) CountState() Count total number of voxels in the grid. CountState(Occupancy) Count voxels in a given Occupancy state. EnumerateVoxels() Enumerate all voxels with their world-space positions and occupancy values. Fill(Occupancy) Fill the entire grid with a given occupancy value. ForEachVoxel(Action<Vector3, Occupancy>) Enumerate all voxels in the grid, invoking the given action for each voxel. ForEachVoxelParallel(Action<Vector3, Occupancy>, int?) Parallel z-slice enumeration. Use only if the work done in action is heavy enough to justify the parallel overhead. GetBuffer() Get a writable span over the internal occupancy buffer. GetMaskBinary(bool, bool) Export occupancy as a binary mask. GetMaskTernary(bool) Export occupancy as a ternary mask. GetMaskTernary(Span<byte>, bool) Export occupancy as a ternary mask into a provided span. GetReadOnlyBuffer() Get a read-only span over the internal occupancy buffer. GetReadOnlyMemory() Get a read-only memory over the internal occupancy buffer. GetValue((int x, int y, int z)) Get occupancy value at given grid index. LoadFromArray(ReadOnlySpan<Occupancy>) Load occupancies from a flat array (row-major order). SetValue((int x, int y, int z), Occupancy) Set occupancy value at given grid index. ToArrayCopy() Export distances as a copy (flat row-major array). ToString() String representation of the grid. TransformWorld(Vector3) Translates the grid by a world-space vector. Internally shifts content by the nearest integer voxel offset. Cells shifting out of range are dropped. TransformWorld(Vector3, Vector3) Translates the grid so that origin moves to target. Equivalent to TransformWorld(target - origin)."
+  },
+  "api/ZLab.Discrete.Grids.html": {
+    "href": "api/ZLab.Discrete.Grids.html",
+    "title": "Namespace ZLab.Discrete.Grids | ZLab.Discrete",
+    "summary": "Namespace ZLab.Discrete.Grids Classes DistanceGrid Distance field grid structure. GridBase Base class for 3D grid structures, providing common properties and methods. OccupancyGrid Occupancy grid structure. Structs GridMeta Metadata for a 3D grid, including its dimensions, minimum coordinates, and voxel size."
+  },
+  "api/ZLab.Discrete.Operations.Meshing.CordSystem.html": {
+    "href": "api/ZLab.Discrete.Operations.Meshing.CordSystem.html",
+    "title": "Enum CordSystem | ZLab.Discrete",
+    "summary": "Enum CordSystem Coordinate system type used in meshing operations. Namespace: ZLab.Discrete.Operations.Meshing Assembly: ZLab.Discrete.dll Syntax public enum CordSystem : byte Fields Name Description LeftHanded Rhino3D uses left-handed coordinate system RightHanded OpenGL and DirectX use right-handed coordinate systems"
+  },
+  "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh.html": {
+    "href": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh.html",
+    "title": "Method GenerateMesh | ZLab.Discrete",
+    "summary": "Method GenerateMesh | Edit this page View Source GenerateMesh(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, CordSystem) Generates a single mesh from a set of voxels. Internal faces are culled using ZLab.Discrete.Algorithms.Encoding.Morton occupancy set (O(1) neighbor checks). Declaration public static MeshF GenerateMesh(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes, CordSystem cordSystem = CordSystem.RightHanded) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins ReadOnlySpan<Vector3> voxelSizes Per-voxel sizes; must match origins length. CordSystem cordSystem Coordinate system for winding (right- or left-handed). Returns Type Description MeshF A single combined mesh. Remarks If voxelSizes differ, culling is disabled and all six faces per voxel are emitted. Origin convention: the culled path treats origin of voxels as the minimum corner of the cell. Exceptions Type Condition ArgumentException Lengths of origins and voxelSizes differ. InvalidOperationException No vertices or faces were generated. | Edit this page View Source GenerateMesh(ReadOnlySpan<Vector3>, Vector3, CordSystem) Generates a single mesh from a set of voxels, assuming a uniform voxelSize. Internal faces are culled using ZLab.Discrete.Algorithms.Encoding.Morton occupancy set (O(1) neighbor checks). Declaration public static MeshF GenerateMesh(ReadOnlySpan<Vector3> origins, Vector3 voxelSize, CordSystem cordSystem = CordSystem.RightHanded) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins Vector3 voxelSize Uniform voxel size for all voxels. CordSystem cordSystem Coordinate system for winding (right- or left-handed). Returns Type Description MeshF A single combined mesh. Remarks Origin convention: the culled path treats origin of voxels as the minimum corner of the cell. Exceptions Type Condition InvalidOperationException No vertices or faces were generated."
+  },
+  "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes.html": {
+    "href": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes.html",
+    "title": "Method GenerateMeshes | ZLab.Discrete",
+    "summary": "Method GenerateMeshes | Edit this page View Source GenerateMeshes(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, Span<MeshF>, CordSystem) Generates an individual quad-mesh per voxel (no face merging across voxels). Declaration public static void GenerateMeshes(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes, Span<MeshF> outMeshes, CordSystem cordSystem = CordSystem.RightHanded) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins ReadOnlySpan<Vector3> voxelSizes Per-voxel sizes; must match origins length. Span<MeshF> outMeshes Pre-allocated output span to write meshes into; must match origins length. CordSystem cordSystem Coordinate system for winding (right- or left-handed). Remarks This variant avoids allocations by writing into a pre-allocated output Span<T>. Exceptions Type Condition ArgumentException Lengths of origins and voxelSizes differ. | Edit this page View Source GenerateMeshes(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, CordSystem) Generates an individual quad-mesh per voxel (no face merging across voxels). Declaration public static MeshF[] GenerateMeshes(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes, CordSystem cordSystem = CordSystem.RightHanded) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins ReadOnlySpan<Vector3> voxelSizes Per-voxel sizes; must match origins length. CordSystem cordSystem Coordinate system for winding (right- or left-handed). Returns Type Description MeshF[] Array of meshes, one per input voxel. Remarks Memory-heavy: each voxel becomes a standalone box mesh (24 verts, 12 tris). This variant allocates a new array for the output meshes. Exceptions Type Condition ArgumentException Lengths of origins and voxelSizes differ. | Edit this page View Source GenerateMeshes(ReadOnlySpan<Vector3>, Vector3, Span<MeshF>, CordSystem) Generates an individual quad-mesh per voxel (all voxels share the same voxelSize). Declaration public static void GenerateMeshes(ReadOnlySpan<Vector3> origins, Vector3 voxelSize, Span<MeshF> outMeshes, CordSystem cord = CordSystem.RightHanded) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins Vector3 voxelSize Uniform voxel size for all voxels. Span<MeshF> outMeshes Pre-allocated output span to write meshes into; must match origins length. CordSystem cord Coordinate system for winding (right- or left-handed). Remarks This variant avoids allocations by writing into a pre-allocated output Span<T>. Exceptions Type Condition ArgumentException Output span is too small to hold all meshes. | Edit this page View Source GenerateMeshes(ReadOnlySpan<Vector3>, Vector3, CordSystem) Generates an individual quad-mesh per voxel (all voxels share the same voxelSize). Declaration public static MeshF[] GenerateMeshes(ReadOnlySpan<Vector3> origins, Vector3 voxelSize, CordSystem cordSystem = CordSystem.RightHanded) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins Vector3 voxelSize Uniform voxel size for all voxels. CordSystem cordSystem Coordinate system for winding (right- or left-handed). Returns Type Description MeshF[] Array of meshes, one per input voxel. Remarks Memory-heavy: each voxel becomes a standalone box mesh (24 verts, 12 tris). This variant allocates a new array for the output meshes."
+  },
+  "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds.html": {
+    "href": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds.html",
+    "title": "Method GetVoxelBounds | ZLab.Discrete",
+    "summary": "Method GetVoxelBounds | Edit this page View Source GetVoxelBounds(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, Span<BBox>) Gets axis-aligned bounding boxes for a set of voxels. Declaration public static void GetVoxelBounds(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes, Span<BBox> outBoxes) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins ReadOnlySpan<Vector3> voxelSizes Per-voxel sizes; must match origins length. Span<BBox> outBoxes Pre-allocated output span to write bounding boxes into; must match origins length. Remarks This variant avoids allocations by writing into a pre-allocated output Span<T>. Exceptions Type Condition ArgumentException voxelSizes length must match voxels length. | Edit this page View Source GetVoxelBounds(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>) Gets axis-aligned bounding boxes for a set of voxels. Declaration public static BBox[] GetVoxelBounds(ReadOnlySpan<Vector3> origins, ReadOnlySpan<Vector3> voxelSizes) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins ReadOnlySpan<Vector3> voxelSizes Per-voxel sizes; must match origins length. Returns Type Description BBox[] Array of bounding boxes, one per input voxel. Remarks This variant allocates a new array for the output bounding boxes. Exceptions Type Condition ArgumentException voxelSizes length must match voxels length. | Edit this page View Source GetVoxelBounds(ReadOnlySpan<Vector3>, Vector3, Span<BBox>) Gets axis-aligned bounding boxes for a set of voxels (all voxels share the same voxelSize). Declaration public static void GetVoxelBounds(ReadOnlySpan<Vector3> origins, Vector3 voxelSize, Span<BBox> outBoxes) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins Vector3 voxelSize Per-voxel sizes Span<BBox> outBoxes Pre-allocated output span to write bounding boxes into; must match origins length. Remarks This variant avoids allocations by writing into a pre-allocated output Span<T>. Exceptions Type Condition ArgumentException Output span is too small to hold all bounding boxes. | Edit this page View Source GetVoxelBounds(ReadOnlySpan<Vector3>, Vector3) Gets axis-aligned bounding boxes for a set of voxels (all voxels share the same voxelSize). Declaration public static BBox[] GetVoxelBounds(ReadOnlySpan<Vector3> origins, Vector3 voxelSize) Parameters Type Name Description ReadOnlySpan<Vector3> origins Voxel origins Vector3 voxelSize Per-voxel sizes Returns Type Description BBox[] Array of bounding boxes, one per input voxel. Remarks This variant allocates a new array for the output bounding boxes."
+  },
+  "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.html": {
+    "href": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.html",
+    "title": "Class DiscreteMesher | ZLab.Discrete",
+    "summary": "Class DiscreteMesher Naive voxel meshing utilities: emits per-voxel meshes or a single merged mesh. Uses face culling with Morton-coded occupancy when voxel size is uniform. Inheritance object DiscreteMesher Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: ZLab.Discrete.Operations.Meshing Assembly: ZLab.Discrete.dll Syntax public static class DiscreteMesher Remarks Assumes voxels instances lie on a rectilinear grid. For the culled path, all voxels must share an identical voxelSize. If voxel sizes vary, all six faces per voxel are emitted (no merging). Methods Name Description GenerateMesh(ReadOnlySpan<Vector3>, Vector3, CordSystem) Generates a single mesh from a set of voxels, assuming a uniform voxelSize. Internal faces are culled using ZLab.Discrete.Algorithms.Encoding.Morton occupancy set (O(1) neighbor checks). GenerateMesh(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, CordSystem) Generates a single mesh from a set of voxels. Internal faces are culled using ZLab.Discrete.Algorithms.Encoding.Morton occupancy set (O(1) neighbor checks). GenerateMeshes(ReadOnlySpan<Vector3>, Vector3, Span<MeshF>, CordSystem) Generates an individual quad-mesh per voxel (all voxels share the same voxelSize). GenerateMeshes(ReadOnlySpan<Vector3>, Vector3, CordSystem) Generates an individual quad-mesh per voxel (all voxels share the same voxelSize). GenerateMeshes(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, Span<MeshF>, CordSystem) Generates an individual quad-mesh per voxel (no face merging across voxels). GenerateMeshes(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, CordSystem) Generates an individual quad-mesh per voxel (no face merging across voxels). GetVoxelBounds(ReadOnlySpan<Vector3>, Vector3) Gets axis-aligned bounding boxes for a set of voxels (all voxels share the same voxelSize). GetVoxelBounds(ReadOnlySpan<Vector3>, Vector3, Span<BBox>) Gets axis-aligned bounding boxes for a set of voxels (all voxels share the same voxelSize). GetVoxelBounds(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>) Gets axis-aligned bounding boxes for a set of voxels. GetVoxelBounds(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, Span<BBox>) Gets axis-aligned bounding boxes for a set of voxels."
+  },
+  "api/ZLab.Discrete.Operations.Meshing.html": {
+    "href": "api/ZLab.Discrete.Operations.Meshing.html",
+    "title": "Namespace ZLab.Discrete.Operations.Meshing | ZLab.Discrete",
+    "summary": "Namespace ZLab.Discrete.Operations.Meshing Classes DiscreteMesher Naive voxel meshing utilities: emits per-voxel meshes or a single merged mesh. Uses face culling with Morton-coded occupancy when voxel size is uniform. Enums CordSystem Coordinate system type used in meshing operations."
+  },
+  "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh.html": {
+    "href": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh.html",
+    "title": "Method RasterizeMesh | ZLab.Discrete",
+    "summary": "Method RasterizeMesh | Edit this page View Source RasterizeMesh(OccupancyGrid, MeshF, bool, int) Rasterizes a mesh into the given OccupancyGrid. Optionally applies flood fill to classify interior voxels. (grid is mutated in-place.) Declaration public static void RasterizeMesh(OccupancyGrid grid, MeshF mesh, bool floodFill = false, int parallelThreshold = 2048) Parameters Type Name Description OccupancyGrid grid Target grid to populate (mutated in-place). Callers must allocate the grid before calling. MeshF mesh Mesh to discretize into voxels. bool floodFill If true, runs flood fill to label inside/outside voxels. int parallelThreshold Face count threshold for enabling parallel processing."
+  },
+  "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline.html": {
+    "href": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline.html",
+    "title": "Method RasterizePolyline | ZLab.Discrete",
+    "summary": "Method RasterizePolyline | Edit this page View Source RasterizePolyline(OccupancyGrid, PolylineF) Rasterizes a 3D polyline into the given OccupancyGrid. Declaration public static void RasterizePolyline(OccupancyGrid grid, PolylineF polyline) Parameters Type Name Description OccupancyGrid grid Target grid to populate (mutated in-place). PolylineF polyline Polyline to rasterize. Exceptions Type Condition ArgumentNullException Thrown if grid or polyline is null."
+  },
+  "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.html": {
+    "href": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.html",
+    "title": "Class DenseRasterizer | ZLab.Discrete",
+    "summary": "Class DenseRasterizer Rasterizes a mesh into a dense occupancy grid. Inheritance object DenseRasterizer Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: ZLab.Discrete.Operations.Rasterizing Assembly: ZLab.Discrete.dll Syntax public static class DenseRasterizer Methods Name Description RasterizeMesh(OccupancyGrid, MeshF, bool, int) Rasterizes a mesh into the given OccupancyGrid. Optionally applies flood fill to classify interior voxels. (grid is mutated in-place.) RasterizePolyline(OccupancyGrid, PolylineF) Rasterizes a 3D polyline into the given OccupancyGrid."
+  },
+  "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh.html": {
+    "href": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh.html",
+    "title": "Method RasterizeMesh | ZLab.Discrete",
+    "summary": "Method RasterizeMesh | Edit this page View Source RasterizeMesh(MeshF, Vector3, int) Discretize a mesh. Only voxels that intersect the mesh are returned. Declaration public static Vector3[] RasterizeMesh(MeshF mesh, Vector3 voxelSize, int parallelThreshold = 2048) Parameters Type Name Description MeshF mesh Mesh to discretize Vector3 voxelSize Size of each voxel int parallelThreshold Mesh vertices threshold for parallelism Returns Type Description Vector3[] voxels intersects with the mesh boundary"
+  },
+  "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline.html": {
+    "href": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline.html",
+    "title": "Method RasterizePolyline | ZLab.Discrete",
+    "summary": "Method RasterizePolyline | Edit this page View Source RasterizePolyline(PolylineF, Vector3, bool) Discretize a 3D polyline. Only voxels that intersect the polyline are returned. Declaration public static Vector3[] RasterizePolyline(PolylineF polyline, Vector3 voxelSize, bool includeClosingEdge = true) Parameters Type Name Description PolylineF polyline Polyline to discretize Vector3 voxelSize Size of each voxel bool includeClosingEdge If true, includes the edge connecting the last and first vertex if the polyline is closed. Returns Type Description Vector3[] voxels intersects with the polyline"
+  },
+  "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.html": {
+    "href": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.html",
+    "title": "Class SparseRasterizer | ZLab.Discrete",
+    "summary": "Class SparseRasterizer Sparse rasterization of a mesh into voxels. Only voxels that intersect the mesh are collected. Inheritance object SparseRasterizer Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: ZLab.Discrete.Operations.Rasterizing Assembly: ZLab.Discrete.dll Syntax public static class SparseRasterizer Methods Name Description RasterizeMesh(MeshF, Vector3, int) Discretize a mesh. Only voxels that intersect the mesh are returned. RasterizePolyline(PolylineF, Vector3, bool) Discretize a 3D polyline. Only voxels that intersect the polyline are returned."
+  },
+  "api/ZLab.Discrete.Operations.Rasterizing.html": {
+    "href": "api/ZLab.Discrete.Operations.Rasterizing.html",
+    "title": "Namespace ZLab.Discrete.Operations.Rasterizing | ZLab.Discrete",
+    "summary": "Namespace ZLab.Discrete.Operations.Rasterizing Classes DenseRasterizer Rasterizes a mesh into a dense occupancy grid. SparseRasterizer Sparse rasterization of a mesh into voxels. Only voxels that intersect the mesh are collected."
+  },
+  "api/ZLab.Discrete.Voxels.DistanceVoxel.-ctor.html": {
+    "href": "api/ZLab.Discrete.Voxels.DistanceVoxel.-ctor.html",
+    "title": "Constructor DistanceVoxel | ZLab.Discrete",
+    "summary": "Constructor DistanceVoxel DistanceVoxel(Vector3, float) Declaration public DistanceVoxel(Vector3 origin, float distance) Parameters Type Name Description Vector3 origin float distance"
+  },
+  "api/ZLab.Discrete.Voxels.DistanceVoxel.Center.html": {
+    "href": "api/ZLab.Discrete.Voxels.DistanceVoxel.Center.html",
+    "title": "Method Center | ZLab.Discrete",
+    "summary": "Method Center Center(Vector3) Declaration public Vector3 Center(Vector3 size) Parameters Type Name Description Vector3 size Returns Type Description Vector3"
+  },
+  "api/ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds.html": {
+    "href": "api/ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds.html",
+    "title": "Method ComputeBounds | ZLab.Discrete",
+    "summary": "Method ComputeBounds ComputeBounds(Vector3) Declaration public BBox ComputeBounds(Vector3 size) Parameters Type Name Description Vector3 size Returns Type Description BBox"
+  },
+  "api/ZLab.Discrete.Voxels.DistanceVoxel.Distance.html": {
+    "href": "api/ZLab.Discrete.Voxels.DistanceVoxel.Distance.html",
+    "title": "Field Distance | ZLab.Discrete",
+    "summary": "Field Distance Namespace: ZLab.Discrete.Voxels Assembly: ZLab.Discrete.dll Syntax public readonly float Distance Returns Type Description float"
+  },
+  "api/ZLab.Discrete.Voxels.DistanceVoxel.Origin.html": {
+    "href": "api/ZLab.Discrete.Voxels.DistanceVoxel.Origin.html",
+    "title": "Field Origin | ZLab.Discrete",
+    "summary": "Field Origin Namespace: ZLab.Discrete.Voxels Assembly: ZLab.Discrete.dll Syntax public readonly Vector3 Origin Returns Type Description Vector3"
+  },
+  "api/ZLab.Discrete.Voxels.DistanceVoxel.ToArray.html": {
+    "href": "api/ZLab.Discrete.Voxels.DistanceVoxel.ToArray.html",
+    "title": "Method ToArray | ZLab.Discrete",
+    "summary": "Method ToArray ToArray() Declaration public float[] ToArray() Returns Type Description float[]"
+  },
+  "api/ZLab.Discrete.Voxels.DistanceVoxel.ToString.html": {
+    "href": "api/ZLab.Discrete.Voxels.DistanceVoxel.ToString.html",
+    "title": "Method ToString | ZLab.Discrete",
+    "summary": "Method ToString ToString() Returns the fully qualified type name of this instance. Declaration public override string ToString() Returns Type Description string The fully qualified type name. Overrides ValueType.ToString()"
+  },
+  "api/ZLab.Discrete.Voxels.DistanceVoxel.html": {
+    "href": "api/ZLab.Discrete.Voxels.DistanceVoxel.html",
+    "title": "Struct DistanceVoxel | ZLab.Discrete",
+    "summary": "Struct DistanceVoxel Inherited Members ValueType.Equals(object) ValueType.GetHashCode() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Namespace: ZLab.Discrete.Voxels Assembly: ZLab.Discrete.dll Syntax public readonly struct DistanceVoxel Constructors Name Description DistanceVoxel(Vector3, float) Fields Name Description Distance Origin Methods Name Description Center(Vector3) ComputeBounds(Vector3) ToArray() ToString() Returns the fully qualified type name of this instance."
+  },
+  "api/ZLab.Discrete.Voxels.Occupancy.html": {
+    "href": "api/ZLab.Discrete.Voxels.Occupancy.html",
+    "title": "Enum Occupancy | ZLab.Discrete",
+    "summary": "Enum Occupancy Occupancy state of a voxel. Namespace: ZLab.Discrete.Voxels Assembly: ZLab.Discrete.dll Syntax public enum Occupancy : byte Fields Name Description Boundary The voxel intersects the boundary of the geometry. Inside The voxel is inside the geometry. Outside The voxel is outside the geometry."
+  },
+  "api/ZLab.Discrete.Voxels.OccupancyVoxel.-ctor.html": {
+    "href": "api/ZLab.Discrete.Voxels.OccupancyVoxel.-ctor.html",
+    "title": "Constructor OccupancyVoxel | ZLab.Discrete",
+    "summary": "Constructor OccupancyVoxel OccupancyVoxel(Vector3, Occupancy) Declaration public OccupancyVoxel(Vector3 origin, Occupancy state) Parameters Type Name Description Vector3 origin Occupancy state"
+  },
+  "api/ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds.html": {
+    "href": "api/ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds.html",
+    "title": "Method GetBounds | ZLab.Discrete",
+    "summary": "Method GetBounds GetBounds(Vector3) Declaration public BBox GetBounds(Vector3 size) Parameters Type Name Description Vector3 size Returns Type Description BBox"
+  },
+  "api/ZLab.Discrete.Voxels.OccupancyVoxel.Origin.html": {
+    "href": "api/ZLab.Discrete.Voxels.OccupancyVoxel.Origin.html",
+    "title": "Field Origin | ZLab.Discrete",
+    "summary": "Field Origin Namespace: ZLab.Discrete.Voxels Assembly: ZLab.Discrete.dll Syntax public readonly Vector3 Origin Returns Type Description Vector3"
+  },
+  "api/ZLab.Discrete.Voxels.OccupancyVoxel.State.html": {
+    "href": "api/ZLab.Discrete.Voxels.OccupancyVoxel.State.html",
+    "title": "Field State | ZLab.Discrete",
+    "summary": "Field State Namespace: ZLab.Discrete.Voxels Assembly: ZLab.Discrete.dll Syntax public readonly Occupancy State Returns Type Description Occupancy"
+  },
+  "api/ZLab.Discrete.Voxels.OccupancyVoxel.ToString.html": {
+    "href": "api/ZLab.Discrete.Voxels.OccupancyVoxel.ToString.html",
+    "title": "Method ToString | ZLab.Discrete",
+    "summary": "Method ToString ToString() Returns the fully qualified type name of this instance. Declaration public override string ToString() Returns Type Description string The fully qualified type name. Overrides ValueType.ToString()"
+  },
+  "api/ZLab.Discrete.Voxels.OccupancyVoxel.html": {
+    "href": "api/ZLab.Discrete.Voxels.OccupancyVoxel.html",
+    "title": "Struct OccupancyVoxel | ZLab.Discrete",
+    "summary": "Struct OccupancyVoxel Inherited Members ValueType.Equals(object) ValueType.GetHashCode() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Namespace: ZLab.Discrete.Voxels Assembly: ZLab.Discrete.dll Syntax public readonly struct OccupancyVoxel Constructors Name Description OccupancyVoxel(Vector3, Occupancy) Fields Name Description Origin State Methods Name Description GetBounds(Vector3) ToString() Returns the fully qualified type name of this instance."
+  },
+  "api/ZLab.Discrete.Voxels.html": {
+    "href": "api/ZLab.Discrete.Voxels.html",
+    "title": "Namespace ZLab.Discrete.Voxels | ZLab.Discrete",
+    "summary": "Namespace ZLab.Discrete.Voxels Enums Occupancy Occupancy state of a voxel."
+  },
+  "docs/getting-started.html": {
+    "href": "docs/getting-started.html",
+    "title": "Getting Started | ZLab.Discrete",
+    "summary": "Getting Started This guide will help you get started with Zlab.Discrete in your .NET project. Installation You can install the library via NuGet Package Manager or the .NET CLI. dotnet add package ZLab.Discrete Basic Usage Sparse Voxelization and Meshing Following is a simple example demonstrating how to perform sparse voxelization of a triangle mesh and generate a voxel mesh. using System.Numerics; using ZLab.Discrete.Geometry; using ZLab.Discrete.Operations.Meshing; using ZLab.Discrete.Operations.Rasterizing; public class Example { // --------------------------------------------------------------------- // INPUT GEOMETRY (replace with your own data) // --------------------------------------------------------------------- // One triangle in XY plane (z = 0) Vector3[] vertices = { new Vector3(2, 2, 0), new Vector3(7, 2, 0), new Vector3(4, 6, 0), }; TriFace[] faces = { new TriFace(0, 1, 2) }; // Voxel Spec Vector3 size = new Vector3(1, 0.5f, 1); // <- Anisotropic voxel size public void Sparse() { MeshF mesh = new MeshF(vertices, faces); // <- build input mesh Vector3[] voxelOrigins = SparseRasterizer.Rasterize(mesh, size); MeshF voxelMesh = DiscreteMesher.GenerateMesh(voxelOrigins, size); } } See: Mesh Building for more details on mesh construction. Sparse Voxelization for more details on sparse voxelization. Dense Voxelization and Signed Distance Field (SDF) Generation The following example shows how to create a dense voxel grid from a triangle mesh and compute its signed distance field. public void ComputeSdf() { MeshF mesh = new MeshF(vertices, faces); // <- Build the mesh BBox bounds = new BBox(min: new Vector3(0, 0, -1), max: new Vector3(10, 10, 1)); OccupancyGrid oGrid = new(size, bounds); DistanceGrid dGrid = new(oGrid); // Create distance grid from occupancy grid byte[] mask = oGrid.GetMaskTernary(); // get ternary mask from occupancy grid dGrid.BuildFromTernaryMask(mask); // build distance field from the mask } See: Dense Occupancy Grid for more details on dense voxel grids. Signed Distance Field for more details on SDF generation. Sampling the SDF You can sample the signed distance field at any point in space using trilinear interpolation. public void SampleSdf(DistanceGrid dGrid) { Vector3 samplePoint = new Vector3(4.5f, 4.5f, 0); float sdfValue = dGrid.SampleTrilinear(samplePoint); Vector3 sdfGradient = dGrid.SampleGradient(samplePoint); } See: Signed Distance Field for more details on SDF sampling. Extract voxels from Occupancy Grid Extract voxel origins of a specific occupancy state (e.g., Boundary) from the occupancy grid. public void ExtractVoxels(OccupancyGrid oGrid) { List<Vector3> origins = new(); oGrid.ForEachVoxel((origin, state) => { if (state == Occupancy.Boundary) // <- change this to select different states origins.Add(origin); }); } See: Enumerate Voxels for more details on voxel enumeration."
+  },
+  "docs/licenses.html": {
+    "href": "docs/licenses.html",
+    "title": "License | ZLab.Discrete",
+    "summary": "License ZLab.Discrete is licensed under the PolyForm Noncommercial 1.0.0 license. TL;DR — You may use, modify, and distribute ZLab.Discrete for noncommercial purposes (including personal projects, education, academic research, nonprofits, and government) subject to the PolyForm-NC terms. Commercial use is not permitted. For commercial licensing, contact dev@zekezhang.com. See the LICENSE file for more details."
+  },
+  "docs/references.html": {
+    "href": "docs/references.html",
+    "title": "References | ZLab.Discrete",
+    "summary": "References Akenine-Moller, T. (2001). Fast 3D Triangle-Box Overlap Testing. Journal of Graphics Tools, 6(1), 29–33. https://doi.org/10.1080/10867651.2001.10487535 Felzenszwalb, P. F., & Huttenlocher, D. P. (2012). Distance Transforms of Sampled Functions. Theory of Computing, 8(1), 415–428. https://doi.org/10.4086/toc.2012.v008a019"
+  },
+  "docs/usages/dense-grid-definition.html": {
+    "href": "docs/usages/dense-grid-definition.html",
+    "title": "Define dense voxel grid region | ZLab.Discrete",
+    "summary": "Define dense voxel grid region // Axis-aligned bounds and uniform/non-uniform voxel size BBox bounds = new(min: new Vector3(0,0,0), max: new Vector3(10,10,10)); Vector3 size = new(0.5f, 1f, 0.5f); OccupancyGrid oGrid = new(size, bounds);"
+  },
+  "docs/usages/enumerate-voxels.html": {
+    "href": "docs/usages/enumerate-voxels.html",
+    "title": "Enumerate voxels inside the grid | ZLab.Discrete",
+    "summary": "Enumerate voxels inside the grid Single threaded List<Vector3> origins = new(); oGrid.ForEachVoxel((origin, state) => { if (state == Occupancy.Boundary) // <- change this to select different states origins.Add(origin); }) Multi-threaded ConcurrentBag<Vector3> origins = new(); oGrid.ForEachVoxelParallel((origin, state) => { if (state == Occupancy.Boundary) // <- change this to select different states origins.Add(origin); })"
+  },
+  "docs/usages/mesh-building.html": {
+    "href": "docs/usages/mesh-building.html",
+    "title": "Mesh building | ZLab.Discrete",
+    "summary": "Mesh building To construct a MeshF, you need to provide an array of vertices and an array of faces. Currently, only triangular faces (TriFace) are supported. // Triangles only, indices must be valid for verts[] Vector3[] verts = { /* ... */ }; TriFace[] faces = { new TriFace(a,b,c), /* ... */ }; MeshF mesh = new MeshF(verts, faces); If you are converting from another mesh format, and you know the mesh is closed (watertight), you can construct mesh with: MeshF mesh = new MeshF(verts, faces, isClosed:true); Where setting isClosed to true or false skips the interal watertight check, which can be slow for large meshes."
+  },
+  "docs/usages/mesh-extraction.html": {
+    "href": "docs/usages/mesh-extraction.html",
+    "title": "Mesh Extraction | ZLab.Discrete",
+    "summary": "Mesh Extraction Face-culling meshing This will result a single mesh with internal faces removed. MeshF mesh = DiscreteMesher.GenerateMesh(origins, size); Naive meshing This will result individual mesh for each voxel. // allocates a new array for the meshes MeshF[] meshes = DiscreteMesher.GenerateMeshes(origins, size); if you want no allocation at all, you can also do: MeshF[] buffer = ArrayPool<MeshF>.Shared.Rent(origins.Count); Span<MeshF> meshSpan = buffer.AsSpan(0, origins.Count); // trim to actual size try { DiscreteMesher.GenerateMeshes(origins, size, meshSpan); } finally { // remember to return the array to the pool ArrayPool<MeshF>.Shared.Return(buffer); }"
+  },
+  "docs/usages/rasterization.html": {
+    "href": "docs/usages/rasterization.html",
+    "title": "Rasterization | ZLab.Discrete",
+    "summary": "Rasterization Dense rasterization This will result in a dense occupancy grid where each voxel is classified as Inside, Outside, or Boundary. // Flood fill classifies interior; requires a closed mesh DenseRasterizer.Rasterize(oGrid, mesh, floodFill: true); oGrid will be mutated. floodFill is optional and defaults to false. It is recommended to set it to true if the mesh is closed (watertight) to correctly identify interior voxels. This is a post-processing step that fills in the interior of the mesh after rasterization. Sparse rasterization This will only return a list of voxel origins that are classified as Boundary. List<Vector3> origins = SparseRasterizer.Rasterize(Mesh, size);"
+  },
+  "docs/usages/signed-distance-field.html": {
+    "href": "docs/usages/signed-distance-field.html",
+    "title": "Signed Distance Field (SDF) | ZLab.Discrete",
+    "summary": "Signed Distance Field (SDF) Grid Masking & Distance Field Creation DistanceGrid dGrid = new(oGrid); // Create distance grid from occupancy grid int count = (int)oGrid.Meta.Count; // Total number of voxels in the grid byte[] buffer = ArrayPool<byte>.Shared.Rent(count); // Rent buffer from shared pool try { Span<byte> mask = buffer.AsSpan(0, count); // trim to actual size oGrid.GetMaskTernary(mask); // mask[i] = 0 (Outside), 1 (Inside), 2 (Boundary) dGrid.BuildFromTernaryMask(mask); // Build distance field from mask } finally { ArrayPool<byte>.Shared.Return(buffer); // return buffer to pool } Sample Signed Distance Field (SDF) Sample an arbitrary point in space using nearest voxell or trilinear interpolation. You can also sample the gradient at that point. Vector3 point = new(1.0f, 2.0f, 3.0f); float distanceDiscrete = dGrid.GetValue(point); // nearest voxel (will throw if out of bounds) float distance = dGrid.SampleTrilinear(point); // trilinear interpolation Vector3 gradient = dGrid.SampleGradient(point); // gradient at point"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Zlab.Discrete | ZLab.Discrete",
+    "summary": "Zlab.Discrete A fully managed .NET library for voxelization, meshing, and distance field computation. It is written entirely in C#, requires no external dependencies, and is designed for easy integration into .NET projects. Documentation Getting Started Features Voxelization Anisotropic voxelization (non-uniform voxel sizes) Dense occupancy grids Sparse boundary voxelization Distance Fields Euclidean distance transform (exact, isotropic and anisotropic) Signed distance field (SDF) generation Sampling with nearest-neighbor or trilinear interpolation Gradient computation from SDFs Meshing Face-culling voxel meshing Grid Processing BFS-based flood fill for interior/exterior classification Use Cases Preprocessing 3D meshes into voxel grids Generating SDFs for geometry processing, physics, or rendering Mesh extraction from voxel volumes Spatial analysis and computational geometry research Supported Frameworks .NET Standard 2.1 .NET 7.0 .NET 8.0 .NET 9.0 License ZLab.Discrete is licensed under the PolyForm Noncommercial 1.0.0 license. TL;DR — You may use, modify, and distribute ZLab.Discrete for noncommercial purposes (including personal projects, education, academic research, nonprofits, and government) subject to the PolyForm-NC terms. Commercial use is not permitted. For commercial licensing, contact dev@zekezhang.com. See the LICENSE file for more details. Citation If you find this library useful in your research or projects, please consider citing it as follows: @software{zhang2025zlab, author = {Zeke Zhang}, title = {Zlab.Discrete: A managed C# library for voxelization and distance fields}, year = {2025}, publisher = {GitHub}, url = {https://github.com/zekezhang/Zlab.Discrete}, }"
+  }
+}

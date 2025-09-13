@@ -1,0 +1,1960 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: ZLab.Discrete.Algorithms.Sampling
+  name: ZLab.Discrete.Algorithms.Sampling
+  href: api/ZLab.Discrete.Algorithms.Sampling.html
+  commentId: N:ZLab.Discrete.Algorithms.Sampling
+  fullName: ZLab.Discrete.Algorithms.Sampling
+  nameWithType: ZLab.Discrete.Algorithms.Sampling
+- uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension
+  name: DistanceGridSamplingExtension
+  href: api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.html
+  commentId: T:ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension
+  fullName: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension
+  nameWithType: DistanceGridSamplingExtension
+- uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient(ZLab.Discrete.Grids.DistanceGrid,System.Numerics.Vector3,System.Boolean)
+  name: SampleGradient(DistanceGrid, Vector3, bool)
+  href: api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient.html#ZLab_Discrete_Algorithms_Sampling_DistanceGridSamplingExtension_SampleGradient_ZLab_Discrete_Grids_DistanceGrid_System_Numerics_Vector3_System_Boolean_
+  commentId: M:ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient(ZLab.Discrete.Grids.DistanceGrid,System.Numerics.Vector3,System.Boolean)
+  name.vb: SampleGradient(DistanceGrid, Vector3, Boolean)
+  fullName: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient(ZLab.Discrete.Grids.DistanceGrid, System.Numerics.Vector3, bool)
+  fullName.vb: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient(ZLab.Discrete.Grids.DistanceGrid, System.Numerics.Vector3, Boolean)
+  nameWithType: DistanceGridSamplingExtension.SampleGradient(DistanceGrid, Vector3, bool)
+  nameWithType.vb: DistanceGridSamplingExtension.SampleGradient(DistanceGrid, Vector3, Boolean)
+- uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient*
+  name: SampleGradient
+  href: api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient.html
+  commentId: Overload:ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient
+  fullName: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient
+  nameWithType: DistanceGridSamplingExtension.SampleGradient
+- uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal(ZLab.Discrete.Grids.DistanceGrid,System.Numerics.Vector3,System.Boolean)
+  name: SampleNormal(DistanceGrid, Vector3, bool)
+  href: api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal.html#ZLab_Discrete_Algorithms_Sampling_DistanceGridSamplingExtension_SampleNormal_ZLab_Discrete_Grids_DistanceGrid_System_Numerics_Vector3_System_Boolean_
+  commentId: M:ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal(ZLab.Discrete.Grids.DistanceGrid,System.Numerics.Vector3,System.Boolean)
+  name.vb: SampleNormal(DistanceGrid, Vector3, Boolean)
+  fullName: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal(ZLab.Discrete.Grids.DistanceGrid, System.Numerics.Vector3, bool)
+  fullName.vb: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal(ZLab.Discrete.Grids.DistanceGrid, System.Numerics.Vector3, Boolean)
+  nameWithType: DistanceGridSamplingExtension.SampleNormal(DistanceGrid, Vector3, bool)
+  nameWithType.vb: DistanceGridSamplingExtension.SampleNormal(DistanceGrid, Vector3, Boolean)
+- uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal*
+  name: SampleNormal
+  href: api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal.html
+  commentId: Overload:ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal
+  fullName: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal
+  nameWithType: DistanceGridSamplingExtension.SampleNormal
+- uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear(ZLab.Discrete.Grids.DistanceGrid,System.Numerics.Vector3,System.Boolean)
+  name: SampleTrilinear(DistanceGrid, Vector3, bool)
+  href: api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear.html#ZLab_Discrete_Algorithms_Sampling_DistanceGridSamplingExtension_SampleTrilinear_ZLab_Discrete_Grids_DistanceGrid_System_Numerics_Vector3_System_Boolean_
+  commentId: M:ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear(ZLab.Discrete.Grids.DistanceGrid,System.Numerics.Vector3,System.Boolean)
+  name.vb: SampleTrilinear(DistanceGrid, Vector3, Boolean)
+  fullName: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear(ZLab.Discrete.Grids.DistanceGrid, System.Numerics.Vector3, bool)
+  fullName.vb: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear(ZLab.Discrete.Grids.DistanceGrid, System.Numerics.Vector3, Boolean)
+  nameWithType: DistanceGridSamplingExtension.SampleTrilinear(DistanceGrid, Vector3, bool)
+  nameWithType.vb: DistanceGridSamplingExtension.SampleTrilinear(DistanceGrid, Vector3, Boolean)
+- uid: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear*
+  name: SampleTrilinear
+  href: api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear.html
+  commentId: Overload:ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear
+  fullName: ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear
+  nameWithType: DistanceGridSamplingExtension.SampleTrilinear
+- uid: ZLab.Discrete.Geometry
+  name: ZLab.Discrete.Geometry
+  href: api/ZLab.Discrete.Geometry.html
+  commentId: N:ZLab.Discrete.Geometry
+  fullName: ZLab.Discrete.Geometry
+  nameWithType: ZLab.Discrete.Geometry
+- uid: ZLab.Discrete.Geometry.BBox
+  name: BBox
+  href: api/ZLab.Discrete.Geometry.BBox.html
+  commentId: T:ZLab.Discrete.Geometry.BBox
+  fullName: ZLab.Discrete.Geometry.BBox
+  nameWithType: BBox
+- uid: ZLab.Discrete.Geometry.BBox.#ctor
+  name: BBox()
+  href: api/ZLab.Discrete.Geometry.BBox.-ctor.html#ZLab_Discrete_Geometry_BBox__ctor
+  commentId: M:ZLab.Discrete.Geometry.BBox.#ctor
+  name.vb: New()
+  fullName: ZLab.Discrete.Geometry.BBox.BBox()
+  fullName.vb: ZLab.Discrete.Geometry.BBox.New()
+  nameWithType: BBox.BBox()
+  nameWithType.vb: BBox.New()
+- uid: ZLab.Discrete.Geometry.BBox.#ctor(System.Numerics.Vector3,System.Numerics.Vector3)
+  name: BBox(Vector3, Vector3)
+  href: api/ZLab.Discrete.Geometry.BBox.-ctor.html#ZLab_Discrete_Geometry_BBox__ctor_System_Numerics_Vector3_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Geometry.BBox.#ctor(System.Numerics.Vector3,System.Numerics.Vector3)
+  name.vb: New(Vector3, Vector3)
+  fullName: ZLab.Discrete.Geometry.BBox.BBox(System.Numerics.Vector3, System.Numerics.Vector3)
+  fullName.vb: ZLab.Discrete.Geometry.BBox.New(System.Numerics.Vector3, System.Numerics.Vector3)
+  nameWithType: BBox.BBox(Vector3, Vector3)
+  nameWithType.vb: BBox.New(Vector3, Vector3)
+- uid: ZLab.Discrete.Geometry.BBox.#ctor*
+  name: BBox
+  href: api/ZLab.Discrete.Geometry.BBox.-ctor.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Geometry.BBox.BBox
+  fullName.vb: ZLab.Discrete.Geometry.BBox.New
+  nameWithType: BBox.BBox
+  nameWithType.vb: BBox.New
+- uid: ZLab.Discrete.Geometry.BBox.Center
+  name: Center
+  href: api/ZLab.Discrete.Geometry.BBox.Center.html#ZLab_Discrete_Geometry_BBox_Center
+  commentId: P:ZLab.Discrete.Geometry.BBox.Center
+  fullName: ZLab.Discrete.Geometry.BBox.Center
+  nameWithType: BBox.Center
+- uid: ZLab.Discrete.Geometry.BBox.Center*
+  name: Center
+  href: api/ZLab.Discrete.Geometry.BBox.Center.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Center
+  fullName: ZLab.Discrete.Geometry.BBox.Center
+  nameWithType: BBox.Center
+- uid: ZLab.Discrete.Geometry.BBox.Contains(System.Numerics.Vector3)
+  name: Contains(Vector3)
+  href: api/ZLab.Discrete.Geometry.BBox.Contains.html#ZLab_Discrete_Geometry_BBox_Contains_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Geometry.BBox.Contains(System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Geometry.BBox.Contains(System.Numerics.Vector3)
+  nameWithType: BBox.Contains(Vector3)
+- uid: ZLab.Discrete.Geometry.BBox.Contains(ZLab.Discrete.Geometry.BBox)
+  name: Contains(BBox)
+  href: api/ZLab.Discrete.Geometry.BBox.Contains.html#ZLab_Discrete_Geometry_BBox_Contains_ZLab_Discrete_Geometry_BBox_
+  commentId: M:ZLab.Discrete.Geometry.BBox.Contains(ZLab.Discrete.Geometry.BBox)
+  fullName: ZLab.Discrete.Geometry.BBox.Contains(ZLab.Discrete.Geometry.BBox)
+  nameWithType: BBox.Contains(BBox)
+- uid: ZLab.Discrete.Geometry.BBox.Contains*
+  name: Contains
+  href: api/ZLab.Discrete.Geometry.BBox.Contains.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Contains
+  fullName: ZLab.Discrete.Geometry.BBox.Contains
+  nameWithType: BBox.Contains
+- uid: ZLab.Discrete.Geometry.BBox.Empty
+  name: Empty
+  href: api/ZLab.Discrete.Geometry.BBox.Empty.html#ZLab_Discrete_Geometry_BBox_Empty
+  commentId: P:ZLab.Discrete.Geometry.BBox.Empty
+  fullName: ZLab.Discrete.Geometry.BBox.Empty
+  nameWithType: BBox.Empty
+- uid: ZLab.Discrete.Geometry.BBox.Empty*
+  name: Empty
+  href: api/ZLab.Discrete.Geometry.BBox.Empty.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Empty
+  fullName: ZLab.Discrete.Geometry.BBox.Empty
+  nameWithType: BBox.Empty
+- uid: ZLab.Discrete.Geometry.BBox.Expand(System.Numerics.Vector3)
+  name: Expand(Vector3)
+  href: api/ZLab.Discrete.Geometry.BBox.Expand.html#ZLab_Discrete_Geometry_BBox_Expand_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Geometry.BBox.Expand(System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Geometry.BBox.Expand(System.Numerics.Vector3)
+  nameWithType: BBox.Expand(Vector3)
+- uid: ZLab.Discrete.Geometry.BBox.Expand(ZLab.Discrete.Geometry.BBox)
+  name: Expand(BBox)
+  href: api/ZLab.Discrete.Geometry.BBox.Expand.html#ZLab_Discrete_Geometry_BBox_Expand_ZLab_Discrete_Geometry_BBox_
+  commentId: M:ZLab.Discrete.Geometry.BBox.Expand(ZLab.Discrete.Geometry.BBox)
+  fullName: ZLab.Discrete.Geometry.BBox.Expand(ZLab.Discrete.Geometry.BBox)
+  nameWithType: BBox.Expand(BBox)
+- uid: ZLab.Discrete.Geometry.BBox.Expand*
+  name: Expand
+  href: api/ZLab.Discrete.Geometry.BBox.Expand.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Expand
+  fullName: ZLab.Discrete.Geometry.BBox.Expand
+  nameWithType: BBox.Expand
+- uid: ZLab.Discrete.Geometry.BBox.FromUnordered(System.Numerics.Vector3,System.Numerics.Vector3)
+  name: FromUnordered(Vector3, Vector3)
+  href: api/ZLab.Discrete.Geometry.BBox.FromUnordered.html#ZLab_Discrete_Geometry_BBox_FromUnordered_System_Numerics_Vector3_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Geometry.BBox.FromUnordered(System.Numerics.Vector3,System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Geometry.BBox.FromUnordered(System.Numerics.Vector3, System.Numerics.Vector3)
+  nameWithType: BBox.FromUnordered(Vector3, Vector3)
+- uid: ZLab.Discrete.Geometry.BBox.FromUnordered*
+  name: FromUnordered
+  href: api/ZLab.Discrete.Geometry.BBox.FromUnordered.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.FromUnordered
+  fullName: ZLab.Discrete.Geometry.BBox.FromUnordered
+  nameWithType: BBox.FromUnordered
+- uid: ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span{System.Numerics.Vector3})
+  name: GetAllCorners(Span<Vector3>)
+  href: api/ZLab.Discrete.Geometry.BBox.GetAllCorners.html#ZLab_Discrete_Geometry_BBox_GetAllCorners_System_Span_System_Numerics_Vector3__
+  commentId: M:ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span{System.Numerics.Vector3})
+  name.vb: GetAllCorners(Span(Of Vector3))
+  fullName: ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span<System.Numerics.Vector3>)
+  fullName.vb: ZLab.Discrete.Geometry.BBox.GetAllCorners(System.Span(Of System.Numerics.Vector3))
+  nameWithType: BBox.GetAllCorners(Span<Vector3>)
+  nameWithType.vb: BBox.GetAllCorners(Span(Of Vector3))
+- uid: ZLab.Discrete.Geometry.BBox.GetAllCorners*
+  name: GetAllCorners
+  href: api/ZLab.Discrete.Geometry.BBox.GetAllCorners.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.GetAllCorners
+  fullName: ZLab.Discrete.Geometry.BBox.GetAllCorners
+  nameWithType: BBox.GetAllCorners
+- uid: ZLab.Discrete.Geometry.BBox.Infinite
+  name: Infinite
+  href: api/ZLab.Discrete.Geometry.BBox.Infinite.html#ZLab_Discrete_Geometry_BBox_Infinite
+  commentId: P:ZLab.Discrete.Geometry.BBox.Infinite
+  fullName: ZLab.Discrete.Geometry.BBox.Infinite
+  nameWithType: BBox.Infinite
+- uid: ZLab.Discrete.Geometry.BBox.Infinite*
+  name: Infinite
+  href: api/ZLab.Discrete.Geometry.BBox.Infinite.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Infinite
+  fullName: ZLab.Discrete.Geometry.BBox.Infinite
+  nameWithType: BBox.Infinite
+- uid: ZLab.Discrete.Geometry.BBox.Intersects(ZLab.Discrete.Geometry.BBox)
+  name: Intersects(BBox)
+  href: api/ZLab.Discrete.Geometry.BBox.Intersects.html#ZLab_Discrete_Geometry_BBox_Intersects_ZLab_Discrete_Geometry_BBox_
+  commentId: M:ZLab.Discrete.Geometry.BBox.Intersects(ZLab.Discrete.Geometry.BBox)
+  fullName: ZLab.Discrete.Geometry.BBox.Intersects(ZLab.Discrete.Geometry.BBox)
+  nameWithType: BBox.Intersects(BBox)
+- uid: ZLab.Discrete.Geometry.BBox.Intersects*
+  name: Intersects
+  href: api/ZLab.Discrete.Geometry.BBox.Intersects.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Intersects
+  fullName: ZLab.Discrete.Geometry.BBox.Intersects
+  nameWithType: BBox.Intersects
+- uid: ZLab.Discrete.Geometry.BBox.IsValid
+  name: IsValid
+  href: api/ZLab.Discrete.Geometry.BBox.IsValid.html#ZLab_Discrete_Geometry_BBox_IsValid
+  commentId: P:ZLab.Discrete.Geometry.BBox.IsValid
+  fullName: ZLab.Discrete.Geometry.BBox.IsValid
+  nameWithType: BBox.IsValid
+- uid: ZLab.Discrete.Geometry.BBox.IsValid*
+  name: IsValid
+  href: api/ZLab.Discrete.Geometry.BBox.IsValid.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.IsValid
+  fullName: ZLab.Discrete.Geometry.BBox.IsValid
+  nameWithType: BBox.IsValid
+- uid: ZLab.Discrete.Geometry.BBox.Max
+  name: Max
+  href: api/ZLab.Discrete.Geometry.BBox.Max.html
+  commentId: F:ZLab.Discrete.Geometry.BBox.Max
+  fullName: ZLab.Discrete.Geometry.BBox.Max
+  nameWithType: BBox.Max
+- uid: ZLab.Discrete.Geometry.BBox.Min
+  name: Min
+  href: api/ZLab.Discrete.Geometry.BBox.Min.html
+  commentId: F:ZLab.Discrete.Geometry.BBox.Min
+  fullName: ZLab.Discrete.Geometry.BBox.Min
+  nameWithType: BBox.Min
+- uid: ZLab.Discrete.Geometry.BBox.Pad(System.Single)
+  name: Pad(float)
+  href: api/ZLab.Discrete.Geometry.BBox.Pad.html#ZLab_Discrete_Geometry_BBox_Pad_System_Single_
+  commentId: M:ZLab.Discrete.Geometry.BBox.Pad(System.Single)
+  name.vb: Pad(Single)
+  fullName: ZLab.Discrete.Geometry.BBox.Pad(float)
+  fullName.vb: ZLab.Discrete.Geometry.BBox.Pad(Single)
+  nameWithType: BBox.Pad(float)
+  nameWithType.vb: BBox.Pad(Single)
+- uid: ZLab.Discrete.Geometry.BBox.Pad*
+  name: Pad
+  href: api/ZLab.Discrete.Geometry.BBox.Pad.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Pad
+  fullName: ZLab.Discrete.Geometry.BBox.Pad
+  nameWithType: BBox.Pad
+- uid: ZLab.Discrete.Geometry.BBox.Size
+  name: Size
+  href: api/ZLab.Discrete.Geometry.BBox.Size.html#ZLab_Discrete_Geometry_BBox_Size
+  commentId: P:ZLab.Discrete.Geometry.BBox.Size
+  fullName: ZLab.Discrete.Geometry.BBox.Size
+  nameWithType: BBox.Size
+- uid: ZLab.Discrete.Geometry.BBox.Size*
+  name: Size
+  href: api/ZLab.Discrete.Geometry.BBox.Size.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.Size
+  fullName: ZLab.Discrete.Geometry.BBox.Size
+  nameWithType: BBox.Size
+- uid: ZLab.Discrete.Geometry.BBox.SurfaceArea
+  name: SurfaceArea
+  href: api/ZLab.Discrete.Geometry.BBox.SurfaceArea.html#ZLab_Discrete_Geometry_BBox_SurfaceArea
+  commentId: P:ZLab.Discrete.Geometry.BBox.SurfaceArea
+  fullName: ZLab.Discrete.Geometry.BBox.SurfaceArea
+  nameWithType: BBox.SurfaceArea
+- uid: ZLab.Discrete.Geometry.BBox.SurfaceArea*
+  name: SurfaceArea
+  href: api/ZLab.Discrete.Geometry.BBox.SurfaceArea.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.SurfaceArea
+  fullName: ZLab.Discrete.Geometry.BBox.SurfaceArea
+  nameWithType: BBox.SurfaceArea
+- uid: ZLab.Discrete.Geometry.BBox.ToMesh(ZLab.Discrete.Operations.Meshing.CordSystem)
+  name: ToMesh(CordSystem)
+  href: api/ZLab.Discrete.Geometry.BBox.ToMesh.html#ZLab_Discrete_Geometry_BBox_ToMesh_ZLab_Discrete_Operations_Meshing_CordSystem_
+  commentId: M:ZLab.Discrete.Geometry.BBox.ToMesh(ZLab.Discrete.Operations.Meshing.CordSystem)
+  fullName: ZLab.Discrete.Geometry.BBox.ToMesh(ZLab.Discrete.Operations.Meshing.CordSystem)
+  nameWithType: BBox.ToMesh(CordSystem)
+- uid: ZLab.Discrete.Geometry.BBox.ToMesh*
+  name: ToMesh
+  href: api/ZLab.Discrete.Geometry.BBox.ToMesh.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.ToMesh
+  fullName: ZLab.Discrete.Geometry.BBox.ToMesh
+  nameWithType: BBox.ToMesh
+- uid: ZLab.Discrete.Geometry.BBox.ToString
+  name: ToString()
+  href: api/ZLab.Discrete.Geometry.BBox.ToString.html#ZLab_Discrete_Geometry_BBox_ToString
+  commentId: M:ZLab.Discrete.Geometry.BBox.ToString
+  fullName: ZLab.Discrete.Geometry.BBox.ToString()
+  nameWithType: BBox.ToString()
+- uid: ZLab.Discrete.Geometry.BBox.ToString*
+  name: ToString
+  href: api/ZLab.Discrete.Geometry.BBox.ToString.html
+  commentId: Overload:ZLab.Discrete.Geometry.BBox.ToString
+  fullName: ZLab.Discrete.Geometry.BBox.ToString
+  nameWithType: BBox.ToString
+- uid: ZLab.Discrete.Geometry.MeshF
+  name: MeshF
+  href: api/ZLab.Discrete.Geometry.MeshF.html
+  commentId: T:ZLab.Discrete.Geometry.MeshF
+  fullName: ZLab.Discrete.Geometry.MeshF
+  nameWithType: MeshF
+- uid: ZLab.Discrete.Geometry.MeshF.#ctor
+  name: MeshF()
+  href: api/ZLab.Discrete.Geometry.MeshF.-ctor.html#ZLab_Discrete_Geometry_MeshF__ctor
+  commentId: M:ZLab.Discrete.Geometry.MeshF.#ctor
+  name.vb: New()
+  fullName: ZLab.Discrete.Geometry.MeshF.MeshF()
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.New()
+  nameWithType: MeshF.MeshF()
+  nameWithType.vb: MeshF.New()
+- uid: ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[])
+  name: MeshF(Vector3[], TriFace[])
+  href: api/ZLab.Discrete.Geometry.MeshF.-ctor.html#ZLab_Discrete_Geometry_MeshF__ctor_System_Numerics_Vector3___ZLab_Discrete_Geometry_TriFace___
+  commentId: M:ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[])
+  name.vb: New(Vector3(), TriFace())
+  fullName: ZLab.Discrete.Geometry.MeshF.MeshF(System.Numerics.Vector3[], ZLab.Discrete.Geometry.TriFace[])
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.New(System.Numerics.Vector3(), ZLab.Discrete.Geometry.TriFace())
+  nameWithType: MeshF.MeshF(Vector3[], TriFace[])
+  nameWithType.vb: MeshF.New(Vector3(), TriFace())
+- uid: ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[],System.Boolean)
+  name: MeshF(Vector3[], TriFace[], bool)
+  href: api/ZLab.Discrete.Geometry.MeshF.-ctor.html#ZLab_Discrete_Geometry_MeshF__ctor_System_Numerics_Vector3___ZLab_Discrete_Geometry_TriFace___System_Boolean_
+  commentId: M:ZLab.Discrete.Geometry.MeshF.#ctor(System.Numerics.Vector3[],ZLab.Discrete.Geometry.TriFace[],System.Boolean)
+  name.vb: New(Vector3(), TriFace(), Boolean)
+  fullName: ZLab.Discrete.Geometry.MeshF.MeshF(System.Numerics.Vector3[], ZLab.Discrete.Geometry.TriFace[], bool)
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.New(System.Numerics.Vector3(), ZLab.Discrete.Geometry.TriFace(), Boolean)
+  nameWithType: MeshF.MeshF(Vector3[], TriFace[], bool)
+  nameWithType.vb: MeshF.New(Vector3(), TriFace(), Boolean)
+- uid: ZLab.Discrete.Geometry.MeshF.#ctor*
+  name: MeshF
+  href: api/ZLab.Discrete.Geometry.MeshF.-ctor.html
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Geometry.MeshF.MeshF
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.New
+  nameWithType: MeshF.MeshF
+  nameWithType.vb: MeshF.New
+- uid: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+  name: EnumerateTriangleBounds()
+  href: api/ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds.html#ZLab_Discrete_Geometry_MeshF_EnumerateTriangleBounds
+  commentId: M:ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds()
+  nameWithType: MeshF.EnumerateTriangleBounds()
+- uid: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds*
+  name: EnumerateTriangleBounds
+  href: api/ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds.html
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds
+  nameWithType: MeshF.EnumerateTriangleBounds
+- uid: ZLab.Discrete.Geometry.MeshF.Faces
+  name: Faces
+  href: api/ZLab.Discrete.Geometry.MeshF.Faces.html
+  commentId: F:ZLab.Discrete.Geometry.MeshF.Faces
+  fullName: ZLab.Discrete.Geometry.MeshF.Faces
+  nameWithType: MeshF.Faces
+- uid: ZLab.Discrete.Geometry.MeshF.FromObjFile(System.String)
+  name: FromObjFile(string)
+  href: api/ZLab.Discrete.Geometry.MeshF.FromObjFile.html#ZLab_Discrete_Geometry_MeshF_FromObjFile_System_String_
+  commentId: M:ZLab.Discrete.Geometry.MeshF.FromObjFile(System.String)
+  name.vb: FromObjFile(String)
+  fullName: ZLab.Discrete.Geometry.MeshF.FromObjFile(string)
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.FromObjFile(String)
+  nameWithType: MeshF.FromObjFile(string)
+  nameWithType.vb: MeshF.FromObjFile(String)
+- uid: ZLab.Discrete.Geometry.MeshF.FromObjFile*
+  name: FromObjFile
+  href: api/ZLab.Discrete.Geometry.MeshF.FromObjFile.html
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.FromObjFile
+  fullName: ZLab.Discrete.Geometry.MeshF.FromObjFile
+  nameWithType: MeshF.FromObjFile
+- uid: ZLab.Discrete.Geometry.MeshF.GetBounds
+  name: GetBounds()
+  href: api/ZLab.Discrete.Geometry.MeshF.GetBounds.html#ZLab_Discrete_Geometry_MeshF_GetBounds
+  commentId: M:ZLab.Discrete.Geometry.MeshF.GetBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.GetBounds()
+  nameWithType: MeshF.GetBounds()
+- uid: ZLab.Discrete.Geometry.MeshF.GetBounds*
+  name: GetBounds
+  href: api/ZLab.Discrete.Geometry.MeshF.GetBounds.html
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.GetBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.GetBounds
+  nameWithType: MeshF.GetBounds
+- uid: ZLab.Discrete.Geometry.MeshF.IsClosed
+  name: IsClosed
+  href: api/ZLab.Discrete.Geometry.MeshF.IsClosed.html
+  commentId: F:ZLab.Discrete.Geometry.MeshF.IsClosed
+  fullName: ZLab.Discrete.Geometry.MeshF.IsClosed
+  nameWithType: MeshF.IsClosed
+- uid: ZLab.Discrete.Geometry.MeshF.IsValid
+  name: IsValid
+  href: api/ZLab.Discrete.Geometry.MeshF.IsValid.html#ZLab_Discrete_Geometry_MeshF_IsValid
+  commentId: P:ZLab.Discrete.Geometry.MeshF.IsValid
+  fullName: ZLab.Discrete.Geometry.MeshF.IsValid
+  nameWithType: MeshF.IsValid
+- uid: ZLab.Discrete.Geometry.MeshF.IsValid*
+  name: IsValid
+  href: api/ZLab.Discrete.Geometry.MeshF.IsValid.html
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.IsValid
+  fullName: ZLab.Discrete.Geometry.MeshF.IsValid
+  nameWithType: MeshF.IsValid
+- uid: ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+  name: RecomputeBounds()
+  href: api/ZLab.Discrete.Geometry.MeshF.RecomputeBounds.html#ZLab_Discrete_Geometry_MeshF_RecomputeBounds
+  commentId: M:ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.RecomputeBounds()
+  nameWithType: MeshF.RecomputeBounds()
+- uid: ZLab.Discrete.Geometry.MeshF.RecomputeBounds*
+  name: RecomputeBounds
+  href: api/ZLab.Discrete.Geometry.MeshF.RecomputeBounds.html
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+  fullName: ZLab.Discrete.Geometry.MeshF.RecomputeBounds
+  nameWithType: MeshF.RecomputeBounds
+- uid: ZLab.Discrete.Geometry.MeshF.ToObjFile(System.String)
+  name: ToObjFile(string)
+  href: api/ZLab.Discrete.Geometry.MeshF.ToObjFile.html#ZLab_Discrete_Geometry_MeshF_ToObjFile_System_String_
+  commentId: M:ZLab.Discrete.Geometry.MeshF.ToObjFile(System.String)
+  name.vb: ToObjFile(String)
+  fullName: ZLab.Discrete.Geometry.MeshF.ToObjFile(string)
+  fullName.vb: ZLab.Discrete.Geometry.MeshF.ToObjFile(String)
+  nameWithType: MeshF.ToObjFile(string)
+  nameWithType.vb: MeshF.ToObjFile(String)
+- uid: ZLab.Discrete.Geometry.MeshF.ToObjFile*
+  name: ToObjFile
+  href: api/ZLab.Discrete.Geometry.MeshF.ToObjFile.html
+  commentId: Overload:ZLab.Discrete.Geometry.MeshF.ToObjFile
+  fullName: ZLab.Discrete.Geometry.MeshF.ToObjFile
+  nameWithType: MeshF.ToObjFile
+- uid: ZLab.Discrete.Geometry.MeshF.Vertices
+  name: Vertices
+  href: api/ZLab.Discrete.Geometry.MeshF.Vertices.html
+  commentId: F:ZLab.Discrete.Geometry.MeshF.Vertices
+  fullName: ZLab.Discrete.Geometry.MeshF.Vertices
+  nameWithType: MeshF.Vertices
+- uid: ZLab.Discrete.Geometry.PolylineF
+  name: PolylineF
+  href: api/ZLab.Discrete.Geometry.PolylineF.html
+  commentId: T:ZLab.Discrete.Geometry.PolylineF
+  fullName: ZLab.Discrete.Geometry.PolylineF
+  nameWithType: PolylineF
+- uid: ZLab.Discrete.Geometry.PolylineF.#ctor
+  name: PolylineF()
+  href: api/ZLab.Discrete.Geometry.PolylineF.-ctor.html#ZLab_Discrete_Geometry_PolylineF__ctor
+  commentId: M:ZLab.Discrete.Geometry.PolylineF.#ctor
+  name.vb: New()
+  fullName: ZLab.Discrete.Geometry.PolylineF.PolylineF()
+  fullName.vb: ZLab.Discrete.Geometry.PolylineF.New()
+  nameWithType: PolylineF.PolylineF()
+  nameWithType.vb: PolylineF.New()
+- uid: ZLab.Discrete.Geometry.PolylineF.#ctor(System.Numerics.Vector3[])
+  name: PolylineF(Vector3[])
+  href: api/ZLab.Discrete.Geometry.PolylineF.-ctor.html#ZLab_Discrete_Geometry_PolylineF__ctor_System_Numerics_Vector3___
+  commentId: M:ZLab.Discrete.Geometry.PolylineF.#ctor(System.Numerics.Vector3[])
+  name.vb: New(Vector3())
+  fullName: ZLab.Discrete.Geometry.PolylineF.PolylineF(System.Numerics.Vector3[])
+  fullName.vb: ZLab.Discrete.Geometry.PolylineF.New(System.Numerics.Vector3())
+  nameWithType: PolylineF.PolylineF(Vector3[])
+  nameWithType.vb: PolylineF.New(Vector3())
+- uid: ZLab.Discrete.Geometry.PolylineF.#ctor(System.Numerics.Vector3[],System.Boolean)
+  name: PolylineF(Vector3[], bool)
+  href: api/ZLab.Discrete.Geometry.PolylineF.-ctor.html#ZLab_Discrete_Geometry_PolylineF__ctor_System_Numerics_Vector3___System_Boolean_
+  commentId: M:ZLab.Discrete.Geometry.PolylineF.#ctor(System.Numerics.Vector3[],System.Boolean)
+  name.vb: New(Vector3(), Boolean)
+  fullName: ZLab.Discrete.Geometry.PolylineF.PolylineF(System.Numerics.Vector3[], bool)
+  fullName.vb: ZLab.Discrete.Geometry.PolylineF.New(System.Numerics.Vector3(), Boolean)
+  nameWithType: PolylineF.PolylineF(Vector3[], bool)
+  nameWithType.vb: PolylineF.New(Vector3(), Boolean)
+- uid: ZLab.Discrete.Geometry.PolylineF.#ctor*
+  name: PolylineF
+  href: api/ZLab.Discrete.Geometry.PolylineF.-ctor.html
+  commentId: Overload:ZLab.Discrete.Geometry.PolylineF.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Geometry.PolylineF.PolylineF
+  fullName.vb: ZLab.Discrete.Geometry.PolylineF.New
+  nameWithType: PolylineF.PolylineF
+  nameWithType.vb: PolylineF.New
+- uid: ZLab.Discrete.Geometry.PolylineF.Append(System.Numerics.Vector3)
+  name: Append(Vector3)
+  href: api/ZLab.Discrete.Geometry.PolylineF.Append.html#ZLab_Discrete_Geometry_PolylineF_Append_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Geometry.PolylineF.Append(System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Geometry.PolylineF.Append(System.Numerics.Vector3)
+  nameWithType: PolylineF.Append(Vector3)
+- uid: ZLab.Discrete.Geometry.PolylineF.Append(System.ReadOnlySpan{System.Numerics.Vector3})
+  name: Append(ReadOnlySpan<Vector3>)
+  href: api/ZLab.Discrete.Geometry.PolylineF.Append.html#ZLab_Discrete_Geometry_PolylineF_Append_System_ReadOnlySpan_System_Numerics_Vector3__
+  commentId: M:ZLab.Discrete.Geometry.PolylineF.Append(System.ReadOnlySpan{System.Numerics.Vector3})
+  name.vb: Append(ReadOnlySpan(Of Vector3))
+  fullName: ZLab.Discrete.Geometry.PolylineF.Append(System.ReadOnlySpan<System.Numerics.Vector3>)
+  fullName.vb: ZLab.Discrete.Geometry.PolylineF.Append(System.ReadOnlySpan(Of System.Numerics.Vector3))
+  nameWithType: PolylineF.Append(ReadOnlySpan<Vector3>)
+  nameWithType.vb: PolylineF.Append(ReadOnlySpan(Of Vector3))
+- uid: ZLab.Discrete.Geometry.PolylineF.Append*
+  name: Append
+  href: api/ZLab.Discrete.Geometry.PolylineF.Append.html
+  commentId: Overload:ZLab.Discrete.Geometry.PolylineF.Append
+  fullName: ZLab.Discrete.Geometry.PolylineF.Append
+  nameWithType: PolylineF.Append
+- uid: ZLab.Discrete.Geometry.PolylineF.ClosedEpsilon
+  name: ClosedEpsilon
+  href: api/ZLab.Discrete.Geometry.PolylineF.ClosedEpsilon.html
+  commentId: F:ZLab.Discrete.Geometry.PolylineF.ClosedEpsilon
+  fullName: ZLab.Discrete.Geometry.PolylineF.ClosedEpsilon
+  nameWithType: PolylineF.ClosedEpsilon
+- uid: ZLab.Discrete.Geometry.PolylineF.Count
+  name: Count
+  href: api/ZLab.Discrete.Geometry.PolylineF.Count.html#ZLab_Discrete_Geometry_PolylineF_Count
+  commentId: P:ZLab.Discrete.Geometry.PolylineF.Count
+  fullName: ZLab.Discrete.Geometry.PolylineF.Count
+  nameWithType: PolylineF.Count
+- uid: ZLab.Discrete.Geometry.PolylineF.Count*
+  name: Count
+  href: api/ZLab.Discrete.Geometry.PolylineF.Count.html
+  commentId: Overload:ZLab.Discrete.Geometry.PolylineF.Count
+  fullName: ZLab.Discrete.Geometry.PolylineF.Count
+  nameWithType: PolylineF.Count
+- uid: ZLab.Discrete.Geometry.PolylineF.GetBounds
+  name: GetBounds()
+  href: api/ZLab.Discrete.Geometry.PolylineF.GetBounds.html#ZLab_Discrete_Geometry_PolylineF_GetBounds
+  commentId: M:ZLab.Discrete.Geometry.PolylineF.GetBounds
+  fullName: ZLab.Discrete.Geometry.PolylineF.GetBounds()
+  nameWithType: PolylineF.GetBounds()
+- uid: ZLab.Discrete.Geometry.PolylineF.GetBounds*
+  name: GetBounds
+  href: api/ZLab.Discrete.Geometry.PolylineF.GetBounds.html
+  commentId: Overload:ZLab.Discrete.Geometry.PolylineF.GetBounds
+  fullName: ZLab.Discrete.Geometry.PolylineF.GetBounds
+  nameWithType: PolylineF.GetBounds
+- uid: ZLab.Discrete.Geometry.PolylineF.IsClosed
+  name: IsClosed
+  href: api/ZLab.Discrete.Geometry.PolylineF.IsClosed.html#ZLab_Discrete_Geometry_PolylineF_IsClosed
+  commentId: P:ZLab.Discrete.Geometry.PolylineF.IsClosed
+  fullName: ZLab.Discrete.Geometry.PolylineF.IsClosed
+  nameWithType: PolylineF.IsClosed
+- uid: ZLab.Discrete.Geometry.PolylineF.IsClosed*
+  name: IsClosed
+  href: api/ZLab.Discrete.Geometry.PolylineF.IsClosed.html
+  commentId: Overload:ZLab.Discrete.Geometry.PolylineF.IsClosed
+  fullName: ZLab.Discrete.Geometry.PolylineF.IsClosed
+  nameWithType: PolylineF.IsClosed
+- uid: ZLab.Discrete.Geometry.PolylineF.IsValid
+  name: IsValid
+  href: api/ZLab.Discrete.Geometry.PolylineF.IsValid.html#ZLab_Discrete_Geometry_PolylineF_IsValid
+  commentId: P:ZLab.Discrete.Geometry.PolylineF.IsValid
+  fullName: ZLab.Discrete.Geometry.PolylineF.IsValid
+  nameWithType: PolylineF.IsValid
+- uid: ZLab.Discrete.Geometry.PolylineF.IsValid*
+  name: IsValid
+  href: api/ZLab.Discrete.Geometry.PolylineF.IsValid.html
+  commentId: Overload:ZLab.Discrete.Geometry.PolylineF.IsValid
+  fullName: ZLab.Discrete.Geometry.PolylineF.IsValid
+  nameWithType: PolylineF.IsValid
+- uid: ZLab.Discrete.Geometry.PolylineF.Length
+  name: Length
+  href: api/ZLab.Discrete.Geometry.PolylineF.Length.html#ZLab_Discrete_Geometry_PolylineF_Length
+  commentId: P:ZLab.Discrete.Geometry.PolylineF.Length
+  fullName: ZLab.Discrete.Geometry.PolylineF.Length
+  nameWithType: PolylineF.Length
+- uid: ZLab.Discrete.Geometry.PolylineF.Length*
+  name: Length
+  href: api/ZLab.Discrete.Geometry.PolylineF.Length.html
+  commentId: Overload:ZLab.Discrete.Geometry.PolylineF.Length
+  fullName: ZLab.Discrete.Geometry.PolylineF.Length
+  nameWithType: PolylineF.Length
+- uid: ZLab.Discrete.Geometry.PolylineF.Vertices
+  name: Vertices
+  href: api/ZLab.Discrete.Geometry.PolylineF.Vertices.html#ZLab_Discrete_Geometry_PolylineF_Vertices
+  commentId: P:ZLab.Discrete.Geometry.PolylineF.Vertices
+  fullName: ZLab.Discrete.Geometry.PolylineF.Vertices
+  nameWithType: PolylineF.Vertices
+- uid: ZLab.Discrete.Geometry.PolylineF.Vertices*
+  name: Vertices
+  href: api/ZLab.Discrete.Geometry.PolylineF.Vertices.html
+  commentId: Overload:ZLab.Discrete.Geometry.PolylineF.Vertices
+  fullName: ZLab.Discrete.Geometry.PolylineF.Vertices
+  nameWithType: PolylineF.Vertices
+- uid: ZLab.Discrete.Geometry.TriFace
+  name: TriFace
+  href: api/ZLab.Discrete.Geometry.TriFace.html
+  commentId: T:ZLab.Discrete.Geometry.TriFace
+  fullName: ZLab.Discrete.Geometry.TriFace
+  nameWithType: TriFace
+- uid: ZLab.Discrete.Geometry.TriFace.#ctor(System.Int32,System.Int32,System.Int32)
+  name: TriFace(int, int, int)
+  href: api/ZLab.Discrete.Geometry.TriFace.-ctor.html#ZLab_Discrete_Geometry_TriFace__ctor_System_Int32_System_Int32_System_Int32_
+  commentId: M:ZLab.Discrete.Geometry.TriFace.#ctor(System.Int32,System.Int32,System.Int32)
+  name.vb: New(Integer, Integer, Integer)
+  fullName: ZLab.Discrete.Geometry.TriFace.TriFace(int, int, int)
+  fullName.vb: ZLab.Discrete.Geometry.TriFace.New(Integer, Integer, Integer)
+  nameWithType: TriFace.TriFace(int, int, int)
+  nameWithType.vb: TriFace.New(Integer, Integer, Integer)
+- uid: ZLab.Discrete.Geometry.TriFace.#ctor*
+  name: TriFace
+  href: api/ZLab.Discrete.Geometry.TriFace.-ctor.html
+  commentId: Overload:ZLab.Discrete.Geometry.TriFace.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Geometry.TriFace.TriFace
+  fullName.vb: ZLab.Discrete.Geometry.TriFace.New
+  nameWithType: TriFace.TriFace
+  nameWithType.vb: TriFace.New
+- uid: ZLab.Discrete.Geometry.TriFace.A
+  name: A
+  href: api/ZLab.Discrete.Geometry.TriFace.A.html
+  commentId: F:ZLab.Discrete.Geometry.TriFace.A
+  fullName: ZLab.Discrete.Geometry.TriFace.A
+  nameWithType: TriFace.A
+- uid: ZLab.Discrete.Geometry.TriFace.B
+  name: B
+  href: api/ZLab.Discrete.Geometry.TriFace.B.html
+  commentId: F:ZLab.Discrete.Geometry.TriFace.B
+  fullName: ZLab.Discrete.Geometry.TriFace.B
+  nameWithType: TriFace.B
+- uid: ZLab.Discrete.Geometry.TriFace.C
+  name: C
+  href: api/ZLab.Discrete.Geometry.TriFace.C.html
+  commentId: F:ZLab.Discrete.Geometry.TriFace.C
+  fullName: ZLab.Discrete.Geometry.TriFace.C
+  nameWithType: TriFace.C
+- uid: ZLab.Discrete.Geometry.TriFace.Equals(System.Object)
+  name: Equals(object?)
+  href: api/ZLab.Discrete.Geometry.TriFace.Equals.html#ZLab_Discrete_Geometry_TriFace_Equals_System_Object_
+  commentId: M:ZLab.Discrete.Geometry.TriFace.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: ZLab.Discrete.Geometry.TriFace.Equals(object?)
+  fullName.vb: ZLab.Discrete.Geometry.TriFace.Equals(Object)
+  nameWithType: TriFace.Equals(object?)
+  nameWithType.vb: TriFace.Equals(Object)
+- uid: ZLab.Discrete.Geometry.TriFace.Equals(ZLab.Discrete.Geometry.TriFace)
+  name: Equals(TriFace)
+  href: api/ZLab.Discrete.Geometry.TriFace.Equals.html#ZLab_Discrete_Geometry_TriFace_Equals_ZLab_Discrete_Geometry_TriFace_
+  commentId: M:ZLab.Discrete.Geometry.TriFace.Equals(ZLab.Discrete.Geometry.TriFace)
+  fullName: ZLab.Discrete.Geometry.TriFace.Equals(ZLab.Discrete.Geometry.TriFace)
+  nameWithType: TriFace.Equals(TriFace)
+- uid: ZLab.Discrete.Geometry.TriFace.Equals*
+  name: Equals
+  href: api/ZLab.Discrete.Geometry.TriFace.Equals.html
+  commentId: Overload:ZLab.Discrete.Geometry.TriFace.Equals
+  fullName: ZLab.Discrete.Geometry.TriFace.Equals
+  nameWithType: TriFace.Equals
+- uid: ZLab.Discrete.Geometry.TriFace.GetHashCode
+  name: GetHashCode()
+  href: api/ZLab.Discrete.Geometry.TriFace.GetHashCode.html#ZLab_Discrete_Geometry_TriFace_GetHashCode
+  commentId: M:ZLab.Discrete.Geometry.TriFace.GetHashCode
+  fullName: ZLab.Discrete.Geometry.TriFace.GetHashCode()
+  nameWithType: TriFace.GetHashCode()
+- uid: ZLab.Discrete.Geometry.TriFace.GetHashCode*
+  name: GetHashCode
+  href: api/ZLab.Discrete.Geometry.TriFace.GetHashCode.html
+  commentId: Overload:ZLab.Discrete.Geometry.TriFace.GetHashCode
+  fullName: ZLab.Discrete.Geometry.TriFace.GetHashCode
+  nameWithType: TriFace.GetHashCode
+- uid: ZLab.Discrete.Geometry.TriFace.IsValid
+  name: IsValid
+  href: api/ZLab.Discrete.Geometry.TriFace.IsValid.html#ZLab_Discrete_Geometry_TriFace_IsValid
+  commentId: P:ZLab.Discrete.Geometry.TriFace.IsValid
+  fullName: ZLab.Discrete.Geometry.TriFace.IsValid
+  nameWithType: TriFace.IsValid
+- uid: ZLab.Discrete.Geometry.TriFace.IsValid*
+  name: IsValid
+  href: api/ZLab.Discrete.Geometry.TriFace.IsValid.html
+  commentId: Overload:ZLab.Discrete.Geometry.TriFace.IsValid
+  fullName: ZLab.Discrete.Geometry.TriFace.IsValid
+  nameWithType: TriFace.IsValid
+- uid: ZLab.Discrete.Geometry.TriFace.QueryVertices(System.Numerics.Vector3[],System.Numerics.Vector3@,System.Numerics.Vector3@,System.Numerics.Vector3@)
+  name: QueryVertices(Vector3[], out Vector3, out Vector3, out Vector3)
+  href: api/ZLab.Discrete.Geometry.TriFace.QueryVertices.html#ZLab_Discrete_Geometry_TriFace_QueryVertices_System_Numerics_Vector3___System_Numerics_Vector3__System_Numerics_Vector3__System_Numerics_Vector3__
+  commentId: M:ZLab.Discrete.Geometry.TriFace.QueryVertices(System.Numerics.Vector3[],System.Numerics.Vector3@,System.Numerics.Vector3@,System.Numerics.Vector3@)
+  name.vb: QueryVertices(Vector3(), Vector3, Vector3, Vector3)
+  fullName: ZLab.Discrete.Geometry.TriFace.QueryVertices(System.Numerics.Vector3[], out System.Numerics.Vector3, out System.Numerics.Vector3, out System.Numerics.Vector3)
+  fullName.vb: ZLab.Discrete.Geometry.TriFace.QueryVertices(System.Numerics.Vector3(), System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3)
+  nameWithType: TriFace.QueryVertices(Vector3[], out Vector3, out Vector3, out Vector3)
+  nameWithType.vb: TriFace.QueryVertices(Vector3(), Vector3, Vector3, Vector3)
+- uid: ZLab.Discrete.Geometry.TriFace.QueryVertices*
+  name: QueryVertices
+  href: api/ZLab.Discrete.Geometry.TriFace.QueryVertices.html
+  commentId: Overload:ZLab.Discrete.Geometry.TriFace.QueryVertices
+  fullName: ZLab.Discrete.Geometry.TriFace.QueryVertices
+  nameWithType: TriFace.QueryVertices
+- uid: ZLab.Discrete.Geometry.TriFace.ToString
+  name: ToString()
+  href: api/ZLab.Discrete.Geometry.TriFace.ToString.html#ZLab_Discrete_Geometry_TriFace_ToString
+  commentId: M:ZLab.Discrete.Geometry.TriFace.ToString
+  fullName: ZLab.Discrete.Geometry.TriFace.ToString()
+  nameWithType: TriFace.ToString()
+- uid: ZLab.Discrete.Geometry.TriFace.ToString*
+  name: ToString
+  href: api/ZLab.Discrete.Geometry.TriFace.ToString.html
+  commentId: Overload:ZLab.Discrete.Geometry.TriFace.ToString
+  fullName: ZLab.Discrete.Geometry.TriFace.ToString
+  nameWithType: TriFace.ToString
+- uid: ZLab.Discrete.Geometry.TriFace.op_Equality(ZLab.Discrete.Geometry.TriFace,ZLab.Discrete.Geometry.TriFace)
+  name: operator ==(TriFace, TriFace)
+  href: api/ZLab.Discrete.Geometry.TriFace.op_Equality.html#ZLab_Discrete_Geometry_TriFace_op_Equality_ZLab_Discrete_Geometry_TriFace_ZLab_Discrete_Geometry_TriFace_
+  commentId: M:ZLab.Discrete.Geometry.TriFace.op_Equality(ZLab.Discrete.Geometry.TriFace,ZLab.Discrete.Geometry.TriFace)
+  name.vb: =(TriFace, TriFace)
+  fullName: ZLab.Discrete.Geometry.TriFace.operator ==(ZLab.Discrete.Geometry.TriFace, ZLab.Discrete.Geometry.TriFace)
+  fullName.vb: ZLab.Discrete.Geometry.TriFace.=(ZLab.Discrete.Geometry.TriFace, ZLab.Discrete.Geometry.TriFace)
+  nameWithType: TriFace.operator ==(TriFace, TriFace)
+  nameWithType.vb: TriFace.=(TriFace, TriFace)
+- uid: ZLab.Discrete.Geometry.TriFace.op_Equality*
+  name: operator ==
+  href: api/ZLab.Discrete.Geometry.TriFace.op_Equality.html
+  commentId: Overload:ZLab.Discrete.Geometry.TriFace.op_Equality
+  name.vb: =
+  fullName: ZLab.Discrete.Geometry.TriFace.operator ==
+  fullName.vb: ZLab.Discrete.Geometry.TriFace.=
+  nameWithType: TriFace.operator ==
+  nameWithType.vb: TriFace.=
+- uid: ZLab.Discrete.Geometry.TriFace.op_Inequality(ZLab.Discrete.Geometry.TriFace,ZLab.Discrete.Geometry.TriFace)
+  name: operator !=(TriFace, TriFace)
+  href: api/ZLab.Discrete.Geometry.TriFace.op_Inequality.html#ZLab_Discrete_Geometry_TriFace_op_Inequality_ZLab_Discrete_Geometry_TriFace_ZLab_Discrete_Geometry_TriFace_
+  commentId: M:ZLab.Discrete.Geometry.TriFace.op_Inequality(ZLab.Discrete.Geometry.TriFace,ZLab.Discrete.Geometry.TriFace)
+  name.vb: <>(TriFace, TriFace)
+  fullName: ZLab.Discrete.Geometry.TriFace.operator !=(ZLab.Discrete.Geometry.TriFace, ZLab.Discrete.Geometry.TriFace)
+  fullName.vb: ZLab.Discrete.Geometry.TriFace.<>(ZLab.Discrete.Geometry.TriFace, ZLab.Discrete.Geometry.TriFace)
+  nameWithType: TriFace.operator !=(TriFace, TriFace)
+  nameWithType.vb: TriFace.<>(TriFace, TriFace)
+- uid: ZLab.Discrete.Geometry.TriFace.op_Inequality*
+  name: operator !=
+  href: api/ZLab.Discrete.Geometry.TriFace.op_Inequality.html
+  commentId: Overload:ZLab.Discrete.Geometry.TriFace.op_Inequality
+  name.vb: <>
+  fullName: ZLab.Discrete.Geometry.TriFace.operator !=
+  fullName.vb: ZLab.Discrete.Geometry.TriFace.<>
+  nameWithType: TriFace.operator !=
+  nameWithType.vb: TriFace.<>
+- uid: ZLab.Discrete.Grids
+  name: ZLab.Discrete.Grids
+  href: api/ZLab.Discrete.Grids.html
+  commentId: N:ZLab.Discrete.Grids
+  fullName: ZLab.Discrete.Grids
+  nameWithType: ZLab.Discrete.Grids
+- uid: ZLab.Discrete.Grids.DistanceGrid
+  name: DistanceGrid
+  href: api/ZLab.Discrete.Grids.DistanceGrid.html
+  commentId: T:ZLab.Discrete.Grids.DistanceGrid
+  fullName: ZLab.Discrete.Grids.DistanceGrid
+  nameWithType: DistanceGrid
+- uid: ZLab.Discrete.Grids.DistanceGrid.#ctor(System.Numerics.Vector3,ZLab.Discrete.Geometry.BBox)
+  name: DistanceGrid(Vector3, BBox)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.-ctor.html#ZLab_Discrete_Grids_DistanceGrid__ctor_System_Numerics_Vector3_ZLab_Discrete_Geometry_BBox_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.#ctor(System.Numerics.Vector3,ZLab.Discrete.Geometry.BBox)
+  name.vb: New(Vector3, BBox)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.DistanceGrid(System.Numerics.Vector3, ZLab.Discrete.Geometry.BBox)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.New(System.Numerics.Vector3, ZLab.Discrete.Geometry.BBox)
+  nameWithType: DistanceGrid.DistanceGrid(Vector3, BBox)
+  nameWithType.vb: DistanceGrid.New(Vector3, BBox)
+- uid: ZLab.Discrete.Grids.DistanceGrid.#ctor(ZLab.Discrete.Grids.GridMeta)
+  name: DistanceGrid(GridMeta)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.-ctor.html#ZLab_Discrete_Grids_DistanceGrid__ctor_ZLab_Discrete_Grids_GridMeta_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.#ctor(ZLab.Discrete.Grids.GridMeta)
+  name.vb: New(GridMeta)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.DistanceGrid(ZLab.Discrete.Grids.GridMeta)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.New(ZLab.Discrete.Grids.GridMeta)
+  nameWithType: DistanceGrid.DistanceGrid(GridMeta)
+  nameWithType.vb: DistanceGrid.New(GridMeta)
+- uid: ZLab.Discrete.Grids.DistanceGrid.#ctor(ZLab.Discrete.Grids.OccupancyGrid)
+  name: DistanceGrid(OccupancyGrid)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.-ctor.html#ZLab_Discrete_Grids_DistanceGrid__ctor_ZLab_Discrete_Grids_OccupancyGrid_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.#ctor(ZLab.Discrete.Grids.OccupancyGrid)
+  name.vb: New(OccupancyGrid)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.DistanceGrid(ZLab.Discrete.Grids.OccupancyGrid)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.New(ZLab.Discrete.Grids.OccupancyGrid)
+  nameWithType: DistanceGrid.DistanceGrid(OccupancyGrid)
+  nameWithType.vb: DistanceGrid.New(OccupancyGrid)
+- uid: ZLab.Discrete.Grids.DistanceGrid.#ctor*
+  name: DistanceGrid
+  href: api/ZLab.Discrete.Grids.DistanceGrid.-ctor.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Grids.DistanceGrid.DistanceGrid
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.New
+  nameWithType: DistanceGrid.DistanceGrid
+  nameWithType.vb: DistanceGrid.New
+- uid: ZLab.Discrete.Grids.DistanceGrid.AddOffset(System.Single)
+  name: AddOffset(float)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.AddOffset.html#ZLab_Discrete_Grids_DistanceGrid_AddOffset_System_Single_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.AddOffset(System.Single)
+  name.vb: AddOffset(Single)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.AddOffset(float)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.AddOffset(Single)
+  nameWithType: DistanceGrid.AddOffset(float)
+  nameWithType.vb: DistanceGrid.AddOffset(Single)
+- uid: ZLab.Discrete.Grids.DistanceGrid.AddOffset*
+  name: AddOffset
+  href: api/ZLab.Discrete.Grids.DistanceGrid.AddOffset.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.AddOffset
+  fullName: ZLab.Discrete.Grids.DistanceGrid.AddOffset
+  nameWithType: DistanceGrid.AddOffset
+- uid: ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask(System.ReadOnlySpan{System.Byte},System.Boolean)
+  name: BuildFromBinaryMask(ReadOnlySpan<byte>, bool)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask.html#ZLab_Discrete_Grids_DistanceGrid_BuildFromBinaryMask_System_ReadOnlySpan_System_Byte__System_Boolean_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask(System.ReadOnlySpan{System.Byte},System.Boolean)
+  name.vb: BuildFromBinaryMask(ReadOnlySpan(Of Byte), Boolean)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask(System.ReadOnlySpan<byte>, bool)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask(System.ReadOnlySpan(Of Byte), Boolean)
+  nameWithType: DistanceGrid.BuildFromBinaryMask(ReadOnlySpan<byte>, bool)
+  nameWithType.vb: DistanceGrid.BuildFromBinaryMask(ReadOnlySpan(Of Byte), Boolean)
+- uid: ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask*
+  name: BuildFromBinaryMask
+  href: api/ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask
+  fullName: ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask
+  nameWithType: DistanceGrid.BuildFromBinaryMask
+- uid: ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask(System.ReadOnlySpan{System.Byte},System.Boolean)
+  name: BuildFromTernaryMask(ReadOnlySpan<byte>, bool)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask.html#ZLab_Discrete_Grids_DistanceGrid_BuildFromTernaryMask_System_ReadOnlySpan_System_Byte__System_Boolean_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask(System.ReadOnlySpan{System.Byte},System.Boolean)
+  name.vb: BuildFromTernaryMask(ReadOnlySpan(Of Byte), Boolean)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask(System.ReadOnlySpan<byte>, bool)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask(System.ReadOnlySpan(Of Byte), Boolean)
+  nameWithType: DistanceGrid.BuildFromTernaryMask(ReadOnlySpan<byte>, bool)
+  nameWithType.vb: DistanceGrid.BuildFromTernaryMask(ReadOnlySpan(Of Byte), Boolean)
+- uid: ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask*
+  name: BuildFromTernaryMask
+  href: api/ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask
+  fullName: ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask
+  nameWithType: DistanceGrid.BuildFromTernaryMask
+- uid: ZLab.Discrete.Grids.DistanceGrid.Clone
+  name: Clone()
+  href: api/ZLab.Discrete.Grids.DistanceGrid.Clone.html#ZLab_Discrete_Grids_DistanceGrid_Clone
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.Clone
+  fullName: ZLab.Discrete.Grids.DistanceGrid.Clone()
+  nameWithType: DistanceGrid.Clone()
+- uid: ZLab.Discrete.Grids.DistanceGrid.Clone*
+  name: Clone
+  href: api/ZLab.Discrete.Grids.DistanceGrid.Clone.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.Clone
+  fullName: ZLab.Discrete.Grids.DistanceGrid.Clone
+  nameWithType: DistanceGrid.Clone
+- uid: ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels
+  name: EnumerateVoxels()
+  href: api/ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels.html#ZLab_Discrete_Grids_DistanceGrid_EnumerateVoxels
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels
+  fullName: ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels()
+  nameWithType: DistanceGrid.EnumerateVoxels()
+- uid: ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels*
+  name: EnumerateVoxels
+  href: api/ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels
+  fullName: ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels
+  nameWithType: DistanceGrid.EnumerateVoxels
+- uid: ZLab.Discrete.Grids.DistanceGrid.Fill(System.Single)
+  name: Fill(float)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.Fill.html#ZLab_Discrete_Grids_DistanceGrid_Fill_System_Single_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.Fill(System.Single)
+  name.vb: Fill(Single)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.Fill(float)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.Fill(Single)
+  nameWithType: DistanceGrid.Fill(float)
+  nameWithType.vb: DistanceGrid.Fill(Single)
+- uid: ZLab.Discrete.Grids.DistanceGrid.Fill*
+  name: Fill
+  href: api/ZLab.Discrete.Grids.DistanceGrid.Fill.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.Fill
+  fullName: ZLab.Discrete.Grids.DistanceGrid.Fill
+  nameWithType: DistanceGrid.Fill
+- uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,System.Single})
+  name: ForEachVoxel(Action<Vector3, float>)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel.html#ZLab_Discrete_Grids_DistanceGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_System_Single__
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,System.Single})
+  name.vb: ForEachVoxel(Action(Of Vector3, Single))
+  fullName: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action<System.Numerics.Vector3, float>)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel(System.Action(Of System.Numerics.Vector3, Single))
+  nameWithType: DistanceGrid.ForEachVoxel(Action<Vector3, float>)
+  nameWithType.vb: DistanceGrid.ForEachVoxel(Action(Of Vector3, Single))
+- uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel*
+  name: ForEachVoxel
+  href: api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel
+  fullName: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel
+  nameWithType: DistanceGrid.ForEachVoxel
+- uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,System.Single},System.Nullable{System.Int32})
+  name: ForEachVoxelParallel(Action<Vector3, float>, int?)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_DistanceGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_System_Single__System_Nullable_System_Int32__
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,System.Single},System.Nullable{System.Int32})
+  name.vb: ForEachVoxelParallel(Action(Of Vector3, Single), Integer?)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action<System.Numerics.Vector3, float>, int?)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel(System.Action(Of System.Numerics.Vector3, Single), Integer?)
+  nameWithType: DistanceGrid.ForEachVoxelParallel(Action<Vector3, float>, int?)
+  nameWithType.vb: DistanceGrid.ForEachVoxelParallel(Action(Of Vector3, Single), Integer?)
+- uid: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel*
+  name: ForEachVoxelParallel
+  href: api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel
+  fullName: ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel
+  nameWithType: DistanceGrid.ForEachVoxelParallel
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetBuffer
+  name: GetBuffer()
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetBuffer.html#ZLab_Discrete_Grids_DistanceGrid_GetBuffer
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.GetBuffer
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetBuffer()
+  nameWithType: DistanceGrid.GetBuffer()
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetBuffer*
+  name: GetBuffer
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetBuffer.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.GetBuffer
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetBuffer
+  nameWithType: DistanceGrid.GetBuffer
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetMinMax
+  name: GetMinMax()
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetMinMax.html#ZLab_Discrete_Grids_DistanceGrid_GetMinMax
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.GetMinMax
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetMinMax()
+  nameWithType: DistanceGrid.GetMinMax()
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetMinMax*
+  name: GetMinMax
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetMinMax.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.GetMinMax
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetMinMax
+  nameWithType: DistanceGrid.GetMinMax
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer
+  name: GetReadOnlyBuffer()
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer.html#ZLab_Discrete_Grids_DistanceGrid_GetReadOnlyBuffer
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer()
+  nameWithType: DistanceGrid.GetReadOnlyBuffer()
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer*
+  name: GetReadOnlyBuffer
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer
+  nameWithType: DistanceGrid.GetReadOnlyBuffer
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory
+  name: GetReadOnlyMemory()
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory.html#ZLab_Discrete_Grids_DistanceGrid_GetReadOnlyMemory
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory()
+  nameWithType: DistanceGrid.GetReadOnlyMemory()
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory*
+  name: GetReadOnlyMemory
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory
+  nameWithType: DistanceGrid.GetReadOnlyMemory
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetValue(System.Numerics.Vector3)
+  name: GetValue(Vector3)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetValue.html#ZLab_Discrete_Grids_DistanceGrid_GetValue_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.GetValue(System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetValue(System.Numerics.Vector3)
+  nameWithType: DistanceGrid.GetValue(Vector3)
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  name: GetValue((int x, int y, int z))
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetValue.html#ZLab_Discrete_Grids_DistanceGrid_GetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  name.vb: GetValue((x As Integer, y As Integer, z As Integer))
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetValue((int x, int y, int z))
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.GetValue((x As Integer, y As Integer, z As Integer))
+  nameWithType: DistanceGrid.GetValue((int x, int y, int z))
+  nameWithType.vb: DistanceGrid.GetValue((x As Integer, y As Integer, z As Integer))
+- uid: ZLab.Discrete.Grids.DistanceGrid.GetValue*
+  name: GetValue
+  href: api/ZLab.Discrete.Grids.DistanceGrid.GetValue.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.GetValue
+  fullName: ZLab.Discrete.Grids.DistanceGrid.GetValue
+  nameWithType: DistanceGrid.GetValue
+- uid: ZLab.Discrete.Grids.DistanceGrid.LoadFromArray(System.ReadOnlySpan{System.Single})
+  name: LoadFromArray(ReadOnlySpan<float>)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.LoadFromArray.html#ZLab_Discrete_Grids_DistanceGrid_LoadFromArray_System_ReadOnlySpan_System_Single__
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.LoadFromArray(System.ReadOnlySpan{System.Single})
+  name.vb: LoadFromArray(ReadOnlySpan(Of Single))
+  fullName: ZLab.Discrete.Grids.DistanceGrid.LoadFromArray(System.ReadOnlySpan<float>)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.LoadFromArray(System.ReadOnlySpan(Of Single))
+  nameWithType: DistanceGrid.LoadFromArray(ReadOnlySpan<float>)
+  nameWithType.vb: DistanceGrid.LoadFromArray(ReadOnlySpan(Of Single))
+- uid: ZLab.Discrete.Grids.DistanceGrid.LoadFromArray*
+  name: LoadFromArray
+  href: api/ZLab.Discrete.Grids.DistanceGrid.LoadFromArray.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.LoadFromArray
+  fullName: ZLab.Discrete.Grids.DistanceGrid.LoadFromArray
+  nameWithType: DistanceGrid.LoadFromArray
+- uid: ZLab.Discrete.Grids.DistanceGrid.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},System.Single)
+  name: SetValue((int x, int y, int z), float)
+  href: api/ZLab.Discrete.Grids.DistanceGrid.SetValue.html#ZLab_Discrete_Grids_DistanceGrid_SetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__System_Single_
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},System.Single)
+  name.vb: SetValue((x As Integer, y As Integer, z As Integer), Single)
+  fullName: ZLab.Discrete.Grids.DistanceGrid.SetValue((int x, int y, int z), float)
+  fullName.vb: ZLab.Discrete.Grids.DistanceGrid.SetValue((x As Integer, y As Integer, z As Integer), Single)
+  nameWithType: DistanceGrid.SetValue((int x, int y, int z), float)
+  nameWithType.vb: DistanceGrid.SetValue((x As Integer, y As Integer, z As Integer), Single)
+- uid: ZLab.Discrete.Grids.DistanceGrid.SetValue*
+  name: SetValue
+  href: api/ZLab.Discrete.Grids.DistanceGrid.SetValue.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.SetValue
+  fullName: ZLab.Discrete.Grids.DistanceGrid.SetValue
+  nameWithType: DistanceGrid.SetValue
+- uid: ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy
+  name: ToArrayCopy()
+  href: api/ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy.html#ZLab_Discrete_Grids_DistanceGrid_ToArrayCopy
+  commentId: M:ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy
+  fullName: ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy()
+  nameWithType: DistanceGrid.ToArrayCopy()
+- uid: ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy*
+  name: ToArrayCopy
+  href: api/ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy.html
+  commentId: Overload:ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy
+  fullName: ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy
+  nameWithType: DistanceGrid.ToArrayCopy
+- uid: ZLab.Discrete.Grids.GridBase
+  name: GridBase
+  href: api/ZLab.Discrete.Grids.GridBase.html
+  commentId: T:ZLab.Discrete.Grids.GridBase
+  fullName: ZLab.Discrete.Grids.GridBase
+  nameWithType: GridBase
+- uid: ZLab.Discrete.Grids.GridBase.Bounds
+  name: Bounds
+  href: api/ZLab.Discrete.Grids.GridBase.Bounds.html#ZLab_Discrete_Grids_GridBase_Bounds
+  commentId: P:ZLab.Discrete.Grids.GridBase.Bounds
+  fullName: ZLab.Discrete.Grids.GridBase.Bounds
+  nameWithType: GridBase.Bounds
+- uid: ZLab.Discrete.Grids.GridBase.Bounds*
+  name: Bounds
+  href: api/ZLab.Discrete.Grids.GridBase.Bounds.html
+  commentId: Overload:ZLab.Discrete.Grids.GridBase.Bounds
+  fullName: ZLab.Discrete.Grids.GridBase.Bounds
+  nameWithType: GridBase.Bounds
+- uid: ZLab.Discrete.Grids.GridBase.Contains(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  name: Contains((int x, int y, int z))
+  href: api/ZLab.Discrete.Grids.GridBase.Contains.html#ZLab_Discrete_Grids_GridBase_Contains_System_ValueTuple_System_Int32_System_Int32_System_Int32__
+  commentId: M:ZLab.Discrete.Grids.GridBase.Contains(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  name.vb: Contains((x As Integer, y As Integer, z As Integer))
+  fullName: ZLab.Discrete.Grids.GridBase.Contains((int x, int y, int z))
+  fullName.vb: ZLab.Discrete.Grids.GridBase.Contains((x As Integer, y As Integer, z As Integer))
+  nameWithType: GridBase.Contains((int x, int y, int z))
+  nameWithType.vb: GridBase.Contains((x As Integer, y As Integer, z As Integer))
+- uid: ZLab.Discrete.Grids.GridBase.Contains*
+  name: Contains
+  href: api/ZLab.Discrete.Grids.GridBase.Contains.html
+  commentId: Overload:ZLab.Discrete.Grids.GridBase.Contains
+  fullName: ZLab.Discrete.Grids.GridBase.Contains
+  nameWithType: GridBase.Contains
+- uid: ZLab.Discrete.Grids.GridBase.Meta
+  name: Meta
+  href: api/ZLab.Discrete.Grids.GridBase.Meta.html#ZLab_Discrete_Grids_GridBase_Meta
+  commentId: P:ZLab.Discrete.Grids.GridBase.Meta
+  fullName: ZLab.Discrete.Grids.GridBase.Meta
+  nameWithType: GridBase.Meta
+- uid: ZLab.Discrete.Grids.GridBase.Meta*
+  name: Meta
+  href: api/ZLab.Discrete.Grids.GridBase.Meta.html
+  commentId: Overload:ZLab.Discrete.Grids.GridBase.Meta
+  fullName: ZLab.Discrete.Grids.GridBase.Meta
+  nameWithType: GridBase.Meta
+- uid: ZLab.Discrete.Grids.GridMeta
+  name: GridMeta
+  href: api/ZLab.Discrete.Grids.GridMeta.html
+  commentId: T:ZLab.Discrete.Grids.GridMeta
+  fullName: ZLab.Discrete.Grids.GridMeta
+  nameWithType: GridMeta
+- uid: ZLab.Discrete.Grids.GridMeta.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Numerics.Vector3)
+  name: GridMeta(int, int, int, int, int, int, Vector3)
+  href: api/ZLab.Discrete.Grids.GridMeta.-ctor.html#ZLab_Discrete_Grids_GridMeta__ctor_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Grids.GridMeta.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Numerics.Vector3)
+  name.vb: New(Integer, Integer, Integer, Integer, Integer, Integer, Vector3)
+  fullName: ZLab.Discrete.Grids.GridMeta.GridMeta(int, int, int, int, int, int, System.Numerics.Vector3)
+  fullName.vb: ZLab.Discrete.Grids.GridMeta.New(Integer, Integer, Integer, Integer, Integer, Integer, System.Numerics.Vector3)
+  nameWithType: GridMeta.GridMeta(int, int, int, int, int, int, Vector3)
+  nameWithType.vb: GridMeta.New(Integer, Integer, Integer, Integer, Integer, Integer, Vector3)
+- uid: ZLab.Discrete.Grids.GridMeta.#ctor*
+  name: GridMeta
+  href: api/ZLab.Discrete.Grids.GridMeta.-ctor.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Grids.GridMeta.GridMeta
+  fullName.vb: ZLab.Discrete.Grids.GridMeta.New
+  nameWithType: GridMeta.GridMeta
+  nameWithType.vb: GridMeta.New
+- uid: ZLab.Discrete.Grids.GridMeta.Count
+  name: Count
+  href: api/ZLab.Discrete.Grids.GridMeta.Count.html#ZLab_Discrete_Grids_GridMeta_Count
+  commentId: P:ZLab.Discrete.Grids.GridMeta.Count
+  fullName: ZLab.Discrete.Grids.GridMeta.Count
+  nameWithType: GridMeta.Count
+- uid: ZLab.Discrete.Grids.GridMeta.Count*
+  name: Count
+  href: api/ZLab.Discrete.Grids.GridMeta.Count.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.Count
+  fullName: ZLab.Discrete.Grids.GridMeta.Count
+  nameWithType: GridMeta.Count
+- uid: ZLab.Discrete.Grids.GridMeta.Dimensions
+  name: Dimensions
+  href: api/ZLab.Discrete.Grids.GridMeta.Dimensions.html#ZLab_Discrete_Grids_GridMeta_Dimensions
+  commentId: P:ZLab.Discrete.Grids.GridMeta.Dimensions
+  fullName: ZLab.Discrete.Grids.GridMeta.Dimensions
+  nameWithType: GridMeta.Dimensions
+- uid: ZLab.Discrete.Grids.GridMeta.Dimensions*
+  name: Dimensions
+  href: api/ZLab.Discrete.Grids.GridMeta.Dimensions.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.Dimensions
+  fullName: ZLab.Discrete.Grids.GridMeta.Dimensions
+  nameWithType: GridMeta.Dimensions
+- uid: ZLab.Discrete.Grids.GridMeta.MinX
+  name: MinX
+  href: api/ZLab.Discrete.Grids.GridMeta.MinX.html#ZLab_Discrete_Grids_GridMeta_MinX
+  commentId: P:ZLab.Discrete.Grids.GridMeta.MinX
+  fullName: ZLab.Discrete.Grids.GridMeta.MinX
+  nameWithType: GridMeta.MinX
+- uid: ZLab.Discrete.Grids.GridMeta.MinX*
+  name: MinX
+  href: api/ZLab.Discrete.Grids.GridMeta.MinX.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.MinX
+  fullName: ZLab.Discrete.Grids.GridMeta.MinX
+  nameWithType: GridMeta.MinX
+- uid: ZLab.Discrete.Grids.GridMeta.MinY
+  name: MinY
+  href: api/ZLab.Discrete.Grids.GridMeta.MinY.html#ZLab_Discrete_Grids_GridMeta_MinY
+  commentId: P:ZLab.Discrete.Grids.GridMeta.MinY
+  fullName: ZLab.Discrete.Grids.GridMeta.MinY
+  nameWithType: GridMeta.MinY
+- uid: ZLab.Discrete.Grids.GridMeta.MinY*
+  name: MinY
+  href: api/ZLab.Discrete.Grids.GridMeta.MinY.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.MinY
+  fullName: ZLab.Discrete.Grids.GridMeta.MinY
+  nameWithType: GridMeta.MinY
+- uid: ZLab.Discrete.Grids.GridMeta.MinZ
+  name: MinZ
+  href: api/ZLab.Discrete.Grids.GridMeta.MinZ.html#ZLab_Discrete_Grids_GridMeta_MinZ
+  commentId: P:ZLab.Discrete.Grids.GridMeta.MinZ
+  fullName: ZLab.Discrete.Grids.GridMeta.MinZ
+  nameWithType: GridMeta.MinZ
+- uid: ZLab.Discrete.Grids.GridMeta.MinZ*
+  name: MinZ
+  href: api/ZLab.Discrete.Grids.GridMeta.MinZ.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.MinZ
+  fullName: ZLab.Discrete.Grids.GridMeta.MinZ
+  nameWithType: GridMeta.MinZ
+- uid: ZLab.Discrete.Grids.GridMeta.Nx
+  name: Nx
+  href: api/ZLab.Discrete.Grids.GridMeta.Nx.html#ZLab_Discrete_Grids_GridMeta_Nx
+  commentId: P:ZLab.Discrete.Grids.GridMeta.Nx
+  fullName: ZLab.Discrete.Grids.GridMeta.Nx
+  nameWithType: GridMeta.Nx
+- uid: ZLab.Discrete.Grids.GridMeta.Nx*
+  name: Nx
+  href: api/ZLab.Discrete.Grids.GridMeta.Nx.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.Nx
+  fullName: ZLab.Discrete.Grids.GridMeta.Nx
+  nameWithType: GridMeta.Nx
+- uid: ZLab.Discrete.Grids.GridMeta.Ny
+  name: Ny
+  href: api/ZLab.Discrete.Grids.GridMeta.Ny.html#ZLab_Discrete_Grids_GridMeta_Ny
+  commentId: P:ZLab.Discrete.Grids.GridMeta.Ny
+  fullName: ZLab.Discrete.Grids.GridMeta.Ny
+  nameWithType: GridMeta.Ny
+- uid: ZLab.Discrete.Grids.GridMeta.Ny*
+  name: Ny
+  href: api/ZLab.Discrete.Grids.GridMeta.Ny.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.Ny
+  fullName: ZLab.Discrete.Grids.GridMeta.Ny
+  nameWithType: GridMeta.Ny
+- uid: ZLab.Discrete.Grids.GridMeta.Nz
+  name: Nz
+  href: api/ZLab.Discrete.Grids.GridMeta.Nz.html#ZLab_Discrete_Grids_GridMeta_Nz
+  commentId: P:ZLab.Discrete.Grids.GridMeta.Nz
+  fullName: ZLab.Discrete.Grids.GridMeta.Nz
+  nameWithType: GridMeta.Nz
+- uid: ZLab.Discrete.Grids.GridMeta.Nz*
+  name: Nz
+  href: api/ZLab.Discrete.Grids.GridMeta.Nz.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.Nz
+  fullName: ZLab.Discrete.Grids.GridMeta.Nz
+  nameWithType: GridMeta.Nz
+- uid: ZLab.Discrete.Grids.GridMeta.SizeWorld
+  name: SizeWorld
+  href: api/ZLab.Discrete.Grids.GridMeta.SizeWorld.html#ZLab_Discrete_Grids_GridMeta_SizeWorld
+  commentId: P:ZLab.Discrete.Grids.GridMeta.SizeWorld
+  fullName: ZLab.Discrete.Grids.GridMeta.SizeWorld
+  nameWithType: GridMeta.SizeWorld
+- uid: ZLab.Discrete.Grids.GridMeta.SizeWorld*
+  name: SizeWorld
+  href: api/ZLab.Discrete.Grids.GridMeta.SizeWorld.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.SizeWorld
+  fullName: ZLab.Discrete.Grids.GridMeta.SizeWorld
+  nameWithType: GridMeta.SizeWorld
+- uid: ZLab.Discrete.Grids.GridMeta.VoxelSize
+  name: VoxelSize
+  href: api/ZLab.Discrete.Grids.GridMeta.VoxelSize.html#ZLab_Discrete_Grids_GridMeta_VoxelSize
+  commentId: P:ZLab.Discrete.Grids.GridMeta.VoxelSize
+  fullName: ZLab.Discrete.Grids.GridMeta.VoxelSize
+  nameWithType: GridMeta.VoxelSize
+- uid: ZLab.Discrete.Grids.GridMeta.VoxelSize*
+  name: VoxelSize
+  href: api/ZLab.Discrete.Grids.GridMeta.VoxelSize.html
+  commentId: Overload:ZLab.Discrete.Grids.GridMeta.VoxelSize
+  fullName: ZLab.Discrete.Grids.GridMeta.VoxelSize
+  nameWithType: GridMeta.VoxelSize
+- uid: ZLab.Discrete.Grids.Interfaces
+  name: ZLab.Discrete.Grids.Interfaces
+  href: api/ZLab.Discrete.Grids.Interfaces.html
+  commentId: N:ZLab.Discrete.Grids.Interfaces
+  fullName: ZLab.Discrete.Grids.Interfaces
+  nameWithType: ZLab.Discrete.Grids.Interfaces
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1
+  name: IGrid<T>
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.html
+  commentId: T:ZLab.Discrete.Grids.Interfaces.IGrid`1
+  name.vb: IGrid(Of T)
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T)
+  nameWithType: IGrid<T>
+  nameWithType.vb: IGrid(Of T)
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer
+  name: GetBuffer()
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetBuffer.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_GetBuffer
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetBuffer()
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetBuffer()
+  nameWithType: IGrid<T>.GetBuffer()
+  nameWithType.vb: IGrid(Of T).GetBuffer()
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer*
+  name: GetBuffer
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetBuffer.html
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetBuffer
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetBuffer
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetBuffer
+  nameWithType: IGrid<T>.GetBuffer
+  nameWithType.vb: IGrid(Of T).GetBuffer
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer
+  name: GetReadOnlyBuffer()
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyBuffer.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_GetReadOnlyBuffer
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyBuffer()
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetReadOnlyBuffer()
+  nameWithType: IGrid<T>.GetReadOnlyBuffer()
+  nameWithType.vb: IGrid(Of T).GetReadOnlyBuffer()
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer*
+  name: GetReadOnlyBuffer
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyBuffer.html
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyBuffer
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyBuffer
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetReadOnlyBuffer
+  nameWithType: IGrid<T>.GetReadOnlyBuffer
+  nameWithType.vb: IGrid(Of T).GetReadOnlyBuffer
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory
+  name: GetReadOnlyMemory()
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyMemory.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_GetReadOnlyMemory
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyMemory()
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetReadOnlyMemory()
+  nameWithType: IGrid<T>.GetReadOnlyMemory()
+  nameWithType.vb: IGrid(Of T).GetReadOnlyMemory()
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory*
+  name: GetReadOnlyMemory
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyMemory.html
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetReadOnlyMemory
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyMemory
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetReadOnlyMemory
+  nameWithType: IGrid<T>.GetReadOnlyMemory
+  nameWithType.vb: IGrid(Of T).GetReadOnlyMemory
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  name: GetValue((int x, int y, int z))
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetValue.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_GetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  name.vb: GetValue((x As Integer, y As Integer, z As Integer))
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetValue((int x, int y, int z))
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetValue((x As Integer, y As Integer, z As Integer))
+  nameWithType: IGrid<T>.GetValue((int x, int y, int z))
+  nameWithType.vb: IGrid(Of T).GetValue((x As Integer, y As Integer, z As Integer))
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue*
+  name: GetValue
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetValue.html
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.GetValue
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetValue
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).GetValue
+  nameWithType: IGrid<T>.GetValue
+  nameWithType.vb: IGrid(Of T).GetValue
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},`0)
+  name: SetValue((int x, int y, int z), T)
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.SetValue.html#ZLab_Discrete_Grids_Interfaces_IGrid_1_SetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32___0_
+  commentId: M:ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},`0)
+  name.vb: SetValue((x As Integer, y As Integer, z As Integer), T)
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.SetValue((int x, int y, int z), T)
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).SetValue((x As Integer, y As Integer, z As Integer), T)
+  nameWithType: IGrid<T>.SetValue((int x, int y, int z), T)
+  nameWithType.vb: IGrid(Of T).SetValue((x As Integer, y As Integer, z As Integer), T)
+- uid: ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue*
+  name: SetValue
+  href: api/ZLab.Discrete.Grids.Interfaces.IGrid-1.SetValue.html
+  commentId: Overload:ZLab.Discrete.Grids.Interfaces.IGrid`1.SetValue
+  fullName: ZLab.Discrete.Grids.Interfaces.IGrid<T>.SetValue
+  fullName.vb: ZLab.Discrete.Grids.Interfaces.IGrid(Of T).SetValue
+  nameWithType: IGrid<T>.SetValue
+  nameWithType.vb: IGrid(Of T).SetValue
+- uid: ZLab.Discrete.Grids.OccupancyGrid
+  name: OccupancyGrid
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.html
+  commentId: T:ZLab.Discrete.Grids.OccupancyGrid
+  fullName: ZLab.Discrete.Grids.OccupancyGrid
+  nameWithType: OccupancyGrid
+- uid: ZLab.Discrete.Grids.OccupancyGrid.#ctor(System.Numerics.Vector3,ZLab.Discrete.Geometry.BBox)
+  name: OccupancyGrid(Vector3, BBox)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.-ctor.html#ZLab_Discrete_Grids_OccupancyGrid__ctor_System_Numerics_Vector3_ZLab_Discrete_Geometry_BBox_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.#ctor(System.Numerics.Vector3,ZLab.Discrete.Geometry.BBox)
+  name.vb: New(Vector3, BBox)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.OccupancyGrid(System.Numerics.Vector3, ZLab.Discrete.Geometry.BBox)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.New(System.Numerics.Vector3, ZLab.Discrete.Geometry.BBox)
+  nameWithType: OccupancyGrid.OccupancyGrid(Vector3, BBox)
+  nameWithType.vb: OccupancyGrid.New(Vector3, BBox)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.#ctor(ZLab.Discrete.Grids.GridMeta)
+  name: OccupancyGrid(GridMeta)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.-ctor.html#ZLab_Discrete_Grids_OccupancyGrid__ctor_ZLab_Discrete_Grids_GridMeta_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.#ctor(ZLab.Discrete.Grids.GridMeta)
+  name.vb: New(GridMeta)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.OccupancyGrid(ZLab.Discrete.Grids.GridMeta)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.New(ZLab.Discrete.Grids.GridMeta)
+  nameWithType: OccupancyGrid.OccupancyGrid(GridMeta)
+  nameWithType.vb: OccupancyGrid.New(GridMeta)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.#ctor(ZLab.Discrete.Voxels.Occupancy[],System.Numerics.Vector3[],ZLab.Discrete.Grids.GridMeta)
+  name: OccupancyGrid(Occupancy[], Vector3[], GridMeta)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.-ctor.html#ZLab_Discrete_Grids_OccupancyGrid__ctor_ZLab_Discrete_Voxels_Occupancy___System_Numerics_Vector3___ZLab_Discrete_Grids_GridMeta_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.#ctor(ZLab.Discrete.Voxels.Occupancy[],System.Numerics.Vector3[],ZLab.Discrete.Grids.GridMeta)
+  name.vb: New(Occupancy(), Vector3(), GridMeta)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.OccupancyGrid(ZLab.Discrete.Voxels.Occupancy[], System.Numerics.Vector3[], ZLab.Discrete.Grids.GridMeta)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.New(ZLab.Discrete.Voxels.Occupancy(), System.Numerics.Vector3(), ZLab.Discrete.Grids.GridMeta)
+  nameWithType: OccupancyGrid.OccupancyGrid(Occupancy[], Vector3[], GridMeta)
+  nameWithType.vb: OccupancyGrid.New(Occupancy(), Vector3(), GridMeta)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.#ctor*
+  name: OccupancyGrid
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.-ctor.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.OccupancyGrid
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.New
+  nameWithType: OccupancyGrid.OccupancyGrid
+  nameWithType.vb: OccupancyGrid.New
+- uid: ZLab.Discrete.Grids.OccupancyGrid.Clone
+  name: Clone()
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.Clone.html#ZLab_Discrete_Grids_OccupancyGrid_Clone
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.Clone
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.Clone()
+  nameWithType: OccupancyGrid.Clone()
+- uid: ZLab.Discrete.Grids.OccupancyGrid.Clone*
+  name: Clone
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.Clone.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.Clone
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.Clone
+  nameWithType: OccupancyGrid.Clone
+- uid: ZLab.Discrete.Grids.OccupancyGrid.CountState
+  name: CountState()
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.CountState.html#ZLab_Discrete_Grids_OccupancyGrid_CountState
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.CountState
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.CountState()
+  nameWithType: OccupancyGrid.CountState()
+- uid: ZLab.Discrete.Grids.OccupancyGrid.CountState(ZLab.Discrete.Voxels.Occupancy)
+  name: CountState(Occupancy)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.CountState.html#ZLab_Discrete_Grids_OccupancyGrid_CountState_ZLab_Discrete_Voxels_Occupancy_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.CountState(ZLab.Discrete.Voxels.Occupancy)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.CountState(ZLab.Discrete.Voxels.Occupancy)
+  nameWithType: OccupancyGrid.CountState(Occupancy)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.CountState*
+  name: CountState
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.CountState.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.CountState
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.CountState
+  nameWithType: OccupancyGrid.CountState
+- uid: ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels
+  name: EnumerateVoxels()
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels.html#ZLab_Discrete_Grids_OccupancyGrid_EnumerateVoxels
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels()
+  nameWithType: OccupancyGrid.EnumerateVoxels()
+- uid: ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels*
+  name: EnumerateVoxels
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels
+  nameWithType: OccupancyGrid.EnumerateVoxels
+- uid: ZLab.Discrete.Grids.OccupancyGrid.Fill(ZLab.Discrete.Voxels.Occupancy)
+  name: Fill(Occupancy)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.Fill.html#ZLab_Discrete_Grids_OccupancyGrid_Fill_ZLab_Discrete_Voxels_Occupancy_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.Fill(ZLab.Discrete.Voxels.Occupancy)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.Fill(ZLab.Discrete.Voxels.Occupancy)
+  nameWithType: OccupancyGrid.Fill(Occupancy)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.Fill*
+  name: Fill
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.Fill.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.Fill
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.Fill
+  nameWithType: OccupancyGrid.Fill
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy})
+  name: ForEachVoxel(Action<Vector3, Occupancy>)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy})
+  name.vb: ForEachVoxel(Action(Of Vector3, Occupancy))
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action<System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy>)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action(Of System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy))
+  nameWithType: OccupancyGrid.ForEachVoxel(Action<Vector3, Occupancy>)
+  nameWithType.vb: OccupancyGrid.ForEachVoxel(Action(Of Vector3, Occupancy))
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel*
+  name: ForEachVoxel
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel
+  nameWithType: OccupancyGrid.ForEachVoxel
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy},System.Nullable{System.Int32})
+  name: ForEachVoxelParallel(Action<Vector3, Occupancy>, int?)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__System_Nullable_System_Int32__
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy},System.Nullable{System.Int32})
+  name.vb: ForEachVoxelParallel(Action(Of Vector3, Occupancy), Integer?)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action<System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy>, int?)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action(Of System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy), Integer?)
+  nameWithType: OccupancyGrid.ForEachVoxelParallel(Action<Vector3, Occupancy>, int?)
+  nameWithType.vb: OccupancyGrid.ForEachVoxelParallel(Action(Of Vector3, Occupancy), Integer?)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel*
+  name: ForEachVoxelParallel
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel
+  nameWithType: OccupancyGrid.ForEachVoxelParallel
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetBuffer
+  name: GetBuffer()
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetBuffer.html#ZLab_Discrete_Grids_OccupancyGrid_GetBuffer
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.GetBuffer
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetBuffer()
+  nameWithType: OccupancyGrid.GetBuffer()
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetBuffer*
+  name: GetBuffer
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetBuffer.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.GetBuffer
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetBuffer
+  nameWithType: OccupancyGrid.GetBuffer
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary(System.Boolean,System.Boolean)
+  name: GetMaskBinary(bool, bool)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary.html#ZLab_Discrete_Grids_OccupancyGrid_GetMaskBinary_System_Boolean_System_Boolean_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary(System.Boolean,System.Boolean)
+  name.vb: GetMaskBinary(Boolean, Boolean)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary(bool, bool)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary(Boolean, Boolean)
+  nameWithType: OccupancyGrid.GetMaskBinary(bool, bool)
+  nameWithType.vb: OccupancyGrid.GetMaskBinary(Boolean, Boolean)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary*
+  name: GetMaskBinary
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary
+  nameWithType: OccupancyGrid.GetMaskBinary
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(System.Boolean)
+  name: GetMaskTernary(bool)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary.html#ZLab_Discrete_Grids_OccupancyGrid_GetMaskTernary_System_Boolean_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(System.Boolean)
+  name.vb: GetMaskTernary(Boolean)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(bool)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(Boolean)
+  nameWithType: OccupancyGrid.GetMaskTernary(bool)
+  nameWithType.vb: OccupancyGrid.GetMaskTernary(Boolean)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(System.Span{System.Byte},System.Boolean)
+  name: GetMaskTernary(Span<byte>, bool)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary.html#ZLab_Discrete_Grids_OccupancyGrid_GetMaskTernary_System_Span_System_Byte__System_Boolean_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(System.Span{System.Byte},System.Boolean)
+  name.vb: GetMaskTernary(Span(Of Byte), Boolean)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(System.Span<byte>, bool)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(System.Span(Of Byte), Boolean)
+  nameWithType: OccupancyGrid.GetMaskTernary(Span<byte>, bool)
+  nameWithType.vb: OccupancyGrid.GetMaskTernary(Span(Of Byte), Boolean)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary*
+  name: GetMaskTernary
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary
+  nameWithType: OccupancyGrid.GetMaskTernary
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer
+  name: GetReadOnlyBuffer()
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer.html#ZLab_Discrete_Grids_OccupancyGrid_GetReadOnlyBuffer
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer()
+  nameWithType: OccupancyGrid.GetReadOnlyBuffer()
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer*
+  name: GetReadOnlyBuffer
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer
+  nameWithType: OccupancyGrid.GetReadOnlyBuffer
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory
+  name: GetReadOnlyMemory()
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory.html#ZLab_Discrete_Grids_OccupancyGrid_GetReadOnlyMemory
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory()
+  nameWithType: OccupancyGrid.GetReadOnlyMemory()
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory*
+  name: GetReadOnlyMemory
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory
+  nameWithType: OccupancyGrid.GetReadOnlyMemory
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  name: GetValue((int x, int y, int z))
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetValue.html#ZLab_Discrete_Grids_OccupancyGrid_GetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})
+  name.vb: GetValue((x As Integer, y As Integer, z As Integer))
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetValue((int x, int y, int z))
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.GetValue((x As Integer, y As Integer, z As Integer))
+  nameWithType: OccupancyGrid.GetValue((int x, int y, int z))
+  nameWithType.vb: OccupancyGrid.GetValue((x As Integer, y As Integer, z As Integer))
+- uid: ZLab.Discrete.Grids.OccupancyGrid.GetValue*
+  name: GetValue
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.GetValue.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.GetValue
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.GetValue
+  nameWithType: OccupancyGrid.GetValue
+- uid: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray(System.ReadOnlySpan{ZLab.Discrete.Voxels.Occupancy})
+  name: LoadFromArray(ReadOnlySpan<Occupancy>)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray.html#ZLab_Discrete_Grids_OccupancyGrid_LoadFromArray_System_ReadOnlySpan_ZLab_Discrete_Voxels_Occupancy__
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray(System.ReadOnlySpan{ZLab.Discrete.Voxels.Occupancy})
+  name.vb: LoadFromArray(ReadOnlySpan(Of Occupancy))
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray(System.ReadOnlySpan<ZLab.Discrete.Voxels.Occupancy>)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray(System.ReadOnlySpan(Of ZLab.Discrete.Voxels.Occupancy))
+  nameWithType: OccupancyGrid.LoadFromArray(ReadOnlySpan<Occupancy>)
+  nameWithType.vb: OccupancyGrid.LoadFromArray(ReadOnlySpan(Of Occupancy))
+- uid: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray*
+  name: LoadFromArray
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray
+  nameWithType: OccupancyGrid.LoadFromArray
+- uid: ZLab.Discrete.Grids.OccupancyGrid.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},ZLab.Discrete.Voxels.Occupancy)
+  name: SetValue((int x, int y, int z), Occupancy)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.SetValue.html#ZLab_Discrete_Grids_OccupancyGrid_SetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__ZLab_Discrete_Voxels_Occupancy_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},ZLab.Discrete.Voxels.Occupancy)
+  name.vb: SetValue((x As Integer, y As Integer, z As Integer), Occupancy)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.SetValue((int x, int y, int z), ZLab.Discrete.Voxels.Occupancy)
+  fullName.vb: ZLab.Discrete.Grids.OccupancyGrid.SetValue((x As Integer, y As Integer, z As Integer), ZLab.Discrete.Voxels.Occupancy)
+  nameWithType: OccupancyGrid.SetValue((int x, int y, int z), Occupancy)
+  nameWithType.vb: OccupancyGrid.SetValue((x As Integer, y As Integer, z As Integer), Occupancy)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.SetValue*
+  name: SetValue
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.SetValue.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.SetValue
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.SetValue
+  nameWithType: OccupancyGrid.SetValue
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy
+  name: ToArrayCopy()
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy.html#ZLab_Discrete_Grids_OccupancyGrid_ToArrayCopy
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy()
+  nameWithType: OccupancyGrid.ToArrayCopy()
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy*
+  name: ToArrayCopy
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy
+  nameWithType: OccupancyGrid.ToArrayCopy
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ToString
+  name: ToString()
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.ToString.html#ZLab_Discrete_Grids_OccupancyGrid_ToString
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.ToString
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ToString()
+  nameWithType: OccupancyGrid.ToString()
+- uid: ZLab.Discrete.Grids.OccupancyGrid.ToString*
+  name: ToString
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.ToString.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.ToString
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.ToString
+  nameWithType: OccupancyGrid.ToString
+- uid: ZLab.Discrete.Grids.OccupancyGrid.TransformWorld(System.Numerics.Vector3)
+  name: TransformWorld(Vector3)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.TransformWorld.html#ZLab_Discrete_Grids_OccupancyGrid_TransformWorld_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.TransformWorld(System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.TransformWorld(System.Numerics.Vector3)
+  nameWithType: OccupancyGrid.TransformWorld(Vector3)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.TransformWorld(System.Numerics.Vector3,System.Numerics.Vector3)
+  name: TransformWorld(Vector3, Vector3)
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.TransformWorld.html#ZLab_Discrete_Grids_OccupancyGrid_TransformWorld_System_Numerics_Vector3_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Grids.OccupancyGrid.TransformWorld(System.Numerics.Vector3,System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.TransformWorld(System.Numerics.Vector3, System.Numerics.Vector3)
+  nameWithType: OccupancyGrid.TransformWorld(Vector3, Vector3)
+- uid: ZLab.Discrete.Grids.OccupancyGrid.TransformWorld*
+  name: TransformWorld
+  href: api/ZLab.Discrete.Grids.OccupancyGrid.TransformWorld.html
+  commentId: Overload:ZLab.Discrete.Grids.OccupancyGrid.TransformWorld
+  fullName: ZLab.Discrete.Grids.OccupancyGrid.TransformWorld
+  nameWithType: OccupancyGrid.TransformWorld
+- uid: ZLab.Discrete.Operations.Meshing
+  name: ZLab.Discrete.Operations.Meshing
+  href: api/ZLab.Discrete.Operations.Meshing.html
+  commentId: N:ZLab.Discrete.Operations.Meshing
+  fullName: ZLab.Discrete.Operations.Meshing
+  nameWithType: ZLab.Discrete.Operations.Meshing
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem
+  name: CordSystem
+  href: api/ZLab.Discrete.Operations.Meshing.CordSystem.html
+  commentId: T:ZLab.Discrete.Operations.Meshing.CordSystem
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem
+  nameWithType: CordSystem
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem.LeftHanded
+  name: LeftHanded
+  href: api/ZLab.Discrete.Operations.Meshing.CordSystem.html#ZLab_Discrete_Operations_Meshing_CordSystem_LeftHanded
+  commentId: F:ZLab.Discrete.Operations.Meshing.CordSystem.LeftHanded
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem.LeftHanded
+  nameWithType: CordSystem.LeftHanded
+- uid: ZLab.Discrete.Operations.Meshing.CordSystem.RightHanded
+  name: RightHanded
+  href: api/ZLab.Discrete.Operations.Meshing.CordSystem.html#ZLab_Discrete_Operations_Meshing_CordSystem_RightHanded
+  commentId: F:ZLab.Discrete.Operations.Meshing.CordSystem.RightHanded
+  fullName: ZLab.Discrete.Operations.Meshing.CordSystem.RightHanded
+  nameWithType: CordSystem.RightHanded
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher
+  name: DiscreteMesher
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.html
+  commentId: T:ZLab.Discrete.Operations.Meshing.DiscreteMesher
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher
+  nameWithType: DiscreteMesher
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3,ZLab.Discrete.Operations.Meshing.CordSystem)
+  name: GenerateMesh(ReadOnlySpan<Vector3>, Vector3, CordSystem)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GenerateMesh_System_ReadOnlySpan_System_Numerics_Vector3__System_Numerics_Vector3_ZLab_Discrete_Operations_Meshing_CordSystem_
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3,ZLab.Discrete.Operations.Meshing.CordSystem)
+  name.vb: GenerateMesh(ReadOnlySpan(Of Vector3), Vector3, CordSystem)
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan<System.Numerics.Vector3>, System.Numerics.Vector3, ZLab.Discrete.Operations.Meshing.CordSystem)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan(Of System.Numerics.Vector3), System.Numerics.Vector3, ZLab.Discrete.Operations.Meshing.CordSystem)
+  nameWithType: DiscreteMesher.GenerateMesh(ReadOnlySpan<Vector3>, Vector3, CordSystem)
+  nameWithType.vb: DiscreteMesher.GenerateMesh(ReadOnlySpan(Of Vector3), Vector3, CordSystem)
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3},ZLab.Discrete.Operations.Meshing.CordSystem)
+  name: GenerateMesh(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, CordSystem)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GenerateMesh_System_ReadOnlySpan_System_Numerics_Vector3__System_ReadOnlySpan_System_Numerics_Vector3__ZLab_Discrete_Operations_Meshing_CordSystem_
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3},ZLab.Discrete.Operations.Meshing.CordSystem)
+  name.vb: GenerateMesh(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3), CordSystem)
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan<System.Numerics.Vector3>, System.ReadOnlySpan<System.Numerics.Vector3>, ZLab.Discrete.Operations.Meshing.CordSystem)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh(System.ReadOnlySpan(Of System.Numerics.Vector3), System.ReadOnlySpan(Of System.Numerics.Vector3), ZLab.Discrete.Operations.Meshing.CordSystem)
+  nameWithType: DiscreteMesher.GenerateMesh(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, CordSystem)
+  nameWithType.vb: DiscreteMesher.GenerateMesh(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3), CordSystem)
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh*
+  name: GenerateMesh
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh.html
+  commentId: Overload:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh
+  nameWithType: DiscreteMesher.GenerateMesh
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3,System.Span{ZLab.Discrete.Geometry.MeshF},ZLab.Discrete.Operations.Meshing.CordSystem)
+  name: GenerateMeshes(ReadOnlySpan<Vector3>, Vector3, Span<MeshF>, CordSystem)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GenerateMeshes_System_ReadOnlySpan_System_Numerics_Vector3__System_Numerics_Vector3_System_Span_ZLab_Discrete_Geometry_MeshF__ZLab_Discrete_Operations_Meshing_CordSystem_
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3,System.Span{ZLab.Discrete.Geometry.MeshF},ZLab.Discrete.Operations.Meshing.CordSystem)
+  name.vb: GenerateMeshes(ReadOnlySpan(Of Vector3), Vector3, Span(Of MeshF), CordSystem)
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan<System.Numerics.Vector3>, System.Numerics.Vector3, System.Span<ZLab.Discrete.Geometry.MeshF>, ZLab.Discrete.Operations.Meshing.CordSystem)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan(Of System.Numerics.Vector3), System.Numerics.Vector3, System.Span(Of ZLab.Discrete.Geometry.MeshF), ZLab.Discrete.Operations.Meshing.CordSystem)
+  nameWithType: DiscreteMesher.GenerateMeshes(ReadOnlySpan<Vector3>, Vector3, Span<MeshF>, CordSystem)
+  nameWithType.vb: DiscreteMesher.GenerateMeshes(ReadOnlySpan(Of Vector3), Vector3, Span(Of MeshF), CordSystem)
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3,ZLab.Discrete.Operations.Meshing.CordSystem)
+  name: GenerateMeshes(ReadOnlySpan<Vector3>, Vector3, CordSystem)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GenerateMeshes_System_ReadOnlySpan_System_Numerics_Vector3__System_Numerics_Vector3_ZLab_Discrete_Operations_Meshing_CordSystem_
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3,ZLab.Discrete.Operations.Meshing.CordSystem)
+  name.vb: GenerateMeshes(ReadOnlySpan(Of Vector3), Vector3, CordSystem)
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan<System.Numerics.Vector3>, System.Numerics.Vector3, ZLab.Discrete.Operations.Meshing.CordSystem)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan(Of System.Numerics.Vector3), System.Numerics.Vector3, ZLab.Discrete.Operations.Meshing.CordSystem)
+  nameWithType: DiscreteMesher.GenerateMeshes(ReadOnlySpan<Vector3>, Vector3, CordSystem)
+  nameWithType.vb: DiscreteMesher.GenerateMeshes(ReadOnlySpan(Of Vector3), Vector3, CordSystem)
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3},System.Span{ZLab.Discrete.Geometry.MeshF},ZLab.Discrete.Operations.Meshing.CordSystem)
+  name: GenerateMeshes(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, Span<MeshF>, CordSystem)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GenerateMeshes_System_ReadOnlySpan_System_Numerics_Vector3__System_ReadOnlySpan_System_Numerics_Vector3__System_Span_ZLab_Discrete_Geometry_MeshF__ZLab_Discrete_Operations_Meshing_CordSystem_
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3},System.Span{ZLab.Discrete.Geometry.MeshF},ZLab.Discrete.Operations.Meshing.CordSystem)
+  name.vb: GenerateMeshes(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3), Span(Of MeshF), CordSystem)
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan<System.Numerics.Vector3>, System.ReadOnlySpan<System.Numerics.Vector3>, System.Span<ZLab.Discrete.Geometry.MeshF>, ZLab.Discrete.Operations.Meshing.CordSystem)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan(Of System.Numerics.Vector3), System.ReadOnlySpan(Of System.Numerics.Vector3), System.Span(Of ZLab.Discrete.Geometry.MeshF), ZLab.Discrete.Operations.Meshing.CordSystem)
+  nameWithType: DiscreteMesher.GenerateMeshes(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, Span<MeshF>, CordSystem)
+  nameWithType.vb: DiscreteMesher.GenerateMeshes(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3), Span(Of MeshF), CordSystem)
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3},ZLab.Discrete.Operations.Meshing.CordSystem)
+  name: GenerateMeshes(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, CordSystem)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GenerateMeshes_System_ReadOnlySpan_System_Numerics_Vector3__System_ReadOnlySpan_System_Numerics_Vector3__ZLab_Discrete_Operations_Meshing_CordSystem_
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3},ZLab.Discrete.Operations.Meshing.CordSystem)
+  name.vb: GenerateMeshes(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3), CordSystem)
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan<System.Numerics.Vector3>, System.ReadOnlySpan<System.Numerics.Vector3>, ZLab.Discrete.Operations.Meshing.CordSystem)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes(System.ReadOnlySpan(Of System.Numerics.Vector3), System.ReadOnlySpan(Of System.Numerics.Vector3), ZLab.Discrete.Operations.Meshing.CordSystem)
+  nameWithType: DiscreteMesher.GenerateMeshes(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, CordSystem)
+  nameWithType.vb: DiscreteMesher.GenerateMeshes(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3), CordSystem)
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes*
+  name: GenerateMeshes
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes.html
+  commentId: Overload:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes
+  nameWithType: DiscreteMesher.GenerateMeshes
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3)
+  name: GetVoxelBounds(ReadOnlySpan<Vector3>, Vector3)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GetVoxelBounds_System_ReadOnlySpan_System_Numerics_Vector3__System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3)
+  name.vb: GetVoxelBounds(ReadOnlySpan(Of Vector3), Vector3)
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan<System.Numerics.Vector3>, System.Numerics.Vector3)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan(Of System.Numerics.Vector3), System.Numerics.Vector3)
+  nameWithType: DiscreteMesher.GetVoxelBounds(ReadOnlySpan<Vector3>, Vector3)
+  nameWithType.vb: DiscreteMesher.GetVoxelBounds(ReadOnlySpan(Of Vector3), Vector3)
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3,System.Span{ZLab.Discrete.Geometry.BBox})
+  name: GetVoxelBounds(ReadOnlySpan<Vector3>, Vector3, Span<BBox>)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GetVoxelBounds_System_ReadOnlySpan_System_Numerics_Vector3__System_Numerics_Vector3_System_Span_ZLab_Discrete_Geometry_BBox__
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan{System.Numerics.Vector3},System.Numerics.Vector3,System.Span{ZLab.Discrete.Geometry.BBox})
+  name.vb: GetVoxelBounds(ReadOnlySpan(Of Vector3), Vector3, Span(Of BBox))
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan<System.Numerics.Vector3>, System.Numerics.Vector3, System.Span<ZLab.Discrete.Geometry.BBox>)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan(Of System.Numerics.Vector3), System.Numerics.Vector3, System.Span(Of ZLab.Discrete.Geometry.BBox))
+  nameWithType: DiscreteMesher.GetVoxelBounds(ReadOnlySpan<Vector3>, Vector3, Span<BBox>)
+  nameWithType.vb: DiscreteMesher.GetVoxelBounds(ReadOnlySpan(Of Vector3), Vector3, Span(Of BBox))
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3})
+  name: GetVoxelBounds(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GetVoxelBounds_System_ReadOnlySpan_System_Numerics_Vector3__System_ReadOnlySpan_System_Numerics_Vector3__
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3})
+  name.vb: GetVoxelBounds(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3))
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan<System.Numerics.Vector3>, System.ReadOnlySpan<System.Numerics.Vector3>)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan(Of System.Numerics.Vector3), System.ReadOnlySpan(Of System.Numerics.Vector3))
+  nameWithType: DiscreteMesher.GetVoxelBounds(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>)
+  nameWithType.vb: DiscreteMesher.GetVoxelBounds(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3))
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3},System.Span{ZLab.Discrete.Geometry.BBox})
+  name: GetVoxelBounds(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, Span<BBox>)
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds.html#ZLab_Discrete_Operations_Meshing_DiscreteMesher_GetVoxelBounds_System_ReadOnlySpan_System_Numerics_Vector3__System_ReadOnlySpan_System_Numerics_Vector3__System_Span_ZLab_Discrete_Geometry_BBox__
+  commentId: M:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan{System.Numerics.Vector3},System.ReadOnlySpan{System.Numerics.Vector3},System.Span{ZLab.Discrete.Geometry.BBox})
+  name.vb: GetVoxelBounds(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3), Span(Of BBox))
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan<System.Numerics.Vector3>, System.ReadOnlySpan<System.Numerics.Vector3>, System.Span<ZLab.Discrete.Geometry.BBox>)
+  fullName.vb: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds(System.ReadOnlySpan(Of System.Numerics.Vector3), System.ReadOnlySpan(Of System.Numerics.Vector3), System.Span(Of ZLab.Discrete.Geometry.BBox))
+  nameWithType: DiscreteMesher.GetVoxelBounds(ReadOnlySpan<Vector3>, ReadOnlySpan<Vector3>, Span<BBox>)
+  nameWithType.vb: DiscreteMesher.GetVoxelBounds(ReadOnlySpan(Of Vector3), ReadOnlySpan(Of Vector3), Span(Of BBox))
+- uid: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds*
+  name: GetVoxelBounds
+  href: api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds.html
+  commentId: Overload:ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds
+  fullName: ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds
+  nameWithType: DiscreteMesher.GetVoxelBounds
+- uid: ZLab.Discrete.Operations.Rasterizing
+  name: ZLab.Discrete.Operations.Rasterizing
+  href: api/ZLab.Discrete.Operations.Rasterizing.html
+  commentId: N:ZLab.Discrete.Operations.Rasterizing
+  fullName: ZLab.Discrete.Operations.Rasterizing
+  nameWithType: ZLab.Discrete.Operations.Rasterizing
+- uid: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer
+  name: DenseRasterizer
+  href: api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.html
+  commentId: T:ZLab.Discrete.Operations.Rasterizing.DenseRasterizer
+  fullName: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer
+  nameWithType: DenseRasterizer
+- uid: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh(ZLab.Discrete.Grids.OccupancyGrid,ZLab.Discrete.Geometry.MeshF,System.Boolean,System.Int32)
+  name: RasterizeMesh(OccupancyGrid, MeshF, bool, int)
+  href: api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh.html#ZLab_Discrete_Operations_Rasterizing_DenseRasterizer_RasterizeMesh_ZLab_Discrete_Grids_OccupancyGrid_ZLab_Discrete_Geometry_MeshF_System_Boolean_System_Int32_
+  commentId: M:ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh(ZLab.Discrete.Grids.OccupancyGrid,ZLab.Discrete.Geometry.MeshF,System.Boolean,System.Int32)
+  name.vb: RasterizeMesh(OccupancyGrid, MeshF, Boolean, Integer)
+  fullName: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh(ZLab.Discrete.Grids.OccupancyGrid, ZLab.Discrete.Geometry.MeshF, bool, int)
+  fullName.vb: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh(ZLab.Discrete.Grids.OccupancyGrid, ZLab.Discrete.Geometry.MeshF, Boolean, Integer)
+  nameWithType: DenseRasterizer.RasterizeMesh(OccupancyGrid, MeshF, bool, int)
+  nameWithType.vb: DenseRasterizer.RasterizeMesh(OccupancyGrid, MeshF, Boolean, Integer)
+- uid: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh*
+  name: RasterizeMesh
+  href: api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh.html
+  commentId: Overload:ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh
+  fullName: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh
+  nameWithType: DenseRasterizer.RasterizeMesh
+- uid: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline(ZLab.Discrete.Grids.OccupancyGrid,ZLab.Discrete.Geometry.PolylineF)
+  name: RasterizePolyline(OccupancyGrid, PolylineF)
+  href: api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline.html#ZLab_Discrete_Operations_Rasterizing_DenseRasterizer_RasterizePolyline_ZLab_Discrete_Grids_OccupancyGrid_ZLab_Discrete_Geometry_PolylineF_
+  commentId: M:ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline(ZLab.Discrete.Grids.OccupancyGrid,ZLab.Discrete.Geometry.PolylineF)
+  fullName: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline(ZLab.Discrete.Grids.OccupancyGrid, ZLab.Discrete.Geometry.PolylineF)
+  nameWithType: DenseRasterizer.RasterizePolyline(OccupancyGrid, PolylineF)
+- uid: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline*
+  name: RasterizePolyline
+  href: api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline.html
+  commentId: Overload:ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline
+  fullName: ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline
+  nameWithType: DenseRasterizer.RasterizePolyline
+- uid: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer
+  name: SparseRasterizer
+  href: api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.html
+  commentId: T:ZLab.Discrete.Operations.Rasterizing.SparseRasterizer
+  fullName: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer
+  nameWithType: SparseRasterizer
+- uid: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh(ZLab.Discrete.Geometry.MeshF,System.Numerics.Vector3,System.Int32)
+  name: RasterizeMesh(MeshF, Vector3, int)
+  href: api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh.html#ZLab_Discrete_Operations_Rasterizing_SparseRasterizer_RasterizeMesh_ZLab_Discrete_Geometry_MeshF_System_Numerics_Vector3_System_Int32_
+  commentId: M:ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh(ZLab.Discrete.Geometry.MeshF,System.Numerics.Vector3,System.Int32)
+  name.vb: RasterizeMesh(MeshF, Vector3, Integer)
+  fullName: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh(ZLab.Discrete.Geometry.MeshF, System.Numerics.Vector3, int)
+  fullName.vb: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh(ZLab.Discrete.Geometry.MeshF, System.Numerics.Vector3, Integer)
+  nameWithType: SparseRasterizer.RasterizeMesh(MeshF, Vector3, int)
+  nameWithType.vb: SparseRasterizer.RasterizeMesh(MeshF, Vector3, Integer)
+- uid: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh*
+  name: RasterizeMesh
+  href: api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh.html
+  commentId: Overload:ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh
+  fullName: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh
+  nameWithType: SparseRasterizer.RasterizeMesh
+- uid: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline(ZLab.Discrete.Geometry.PolylineF,System.Numerics.Vector3,System.Boolean)
+  name: RasterizePolyline(PolylineF, Vector3, bool)
+  href: api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline.html#ZLab_Discrete_Operations_Rasterizing_SparseRasterizer_RasterizePolyline_ZLab_Discrete_Geometry_PolylineF_System_Numerics_Vector3_System_Boolean_
+  commentId: M:ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline(ZLab.Discrete.Geometry.PolylineF,System.Numerics.Vector3,System.Boolean)
+  name.vb: RasterizePolyline(PolylineF, Vector3, Boolean)
+  fullName: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline(ZLab.Discrete.Geometry.PolylineF, System.Numerics.Vector3, bool)
+  fullName.vb: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline(ZLab.Discrete.Geometry.PolylineF, System.Numerics.Vector3, Boolean)
+  nameWithType: SparseRasterizer.RasterizePolyline(PolylineF, Vector3, bool)
+  nameWithType.vb: SparseRasterizer.RasterizePolyline(PolylineF, Vector3, Boolean)
+- uid: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline*
+  name: RasterizePolyline
+  href: api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline.html
+  commentId: Overload:ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline
+  fullName: ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline
+  nameWithType: SparseRasterizer.RasterizePolyline
+- uid: ZLab.Discrete.Voxels
+  name: ZLab.Discrete.Voxels
+  href: api/ZLab.Discrete.Voxels.html
+  commentId: N:ZLab.Discrete.Voxels
+  fullName: ZLab.Discrete.Voxels
+  nameWithType: ZLab.Discrete.Voxels
+- uid: ZLab.Discrete.Voxels.DistanceVoxel
+  name: DistanceVoxel
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.html
+  commentId: T:ZLab.Discrete.Voxels.DistanceVoxel
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel
+  nameWithType: DistanceVoxel
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.#ctor(System.Numerics.Vector3,System.Single)
+  name: DistanceVoxel(Vector3, float)
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.-ctor.html#ZLab_Discrete_Voxels_DistanceVoxel__ctor_System_Numerics_Vector3_System_Single_
+  commentId: M:ZLab.Discrete.Voxels.DistanceVoxel.#ctor(System.Numerics.Vector3,System.Single)
+  name.vb: New(Vector3, Single)
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.DistanceVoxel(System.Numerics.Vector3, float)
+  fullName.vb: ZLab.Discrete.Voxels.DistanceVoxel.New(System.Numerics.Vector3, Single)
+  nameWithType: DistanceVoxel.DistanceVoxel(Vector3, float)
+  nameWithType.vb: DistanceVoxel.New(Vector3, Single)
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.#ctor*
+  name: DistanceVoxel
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.-ctor.html
+  commentId: Overload:ZLab.Discrete.Voxels.DistanceVoxel.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.DistanceVoxel
+  fullName.vb: ZLab.Discrete.Voxels.DistanceVoxel.New
+  nameWithType: DistanceVoxel.DistanceVoxel
+  nameWithType.vb: DistanceVoxel.New
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.Center(System.Numerics.Vector3)
+  name: Center(Vector3)
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.Center.html#ZLab_Discrete_Voxels_DistanceVoxel_Center_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Voxels.DistanceVoxel.Center(System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.Center(System.Numerics.Vector3)
+  nameWithType: DistanceVoxel.Center(Vector3)
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.Center*
+  name: Center
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.Center.html
+  commentId: Overload:ZLab.Discrete.Voxels.DistanceVoxel.Center
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.Center
+  nameWithType: DistanceVoxel.Center
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds(System.Numerics.Vector3)
+  name: ComputeBounds(Vector3)
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds.html#ZLab_Discrete_Voxels_DistanceVoxel_ComputeBounds_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds(System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds(System.Numerics.Vector3)
+  nameWithType: DistanceVoxel.ComputeBounds(Vector3)
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds*
+  name: ComputeBounds
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds.html
+  commentId: Overload:ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds
+  nameWithType: DistanceVoxel.ComputeBounds
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.Distance
+  name: Distance
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.Distance.html
+  commentId: F:ZLab.Discrete.Voxels.DistanceVoxel.Distance
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.Distance
+  nameWithType: DistanceVoxel.Distance
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.Origin
+  name: Origin
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.Origin.html
+  commentId: F:ZLab.Discrete.Voxels.DistanceVoxel.Origin
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.Origin
+  nameWithType: DistanceVoxel.Origin
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.ToArray
+  name: ToArray()
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.ToArray.html#ZLab_Discrete_Voxels_DistanceVoxel_ToArray
+  commentId: M:ZLab.Discrete.Voxels.DistanceVoxel.ToArray
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.ToArray()
+  nameWithType: DistanceVoxel.ToArray()
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.ToArray*
+  name: ToArray
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.ToArray.html
+  commentId: Overload:ZLab.Discrete.Voxels.DistanceVoxel.ToArray
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.ToArray
+  nameWithType: DistanceVoxel.ToArray
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.ToString
+  name: ToString()
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.ToString.html#ZLab_Discrete_Voxels_DistanceVoxel_ToString
+  commentId: M:ZLab.Discrete.Voxels.DistanceVoxel.ToString
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.ToString()
+  nameWithType: DistanceVoxel.ToString()
+- uid: ZLab.Discrete.Voxels.DistanceVoxel.ToString*
+  name: ToString
+  href: api/ZLab.Discrete.Voxels.DistanceVoxel.ToString.html
+  commentId: Overload:ZLab.Discrete.Voxels.DistanceVoxel.ToString
+  fullName: ZLab.Discrete.Voxels.DistanceVoxel.ToString
+  nameWithType: DistanceVoxel.ToString
+- uid: ZLab.Discrete.Voxels.Occupancy
+  name: Occupancy
+  href: api/ZLab.Discrete.Voxels.Occupancy.html
+  commentId: T:ZLab.Discrete.Voxels.Occupancy
+  fullName: ZLab.Discrete.Voxels.Occupancy
+  nameWithType: Occupancy
+- uid: ZLab.Discrete.Voxels.Occupancy.Boundary
+  name: Boundary
+  href: api/ZLab.Discrete.Voxels.Occupancy.html#ZLab_Discrete_Voxels_Occupancy_Boundary
+  commentId: F:ZLab.Discrete.Voxels.Occupancy.Boundary
+  fullName: ZLab.Discrete.Voxels.Occupancy.Boundary
+  nameWithType: Occupancy.Boundary
+- uid: ZLab.Discrete.Voxels.Occupancy.Inside
+  name: Inside
+  href: api/ZLab.Discrete.Voxels.Occupancy.html#ZLab_Discrete_Voxels_Occupancy_Inside
+  commentId: F:ZLab.Discrete.Voxels.Occupancy.Inside
+  fullName: ZLab.Discrete.Voxels.Occupancy.Inside
+  nameWithType: Occupancy.Inside
+- uid: ZLab.Discrete.Voxels.Occupancy.Outside
+  name: Outside
+  href: api/ZLab.Discrete.Voxels.Occupancy.html#ZLab_Discrete_Voxels_Occupancy_Outside
+  commentId: F:ZLab.Discrete.Voxels.Occupancy.Outside
+  fullName: ZLab.Discrete.Voxels.Occupancy.Outside
+  nameWithType: Occupancy.Outside
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel
+  name: OccupancyVoxel
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.html
+  commentId: T:ZLab.Discrete.Voxels.OccupancyVoxel
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel
+  nameWithType: OccupancyVoxel
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel.#ctor(System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy)
+  name: OccupancyVoxel(Vector3, Occupancy)
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.-ctor.html#ZLab_Discrete_Voxels_OccupancyVoxel__ctor_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy_
+  commentId: M:ZLab.Discrete.Voxels.OccupancyVoxel.#ctor(System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy)
+  name.vb: New(Vector3, Occupancy)
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.OccupancyVoxel(System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy)
+  fullName.vb: ZLab.Discrete.Voxels.OccupancyVoxel.New(System.Numerics.Vector3, ZLab.Discrete.Voxels.Occupancy)
+  nameWithType: OccupancyVoxel.OccupancyVoxel(Vector3, Occupancy)
+  nameWithType.vb: OccupancyVoxel.New(Vector3, Occupancy)
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel.#ctor*
+  name: OccupancyVoxel
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.-ctor.html
+  commentId: Overload:ZLab.Discrete.Voxels.OccupancyVoxel.#ctor
+  name.vb: New
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.OccupancyVoxel
+  fullName.vb: ZLab.Discrete.Voxels.OccupancyVoxel.New
+  nameWithType: OccupancyVoxel.OccupancyVoxel
+  nameWithType.vb: OccupancyVoxel.New
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds(System.Numerics.Vector3)
+  name: GetBounds(Vector3)
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds.html#ZLab_Discrete_Voxels_OccupancyVoxel_GetBounds_System_Numerics_Vector3_
+  commentId: M:ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds(System.Numerics.Vector3)
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds(System.Numerics.Vector3)
+  nameWithType: OccupancyVoxel.GetBounds(Vector3)
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds*
+  name: GetBounds
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds.html
+  commentId: Overload:ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds
+  nameWithType: OccupancyVoxel.GetBounds
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel.Origin
+  name: Origin
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.Origin.html
+  commentId: F:ZLab.Discrete.Voxels.OccupancyVoxel.Origin
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.Origin
+  nameWithType: OccupancyVoxel.Origin
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel.State
+  name: State
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.State.html
+  commentId: F:ZLab.Discrete.Voxels.OccupancyVoxel.State
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.State
+  nameWithType: OccupancyVoxel.State
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel.ToString
+  name: ToString()
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.ToString.html#ZLab_Discrete_Voxels_OccupancyVoxel_ToString
+  commentId: M:ZLab.Discrete.Voxels.OccupancyVoxel.ToString
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.ToString()
+  nameWithType: OccupancyVoxel.ToString()
+- uid: ZLab.Discrete.Voxels.OccupancyVoxel.ToString*
+  name: ToString
+  href: api/ZLab.Discrete.Voxels.OccupancyVoxel.ToString.html
+  commentId: Overload:ZLab.Discrete.Voxels.OccupancyVoxel.ToString
+  fullName: ZLab.Discrete.Voxels.OccupancyVoxel.ToString
+  nameWithType: OccupancyVoxel.ToString

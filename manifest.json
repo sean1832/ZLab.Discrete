@@ -1,0 +1,2239 @@
+{
+  "source_base_path": "/home/runner/work/ZLab.Discrete/ZLab.Discrete/docs/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleNormal",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.yml\" sourcestartlinenumber=\"1\">Extension methods for sampling a <xref href=\"ZLab.Discrete.Grids.DistanceGrid\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleGradient",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Algorithms.Sampling.DistanceGridSamplingExtension.SampleTrilinear",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Algorithms.Sampling.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Algorithms.Sampling.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Algorithms.Sampling",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Expand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Expand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.BBox.yml\" sourcestartlinenumber=\"1\">Axis-aligned bounding box (AABB) in 3D space.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.GetAllCorners.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.GetAllCorners",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.ToMesh.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.ToMesh",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Pad.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Pad",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Contains.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Contains",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Intersects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Intersects",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.ToString.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.ToString",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.BBox",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.FromUnordered.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.FromUnordered",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Empty.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Empty",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.IsValid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.IsValid",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.SurfaceArea.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.SurfaceArea",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Size.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Size",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Center.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Center",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Max.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Max",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.BBox.yml\" sourcestartlinenumber=\"1\">Maximum corner of the bounding box.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Min.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Min",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.BBox.yml\" sourcestartlinenumber=\"1\">Minimum corner of the bounding box.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.BBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.BBox.Infinite.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.BBox.Infinite",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.EnumerateTriangleBounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.MeshF",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.GetBounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.GetBounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.RecomputeBounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.RecomputeBounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.FromObjFile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.FromObjFile",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.Vertices.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.Vertices",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.MeshF.yml\" sourcestartlinenumber=\"1\">Array of vertex positions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.MeshF.yml\" sourcestartlinenumber=\"1\">Triangle mesh with float precision vertices.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.Faces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.Faces",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.MeshF.yml\" sourcestartlinenumber=\"1\">Array of faces, each face is an array of vertex indices. (must be triangles)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.IsValid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.IsValid",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.ToObjFile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.ToObjFile",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.MeshF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.MeshF.IsClosed.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.MeshF.IsClosed",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.MeshF.yml\" sourcestartlinenumber=\"1\">Indicates if the mesh is closed (watertight).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.Length.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.Length",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.PolylineF.yml\" sourcestartlinenumber=\"1\">Polyline defined by a sequence of 3D vertices that make up the line segments.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.Append.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.Append",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.GetBounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.GetBounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.IsValid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.IsValid",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.PolylineF",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.IsClosed.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.IsClosed",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.Count.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.Count",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.ClosedEpsilon.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.ClosedEpsilon",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.PolylineF.yml\" sourcestartlinenumber=\"1\">Tolerance for determining if the polyline is closed (distance between first and last vertex).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.PolylineF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.PolylineF.Vertices.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.PolylineF.Vertices",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.QueryVertices.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.QueryVertices",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.TriFace.yml\" sourcestartlinenumber=\"1\">Triangle face defined by three vertex indices (int). (12 bytes)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.ToString.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.ToString",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.op_Inequality.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.operator !=",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.TriFace",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.IsValid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.IsValid",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.C.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.C",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.TriFace.yml\" sourcestartlinenumber=\"1\">Index of the third vertex of the triangle.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.A.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.A",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.TriFace.yml\" sourcestartlinenumber=\"1\">Index of the first vertex of the triangle.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.op_Equality.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.operator ==",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.GetHashCode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.GetHashCode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.Equals.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.Equals",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.TriFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.TriFace.B.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry.TriFace.B",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Geometry.TriFace.yml\" sourcestartlinenumber=\"1\">Index of the second vertex of the triangle.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Geometry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Geometry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Geometry",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.AddOffset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.AddOffset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.ToArrayCopy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.EnumerateVoxels",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.ForEachVoxelParallel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.LoadFromArray.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.LoadFromArray",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Grids.DistanceGrid.yml\" sourcestartlinenumber=\"1\">Distance field grid structure.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.BuildFromTernaryMask",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.GetMinMax.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.GetMinMax",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.DistanceGrid",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.SetValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.SetValue",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.GetBuffer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.GetBuffer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyMemory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.GetReadOnlyBuffer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.GetValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.GetValue",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.Clone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.Clone",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.BuildFromBinaryMask",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.Fill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.Fill",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.DistanceGrid.ForEachVoxel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridBase.Meta.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridBase.Meta",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridBase.Bounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridBase.Bounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridBase.Contains.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridBase.Contains",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridBase",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Grids.GridBase.yml\" sourcestartlinenumber=\"1\">Base class for 3D grid structures, providing common properties and methods.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.Ny.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.Ny",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.MinX.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.MinX",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.MinY.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.MinY",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.MinZ.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.MinZ",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.Nx.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.Nx",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Grids.GridMeta.yml\" sourcestartlinenumber=\"1\">Metadata for a 3D grid, including its dimensions, minimum coordinates, and voxel size.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.Nz.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.Nz",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.VoxelSize.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.VoxelSize",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.GridMeta",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.Count.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.Count",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.SizeWorld.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.SizeWorld",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.GridMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.GridMeta.Dimensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.GridMeta.Dimensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyMemory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyMemory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetBuffer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetBuffer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.Interfaces.IGrid<T>",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Grids.Interfaces.IGrid-1.yml\" sourcestartlinenumber=\"1\">Interface for a 3D grid structure that allows getting and setting values at specific indices,</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.SetValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.Interfaces.IGrid<T>.SetValue",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetValue",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.Interfaces.IGrid-1.GetReadOnlyBuffer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.Interfaces.IGrid<T>.GetReadOnlyBuffer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.ToString.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.ToString",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.Fill.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.Fill",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.SetValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.SetValue",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.GetValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.GetValue",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.Clone.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.Clone",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.OccupancyGrid",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.GetBuffer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.GetBuffer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.CountState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.CountState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Grids.OccupancyGrid.yml\" sourcestartlinenumber=\"1\">Occupancy grid structure.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.OccupancyGrid.TransformWorld.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids.OccupancyGrid.TransformWorld",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Grids.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Grids.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Grids",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Meshing.CordSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Meshing.CordSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Meshing.CordSystem",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Operations.Meshing.CordSystem.yml\" sourcestartlinenumber=\"1\">Coordinate system type used in meshing operations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMesh",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Meshing.DiscreteMesher",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.yml\" sourcestartlinenumber=\"1\">Naive voxel meshing utilities: emits per-voxel meshes or a single merged mesh.\nUses face culling with Morton-coded occupancy when voxel size is uniform.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Meshing.DiscreteMesher.GetVoxelBounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Meshing.DiscreteMesher.GenerateMeshes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Meshing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Meshing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Meshing",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizeMesh",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.RasterizePolyline",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Rasterizing.DenseRasterizer",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Operations.Rasterizing.DenseRasterizer.yml\" sourcestartlinenumber=\"1\">Rasterizes a mesh into a dense occupancy grid.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizeMesh",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.RasterizePolyline",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Rasterizing.SparseRasterizer",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Operations.Rasterizing.SparseRasterizer.yml\" sourcestartlinenumber=\"1\">Sparse rasterization of a mesh into voxels. Only voxels that intersect the mesh are collected.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Operations.Rasterizing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Operations.Rasterizing.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Operations.Rasterizing",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.ToString.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.DistanceVoxel.ToString",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.Origin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.DistanceVoxel.Origin",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.Distance.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.DistanceVoxel.Distance",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.DistanceVoxel.DistanceVoxel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.ToArray.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.DistanceVoxel.ToArray",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.DistanceVoxel.ComputeBounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.DistanceVoxel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.DistanceVoxel.Center.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.DistanceVoxel.Center",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.Occupancy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.Occupancy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.Occupancy",
+      "Summary": "<p sourcefile=\"api/ZLab.Discrete.Voxels.Occupancy.yml\" sourcestartlinenumber=\"1\">Occupancy state of a voxel.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.Origin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.OccupancyVoxel.Origin",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.-ctor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.OccupancyVoxel.OccupancyVoxel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.OccupancyVoxel.GetBounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.State.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.OccupancyVoxel.State",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.OccupancyVoxel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.OccupancyVoxel.ToString.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels.OccupancyVoxel.ToString",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZLab.Discrete.Voxels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZLab.Discrete.Voxels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZLab.Discrete.Voxels",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/licenses.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/licenses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/references.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/references.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "docs/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/usages/dense-grid-definition.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/usages/dense-grid-definition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/usages/enumerate-voxels.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/usages/enumerate-voxels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/usages/mesh-building.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/usages/mesh-building.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/usages/mesh-extraction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/usages/mesh-extraction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/usages/rasterization.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/usages/rasterization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/usages/signed-distance-field.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/usages/signed-distance-field.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/usages/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "docs/usages/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/usages/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/icon_dark_trans.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/icon_dark_trans.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

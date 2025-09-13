@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class OccupancyGrid | ZLab.Discrete </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class OccupancyGrid | ZLab.Discrete ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon_dark_trans.png" alt="ZLab.Discrete" class="logomark">
+              <span class="brand-title">ZLab.Discrete</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon_dark_trans.png" alt="ZLab.Discrete" class="logomark">
+                          <span class="brand-title">ZLab.Discrete</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong>Developed by <a href='https://github.com/sean1832' style='color: lightblue !important;'>Zeke Zhang</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div class="contribution">
+                               <a href="https://github.com/sean1832/ZLab.Discrete/new/main/apiSpec/new?filename=ZLab_Discrete_Grids_OccupancyGrid.md&amp;value=---%0Auid%3A%20ZLab.Discrete.Grids.OccupancyGrid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="ZLab.Discrete.Grids.OccupancyGrid">
+
+
+
+  <h1 id="ZLab_Discrete_Grids_OccupancyGrid" data-uid="ZLab.Discrete.Grids.OccupancyGrid" class="text-break">Class OccupancyGrid</h1>
+  <div class="markdown level0 summary"><p>Occupancy grid structure.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="ZLab.Discrete.Grids.GridBase.html">GridBase</a></div>
+    <div class="level2"><span class="xref">OccupancyGrid</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="ZLab.Discrete.Grids.Interfaces.IGrid-1.html">IGrid</a>&lt;<a class="xref" href="ZLab.Discrete.Voxels.Occupancy.html">Occupancy</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ZLab.Discrete.Grids.GridBase.Meta.html#ZLab_Discrete_Grids_GridBase_Meta">GridBase.Meta</a>
+    </div>
+    <div>
+      <a class="xref" href="ZLab.Discrete.Grids.GridBase.Bounds.html#ZLab_Discrete_Grids_GridBase_Bounds">GridBase.Bounds</a>
+    </div>
+    <div>
+      <a class="xref" href="ZLab.Discrete.Grids.GridBase.Contains.html#ZLab_Discrete_Grids_GridBase_Contains_System_ValueTuple_System_Int32_System_Int32_System_Int32__">GridBase.Contains((int x, int y, int z))</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ZLab.html">ZLab</a>.<a class="xref" href="ZLab.Discrete.html">Discrete</a>.<a class="xref" href="ZLab.Discrete.Grids.html">Grids</a></h6>
+  <h6><strong>Assembly</strong>: ZLab.Discrete.dll</h6>
+  <h5 id="ZLab_Discrete_Grids_OccupancyGrid_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class OccupancyGrid : GridBase, IGrid&lt;Occupancy&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid__ctor_System_Numerics_Vector3_ZLab_Discrete_Geometry_BBox_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.#ctor(System.Numerics.Vector3,ZLab.Discrete.Geometry.BBox)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.-ctor.html#ZLab_Discrete_Grids_OccupancyGrid__ctor_System_Numerics_Vector3_ZLab_Discrete_Geometry_BBox_">OccupancyGrid(Vector3, BBox)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create an occupancy grid that covers the given world-space bounds with the given voxel size.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid__ctor_ZLab_Discrete_Grids_GridMeta_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.#ctor(ZLab.Discrete.Grids.GridMeta)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.-ctor.html#ZLab_Discrete_Grids_OccupancyGrid__ctor_ZLab_Discrete_Grids_GridMeta_">OccupancyGrid(GridMeta)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create an occupancy grid with given metadata.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid__ctor_ZLab_Discrete_Voxels_Occupancy___System_Numerics_Vector3___ZLab_Discrete_Grids_GridMeta_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.#ctor(ZLab.Discrete.Voxels.Occupancy[],System.Numerics.Vector3[],ZLab.Discrete.Grids.GridMeta)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.-ctor.html#ZLab_Discrete_Grids_OccupancyGrid__ctor_ZLab_Discrete_Voxels_Occupancy___System_Numerics_Vector3___ZLab_Discrete_Grids_GridMeta_">OccupancyGrid(Occupancy[], Vector3[], GridMeta)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create an occupancy grid from arrays of occupancies and their corresponding world-space positions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_Clone" data-uid="ZLab.Discrete.Grids.OccupancyGrid.Clone">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.Clone.html#ZLab_Discrete_Grids_OccupancyGrid_Clone">Clone()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deep clone of this grid. (Meta and buffer are copied.)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_CountState" data-uid="ZLab.Discrete.Grids.OccupancyGrid.CountState">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.CountState.html#ZLab_Discrete_Grids_OccupancyGrid_CountState">CountState()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Count total number of voxels in the grid.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_CountState_ZLab_Discrete_Voxels_Occupancy_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.CountState(ZLab.Discrete.Voxels.Occupancy)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.CountState.html#ZLab_Discrete_Grids_OccupancyGrid_CountState_ZLab_Discrete_Voxels_Occupancy_">CountState(Occupancy)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Count voxels in a given <a class="xref" href="ZLab.Discrete.Voxels.Occupancy.html">Occupancy</a> state.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_EnumerateVoxels" data-uid="ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.EnumerateVoxels.html#ZLab_Discrete_Grids_OccupancyGrid_EnumerateVoxels">EnumerateVoxels()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Enumerate all voxels with their world-space positions and occupancy values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_Fill_ZLab_Discrete_Voxels_Occupancy_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.Fill(ZLab.Discrete.Voxels.Occupancy)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.Fill.html#ZLab_Discrete_Grids_OccupancyGrid_Fill_ZLab_Discrete_Voxels_Occupancy_">Fill(Occupancy)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fill the entire grid with a given occupancy value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__" data-uid="ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy})">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__">ForEachVoxel(Action&lt;Vector3, Occupancy&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Enumerate all voxels in the grid, invoking the given <code class="paramref">action</code> for each voxel.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__System_Nullable_System_Int32__" data-uid="ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel(System.Action{System.Numerics.Vector3,ZLab.Discrete.Voxels.Occupancy},System.Nullable{System.Int32})">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.ForEachVoxelParallel.html#ZLab_Discrete_Grids_OccupancyGrid_ForEachVoxelParallel_System_Action_System_Numerics_Vector3_ZLab_Discrete_Voxels_Occupancy__System_Nullable_System_Int32__">ForEachVoxelParallel(Action&lt;Vector3, Occupancy&gt;, int?)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Parallel z-slice enumeration. Use only if the work done in <code class="paramref">action</code>
+is heavy enough to justify the parallel overhead.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_GetBuffer" data-uid="ZLab.Discrete.Grids.OccupancyGrid.GetBuffer">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.GetBuffer.html#ZLab_Discrete_Grids_OccupancyGrid_GetBuffer">GetBuffer()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get a writable span over the internal occupancy buffer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_GetMaskBinary_System_Boolean_System_Boolean_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary(System.Boolean,System.Boolean)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.GetMaskBinary.html#ZLab_Discrete_Grids_OccupancyGrid_GetMaskBinary_System_Boolean_System_Boolean_">GetMaskBinary(bool, bool)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Export occupancy as a binary mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_GetMaskTernary_System_Boolean_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(System.Boolean)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary.html#ZLab_Discrete_Grids_OccupancyGrid_GetMaskTernary_System_Boolean_">GetMaskTernary(bool)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Export occupancy as a ternary mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_GetMaskTernary_System_Span_System_Byte__System_Boolean_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary(System.Span{System.Byte},System.Boolean)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.GetMaskTernary.html#ZLab_Discrete_Grids_OccupancyGrid_GetMaskTernary_System_Span_System_Byte__System_Boolean_">GetMaskTernary(Span&lt;byte&gt;, bool)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Export occupancy as a ternary mask into a provided span.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_GetReadOnlyBuffer" data-uid="ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyBuffer.html#ZLab_Discrete_Grids_OccupancyGrid_GetReadOnlyBuffer">GetReadOnlyBuffer()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get a read-only span over the internal occupancy buffer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_GetReadOnlyMemory" data-uid="ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.GetReadOnlyMemory.html#ZLab_Discrete_Grids_OccupancyGrid_GetReadOnlyMemory">GetReadOnlyMemory()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get a read-only memory over the internal occupancy buffer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_GetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__" data-uid="ZLab.Discrete.Grids.OccupancyGrid.GetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32})">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.GetValue.html#ZLab_Discrete_Grids_OccupancyGrid_GetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__">GetValue((int x, int y, int z))</a>
+        </td>
+        <td class="markdown level1 summary"><p>Get occupancy value at given grid index.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_LoadFromArray_System_ReadOnlySpan_ZLab_Discrete_Voxels_Occupancy__" data-uid="ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray(System.ReadOnlySpan{ZLab.Discrete.Voxels.Occupancy})">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.LoadFromArray.html#ZLab_Discrete_Grids_OccupancyGrid_LoadFromArray_System_ReadOnlySpan_ZLab_Discrete_Voxels_Occupancy__">LoadFromArray(ReadOnlySpan&lt;Occupancy&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Load occupancies from a flat array (row-major order).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_SetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__ZLab_Discrete_Voxels_Occupancy_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.SetValue(System.ValueTuple{System.Int32,System.Int32,System.Int32},ZLab.Discrete.Voxels.Occupancy)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.SetValue.html#ZLab_Discrete_Grids_OccupancyGrid_SetValue_System_ValueTuple_System_Int32_System_Int32_System_Int32__ZLab_Discrete_Voxels_Occupancy_">SetValue((int x, int y, int z), Occupancy)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Set occupancy value at given grid index.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_ToArrayCopy" data-uid="ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.ToArrayCopy.html#ZLab_Discrete_Grids_OccupancyGrid_ToArrayCopy">ToArrayCopy()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Export distances as a copy (flat row-major array).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_ToString" data-uid="ZLab.Discrete.Grids.OccupancyGrid.ToString">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.ToString.html#ZLab_Discrete_Grids_OccupancyGrid_ToString">ToString()</a>
+        </td>
+        <td class="markdown level1 summary"><p>String representation of the grid.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_TransformWorld_System_Numerics_Vector3_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.TransformWorld(System.Numerics.Vector3)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.TransformWorld.html#ZLab_Discrete_Grids_OccupancyGrid_TransformWorld_System_Numerics_Vector3_">TransformWorld(Vector3)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Translates the grid by a world-space vector.
+Internally shifts content by the nearest integer voxel offset. Cells shifting out of range are dropped.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="ZLab_Discrete_Grids_OccupancyGrid_TransformWorld_System_Numerics_Vector3_System_Numerics_Vector3_" data-uid="ZLab.Discrete.Grids.OccupancyGrid.TransformWorld(System.Numerics.Vector3,System.Numerics.Vector3)">
+          <a class="xref" href="ZLab.Discrete.Grids.OccupancyGrid.TransformWorld.html#ZLab_Discrete_Grids_OccupancyGrid_TransformWorld_System_Numerics_Vector3_System_Numerics_Vector3_">TransformWorld(Vector3, Vector3)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Translates the grid so that <code class="paramref">origin</code> moves to <code class="paramref">target</code>.
+Equivalent to <code>TransformWorld(target - origin)</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+                </div>
+
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>
