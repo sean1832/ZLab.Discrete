@@ -1,9 +1,9 @@
-name: Publish to GitHub Packages + NuGet.org
+name: Publish (GitHub Packages + NuGet.org)
 
 on:
   release:
-    types: [published]
-  workflow_dispatch:
+    types: [published] # trigger on published releases (not prereleases)
+  workflow_dispatch: # allow manual triggering
 
 permissions:
   contents: write
@@ -11,10 +11,13 @@ permissions:
 
 jobs:
   publish:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -23,85 +26,68 @@ jobs:
             9.x
             8.x
             7.x
+          cache: true # enable caching
+          cache-dependency-path: |
+            **/*.csproj
+            **/Directory.Packages.props
+            **/packages.lock.json
+            global.json
+            nuget.config
 
       - name: Compute version from tag
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          $tag = $env:GITHUB_REF_NAME
-          $version = $tag -replace '^v',''
-          echo "VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-        shell: pwsh
+          TAG="${GITHUB_REF_NAME}"
+          VERSION="${TAG#v}"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
 
       - name: Restore
         run: dotnet restore
 
-      - name: Build (Release)
+      - name: Build Release
         run: dotnet build --configuration Release --no-restore
 
       - name: Pack
         run: |
-          dotnet pack ZLab.Discrete/ZLab.Discrete.csproj `
-            --configuration Release `
-            --no-build `
-            -p:PackageVersion=${{ env.VERSION }} `
-            -p:Version=${{ env.VERSION }} `
-            -p:ContinuousIntegrationBuild=true `
-            -p:IncludeSymbols=true `
-            -p:SymbolPackageFormat=snupkg `
-            -p:RepositoryUrl=${{ github.server_url }}/${{ github.repository }} `
-            -p:RepositoryCommit=${{ github.sha }} `
+          dotnet pack ZLab.Discrete/ZLab.Discrete.csproj \
+            --configuration Release \
+            --no-build \
+            -p:PackageVersion="$VERSION" \
+            -p:Version="$VERSION" \
+            -p:ContinuousIntegrationBuild=true \
+            -p:IncludeSymbols=true \
+            -p:SymbolPackageFormat=snupkg \
+            -p:RepositoryUrl=${{ github.server_url }}/${{ github.repository }} \
+            -p:RepositoryCommit=${{ github.sha }} \
             --output ./nupkgs
-        shell: pwsh
-
-      - name: List packed files
-        shell: pwsh
-        run: |
-          Write-Host "Contents of ./nupkgs:"
-          Get-ChildItem ./nupkgs | Format-Table Name,Length,LastWriteTime
 
       - name: Add GitHub Packages source
         run: |
-          dotnet nuget add source `
-            "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" `
-            --name "github" `
-            --username "${{ github.actor }}" `
-            --password "${{ secrets.GITHUB_TOKEN }}" `
+          dotnet nuget add source \
+            "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+            --name "github" \
+            --username "${{ github.actor }}" \
+            --password "${{ secrets.GITHUB_TOKEN }}" \
             --store-password-in-clear-text
-        shell: pwsh
 
       - name: Publish to GitHub Packages
-        shell: pwsh
         run: |
-          $pkgs = Get-ChildItem -Path "./nupkgs" -Filter "*.nupkg" -ErrorAction Stop
-          if ($pkgs.Count -eq 0) { Write-Error "No .nupkg files found in ./nupkgs"; exit 1 }
-          foreach ($p in $pkgs) {
-            dotnet nuget push $p.FullName --source "github" --skip-duplicate
-          }
-
-          $symbols = Get-ChildItem -Path "./nupkgs" -Filter "*.snupkg" -ErrorAction SilentlyContinue
-          foreach ($s in $symbols) {
-            dotnet nuget push $s.FullName --source "github" --skip-duplicate
-          }
+          dotnet nuget push "./nupkgs/*.nupkg" --source "github" --skip-duplicate
+          dotnet nuget push "./nupkgs/*.snupkg" --source "github" --skip-duplicate
 
       - name: Publish to NuGet.org
-        shell: pwsh
+        if: ${{ github.event.release.prerelease == false }}
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: |
-          $pkgs = Get-ChildItem -Path "./nupkgs" -Filter "*.nupkg" -ErrorAction Stop
-          if ($pkgs.Count -eq 0) { Write-Error "No .nupkg files found in ./nupkgs"; exit 1 }
-          foreach ($p in $pkgs) {
-            dotnet nuget push $p.FullName `
-              --api-key "${{ secrets.NUGET_API_KEY }}" `
-              --source "https://api.nuget.org/v3/index.json" `
-              --skip-duplicate
-          }
-
-          $symbols = Get-ChildItem -Path "./nupkgs" -Filter "*.snupkg" -ErrorAction SilentlyContinue
-          foreach ($s in $symbols) {
-            dotnet nuget push $s.FullName `
-              --api-key "${{ secrets.NUGET_API_KEY }}" `
-              --source "https://api.nuget.org/v3/index.json" `
-              --skip-duplicate
-          }
+          dotnet nuget push "./nupkgs/*.nupkg" \
+            --api-key "$NUGET_API_KEY" \
+            --source "https://api.nuget.org/v3/index.json" \
+            --skip-duplicate
+          dotnet nuget push "./nupkgs/*.snupkg" \
+            --api-key "$NUGET_API_KEY" \
+            --source "https://api.nuget.org/v3/index.json" \
+            --skip-duplicate
 
       - name: Attach packages to the GitHub Release
         uses: softprops/action-gh-release@v2
@@ -109,3 +95,5 @@ jobs:
           files: |
             nupkgs/*.nupkg
             nupkgs/*.snupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

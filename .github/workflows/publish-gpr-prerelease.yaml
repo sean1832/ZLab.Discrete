@@ -37,15 +37,14 @@ jobs:
       - name: Restore
         run: dotnet restore
 
-      - name: Build Release (skip net472;net48 for ubuntu)
-        run: dotnet build --configuration Release --no-restore -p:TargetFrameworks="netstandard2.1;net7.0;net8.0;net9.0"
+      - name: Build Release
+        run: dotnet build --configuration Release --no-restore
 
       - name: Pack
         run: |
           dotnet pack ZLab.Discrete/ZLab.Discrete.csproj \
             --configuration Release \
             --no-build \
-            -p:TargetFrameworks="netstandard2.1;net7.0;net8.0;net9.0" \
             -p:PackageVersion=${VERSION} \
             -p:Version=${VERSION} \
             -p:ContinuousIntegrationBuild=true \
